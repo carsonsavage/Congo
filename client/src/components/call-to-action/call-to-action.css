@@ -1,4 +1,7 @@
 .call-to-action {
     background-color: seagreen;
     color: white;
+    width: 600px;
+    height: 400px;
+    margin: 40px auto;
 }
