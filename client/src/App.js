@@ -11,19 +11,37 @@ import Orders from './pages/orders/orders.js';
 function App() {
   return (
     <Router>
-        <Route exact path="/" component={Home} />
+      <Switch>
 
-        <Route path="/search" component={Search} />
+        <Route exact path="/">
+          <Home />
+        </Route>
 
-        <Route path="/user/dashboard/:id" component={Dashboard} />
+        <Route path="/search">
+          <Search />
+        </Route>
 
-        <Route path="/checkout" component={Checkout} />
+        <Route path="/user/dashboard/:id">
+          <Dashboard />
+        </Route>
 
-        <Route path="/cart" component={Cart} />
+        <Route path="/checkout">
+          <Checkout />
+        </Route>
 
-        <Route path="/sign-in" component={SignIn} />
+        <Route path="/cart">
+          <Cart />
+        </Route>
 
-        <Route path="/orders" component={Orders} />
+        <Route path="/sign-in">
+          <SignIn />
+        </Route>
+
+        <Route path="/orders">
+          <Orders />
+        </Route>
+
+      </Switch>
     </Router>
   );
 }
