@@ -2,7 +2,7 @@ import React from 'react';
 
 function Wrapper(props){
     return (
-        <div className="container">
+        <div className="ui container">
             {props.children}
         </div>
     )
