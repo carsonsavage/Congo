@@ -1,4 +1,7 @@
 .header{
     background-color: #13137a;
     color: white;
+    height: 75px;
+    text-align: center;
+    padding: 20px;
 }
