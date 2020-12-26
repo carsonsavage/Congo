@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './pages/home/home.js';
 import Search from './pages/search/search.js';
 import Dashboard from './pages/dashboard/dashboard.js';
@@ -13,33 +13,19 @@ function App() {
     <Router>
       <Switch>
 
-        <Route exact path="/">
-          <Home />
-        </Route>
+        <Route exact path="/" component={Home} />
 
-        <Route path="/search">
-          <Search />
-        </Route>
+        <Route path="/search" component={Search} />
 
-        <Route path="/user/dashboard/:id">
-          <Dashboard />
-        </Route>
+        <Route path="/user/dashboard/:id" component={Dashboard} />
 
-        <Route path="/checkout">
-          <Checkout />
-        </Route>
+        <Route path="/checkout" component={Checkout} />
 
-        <Route path="/cart">
-          <Cart />
-        </Route>
+        <Route path="/cart" component={Cart} />
 
-        <Route path="/sign-in">
-          <SignIn />
-        </Route>
+        <Route path="/sign-in" component={SignIn} />
 
-        <Route path="/orders">
-          <Orders />
-        </Route>
+        <Route path="/orders" component={Orders} />
 
       </Switch>
     </Router>
