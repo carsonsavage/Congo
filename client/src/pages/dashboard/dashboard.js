@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as useParams } from "react-router-dom";
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 import Wrapper from '../../components/wrapper/wrapper';
@@ -9,14 +8,12 @@ import SavedPayment from '../../components/saved-payment/saved-payment.js';
 import PrevOrders from '../../components/prev-orders/prev-orders.js';
 
 function UserDashboard(props){
-    console.log(props);
-
     return (
         <>
         <Header />
 
         <Wrapper>
-            <AccountInfo />
+            <AccountInfo id={props.match.params.id} />
             <SavedAddress />
             <SavedPayment />
             <PrevOrders />
