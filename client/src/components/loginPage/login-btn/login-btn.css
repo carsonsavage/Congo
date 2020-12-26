@@ -1,0 +1,10 @@
+.login-btn{
+    width: 300px;
+    margin: 40px auto;
+}
+
+.login-btn button{
+    background-color: #007a00;
+    color: white;
+    width: 100%;
+}
