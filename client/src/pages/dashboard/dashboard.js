@@ -1,6 +1,5 @@
 import React from 'react';
 import Footer from '../../components/footer/footer';
-import {MainHeader} from '../../components/header/header';
 import Wrapper from '../../components/wrapper/wrapper';
 import AccountInfo from '../../components/userAccountPage/account-info/account-info.js';
 import SavedAddress from '../../components/userAccountPage/saved-address/saved-address.js';
@@ -10,7 +9,6 @@ import PrevOrders from '../../components/userAccountPage/prev-orders/prev-orders
 function UserDashboard(props){
     return (
         <>
-        <MainHeader />
 
         <Wrapper>
             <AccountInfo id={props.match.params.id} />
