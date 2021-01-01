@@ -1,0 +1,9 @@
+.cart{
+    text-align: center;
+    font-size: 20px;
+}
+
+.cart p{
+    color: green;
+    font-weight: bold;
+}

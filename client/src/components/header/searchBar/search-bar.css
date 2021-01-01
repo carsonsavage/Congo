@@ -1,0 +1,13 @@
+.search-bar{
+    width: 60%;
+    margin: -20px auto;
+}
+
+.ui.input{
+    width: 85%;
+}
+
+button{
+    padding: 0;
+    width: 55px;
+}

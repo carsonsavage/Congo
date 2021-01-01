@@ -1,0 +1,13 @@
+.checkout-horizontal{
+    background-color: red;
+    height: 100px;
+    margin: 40px 0;
+}
+
+.checkout-vertical{
+    background-color: red;
+    width: 29%;
+    height: 300px;
+    margin-left: 20px;
+    float: right;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "congo-marketplace",
+  "version": "1.0.0",
+  "description": "Amazon mock up called congo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaySloth/Project3.git"
+  },
+  "author": "Allister, Carson, Beshayr, Teshera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaySloth/Project3/issues"
+  },
+  "homepage": "https://github.com/DaySloth/Project3#readme"
+}
