@@ -8,9 +8,9 @@
       max-width: 320px;
     }
 
-    .ui green labeled icon button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    #signup-btn {
+        width: 200px;
+        display: inline-block;
+        margin-left: 41%;
     }
   }
