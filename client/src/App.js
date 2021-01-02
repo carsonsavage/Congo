@@ -8,6 +8,7 @@ import Checkout from "./pages/checkout/checkout.js";
 import Cart from "./pages/cart/cart.js";
 import Login from "./pages/login/login.js";
 import Orders from "./pages/orders/orders.js";
+import Signup from './pages/signup/signup.js';
 import "./app.css";
 import CartContext from "./util/cartContext.js";
 import SearchContext from "./util/searchContext.js";
@@ -77,16 +78,15 @@ function App() {
 
                             <Route path="/search/:query" component={Search} />
 
-                            <Route
-                                path="/user/dashboard/:id"
-                                component={Dashboard}
-                            />
+                            <Route path="/user/dashboard/:id" component={Dashboard} />
 
                             <Route path="/checkout" component={Checkout} />
 
                             <Route path="/cart" component={Cart} />
 
                             <Route path="/login" component={Login} />
+
+                            <Route path="/signup" component={Signup} />
 
                             <Route path="/orders" component={Orders} />
                         </Switch>
