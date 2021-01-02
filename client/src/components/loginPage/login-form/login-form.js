@@ -30,13 +30,27 @@ export default function Login() {
         <Form.Group size="lg" controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
+            class="ui left icon input"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
+        <Button block size="lg" type="submit" disabled={!validateForm()}>
+          Login
+        </Button>
         
       </Form>
+      <div>
+        <div className="ui horizontal divider">
+          Or
+        </div>
+        <div className="ui green labeled icon button">
+          Sign Up
+          <i className="add icon" />
+        </div>
+      </div>
     </div>
+    
   );
 }
