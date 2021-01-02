@@ -31,7 +31,20 @@ function App() {
         last_name: "Rampenthal",
         phone: "111-222-3333",
         email: "test@email.com",
-        saved_address: [],
+        saved_address: [{
+            name: "Allister Rampenthal",
+            address: "123 Hamburger St",
+            city: "Freeport",
+            state: "IL",
+            zipcode: 64203
+        },
+        {
+            name: "Allister Rampenthal",
+            address: "123 Hamburger St",
+            city: "Freeport",
+            state: "IL",
+            zipcode: 64203
+        }],
         saved_payments: [],
         orders: [],
     });
@@ -40,14 +53,17 @@ function App() {
         setSearchState({ ...searchState, search_query: event.target.value });
     };
 
-    const handleUserInfoChange = (name, value) => {
-      console.log(name, value)
-    }
+    const handleUserInfoChange = (event) => {
+        const {name, value} = event.target;
+        setUserState({...userState, [name]:[value]});
+    };
 
     return (
         <CartContext.Provider value={{ cartState, setCartState }}>
             <SearchContext.Provider value={{ searchState, handleSearchChange }}>
-                <UserContext.Provider value={{ userState, handleUserInfoChange }}>
+                <UserContext.Provider
+                    value={{ userState, handleUserInfoChange }}
+                >
                     <Router>
                         <Header />
                         <Switch>
