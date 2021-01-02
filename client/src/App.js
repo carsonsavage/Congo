@@ -15,6 +15,8 @@ import SearchContext from "./util/searchContext.js";
 import UserContext from "./util/userContext.js";
 
 function App() {
+    
+
     const [searchState, setSearchState] = useState({
         search_query: "",
         search_results: [],
