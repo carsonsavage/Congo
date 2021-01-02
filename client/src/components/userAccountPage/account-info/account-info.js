@@ -1,13 +1,31 @@
-import React from 'react';
-import './account-info.css';
+import React, { useContext, useState } from "react";
+import "./account-info.css";
+import UserContext from "../../../util/userContext.js";
 
-function AccountInfo(props){
+function AccountInfo() {
+    const { userState, handleUserInfoChange } = useContext(UserContext);
+
+    const [editState, setEditState] = useState(false);
+
+    function enableEdit() {
+        setEditState(true)
+    }
+
+    function disableEdit() {
+        setEditState(false)
+    }
+
     return (
         <div className="account-info">
             <h3>Account Info</h3>
-            <h5>User id: {props.id}</h5>
+            <hr />
+
+
+            <h5>last name: {userState.last_name}</h5>
+            <h5>email: {userState.email}</h5>
+            <h5>phone number: {userState.phone}</h5>
         </div>
-    )
-};
+    );
+}
 
 export default AccountInfo;
