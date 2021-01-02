@@ -4,15 +4,10 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SearchBar from "./searchBar/search-bar.js";
 import Cart from "./cart/cart.js";
+import UserContext from "../../util/userContext.js";
 
 function Header() {
-    const [userState, setUserState] = useState({
-        loggedIn: true,
-        _id: "434xjiJ83",
-        first_name: "Allister",
-        last_name: "Rampenthal",
-        email: "allisterrampenthal@gmail.com"
-    });
+    const {userState} = useContext(UserContext);
 
     return (
         <Navbar bg="dark" expand="lg" className="header">
