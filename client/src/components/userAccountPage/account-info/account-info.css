@@ -5,3 +5,12 @@
     margin: 40px auto;
     justify-content: center;
 }
+
+label, span{
+    font-weight: bold;
+}
+
+.cardHeader{
+    font-size: 20px;
+    font-weight: bold;
+}
