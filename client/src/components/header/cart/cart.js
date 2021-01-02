@@ -7,10 +7,10 @@ function Cart() {
     const { cartState, setCartState } = useContext(CartContext);
 
     return (
-        <div className="cart">
+        <a href="/cart" className="cart">
             <Cart2 width={30} height={30}/>
             <p>0</p>
-        </div>
+        </a>
     );
 }
 
