@@ -15,7 +15,7 @@ import SearchContext from "./util/searchContext.js";
 function App() {
   const [searchState, setSearchState] = useState({
     search_query: "",
-    serach_results: []
+    search_results: []
 });
   const [cartState, setCartState] = useState({
     cart_total: 0,
@@ -23,15 +23,19 @@ function App() {
     cart_items: []
 });
 
+const handleSearchChange = event => {
+  setSearchState({...searchState, search_query: event.target.value})
+};
+
   return (
     <CartContext.Provider value={{ cartState, setCartState }}>
-      <SearchContext.Provider value={{ searchState, setSearchState }}>
+      <SearchContext.Provider value={{ searchState, handleSearchChange }}>
         <Header />
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
 
-            <Route path="/search" component={Search} />
+            <Route path="/search/:query" component={Search} />
 
             <Route path="/user/dashboard/:id" component={Dashboard} />
 
