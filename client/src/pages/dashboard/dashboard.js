@@ -7,11 +7,12 @@ import SavedPayment from '../../components/userAccountPage/saved-payment/saved-p
 import PrevOrders from '../../components/userAccountPage/prev-orders/prev-orders.js';
 
 function UserDashboard(props){
+
     return (
         <>
 
         <Wrapper>
-            <AccountInfo id={props.match.params.id} />
+            <AccountInfo />
             <SavedAddress />
             <SavedPayment />
             <PrevOrders />
