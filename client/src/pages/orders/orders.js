@@ -5,6 +5,7 @@ import OrderSearch from '../../components/ordersPage/order-search/order-search.j
 import OrderDisplay from '../../components/ordersPage/order-display/order-display.js';
 
 function Orders(){
+
     return (
         <>
         <Wrapper>
