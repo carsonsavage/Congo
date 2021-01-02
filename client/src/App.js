@@ -31,21 +31,27 @@ function App() {
         last_name: "Rampenthal",
         phone: "111-222-3333",
         email: "test@email.com",
-        saved_address: [{
-            name: "Allister Rampenthal",
-            address: "123 Hamburger St",
-            city: "Freeport",
-            state: "IL",
-            zipcode: 64203
-        },
-        {
-            name: "Allister Rampenthal",
-            address: "123 Hamburger St",
-            city: "Freeport",
-            state: "IL",
-            zipcode: 64203
-        }],
-        saved_payments: [],
+        saved_address: [
+            {
+                name: "Allister Rampenthal",
+                address: "123 Hamburger St",
+                city: "Freeport",
+                state: "IL",
+                zipcode: 64203,
+            },
+        ],
+        saved_payments: [
+            {
+                name: "allister rampenthal",
+                card_number: 1111222233334444,
+                expiration: "06/22",
+            },
+            {
+                name: "test dude",
+                card_number: 4739765294750742,
+                expiration: "05/21",
+            },
+        ],
         orders: [],
     });
 
@@ -54,8 +60,8 @@ function App() {
     };
 
     const handleUserInfoChange = (event) => {
-        const {name, value} = event.target;
-        setUserState({...userState, [name]:[value]});
+        const { name, value } = event.target;
+        setUserState({ ...userState, [name]: [value] });
     };
 
     return (
