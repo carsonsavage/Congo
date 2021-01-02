@@ -8,50 +8,71 @@ import Checkout from "./pages/checkout/checkout.js";
 import Cart from "./pages/cart/cart.js";
 import Login from "./pages/login/login.js";
 import Orders from "./pages/orders/orders.js";
-import './app.css';
+import "./app.css";
 import CartContext from "./util/cartContext.js";
 import SearchContext from "./util/searchContext.js";
+import UserContext from "./util/userContext.js";
 
 function App() {
-  const [searchState, setSearchState] = useState({
-    search_query: "",
-    search_results: []
-});
-  const [cartState, setCartState] = useState({
-    cart_total: 0,
-    cart_item_count: 0,
-    cart_items: []
-});
+    const [searchState, setSearchState] = useState({
+        search_query: "",
+        search_results: [],
+    });
+    const [cartState, setCartState] = useState({
+        cart_total: 0,
+        cart_item_count: 0,
+        cart_items: [],
+    });
 
-const handleSearchChange = event => {
-  setSearchState({...searchState, search_query: event.target.value})
-};
+    const [userState, setUserState] = useState({
+        loggedIn: true,
+        _id: "4e5x6c35r24",
+        first_name: "Allister",
+        last_name: "Rampenthal",
+        phone: "111-222-3333",
+        email: "test@email.com",
+        saved_address: [],
+        saved_payments: [],
+        orders: [],
+    });
 
-  return (
-    <CartContext.Provider value={{ cartState, setCartState }}>
-      <SearchContext.Provider value={{ searchState, handleSearchChange }}>
-        <Router>
-        <Header />
-          <Switch>
-            <Route exact path="/" component={Home} />
+    const handleSearchChange = (event) => {
+        setSearchState({ ...searchState, search_query: event.target.value });
+    };
 
-            <Route path="/search/:query" component={Search} />
+    const handleUserInfoChange = (name, value) => {
+      console.log(name, value)
+    }
 
-            <Route path="/user/dashboard/:id" component={Dashboard} />
+    return (
+        <CartContext.Provider value={{ cartState, setCartState }}>
+            <SearchContext.Provider value={{ searchState, handleSearchChange }}>
+                <UserContext.Provider value={{ userState, handleUserInfoChange }}>
+                    <Router>
+                        <Header />
+                        <Switch>
+                            <Route exact path="/" component={Home} />
 
-            <Route path="/checkout" component={Checkout} />
+                            <Route path="/search/:query" component={Search} />
 
-            <Route path="/cart" component={Cart} />
+                            <Route
+                                path="/user/dashboard/:id"
+                                component={Dashboard}
+                            />
 
-            <Route path="/login" component={Login} />
+                            <Route path="/checkout" component={Checkout} />
 
-            <Route path="/orders" component={Orders} />
-          </Switch>
-        </Router>
+                            <Route path="/cart" component={Cart} />
 
-      </SearchContext.Provider>
-    </CartContext.Provider>
-  );
+                            <Route path="/login" component={Login} />
+
+                            <Route path="/orders" component={Orders} />
+                        </Switch>
+                    </Router>
+                </UserContext.Provider>
+            </SearchContext.Provider>
+        </CartContext.Provider>
+    );
 }
 
 export default App;
