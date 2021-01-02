@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./saved-address.css";
 import UserContext from "../../../util/userContext.js";
-import AddressCards from '../address-card/address-card.js';
+import AddressCards from "../address-card/address-card.js";
 
 function SavedAddress() {
     const { userState, handleUserInfoChange } = useContext(UserContext);
@@ -19,8 +19,13 @@ function SavedAddress() {
         <div className="ui raised segment">
             <button className="ui blue ribbon label">Address Book</button>
             <h4>Saved Addresses</h4>
+            <button className="circular ui icon button">
+                <i class="plus icon"></i>
+            </button>
             <hr />
-            <div className="ui cards"><AddressCards /></div>
+            <div className="ui cards">
+                <AddressCards />
+            </div>
         </div>
     );
 }
