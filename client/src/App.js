@@ -8,7 +8,7 @@ import Checkout from "./pages/checkout/checkout.js";
 import Cart from "./pages/cart/cart.js";
 import Login from "./pages/login/login.js";
 import Orders from "./pages/orders/orders.js";
-
+import './app.css';
 import CartContext from "./util/cartContext.js";
 import SearchContext from "./util/searchContext.js";
 
@@ -30,8 +30,8 @@ const handleSearchChange = event => {
   return (
     <CartContext.Provider value={{ cartState, setCartState }}>
       <SearchContext.Provider value={{ searchState, handleSearchChange }}>
-        <Header />
         <Router>
+        <Header />
           <Switch>
             <Route exact path="/" component={Home} />
 
