@@ -7,7 +7,7 @@ import Cart from "./cart/cart.js";
 
 function Header() {
     const [userState, setUserState] = useState({
-        loggedIn: true,
+        loggedIn: false,
         _id: "434xjiJ83",
         first_name: "Allister",
         last_name: "Rampenthal",
@@ -15,7 +15,7 @@ function Header() {
     });
 
     return (
-        <Navbar bg="dark" expand="lg" className="header">
+        <Navbar bg="dark" expand="lg" className="header" >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Brand className="brand">
                 <Link to="/" className="react-link">Congo</Link>
