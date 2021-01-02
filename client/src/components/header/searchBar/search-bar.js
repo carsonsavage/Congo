@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import "./search-bar.css";
 import SearchContext from "../../../util/searchContext";
 
@@ -16,12 +17,13 @@ function SearchBar() {
                 />
             </div>
 
-            <button className="ui inverted blue button" onClick={(event)=>{
-                event.preventDefault();
-                window.location.href=`/search/${searchState.search_query}`
-                }}>
+            <Link
+                to={`/search/${searchState.search_query}`}
+                role="button"
+                className="ui inverted blue button"
+            >
                 <i className="search icon" />
-            </button>
+            </Link>
         </div>
     );
 }

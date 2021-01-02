@@ -1,35 +1,35 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
-let User = require('../models/user.js');
+let Orders = require('../basic files/products/models/orders.js');
 
-/* GET ALL USER */
+/* GET ALL ORDERS */
 router.get('/', function(req, res, next) {
-  User.find(function (err, data) {
+  Orders.find(function (err, data) {
     if (err) return next(err);
     res.json(data);
   });
 });
 
-/* GET SINGLE USER BY ID */
+/* GET SINGLE ORDERS BY ID */
 router.get('/:id', function(req, res, next) {
-  User.findById(req.params.id, function (err, data) {
+  Orders.findById(req.params.id, function (err, data) {
     if (err) return next(err);
     res.json(data);
   });
 });
 
-/* SAVE USER */
+/* SAVE ORDERS */
 router.post('/', function(req, res, next) {
-  User.create(req.body, function (err, data) {
+  Orders.create(req.body, function (err, data) {
     if (err) return next(err);
     res.json(data);
   });
 });
 
-/* UPDATE USER */
+/* UPDATE ORDERS */
 router.put('/:id', function(req, res, next) {
-  User.findByIdAndUpdate(req.params.id, req.body, function (err, data) {
+  Orders.findByIdAndUpdate(req.params.id, req.body, function (err, data) {
     if (err) return next(err);
     res.json(data);
   });
@@ -37,7 +37,7 @@ router.put('/:id', function(req, res, next) {
 
 /* DELETE PRODUCTS */
 router.delete('/:id', function(req, res, next) {
-  User.findByIdAndRemove(req.params.id, req.body, function (err, data) {
+  Orders.findByIdAndRemove(req.params.id, req.body, function (err, data) {
     if (err) return next(err);
     res.json(data);
   });
