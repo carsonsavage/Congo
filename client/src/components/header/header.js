@@ -19,10 +19,10 @@ function Header() {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="header-text">
                     <Nav.Item>
-                        <Nav.Link className="account-text">Hello, {"User"}</Nav.Link>
+                        <Nav.Link className="account-text" href={true ? "/user/dashboard/77eiove" : "/login" }>Hello, {"User"}</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link>
+                        <Nav.Link href="/orders">
                             Returns & Orders
                         </Nav.Link>
                     </Nav.Item>
