@@ -10,7 +10,7 @@ function Header() {
     const {userState} = useContext(UserContext);
 
     return (
-        <Navbar bg="dark" expand="lg" className="header">
+        <Navbar bg="dark" expand="lg" className="header" >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Brand className="brand">
                 <Link to="/" className="react-link">Congo</Link>

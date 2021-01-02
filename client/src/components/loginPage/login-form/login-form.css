@@ -7,4 +7,10 @@
       margin: 0 auto;
       max-width: 320px;
     }
+
+    .ui green labeled icon button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
   }
