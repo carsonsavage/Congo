@@ -7,3 +7,18 @@
     color: green;
     font-weight: bold;
 }
+
+a.cart:link{
+    text-decoration: none;
+    color: inherit;
+}
+
+a.cart:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
+a.cart:visited{
+    text-decoration: none;
+    color: inherit;
+}
