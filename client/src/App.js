@@ -15,7 +15,7 @@ import SearchContext from "./util/searchContext.js";
 import UserContext from "./util/userContext.js";
 
 function App() {
-    
+
 
     const [searchState, setSearchState] = useState({
         search_query: "",
@@ -55,7 +55,21 @@ function App() {
                 expiration: "05/21",
             },
         ],
-        orders: [],
+        orders: [
+            {
+                items: [
+                    {
+                        title: "test title",
+                        price: "22.30",
+                        image: "someimageaddress",
+                        uid: "835803",
+                        qnty: 1
+                    }
+                ],
+                total: 22.30,
+                order_id: "22950374"
+            }
+        ],
     });
 
     const handleSearchChange = (event) => {
