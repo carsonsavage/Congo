@@ -7,9 +7,11 @@ function CartCallToAction() {
     return (
         <div className="cart-cta">
             <h3>Cart Call to action</h3>
-            <Button inverted color="green">
-                <Link to="/checkout">Checkout</Link>
-            </Button>
+            <Link to="/checkout" className="react-link">
+                <Button inverted color="green">
+                    Checkout
+                </Button>
+            </Link>
         </div>
     );
 }
