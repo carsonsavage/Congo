@@ -8,7 +8,7 @@ function PaymentCards() {
     return (
         <>
             {userState.saved_payments.map((payment, index) => (
-                <div class="ui segment clearfix">
+                <div class="ui segment clearfix" key={index}>
                     <div className="row">
                         <div className="col-3">
                             <i class="credit card icon"></i>
