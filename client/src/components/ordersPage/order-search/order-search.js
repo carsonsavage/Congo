@@ -6,7 +6,7 @@ function OrderSearch() {
         <div className="order-search">
             <div class="ui left icon input">
                 <input type="text" placeholder="Search orders..." />
-                <i class="users icon"></i>
+                <i class="search icon"></i>
             </div>
         </div>
     );
