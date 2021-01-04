@@ -17,7 +17,7 @@ function Orders() {
                     </h1>
                 </div>
                 <hr />
-                {false ? (
+                {true ? (
                     <>
                         <OrderSearch />
                         <OrderDisplay />
