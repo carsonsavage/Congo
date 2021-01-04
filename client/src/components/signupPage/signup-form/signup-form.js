@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
+import React, { useEffect, useState } from "react";
+import { Form, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import "./signup-form.css";
 
 export default function Login() {
+    const [passwordError, setPasswordError] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -10,51 +12,78 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const [address, setAddress] = useState({
         name: `${firstName} ${lastName}`,
-        address: "",
+        address1: "",
+        address2: "",
         city: "",
         state: "",
         zipcode: "",
     });
     const [confirmPassword, setConfirmPassword] = useState("");
 
-    function validateForm() {
-        return email.length > 0 && password.length > 0;
-    }
+    useEffect(() => {
+        if (password !== confirmPassword) {
+            setPasswordError("Passwords do not match");
+        } else {
+            setPasswordError("");
+        }
+    }, [confirmPassword]);
 
     function handleSubmit(event) {
         event.preventDefault();
+        console.log("hi");
     }
 
     return (
         <div className="Signup">
+            <div className="ui horizontal divider signup-divider">
+                User Information
+            </div>
             <Form onSubmit={handleSubmit}>
-                <Form.Group size="lg" controlId="first_name">
-                    <Form.Label>First Name</Form.Label>
-                    <Form.Control
-                        autoFocus
-                        type="text"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group size="lg" controlId="last_name">
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control
-                        autoFocus
-                        type="text"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group size="lg" controlId="email">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                        autoFocus
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </Form.Group>
+                <Form.Row>
+                    <Col>
+                        <Form.Label>First Name</Form.Label>
+                        <Form.Control
+                            autoFocus
+                            type="text"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            required
+                        />
+                    </Col>
+                    <Col>
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control
+                            autoFocus
+                            type="text"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            required
+                        />
+                    </Col>
+                </Form.Row>
+                <Form.Row>
+                    <Col>
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
+                            autoFocus
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </Col>
+                    <Col>
+                        <Form.Label>Phone number</Form.Label>
+                        <Form.Control
+                            autoFocus
+                            type="tel"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                            required
+                        />
+                    </Col>
+                </Form.Row>
+
                 <Form.Group size="lg" controlId="password">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
@@ -62,33 +91,210 @@ export default function Login() {
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        required
                     />
                 </Form.Group>
-                <Form.Group size="lg" controlId="confirm_password">
+
+                <div className="password-check-error">{passwordError}</div>
+
+                <Form.Group size="lg" controlId="confirm_password" className="">
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control
                         class="ui left icon input"
                         type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        required
                     />
                 </Form.Group>
-                <Button
-                    block
-                    size="lg"
-                    type="submit"
-                    disabled={!validateForm()}
-                >
-                    Login
+                <div className="password-check-error">{passwordError}</div>
+
+                <div className="ui horizontal divider signup-divider">
+                    Address Information
+                </div>
+
+                <Form.Group size="lg">
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control
+                        class="ui left icon input"
+                        type="text"
+                        value={address.address1}
+                        onChange={(e) =>
+                            setAddress({ ...address, address1: e.target.value })
+                        }
+                        placeholder="Street address or P.O. Box"
+                        required
+                    />
+                    <Form.Control
+                        class="ui left icon input"
+                        type="text"
+                        value={address.address2}
+                        onChange={(e) =>
+                            setAddress({ ...address, address2: e.target.value })
+                        }
+                        placeholder="Apt, suite, unit, building, floor, etc."
+                    />
+                </Form.Group>
+
+                <Form.Row>
+                    <Form.Group as={Col} controlId="formGridCity">
+                        <Form.Label>City</Form.Label>
+                        <Form.Control
+                            type="text"
+                            value={address.city}
+                            onChange={(e) =>
+                                setAddress({ ...address, city: e.target.value })
+                            }
+                            required
+                        />
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="formGridState">
+                        <Form.Label>State</Form.Label>
+                        <Form.Control
+                            as="select"
+                            defaultValue="Choose..."
+                            onChange={(e) =>
+                                setAddress({
+                                    ...address,
+                                    state: e.target.value,
+                                })
+                            }
+                        >
+                            <option value="AK">Alaska</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="IA">Iowa</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MD">Maryland</option>
+                            <option value="ME">Maine</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MT">Montana</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NY">New York</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VA">Virginia</option>
+                            <option value="VT">Vermont</option>
+                            <option value="WA">Washington</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WY">Wyoming</option>
+                        </Form.Control>
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="formGridZip">
+                        <Form.Label>Zip Code</Form.Label>
+                        <Form.Control
+                            type="text"
+                            value={address.zipcode}
+                            onChange={(e) =>
+                                setAddress({
+                                    ...address,
+                                    zipcode: e.target.value,
+                                })
+                            }
+                            required
+                        />
+                    </Form.Group>
+                </Form.Row>
+
+                <div className="ui horizontal divider signup-divider">
+                    Payment Information
+                </div>
+
+                <Form.Row>
+                    <Form.Group as={Col} controlId="formGridCity">
+                        <Form.Label>Card Number</Form.Label>
+                        <Form.Control
+                            type="tel"
+                            inputmode="numeric"
+                            pattern="[0-9\s]{13,19}"
+                            maxlength="16"
+                            placeholder="xxxx xxxx xxxx xxxx"
+                            required
+                        />
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="formGridState">
+                        <Form.Label>Name on card</Form.Label>
+                        <Form.Control required />
+                    </Form.Group>
+
+                    <Form.Group as={Col} controlId="formGridZip">
+                        <Form.Label>Expiration date</Form.Label>
+                        <Form.Row>
+                            <Col xs={5}>
+                                <Form.Control as="select">
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </Form.Control>
+                            </Col>
+                            <Col xs={5}>
+                                <Form.Control as="select">
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                </Form.Control>
+                            </Col>
+                        </Form.Row>
+                    </Form.Group>
+                </Form.Row>
+
+                <Button block size="lg" type="submit">
+                    Signup
                 </Button>
             </Form>
-            <div>
-                <div className="ui horizontal divider">Or</div>
-                <div className="ui green labeled icon button" id="signup-btn">
-                    Sign Up
-                    <i className="signup icon" />
-                </div>
-            </div>
         </div>
     );
 }
