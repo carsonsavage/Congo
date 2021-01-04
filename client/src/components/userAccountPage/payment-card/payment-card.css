@@ -1,0 +1,10 @@
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+div.ui.mini button{
+    width: 70px;
+    display: inline-block;
+}

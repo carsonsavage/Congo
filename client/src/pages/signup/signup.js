@@ -1,17 +1,17 @@
 import React from 'react';
 import Wrapper from '../../components/wrapper/wrapper';
 import Logo from '../../components/loginPage/logo/logo.js';
-import LoginForm from '../../components/loginPage/login-form/login-form.js';
+import SignupForm from '../../components/signupPage/signup-form/signup-form.js';
 
-function Login(){
+function Signup(){
     return (
         <>
         <Wrapper>
             <Logo />
-            <LoginForm />
+            <SignupForm />
         </Wrapper>
         </>
     )
 };
 
-export default Login;
+export default Signup;
