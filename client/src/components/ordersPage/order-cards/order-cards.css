@@ -1,0 +1,19 @@
+.order-segment:hover{
+    background-color: #d3d2d2;
+}
+
+.center{
+    text-align: center;
+}
+
+.order-segment-img img{
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.order-segment-img{
+    margin-top: 20px;
+    height: 150px;
+    justify-content: center;
+    text-align: center;
+}

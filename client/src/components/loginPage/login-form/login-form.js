@@ -45,9 +45,9 @@ export default function Login() {
         <div className="ui horizontal divider">
           Or
         </div>
-        <div className="ui green labeled icon button">
+        <div className="ui green labeled icon button" id="signup-btn">
           Sign Up
-          <i className="add icon" />
+          <i className="signup icon" />
         </div>
       </div>
     </div>
