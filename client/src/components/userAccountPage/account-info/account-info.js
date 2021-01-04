@@ -3,7 +3,7 @@ import "./account-info.css";
 import UserContext from "../../../util/userContext.js";
 
 function AccountInfo() {
-    const { userState, handleUserInfoChange } = useContext(UserContext);
+    const { editableUserState, handleUserInfoChange, saveUserInfoChange } = useContext(UserContext);
 
     const [editState, setEditState] = useState(false);
 
@@ -12,6 +12,7 @@ function AccountInfo() {
     }
 
     function saveEdit() {
+        saveUserInfoChange();
         setEditState(false);
     }
 
@@ -27,20 +28,20 @@ function AccountInfo() {
                     <hr />
                     <div>
                         <label>First Name: </label><br/>
-                        <input value={userState.first_name} onChange={handleUserInfoChange} name="first_name" type="text"/>
+                        <input value={editableUserState.first_name} onChange={handleUserInfoChange} name="first_name" type="text"/>
                     </div>
                     <div>
                         <label>Last Name: </label><br/>
-                        <input value={userState.last_name} onChange={handleUserInfoChange} name="last_name" type="text"/>
+                        <input value={editableUserState.last_name} onChange={handleUserInfoChange} name="last_name" type="text"/>
                     </div>
                     <div>
                         <label>Email: </label><br/>
-                        <input value={userState.email} onChange={handleUserInfoChange} name="email" type="email"/>
+                        <input value={editableUserState.email} onChange={handleUserInfoChange} name="email" type="email"/>
                     </div>
 
                     <div>
                         <label>Phone Number: </label><br/>
-                        <input value={userState.phone} onChange={handleUserInfoChange} name="phone" type="tel"/>
+                        <input value={editableUserState.phone} onChange={handleUserInfoChange} name="phone" type="tel"/>
                     </div>
                 </>
             ) : (
@@ -49,10 +50,10 @@ function AccountInfo() {
                         <i class="edit icon"></i>
                     </button>
                     <hr />
-                    <p><span>First Name:</span> {userState.first_name}</p>
-                    <p><span>Last Name:</span> {userState.last_name}</p>
-                    <p><span>Email:</span> {userState.email}</p>
-                    <p><span>Phone Number:</span> {userState.phone}</p>
+                    <p><span>First Name:</span> {editableUserState.first_name}</p>
+                    <p><span>Last Name:</span> {editableUserState.last_name}</p>
+                    <p><span>Email:</span> {editableUserState.email}</p>
+                    <p><span>Phone Number:</span> {editableUserState.phone}</p>
                 </>
             )}
         </div>
