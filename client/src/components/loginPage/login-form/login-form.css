@@ -1,7 +1,16 @@
-.login-form{
-    height: 200px;
-    background-color: gray;
-    color: white;
-    width: 400px;
-    margin: 40px auto;
-}
+@media all and (min-width: 480px) {
+    .Login {
+      padding: 60px 0;
+    }
+  
+    .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+
+    #signup-btn {
+        width: 200px;
+        display: inline-block;
+        margin-left: 41%;
+    }
+  }
