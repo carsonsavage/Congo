@@ -16,10 +16,9 @@ import UserContext from "./util/userContext.js";
 
 function App() {
 
-
     const [searchState, setSearchState] = useState({
         search_query: "",
-        search_results: [],
+        search_results: []
     });
     const [cartState, setCartState] = useState({
         cart_total: 0,
@@ -28,49 +27,19 @@ function App() {
     });
 
     const [userState, setUserState] = useState({
-        loggedIn: true,
-        _id: "4e5x6c35r24",
-        first_name: "Allister",
-        last_name: "Rampenthal",
-        phone: "111-222-3333",
-        email: "test@email.com",
-        saved_address: [
-            {
-                name: "Allister Rampenthal",
-                address: "123 Hamburger St",
-                city: "Freeport",
-                state: "IL",
-                zipcode: 64203,
-            },
-        ],
-        saved_payments: [
-            {
-                name: "allister rampenthal",
-                card_number: 1111222233334444,
-                expiration: "06/22",
-            },
-            {
-                name: "test dude",
-                card_number: 4739765294750742,
-                expiration: "05/21",
-            },
-        ],
-        orders: [
-            {
-                items: [
-                    {
-                        title: "test title",
-                        price: "22.30",
-                        image: "someimageaddress",
-                        uid: "835803",
-                        qnty: 1
-                    }
-                ],
-                total: 22.30,
-                order_id: "22950374"
-            }
-        ],
+        loggedIn: false,
+        _id: "",
+        first_name: "",
+        last_name: "",
+        phone: "",
+        email: "",
+        saved_address: [],
+        saved_payments: []
     });
+
+    const [editableUserState, setEditableUserState] = useState(userState);
+
+    const [ordersState, setOrdersState] = useState();
 
     const handleSearchChange = (event) => {
         setSearchState({ ...searchState, search_query: event.target.value });
@@ -78,14 +47,20 @@ function App() {
 
     const handleUserInfoChange = (event) => {
         const { name, value } = event.target;
-        setUserState({ ...userState, [name]: [value] });
+        setEditableUserState({ ...editableUserState, [name]: [value] });
     };
+
+    const saveUserInfoChange = () => {
+        //make api call to save updated user
+        //on success, change userState
+        setUserState(editableUserState);
+    }
 
     return (
         <CartContext.Provider value={{ cartState, setCartState }}>
             <SearchContext.Provider value={{ searchState, handleSearchChange }}>
                 <UserContext.Provider
-                    value={{ userState, handleUserInfoChange }}
+                    value={{ userState, editableUserState, handleUserInfoChange, saveUserInfoChange }}
                 >
                     <Router>
                         <Header />
