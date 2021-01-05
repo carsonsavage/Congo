@@ -19,6 +19,9 @@ export default {
 
     logout: () => {
         return axios.get("/api/user/logout");
-    }
-};
+    },
 
+    searchProducts: (category, query) => {
+        return axios.post('/api/products/search', {category: category, query: query});
+    },
+};
