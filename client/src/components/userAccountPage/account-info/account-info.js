@@ -41,7 +41,7 @@ function AccountInfo() {
 
                     <div>
                         <label>Phone Number: </label><br/>
-                        <input value={editableUserState.phone} onChange={handleUserInfoChange} name="phone" type="tel"/>
+                        <input value={editableUserState.phone_num} onChange={handleUserInfoChange} name="phone" type="tel"/>
                     </div>
                 </>
             ) : (
@@ -53,7 +53,7 @@ function AccountInfo() {
                     <p><span>First Name:</span> {editableUserState.first_name}</p>
                     <p><span>Last Name:</span> {editableUserState.last_name}</p>
                     <p><span>Email:</span> {editableUserState.email}</p>
-                    <p><span>Phone Number:</span> {editableUserState.phone}</p>
+                    <p><span>Phone Number:</span> {editableUserState.phone_num}</p>
                 </>
             )}
         </div>
