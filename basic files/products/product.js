@@ -19,24 +19,21 @@ function readWriteFile(product) {
 
 let product = {
     "uid": translator.new(),
-    "title": "Costa Coffee Ground Coffee, Medium and Dark Roast, 2 bags (12oz each), Rainforest Alliance Certified",
-    "price": 19.00,
-    "quantity": 34,
-    "category": "food",
+    "title": "New World - Deluxe Edition",
+    "price": 49.99,
+    "quantity": 1,
+    "category": "Video games",
     "keywords": [
-        "food",
-        "coffee",
-        "costa coffee",
-        "ground coffee"
+        "",
+        ""
     ],
     "features": [
-        "FIRST DECISION OF THE DAY: Smooth, nutty medium roast or bold, chocolatey dark roast? Our Signature Blend Medium and Dark Roasts are a blend of 100% Arabica beans from Honduras, Brazil and Colombia",
-        "ALWAYS RESPONSIBLY SOURCED: Our beans are our pride and joy and always sourced from Rainforest Alliance Certified farms. Rainforest Alliance is a non-profit that is dedicated to protect biodiversity, amplify the voices of farmers and forest communities, and help them mitigate and adapt to climate change.",
-        "LONDON BORN, NOW U.S.A BOUND. From the land of notoriously bad weather comes famously great coffee. Costa Coffee's story began in London, England with two brothers in search of the perfect cup of smooth, bitter-free coffee. Almost 50 years later, London's favorite coffee shop has crossed the pond to the United States",
-        "CHOOSE YOUR BREW: How many cups of coffee does it take for you to take on the day? No judgement here. Whether your favorite method is filtered drip, French press, or pour-over Costa Coffee can create the perfect cup"
+        "Windows 10 game",
+        "multiplayer game",
+        "online and offline"
     ],
-    "description": "From the land of notoriously bad weather comes famously great coffee. Almost 50 years ago, Sergio and Bruno Costa came to London and discovered their calling - to bring great tasting coffee to the tea drinkers of Great Britain. After blind-testing 112 variations of coffee the Costa Brothers discovered our first Signature Blend. Now Costa Coffee has arrived in the U.S. and whether you go for exceptionally smooth or delightfully bold, we’ve got you covered",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81lzzU0XPNL._SL1500_.jpg"
-};
+    "description": "Overcome the brutal legions of The Corrupted and draw battle lines with competing players in this land of danger and opportunity. Combine skill and strength in melee combat, attack at range with precision, or master arcane attacks. Bend the wilds to your will by hunting fierce beasts for food and crafting materials, and harvesting valuable resources from the land to fuel your ascent to power. The Deluxe Edition includes the Woodsman armor skin, Woodsman hatchet skin, Mastiff house pet, Rock/Paper/Scissors emote set, and the New World digital art book. Pre-order before New World launches to secure Closed Beta access beginning in Spring 2021 and get Isabella’s amulet, the Fist Bump emote, a guild crest set, and the “Expedition One” unique title.",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/71OOpvlO4WL._SL1500_.jpg"
+}
 
 readWriteFile(product);
