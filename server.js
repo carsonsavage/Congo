@@ -2,6 +2,8 @@
 const express = require("express");
 require("dotenv").config();
 
+const routes = require("./routes");
+
 //getting express server
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,6 +18,8 @@ if (process.env.NODE_ENV === "production") {
 
 
 // Need to add routes here
+// Add routes, both API and view
+app.use(routes);
 
 
 // Connect to the Mongo DB
