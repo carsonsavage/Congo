@@ -57,7 +57,7 @@ export default function Login() {
             console.log(registerObj);
             //call to register
             registerUser(registerObj)
-            .then((res)=>{console.log("response", res.data)});
+            .then((res)=>{window.location.href = "/login"});
         }
     }
 
@@ -271,9 +271,9 @@ export default function Login() {
                         <Form.Label>Card Number</Form.Label>
                         <Form.Control
                             type="tel"
-                            inputmode="numeric"
+                            inputMode="numeric"
                             pattern="[0-9\s]{13,19}"
-                            maxlength="16"
+                            maxLength="16"
                             placeholder="xxxx xxxx xxxx xxxx"
                             required
                             onChange={(e) =>
