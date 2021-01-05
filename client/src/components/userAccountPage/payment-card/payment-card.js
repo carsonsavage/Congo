@@ -7,7 +7,7 @@ function PaymentCards() {
 
     return (
         <>
-            {userState.saved_payments.map((payment, index) => (
+            {userState.credit_cards.map((payment, index) => (
                 <div class="ui segment clearfix" key={index}>
                     <div className="row">
                         <div className="col-3">
@@ -19,11 +19,11 @@ function PaymentCards() {
                             </span>
                         </div>
                         <div className="col-3">
-                            <p>{payment.name}</p>
+                            <p>{payment.card_name}</p>
                         </div>
 
                         <div className="col-3">
-                            <p>{payment.expiration}</p>
+                            <p>{payment.expire_month} / {payment.expire_year}</p>
                         </div>
                         <div className="col-3">
                             <div
