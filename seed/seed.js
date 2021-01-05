@@ -8,6 +8,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/congo", {
     useUnifiedTopology: true,
 });
 
+db.Product.collection.createIndex({title: "text", keywords: "text", features: "text", category: "text"});
+
 db.Product.deleteMany({})
     .then(() => db.Product.collection.insertMany(productsSeed))
     .then((data) => {
