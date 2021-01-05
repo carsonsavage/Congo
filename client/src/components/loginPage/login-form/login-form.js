@@ -57,7 +57,7 @@ export default function Login() {
 
                 <Link to="/signup">
                     <div
-                        className="ui green labeled icon button"
+                        className="ui green labeled huge icon button"
                         id="signup-btn"
                     >
                         Sign Up
