@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Form, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import "./signup-form.css";
+import UserContext from '../../../util/userContext.js';
 
 export default function Login() {
+    const {registerUser} = useContext(UserContext);
+
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -53,6 +56,8 @@ export default function Login() {
         if (!passwordError) {
             console.log(registerObj);
             //call to register
+            registerUser(registerObj)
+            .then((res)=>{console.log("response", res.data)});
         }
     }
 
