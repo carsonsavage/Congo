@@ -21,7 +21,7 @@ function Orders() {
                     </h1>
                 </div>
                 <hr />
-                {userState.isLoggedIn ? (
+                {userState.loggedIn ? (
                     <>
                         <OrderSearch />
                         <OrderDisplay />
