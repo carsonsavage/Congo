@@ -8,18 +8,17 @@ import Checkout from "./pages/checkout/checkout.js";
 import Cart from "./pages/cart/cart.js";
 import Login from "./pages/login/login.js";
 import Orders from "./pages/orders/orders.js";
-import Signup from './pages/signup/signup.js';
+import Signup from "./pages/signup/signup.js";
 import "./app.css";
 import CartContext from "./util/cartContext.js";
 import SearchContext from "./util/searchContext.js";
 import UserContext from "./util/userContext.js";
-import API from './util/API';
+import API from "./util/API";
 
 function App() {
-
     const [searchState, setSearchState] = useState({
         search_query: "",
-        search_results: []
+        search_results: [],
     });
     const [cartState, setCartState] = useState({
         cart_total: 0,
@@ -35,16 +34,48 @@ function App() {
         phone: "",
         email: "",
         saved_address: [],
-        saved_payments: []
+        saved_payments: [],
     });
 
     const [editableUserState, setEditableUserState] = useState(userState);
 
     const [ordersState, setOrdersState] = useState();
 
-    useEffect(()=>{
-        setEditableUserState(userState)
+    useEffect(() => {
+        setEditableUserState(userState);
+        loadCart();
     }, [userState]);
+
+    useEffect(() => {
+        loadUser();
+    }, []);
+
+    const loadUser = () => {
+        //call to check user that is in session
+        API.getUser()
+            //set to the userState
+            .then(({ data }) => {
+                if (data) {
+                    setUserState({ ...userState, loggedIn: true, ...data });
+                    loadCart();
+                }
+            });
+    };
+
+    const loadCart = () => {
+        //call to get cart if someone is logged in
+        if (userState.loggedIn) {
+            console.log("logged in, getting cart");
+        } else {
+            //call to get cart if someone is NOT logged in
+            console.log("not logged in, getting cookie cart");
+        }
+    };
+
+    const loadOrders = (userId) => {
+        //call to get orders by userId
+        //set into ordersState
+    };
 
     const handleSearchChange = (event) => {
         setSearchState({ ...searchState, search_query: event.target.value });
@@ -62,20 +93,42 @@ function App() {
     };
 
     const registerUser = (user) => {
-        return API.register(user)
+        return API.register(user);
     };
 
     const loginUser = (user) => {
         API.login(user)
-        .then(({data})=>{setUserState({...userState, loggedIn: true, ...data})})
-        .catch((err)=>{console.log(err)});
+            .then(({ data }) => {
+                setUserState({ ...userState, loggedIn: true, ...data });
+                window.location.href = "/";
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
+
+    const logoutUser = ()=> {
+        API.logout()
+        .then(({status})=>{
+            if(status === 200){
+                window.location.href = "/";
+            }
+        });
+    }
 
     return (
         <CartContext.Provider value={{ cartState, setCartState }}>
             <SearchContext.Provider value={{ searchState, handleSearchChange }}>
                 <UserContext.Provider
-                    value={{ userState, editableUserState, handleUserInfoChange, saveUserInfoChange, registerUser, loginUser }}
+                    value={{
+                        userState,
+                        editableUserState,
+                        handleUserInfoChange,
+                        saveUserInfoChange,
+                        registerUser,
+                        loginUser,
+                        logoutUser
+                    }}
                 >
                     <Router>
                         <Header />
@@ -84,7 +137,10 @@ function App() {
 
                             <Route path="/search/:query" component={Search} />
 
-                            <Route path="/user/dashboard/:id" component={Dashboard} />
+                            <Route
+                                path="/user/dashboard/:id"
+                                component={Dashboard}
+                            />
 
                             <Route path="/checkout" component={Checkout} />
 
