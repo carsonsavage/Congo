@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/header/header.js";
 import Home from "./pages/home/home.js";
@@ -13,6 +13,7 @@ import "./app.css";
 import CartContext from "./util/cartContext.js";
 import SearchContext from "./util/searchContext.js";
 import UserContext from "./util/userContext.js";
+import API from './util/API';
 
 function App() {
 
@@ -41,6 +42,10 @@ function App() {
 
     const [ordersState, setOrdersState] = useState();
 
+    useEffect(()=>{
+        setEditableUserState(userState)
+    }, [userState]);
+
     const handleSearchChange = (event) => {
         setSearchState({ ...searchState, search_query: event.target.value });
     };
@@ -54,13 +59,23 @@ function App() {
         //make api call to save updated user
         //on success, change userState
         setUserState(editableUserState);
-    }
+    };
+
+    const registerUser = (user) => {
+        return API.register(user)
+    };
+
+    const loginUser = (user) => {
+        API.login(user)
+        .then(({data})=>{setUserState({...userState, loggedIn: true, ...data})})
+        .catch((err)=>{console.log(err)});
+    };
 
     return (
         <CartContext.Provider value={{ cartState, setCartState }}>
             <SearchContext.Provider value={{ searchState, handleSearchChange }}>
                 <UserContext.Provider
-                    value={{ userState, editableUserState, handleUserInfoChange, saveUserInfoChange }}
+                    value={{ userState, editableUserState, handleUserInfoChange, saveUserInfoChange, registerUser, loginUser }}
                 >
                     <Router>
                         <Header />
