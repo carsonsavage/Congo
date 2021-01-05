@@ -1,8 +1,10 @@
 //setting up node env variable reading
 const express = require("express");
 require("dotenv").config();
-
 const routes = require("./routes");
+
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
 
 //getting express server
 const app = express();
@@ -15,6 +17,8 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
+
+
 
 
 // Need to add routes here
