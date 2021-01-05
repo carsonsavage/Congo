@@ -15,6 +15,10 @@ export default {
 
     getUser: () => {
         return axios.get("/api/user");
+    },
+
+    logout: () => {
+        return axios.get("/api/user/logout");
     }
 };
 
