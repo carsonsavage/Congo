@@ -1,4 +1,8 @@
 .order-search{
-    width: 400px;
+    width: 50%;
     margin: 40px auto;
+}
+
+.order-search div.ui.input{
+    width: 90%;
 }

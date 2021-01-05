@@ -1,7 +1,11 @@
 .logo{
     width: 100px;
     height: 100px;
-    background-color: green;
     color: white;
     margin: 40px auto;
+}
+
+.logo img{
+    border-radius: 50%;
+    margin-left: -30px;
 }
