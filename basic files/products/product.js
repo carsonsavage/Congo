@@ -19,21 +19,21 @@ function readWriteFile(product) {
 
 let product = {
     "uid": translator.new(),
-    "title": "New World - Deluxe Edition",
-    "price": 49.99,
+    "title": "Baby Einstein Magic Touch Piano Wooden Musical Toy Toddler Toy, Ages 6 months and up",
+    "price": 24.99,
     "quantity": 1,
-    "category": "Video games",
+    "category": "Baby",
     "keywords": [
-        "",
-        ""
+        "toy",
+        "Multi use"
     ],
     "features": [
-        "Windows 10 game",
-        "multiplayer game",
-        "online and offline"
+        "wooden",
+        "durable",
+        "multiple music options"
     ],
-    "description": "Overcome the brutal legions of The Corrupted and draw battle lines with competing players in this land of danger and opportunity. Combine skill and strength in melee combat, attack at range with precision, or master arcane attacks. Bend the wilds to your will by hunting fierce beasts for food and crafting materials, and harvesting valuable resources from the land to fuel your ascent to power. The Deluxe Edition includes the Woodsman armor skin, Woodsman hatchet skin, Mastiff house pet, Rock/Paper/Scissors emote set, and the New World digital art book. Pre-order before New World launches to secure Closed Beta access beginning in Spring 2021 and get Isabella’s amulet, the Fist Bump emote, a guild crest set, and the “Expedition One” unique title.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71OOpvlO4WL._SL1500_.jpg"
+    "description": "Wooden piano magically makes music, 3 sheets of music & 6 different songs, child safe and durable materials, Easy to wipe down and clean, Ships in fully enclosed packaging",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/71--Y8HdOQL._AC_SL1500_.jpg"
 }
 
 readWriteFile(product);
