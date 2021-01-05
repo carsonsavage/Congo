@@ -4,21 +4,28 @@ import Button from "react-bootstrap/Button";
 import "./signup-form.css";
 
 export default function Login() {
-    const [passwordError, setPasswordError] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [passwordError, setPasswordError] = useState("");
     const [address, setAddress] = useState({
-        name: `${firstName} ${lastName}`,
+        name: "",
         address1: "",
         address2: "",
         city: "",
         state: "",
         zipcode: "",
     });
-    const [confirmPassword, setConfirmPassword] = useState("");
+
+    const [creditCard, setCreditCard] = useState({
+        card_number: "",
+        card_name: "",
+        expire_month: "",
+        expire_year: "",
+    });
 
     useEffect(() => {
         if (password !== confirmPassword) {
@@ -28,9 +35,25 @@ export default function Login() {
         }
     }, [confirmPassword]);
 
+    useEffect(()=>{
+        setAddress({...address, name: `${firstName} ${lastName}`})
+    }, [firstName, lastName]);
+
     function handleSubmit(event) {
         event.preventDefault();
-        console.log("hi");
+        const registerObj = {
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            password: password,
+            phone_num: phoneNumber,
+            address: [address],
+            credit_cards: [creditCard],
+        };
+        if (!passwordError) {
+            console.log(registerObj);
+            //call to register
+        }
     }
 
     return (
@@ -84,7 +107,7 @@ export default function Login() {
                     </Col>
                 </Form.Row>
 
-                <Form.Group size="lg" controlId="password">
+                <Form.Group size="lg">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                         class="ui left icon input"
@@ -97,7 +120,7 @@ export default function Login() {
 
                 <div className="password-check-error">{passwordError}</div>
 
-                <Form.Group size="lg" controlId="confirm_password" className="">
+                <Form.Group size="lg" className="">
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control
                         class="ui left icon input"
@@ -137,7 +160,7 @@ export default function Login() {
                 </Form.Group>
 
                 <Form.Row>
-                    <Form.Group as={Col} controlId="formGridCity">
+                    <Form.Group as={Col}>
                         <Form.Label>City</Form.Label>
                         <Form.Control
                             type="text"
@@ -149,7 +172,7 @@ export default function Login() {
                         />
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridState">
+                    <Form.Group as={Col}>
                         <Form.Label>State</Form.Label>
                         <Form.Control
                             as="select"
@@ -160,7 +183,9 @@ export default function Login() {
                                     state: e.target.value,
                                 })
                             }
+                            required
                         >
+                            <option> </option>
                             <option value="AK">Alaska</option>
                             <option value="AL">Alabama</option>
                             <option value="AR">Arkansas</option>
@@ -216,7 +241,7 @@ export default function Login() {
                         </Form.Control>
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridZip">
+                    <Form.Group as={Col}>
                         <Form.Label>Zip Code</Form.Label>
                         <Form.Control
                             type="text"
@@ -237,7 +262,7 @@ export default function Login() {
                 </div>
 
                 <Form.Row>
-                    <Form.Group as={Col} controlId="formGridCity">
+                    <Form.Group as={Col}>
                         <Form.Label>Card Number</Form.Label>
                         <Form.Control
                             type="tel"
@@ -246,19 +271,43 @@ export default function Login() {
                             maxlength="16"
                             placeholder="xxxx xxxx xxxx xxxx"
                             required
+                            onChange={(e) =>
+                                setCreditCard({
+                                    ...creditCard,
+                                    card_number: e.target.value,
+                                })
+                            }
                         />
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridState">
+                    <Form.Group as={Col}>
                         <Form.Label>Name on card</Form.Label>
-                        <Form.Control required />
+                        <Form.Control
+                            required
+                            onChange={(e) =>
+                                setCreditCard({
+                                    ...creditCard,
+                                    card_name: e.target.value,
+                                })
+                            }
+                        />
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridZip">
+                    <Form.Group as={Col}>
                         <Form.Label>Expiration date</Form.Label>
                         <Form.Row>
                             <Col xs={5}>
-                                <Form.Control as="select">
+                                <Form.Control
+                                    as="select"
+                                    onChange={(e) =>
+                                        setCreditCard({
+                                            ...creditCard,
+                                            expire_month: e.target.value,
+                                        })
+                                    }
+                                    required
+                                >
+                                    <option> </option>
                                     <option value="01">01</option>
                                     <option value="02">02</option>
                                     <option value="03">03</option>
@@ -273,8 +322,19 @@ export default function Login() {
                                     <option value="12">12</option>
                                 </Form.Control>
                             </Col>
+                            <div>/</div>
                             <Col xs={5}>
-                                <Form.Control as="select">
+                                <Form.Control
+                                    as="select"
+                                    onChange={(e) =>
+                                        setCreditCard({
+                                            ...creditCard,
+                                            expire_year: e.target.value,
+                                        })
+                                    }
+                                    required
+                                >
+                                    <option> </option>
                                     <option value="2021">2021</option>
                                     <option value="2022">2022</option>
                                     <option value="2023">2023</option>
