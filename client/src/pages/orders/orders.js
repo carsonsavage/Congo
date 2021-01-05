@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./orders.css";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/footer";
 import Wrapper from "../../components/wrapper/wrapper";
 import OrderSearch from "../../components/ordersPage/order-search/order-search.js";
 import OrderDisplay from "../../components/ordersPage/prev-orders/prev-orders.js";
+import UserContext from "../../util/userContext.js";
 
 function Orders() {
+
+    const { userState, handleUserInfoChange } = useContext(UserContext);
+
     return (
         <>
             <Wrapper>
@@ -17,7 +21,7 @@ function Orders() {
                     </h1>
                 </div>
                 <hr />
-                {false ? (
+                {userState.isLoggedIn ? (
                     <>
                         <OrderSearch />
                         <OrderDisplay />
