@@ -19,24 +19,21 @@ function readWriteFile(product) {
 
 let product = {
     "uid": translator.new(),
-    "title": "Costa Coffee Ground Coffee, Medium and Dark Roast, 2 bags (12oz each), Rainforest Alliance Certified",
-    "price": 19.00,
-    "quantity": 34,
-    "category": "food",
+    "title": "Captain Toad: Treasure Tracker (Nintendo Switch)",
+    "price": 60.80,
+    "quantity": 1,
+    "category": "Video games",
     "keywords": [
-        "food",
-        "coffee",
-        "costa coffee",
-        "ground coffee"
+        "Treasure Tracker",
+        "Nintindo"
     ],
     "features": [
-        "FIRST DECISION OF THE DAY: Smooth, nutty medium roast or bold, chocolatey dark roast? Our Signature Blend Medium and Dark Roasts are a blend of 100% Arabica beans from Honduras, Brazil and Colombia",
-        "ALWAYS RESPONSIBLY SOURCED: Our beans are our pride and joy and always sourced from Rainforest Alliance Certified farms. Rainforest Alliance is a non-profit that is dedicated to protect biodiversity, amplify the voices of farmers and forest communities, and help them mitigate and adapt to climate change.",
-        "LONDON BORN, NOW U.S.A BOUND. From the land of notoriously bad weather comes famously great coffee. Costa Coffee's story began in London, England with two brothers in search of the perfect cup of smooth, bitter-free coffee. Almost 50 years later, London's favorite coffee shop has crossed the pond to the United States",
-        "CHOOSE YOUR BREW: How many cups of coffee does it take for you to take on the day? No judgement here. Whether your favorite method is filtered drip, French press, or pour-over Costa Coffee can create the perfect cup"
+        "Nintindo Switch game",
+        "multiplayer game",
+        "online and offline"
     ],
-    "description": "From the land of notoriously bad weather comes famously great coffee. Almost 50 years ago, Sergio and Bruno Costa came to London and discovered their calling - to bring great tasting coffee to the tea drinkers of Great Britain. After blind-testing 112 variations of coffee the Costa Brothers discovered our first Signature Blend. Now Costa Coffee has arrived in the U.S. and whether you go for exceptionally smooth or delightfully bold, we’ve got you covered",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81lzzU0XPNL._SL1500_.jpg"
-};
+    "description": "A free demo of Captain Toad: Treasure Tracker is now available, Explore a variety of tricky sandbox-style levels in Captain Toad: Treasure Tracker, you can rotate the camera and touch the screen for a better view of hidden treasures, We've included a few super mario odyssey levels, too, now you can explore locales from a variety of kingdoms - like new donk city;The Nintendo Switch version can be played with a friend by sharing a pair of Joy-Con controllers; while one player controls Captain Toad, the other can assist with things like turnip cover fire, so you can enjoy tracking treasure together;Compatible with Nintendo Switch only",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/81v8i3wCT2L._SL1500_.jpg"
+}
 
 readWriteFile(product);
