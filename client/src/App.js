@@ -18,6 +18,7 @@ import API from "./util/API";
 function App() {
     const [searchState, setSearchState] = useState({
         search_query: "",
+        search_category: "",
         search_results: [],
     });
     const [cartState, setCartState] = useState({
@@ -114,11 +115,15 @@ function App() {
                 window.location.href = "/";
             }
         });
-    }
+    };
+
+    const searchProducts = ()=> {
+        API.searchProducts(searchState.search_category, searchState.search_query);
+    };
 
     return (
         <CartContext.Provider value={{ cartState, setCartState }}>
-            <SearchContext.Provider value={{ searchState, handleSearchChange }}>
+            <SearchContext.Provider value={{ searchState, handleSearchChange, searchProducts }}>
                 <UserContext.Provider
                     value={{
                         userState,
@@ -135,7 +140,7 @@ function App() {
                         <Switch>
                             <Route exact path="/" component={Home} />
 
-                            <Route path="/search/:query" component={Search} />
+                            <Route path="/search" component={Search} />
 
                             <Route
                                 path="/user/dashboard/:id"
