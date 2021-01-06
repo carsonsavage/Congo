@@ -1,5 +1,10 @@
 .search-results{
-    background-color: orange;
-    height: 100vh;
     margin: 40px auto;
+}
+
+.card.product-cards{
+    margin-top: 40px;
+    border: none;
+    box-sizing: none;
+    background-color: #ffffff00;
 }
