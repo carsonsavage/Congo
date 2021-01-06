@@ -9,7 +9,7 @@ module.exports = {
         return db.Product.find({ category: category });
     },
     findByQuery: function (query) {
-        return db.Product.find({ $text: { $search: `"\"${query}\""` } });
+        return db.Product.find({ $text: { $search: `${query}` } });
     },
     findByCategoryAndQuery: function (category, query) {
         return db.Product.find({ category: category, $text: { $search: query } });
