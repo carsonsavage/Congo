@@ -121,7 +121,8 @@ function App() {
 
     const searchProducts = ()=> {
         API.searchProducts(searchState.search_category, searchState.search_query)
-        .then((data)=>{
+        .then(({data})=>{
+            console.log(data);
             setSearchState({...searchState, search_results: data, filtered_results: data});
         });
     };
