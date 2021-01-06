@@ -22,6 +22,7 @@ export default {
     },
 
     searchProducts: (category, query) => {
+        console.log(category, query)
         return axios.post('/api/products/search', {category: category, query: query});
     },
 };
