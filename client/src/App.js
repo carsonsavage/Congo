@@ -20,7 +20,9 @@ function App() {
         search_query: "",
         search_category: "",
         search_results: [],
+        filtered_results: []
     });
+
     const [cartState, setCartState] = useState({
         cart_total: 0,
         cart_item_count: 0,
@@ -40,7 +42,7 @@ function App() {
 
     const [editableUserState, setEditableUserState] = useState(userState);
 
-    const [ordersState, setOrdersState] = useState();
+    const [ordersState, setOrdersState] = useState({});
 
     useEffect(() => {
         setEditableUserState(userState);
@@ -118,7 +120,10 @@ function App() {
     };
 
     const searchProducts = ()=> {
-        API.searchProducts(searchState.search_category, searchState.search_query);
+        API.searchProducts(searchState.search_category, searchState.search_query)
+        .then((data)=>{
+            setSearchState({...searchState, search_results: data, filtered_results: data});
+        });
     };
 
     return (
