@@ -16,18 +16,15 @@ function SearchBar() {
         return query;
     }
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        history.push(generateSearchQuery());
+        searchProducts(searchState.search_category, searchState.search_query);
+    }
+
     return (
         <div className="search-bar">
-            <form
-                onSubmit={(event) => {
-                    event.preventDefault();
-                    history.push(generateSearchQuery());
-                    searchProducts(
-                        searchState.search_category,
-                        searchState.search_query
-                    );
-                }}
-            >
+            <form onSubmit={handleSubmit}>
                 <div className="ui input">
                     <input
                         name="search"
@@ -37,13 +34,10 @@ function SearchBar() {
                     />
                 </div>
 
-                <Link
-                    to={generateSearchQuery()}
-                    role="button"
-                    type="submit"
-                    className="ui inverted blue button"
-                >
-                    <i className="search icon" />
+                <Link to={generateSearchQuery()}>
+                    <button type="submit" className="ui inverted blue button" onClick={handleSubmit}>
+                        <i className="search icon" />
+                    </button>
                 </Link>
             </form>
         </div>
