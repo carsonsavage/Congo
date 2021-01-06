@@ -1,23 +1,36 @@
 import React, { useContext } from "react";
 import SearchContext from "../../../util/searchContext.js";
-import { Card } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function SearchCards() {
+    const { searchState } = useContext(SearchContext);
     return (
         <>
-            <Card style={{ width: "20rem" }}>
-                <Card.Img
-                    variant="top"
-                    src="https://images-na.ssl-images-amazon.com/images/I/717YIsksV5L._SL1500_.jpg"
-                />
-                <Card.Body>
-                    <Card.Title>Crib title</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
-                    </Card.Text>
-                </Card.Body>
-            </Card>
+            {searchState.filtered_results.map(
+                ({ _id, title, price, image, quantity }, index) => (
+                    <Col>
+                        <Link to={`/product/details/${_id}`} key={index}>
+                            <Card
+                                style={{ width: "20rem" }}
+                                className="product-cards"
+                            >
+                                <Card.Img variant="top" src={image} />
+                                <Card.Body>
+                                    <Card.Title>{title}</Card.Title>
+                                    <h3>${price}</h3>
+                                    {quantity < 5 && (
+                                        <p>
+                                            Better hurry, only {quantity}{" "}
+                                            available
+                                        </p>
+                                    )}
+                                </Card.Body>
+                            </Card>
+                        </Link>
+                    </Col>
+                )
+            )}
         </>
     );
 }
