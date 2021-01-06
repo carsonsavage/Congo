@@ -20,7 +20,7 @@ function App() {
         search_query: "",
         search_category: "",
         search_results: [],
-        filtered_results: []
+        filtered_results: [],
     });
 
     const [cartState, setCartState] = useState({
@@ -84,6 +84,10 @@ function App() {
         setSearchState({ ...searchState, search_query: event.target.value });
     };
 
+    const handleCategoryChange = (event) => {
+        setSearchState({ ...searchState, search_category: event.target.value });
+    };
+
     const handleUserInfoChange = (event) => {
         const { name, value } = event.target;
         setEditableUserState({ ...editableUserState, [name]: [value] });
@@ -110,26 +114,30 @@ function App() {
             });
     };
 
-    const logoutUser = ()=> {
-        API.logout()
-        .then(({status})=>{
-            if(status === 200){
+    const logoutUser = () => {
+        API.logout().then(({ status }) => {
+            if (status === 200) {
                 window.location.href = "/";
             }
         });
     };
 
-    const searchProducts = ()=> {
-        API.searchProducts(searchState.search_category, searchState.search_query)
-        .then(({data})=>{
+    const searchProducts = (category, query) => {
+        API.searchProducts(category, query).then(({ data }) => {
             console.log(data);
-            setSearchState({...searchState, search_results: data, filtered_results: data});
+            setSearchState({
+                ...searchState,
+                search_results: data,
+                filtered_results: data,
+            });
         });
     };
 
     return (
         <CartContext.Provider value={{ cartState, setCartState }}>
-            <SearchContext.Provider value={{ searchState, handleSearchChange, searchProducts }}>
+            <SearchContext.Provider
+                value={{ searchState, handleSearchChange, searchProducts }}
+            >
                 <UserContext.Provider
                     value={{
                         userState,
@@ -138,7 +146,7 @@ function App() {
                         saveUserInfoChange,
                         registerUser,
                         loginUser,
-                        logoutUser
+                        logoutUser,
                     }}
                 >
                     <Router>
@@ -146,7 +154,10 @@ function App() {
                         <Switch>
                             <Route exact path="/" component={Home} />
 
-                            <Route path="/search" component={Search} />
+                            <Route
+                                path="/search/C=:category?&Q=:query?"
+                                component={Search}
+                            />
 
                             <Route
                                 path="/user/dashboard/:id"
