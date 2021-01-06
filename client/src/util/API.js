@@ -22,7 +22,10 @@ export default {
     },
 
     searchProducts: (category, query) => {
-        console.log(category, query)
-        return axios.post('/api/products/search', {category: category, query: query});
+        return axios.get(`/api/products/search/C=${category}&Q=${query}`);
     },
+
+    getOrders: (userId) => {
+        return axios.get(`/api/user/${userId}/orders`);
+    }
 };
