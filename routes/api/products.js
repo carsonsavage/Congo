@@ -2,9 +2,14 @@ const router = require("express").Router();
 const productsController = require("../../controllers/productsController");
 
 // Matches with "/api/products/search"
-router.route("/search").post(({ body }, res) => {
-    const { category, query } = body;
-    if (category && query) {
+router.route("/search/C=:category?&Q=:query?").get(({ params }, res) => {
+    let { category, query } = params;
+    if (
+        category !== "undefined" &&
+        query !== "undefined" &&
+        category &&
+        query
+    ) {
         productsController
             .findByCategoryAndQuery(category, query)
             .then((data) => {
@@ -13,7 +18,7 @@ router.route("/search").post(({ body }, res) => {
             .catch((err) => {
                 res.status(422).json(err);
             });
-    } else if (category) {
+    } else if (category !== "undefined" && category) {
         productsController
             .findByCategory(category)
             .then((data) => {
@@ -22,7 +27,7 @@ router.route("/search").post(({ body }, res) => {
             .catch((err) => {
                 res.status(422).json(err);
             });
-    } else if (query) {
+    } else if (query !== "undefined" && query) {
         productsController
             .findByQuery(query)
             .then((data) => {
