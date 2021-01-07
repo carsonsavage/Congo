@@ -101,7 +101,6 @@ function StateController(props) {
 
     const lookupProduct = (productId) => {
         API.lookupProduct(productId).then(({ data }) => {
-            console.log(data[0]);
             setSearchState({ ...searchState, product_result: data[0] });
         });
     };
@@ -148,6 +147,20 @@ function StateController(props) {
         });
     };
 
+    const addProductToCart = (productId) => {
+        API.lookupProduct(productId).then(({ data }) => {
+            console.log(data);
+            if(userState.loggedIn){
+                //save to the dbcart
+                console.log("adding to user cart")
+            } else {
+                //save to the cookies cart
+                console.log("adding to cookie cart")
+            }
+            loadCart();
+        });
+    };
+
     const searchProducts = (category, query) => {
         API.searchProducts(category, query).then(({ data }) => {
             console.log(data);
@@ -160,7 +173,7 @@ function StateController(props) {
     };
 
     return (
-        <CartContext.Provider value={{ cartState, setCartState }}>
+        <CartContext.Provider value={{ cartState, setCartState, addProductToCart }}>
             <SearchContext.Provider
                 value={{
                     searchState,
