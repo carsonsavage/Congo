@@ -25,6 +25,10 @@ export default {
         return axios.get(`/api/products/search/C=${category}&Q=${query}`);
     },
 
+    lookupProduct: (productId) => {
+        return axios.get(`/api/products/details/${productId}`)
+    },
+
     getOrders: (userId) => {
         return axios.get(`/api/user/${userId}/orders`);
     }
