@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import NumberFormat from "react-number-format";
 import "./product-details.css";
 import { useHistory } from "react-router-dom";
 import { Col, Row, Image } from "react-bootstrap";
-import { Rating } from "semantic-ui-react";
+import { Rating, Button, Icon, Label } from "semantic-ui-react";
 import Wrapper from "../../components/wrapper/wrapper";
 import Footer from "../../components/footer/footer";
 import AboutItemList from "../../components/productDetailsPage/product-info/about-item.js";
@@ -20,6 +20,12 @@ function Orders(props) {
     return (
         <>
             <Wrapper>
+                <Button animated size="mini" id="back-to-results" onClick={()=>{history.goBack()}}>
+                    <Button.Content visible>Back to search results</Button.Content>
+                    <Button.Content hidden>
+                        <Icon name="arrow left" />
+                    </Button.Content>
+                </Button>
                 <Row className="product-details">
                     <ImageState />
                     <Col md={4}>
