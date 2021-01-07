@@ -10,18 +10,35 @@ import AboutItemList from "../../components/productDetailsPage/product-info/abou
 import ItemDescription from "../../components/productDetailsPage/product-info/item-description.js";
 import ProductCta from "../../components/productDetailsPage/cta/product-details-cta.js";
 import ImageState from "./imageState.js";
+import SearchContext from "../../util/searchContext.js";
+
 function Orders(props) {
+    const { searchState, lookupProduct } = useContext(SearchContext);
+
     const { params } = props.match;
     const history = useHistory();
-
+    const { product_result } = searchState;
     const ratingValue = parseInt(Math.floor(Math.random() * 5));
     const ratingCount = parseInt(Math.floor(Math.random() * 2946));
+
+    useEffect(() => {
+        lookupProduct(params.productId);
+    }, []);
 
     return (
         <>
             <Wrapper>
-                <Button animated size="mini" id="back-to-results" onClick={()=>{history.goBack()}}>
-                    <Button.Content visible>Back to search results</Button.Content>
+                <Button
+                    animated
+                    size="mini"
+                    id="back-to-results"
+                    onClick={() => {
+                        history.goBack();
+                    }}
+                >
+                    <Button.Content visible>
+                        Back to search results
+                    </Button.Content>
                     <Button.Content hidden>
                         <Icon name="arrow left" />
                     </Button.Content>
@@ -30,11 +47,7 @@ function Orders(props) {
                     <ImageState />
                     <Col md={4}>
                         <div className="title">
-                            <h2>
-                                Storkcraft Graco Solano 4-in-1 Convertible Crib
-                                and Changer with Drawer, Fixed Side Crib,
-                                Assembly Required (Mattress Not Included), White
-                            </h2>
+                            <h2>{product_result.title}</h2>
                             <Rating
                                 icon="star"
                                 defaultRating={ratingValue}
@@ -57,12 +70,12 @@ function Orders(props) {
                                 <div className="inline-block price">
                                     <h6>Price:</h6>
                                 </div>
-                                <h3 className="inline">$234.52</h3>
+                                <h3 className="inline">${product_result.price}</h3>
                             </div>
                             <hr />
                             <h4>About this item</h4>
                             <AboutItemList
-                                features={["sturdy", "convertible"]}
+                                features={product_result.features}
                             />
                         </div>
                     </Col>
@@ -76,7 +89,7 @@ function Orders(props) {
                     <Col id="description">
                         <hr />
                         <h4>Description</h4>
-                        <ItemDescription description="lalalalllllllllllllllllllllllllll" />
+                        <ItemDescription description={product_result.description} />
                     </Col>
                 </Row>
             </Wrapper>
