@@ -7,7 +7,7 @@ function AddToCartBtn({ id }) {
     const callToAdd = (event, _id) => {
         event.preventDefault();
         setButtonLoading(true);
-        console.log(_id)
+        console.log(_id);
 
         setTimeout(() => {
             setButtonLoading(false);
@@ -24,7 +24,7 @@ function AddToCartBtn({ id }) {
             }}
         >
             <Button.Content hidden>
-                <Icon name="shop" />
+                <Icon name="add to cart" />
             </Button.Content>
             <Button.Content visible>Add to Cart</Button.Content>
         </Button>
