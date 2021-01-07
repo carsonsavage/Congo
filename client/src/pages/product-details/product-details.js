@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import NumberFormat from 'react-number-format';
+import NumberFormat from "react-number-format";
 import "./product-details.css";
 import { useHistory } from "react-router-dom";
 import { Col, Row, Image } from "react-bootstrap";
@@ -7,6 +7,9 @@ import { Rating } from "semantic-ui-react";
 import Wrapper from "../../components/wrapper/wrapper";
 import Footer from "../../components/footer/footer";
 import SmallProductImages from "../../components/productDetailsPage/small-product-images/small-product-images.js";
+import AboutItemList from "../../components/productDetailsPage/product-info/about-item.js";
+import ItemDescription from "../../components/productDetailsPage/product-info/item-description.js";
+import ProductCta from "../../components/productDetailsPage/cta/product-details-cta.js";
 
 function Orders(props) {
     const { params } = props.match;
@@ -18,9 +21,7 @@ function Orders(props) {
         "https://images-na.ssl-images-amazon.com/images/I/71yBHHy5hXL._SL1500_.jpg",
     ];
 
-    const ratingValue = parseInt(Math.floor(Math.random * 5));
-    console.log(ratingValue)
-
+    const ratingValue = parseInt(Math.floor(Math.random() * 5));
     //set original image here
     const [imgState, setImageState] = useState(sampleImageArray[0]);
 
@@ -52,19 +53,49 @@ function Orders(props) {
                                 icon="star"
                                 defaultRating={ratingValue}
                                 maxRating={5}
-                                disabled
+                                clearable
                             />
-                            <p className="inline"> | <NumberFormat value={2373} displayType={'text'} thousandSeparator={true} /> Ratings</p>
+                            <p className="inline">
+                                {" "}
+                                |{" "}
+                                <NumberFormat
+                                    value={2832}
+                                    displayType={"text"}
+                                    thousandSeparator={true}
+                                />{" "}
+                                Ratings
+                            </p>
                             <hr />
+
+                            <div>
+                                <div className="inline-block price">
+                                    <h6>Price:</h6>
+                                </div>
+                                <h3 className="inline">$234.52</h3>
+                            </div>
+                            <hr />
+                            <h4>About this item</h4>
+                            <AboutItemList
+                                features={["sturdy", "convertible"]}
+                            />
                         </div>
                     </Col>
                     <Col md={2}>
-                        <div className="product-cta">cta</div>
+                        <div className="product-cta">
+                            <ProductCta />
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <hr />
+                        <h4>Description</h4>
+                        <ItemDescription description="lalalalllllllllllllllllllllllllll" />
                     </Col>
                 </Row>
             </Wrapper>
 
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 }
