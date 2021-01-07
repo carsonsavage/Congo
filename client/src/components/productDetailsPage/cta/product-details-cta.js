@@ -47,7 +47,7 @@ function ProductCta({_id, price, qnty}) {
                 </Form.Control>
             </div>
             <div className="cta-divs addtocart">
-                <Button animated="vertical" className="addToCartBtn">
+                <Button animated="vertical" className="addToCartBtn green">
                     <Button.Content hidden>
                         <Icon name="shop" />
                     </Button.Content>
