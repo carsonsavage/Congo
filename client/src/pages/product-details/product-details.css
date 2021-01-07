@@ -1,3 +1,20 @@
-.orders-header{
-    padding: 40px 0 20px ;
+.product-details{
+    margin-top: 40px;
+}
+
+.small-images {
+    height: 300px;
+}
+
+.title {
+    height: 700px;
+}
+
+.product-cta {
+    background-color: green;
+    height: 700px;
+}
+
+.inline {
+    display: inline;
 }
