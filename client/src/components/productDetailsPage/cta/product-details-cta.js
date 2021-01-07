@@ -1,5 +1,6 @@
 import React from "react";
-import Moment from "react-moment";
+import { Label } from "semantic-ui-react";
+import { Form, Row, Col } from "react-bootstrap";
 
 function ProductCta() {
     Date.prototype.addDays = function (days) {
@@ -18,13 +19,19 @@ function ProductCta() {
 
     return (
         <>
-        <h1>${29.93}</h1>
-        <p>Delivery: {formatedDate}</p>
-        <h3>In Stock.</h3>
-
-        <select>
-            <option>1</option>
-        </select>
+            <Label tag className="ui label massive red">
+                ${234.52}
+            </Label>
+            <p>Delivery: {formatedDate}</p>
+            <h3>In Stock.</h3>
+            <label>Qty:</label>
+            <Form.Control as="select" size="sm" className="select">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </Form.Control>
         </>
     );
 }
