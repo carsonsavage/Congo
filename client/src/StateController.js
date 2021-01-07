@@ -3,21 +3,44 @@ import CartContext from "./util/cartContext.js";
 import SearchContext from "./util/searchContext.js";
 import UserContext from "./util/userContext.js";
 import API from "./util/API";
+import { useCookies } from "react-cookie";
 
 function StateController(props) {
+    const [cookies, setCookie, removeCookie] = useCookies(["cookieCart"]);
+
     const [searchState, setSearchState] = useState({
         search_query: "",
         search_category: "",
         search_results: [],
         filtered_results: [],
-        product_result: {}
+        product_result: {},
     });
+
+    const [savedCartState, setSavedCartState] = useState();
 
     const [cartState, setCartState] = useState({
         cart_total: 0,
         cart_item_count: 0,
         cart_items: [],
     });
+
+    useEffect(() => {
+        if (savedCartState) {
+            let total = 0;
+            let count = 0;
+            savedCartState.forEach((product) => {
+                total = total + product.price;
+                count = count + 1;
+            });
+
+            console.log(total, count);
+            setCartState({
+                ...cartState,
+                cart_total: total,
+                cart_item_count: count,
+            });
+        }
+    }, [savedCartState]);
 
     const [userState, setUserState] = useState({
         loggedIn: false,
@@ -59,9 +82,15 @@ function StateController(props) {
         //call to get cart if someone is logged in
         if (userState.loggedIn) {
             console.log("logged in, getting cart");
+            API.getCart(userState._id).then(({ data }) => {
+                console.log("got data back");
+            });
         } else {
             //call to get cart if someone is NOT logged in
             console.log("not logged in, getting cookie cart");
+            //setCookie("cookieCart", obj, { path: "/" });
+            //removeCookie("cookieCart");
+            console.log(cookies.cookieCart);
         }
     };
 
@@ -71,10 +100,9 @@ function StateController(props) {
     };
 
     const lookupProduct = (productId) => {
-        API.lookupProduct(productId)
-        .then(({data})=>{
+        API.lookupProduct(productId).then(({ data }) => {
             console.log(data[0]);
-            setSearchState({...searchState, product_result: data[0]})
+            setSearchState({ ...searchState, product_result: data[0] });
         });
     };
 
@@ -134,7 +162,12 @@ function StateController(props) {
     return (
         <CartContext.Provider value={{ cartState, setCartState }}>
             <SearchContext.Provider
-                value={{ searchState, handleSearchChange, searchProducts, lookupProduct }}
+                value={{
+                    searchState,
+                    handleSearchChange,
+                    searchProducts,
+                    lookupProduct,
+                }}
             >
                 <UserContext.Provider
                     value={{
@@ -152,6 +185,6 @@ function StateController(props) {
             </SearchContext.Provider>
         </CartContext.Provider>
     );
-};
+}
 
 export default StateController;
