@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/header/header.js";
 import Home from "./pages/home/home.js";
@@ -8,50 +8,41 @@ import Checkout from "./pages/checkout/checkout.js";
 import Cart from "./pages/cart/cart.js";
 import Login from "./pages/login/login.js";
 import Orders from "./pages/orders/orders.js";
-import './app.css';
-import CartContext from "./util/cartContext.js";
-import SearchContext from "./util/searchContext.js";
+import Signup from "./pages/signup/signup.js";
+import ProductDetails from './pages/product-details/product-details.js';
+import "./app.css";
+import StateController from "./StateController.js";
 
 function App() {
-  const [searchState, setSearchState] = useState({
-    search_query: "",
-    search_results: []
-});
-  const [cartState, setCartState] = useState({
-    cart_total: 0,
-    cart_item_count: 0,
-    cart_items: []
-});
+    return (
+        <StateController>
+            <Router>
+                <Header />
+                <Switch>
+                    <Route exact path="/" component={Home} />
 
-const handleSearchChange = event => {
-  setSearchState({...searchState, search_query: event.target.value})
-};
+                    <Route
+                        path="/search/C=:category?&Q=:query?"
+                        component={Search}
+                    />
 
-  return (
-    <CartContext.Provider value={{ cartState, setCartState }}>
-      <SearchContext.Provider value={{ searchState, handleSearchChange }}>
-        <Router>
-        <Header />
-          <Switch>
-            <Route exact path="/" component={Home} />
+                    <Route path="/user/dashboard/:id" component={Dashboard} />
 
-            <Route path="/search/:query" component={Search} />
+                    <Route path="/product/details/:productId" component={ProductDetails} />
 
-            <Route path="/user/dashboard/:id" component={Dashboard} />
+                    <Route path="/checkout" component={Checkout} />
 
-            <Route path="/checkout" component={Checkout} />
+                    <Route path="/cart" component={Cart} />
 
-            <Route path="/cart" component={Cart} />
+                    <Route path="/login" component={Login} />
 
-            <Route path="/login" component={Login} />
+                    <Route path="/signup" component={Signup} />
 
-            <Route path="/orders" component={Orders} />
-          </Switch>
-        </Router>
-
-      </SearchContext.Provider>
-    </CartContext.Provider>
-  );
+                    <Route path="/orders" component={Orders} />
+                </Switch>
+            </Router>
+        </StateController>
+    );
 }
 
 export default App;

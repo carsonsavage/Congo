@@ -1,0 +1,10 @@
+.small-product-icon{
+    max-width: 80px;
+    border: 2px gray solid;
+    margin-bottom: 10px;
+}
+
+.small-product-icon:hover{
+    max-width: 80px;
+    border: 2px green solid
+}
