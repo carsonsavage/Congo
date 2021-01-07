@@ -1,12 +1,17 @@
-import React from 'react';
-import './cart-items.css';
+import React from "react";
+import "./cart-items.css";
+import { Header, Icon } from "semantic-ui-react";
 
-function CartItems(){
+function CartItems() {
     return (
         <div className="cart-items">
-            <h3>Cart Items</h3>
+            <Header as="h1" textAlign="center">
+                <Icon name="cart" />
+                <Header.Content>Shopping Cart</Header.Content>
+                <hr />
+            </Header>
         </div>
-    )
-};
+    );
+}
 
 export default CartItems;
