@@ -54,6 +54,7 @@ function AccountInfo() {
                     <p><span>Last Name:</span> {editableUserState.last_name}</p>
                     <p><span>Email:</span> {editableUserState.email}</p>
                     <p><span>Phone Number:</span> {editableUserState.phone_num}</p>
+
                 </>
             )}
         </div>

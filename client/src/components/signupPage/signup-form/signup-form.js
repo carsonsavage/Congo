@@ -6,7 +6,6 @@ import UserContext from '../../../util/userContext.js';
 
 export default function Login() {
     const {registerUser} = useContext(UserContext);
-
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");

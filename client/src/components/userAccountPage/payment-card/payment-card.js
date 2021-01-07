@@ -7,6 +7,7 @@ function PaymentCards() {
 
     return (
         <>
+
             {userState.credit_cards.map((payment, index) => (
                 <div class="ui segment clearfix" key={index}>
                     <div className="row">
@@ -19,6 +20,7 @@ function PaymentCards() {
                             </span>
                         </div>
                         <div className="col-3">
+
                             <p>{payment.card_name}</p>
                         </div>
 

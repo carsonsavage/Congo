@@ -7,8 +7,6 @@ import UserContext from '../../../util/userContext.js';
 
 export default function Login() {
     const {loginUser} = useContext(UserContext);
-
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -19,6 +17,7 @@ export default function Login() {
     function handleSubmit(event) {
         event.preventDefault();
         loginUser({email: email, password: password});
+
     }
 
     return (
@@ -58,6 +57,7 @@ export default function Login() {
                 <Link to="/signup">
                     <div
                         className="ui green labeled huge icon button"
+
                         id="signup-btn"
                     >
                         Sign Up

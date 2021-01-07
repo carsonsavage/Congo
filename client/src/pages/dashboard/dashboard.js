@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import "./dashboard.css";
 import Footer from "../../components/footer/footer";
@@ -19,7 +20,6 @@ function UserDashboard() {
                     <SavedPayment />
                 </div>
             </Wrapper>
-
             <Footer />
         </>
     );
