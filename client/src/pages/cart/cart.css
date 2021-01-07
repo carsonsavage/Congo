@@ -1,3 +1,9 @@
 .cart-page{
     margin-top: 40px;
 }
+
+.header.sub{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
