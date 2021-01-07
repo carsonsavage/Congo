@@ -12,7 +12,13 @@ module.exports = {
         return db.Product.find({ $text: { $search: `${query}` } });
     },
     findByCategoryAndQuery: function (category, query) {
-        return db.Product.find({ category: category, $text: { $search: query } });
+        return db.Product.find({
+            category: category,
+            $text: { $search: query },
+        });
+    },
+    findById: function (id) {
+        return db.Product.find({ _id: id });
     },
     create: function (req, res) {
         db.Product.create(req.body)
