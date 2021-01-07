@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Button, Icon, Label } from "semantic-ui-react";
 
-function AddToCartBtn() {
+function AddToCartBtn({ id }) {
     const [buttonLoading, setButtonLoading] = useState(false);
 
-    const callToAdd = (event) => {
+    const callToAdd = (event, _id) => {
         event.preventDefault();
         setButtonLoading(true);
+        console.log(_id)
 
         setTimeout(() => {
             setButtonLoading(false);
@@ -18,7 +19,9 @@ function AddToCartBtn() {
             animated="vertical"
             className="addToCartBtn green"
             loading={buttonLoading}
-            onClick={callToAdd}
+            onClick={(e) => {
+                callToAdd(e, id);
+            }}
         >
             <Button.Content hidden>
                 <Icon name="shop" />
