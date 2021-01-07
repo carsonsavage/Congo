@@ -3,20 +3,15 @@ import { Col, Image } from "react-bootstrap";
 import SmallProductImages from "../../components/productDetailsPage/small-product-images/small-product-images.js";
 
 function ImageState({images}) {
-    const sampleImageArray = [
-        "https://images-na.ssl-images-amazon.com/images/I/71nhQn8zoUL._SL1500_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/I/71Y7-ZBt24L._SL1240_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/I/71yBHHy5hXL._SL1500_.jpg",
-    ];
 
-    const [imgState, setImageState] = useState(sampleImageArray[0]);
+    const [imgState, setImageState] = useState(images[0]);
 
     return (
         <>
             <Col md={1}>
                 <div className="small-images">
                     <SmallProductImages
-                        images={sampleImageArray}
+                        images={images}
                         setImageState={setImageState}
                     />
                 </div>
