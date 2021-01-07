@@ -88,9 +88,7 @@ function StateController(props) {
         } else {
             //call to get cart if someone is NOT logged in
             console.log("not logged in, getting cookie cart");
-            //setCookie("cookieCart", obj, { path: "/" });
-            //removeCookie("cookieCart");
-            console.log(cookies.cookieCart);
+            setSavedCartState(cookies.cookieCart);
         }
     };
 
@@ -149,21 +147,31 @@ function StateController(props) {
 
     const addProductToCart = (productId) => {
         API.lookupProduct(productId).then(({ data }) => {
-            console.log(data);
-            if(userState.loggedIn){
+            if (userState.loggedIn) {
                 //save to the dbcart
-                console.log("adding to user cart")
+                console.log("adding to user cart");
             } else {
                 //save to the cookies cart
-                console.log("adding to cookie cart")
+                console.log("adding to cookie cart");
+                if (cookies.cookieCart) {
+                    //add to the array
+                    console.log(cookies.cookieCart);
+                    let newCart = cookies.cookieCart;
+                    newCart.push(data[0]);
+                    console.log(newCart);
+                    setCookie("cookieCart", newCart, { path: "/" });
+                    //window.location.href = "/"
+                    //window.location.href = `/cart/success/${data._id}`;
+                } else {
+                    setCookie("cookieCart", [data[0]], { path: "/" });
+                    //window.location.href = `/cart/success/${data._id}`;
+                }
             }
-            loadCart();
         });
     };
 
     const searchProducts = (category, query) => {
         API.searchProducts(category, query).then(({ data }) => {
-            console.log(data);
             setSearchState({
                 ...searchState,
                 search_results: data,
@@ -173,7 +181,9 @@ function StateController(props) {
     };
 
     return (
-        <CartContext.Provider value={{ cartState, setCartState, addProductToCart }}>
+        <CartContext.Provider
+            value={{ cartState, setCartState, addProductToCart }}
+        >
             <SearchContext.Provider
                 value={{
                     searchState,
