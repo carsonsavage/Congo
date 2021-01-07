@@ -65,3 +65,8 @@ hr{
 .outOfStock{
     color: red;
 }
+
+#back-to-results{
+    margin-top: 10px;
+    width: 200px;
+}
