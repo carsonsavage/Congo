@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Icon, Label } from "semantic-ui-react";
+import CartContext from "../../../util/cartContext";
 
 function AddToCartBtn({ id }) {
+    const {addProductToCart} = useContext(CartContext);
     const [buttonLoading, setButtonLoading] = useState(false);
 
     const callToAdd = (event, _id) => {
         event.preventDefault();
         setButtonLoading(true);
-        console.log(_id);
-
-        setTimeout(() => {
-            setButtonLoading(false);
-        }, 5000);
+        addProductToCart(_id);
     };
 
     return (
