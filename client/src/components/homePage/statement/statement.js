@@ -7,7 +7,7 @@ function Statement(){
       <Carousel.Item interval={10000}>
         <img
           className="d-block w-100"
-          src="https://i.imgur.com/5JId3WT.png"
+          src="https://i.imgur.com/eXTlBPb.png"
           alt="covid info"
         />
         <Carousel.Caption>
@@ -16,7 +16,7 @@ function Statement(){
       <Carousel.Item interval={10000}>
         <img
           className="d-block w-100"
-          src="https://i.imgur.com/LPDTa02.png"
+          src="https://i.imgur.com/wDzJrTE.png"
           alt="charity info"
         />
         <Carousel.Caption>
@@ -25,7 +25,7 @@ function Statement(){
       <Carousel.Item interval={10000}>
         <img
           className="d-block w-100"
-          src="https://i.imgur.com/IDumiJ3.png"
+          src="https://i.imgur.com/O1SEbKD.png"
           alt="sale info"
         />
         <Carousel.Caption>
