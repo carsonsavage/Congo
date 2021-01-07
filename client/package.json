@@ -12,6 +12,8 @@
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
+    "react-cookie": "^4.0.3",
+    "react-cookies": "^0.1.1",
     "react-dom": "^17.0.1",
     "react-items-carousel": "^2.8.0",
     "react-moment": "^1.1.1",
@@ -19,6 +21,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "semantic-ui-react": "^2.0.1",
+    "universal-cookie": "^4.0.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
