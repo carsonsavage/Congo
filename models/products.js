@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
     keywords: Array,
     features: Array,
     description: String,
-    image: String,
+    images: Array,
     date_Updated: { type: Date, default: Date.now }
 });
 
