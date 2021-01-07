@@ -226,7 +226,7 @@
       "4k video"
     ],
     "description": "12.1MP1 Exmor R sensor, optimized for 4K, sensitivity and speed, New BIONZ XR processing engine delivers 8x more processing power2, Low noise images w/ ISO up to 409,6003 and 15+stop dynamic range4, Up to 4K 120p5 10-bit 4:2:2 and full pixel readout in all rec. modes, Up to 4K 120p5 in XAVC S (AVC), XAVC HS (HEVC) and XAVC S-I (All-I), Video capture resolution: 4K UHD 2160p",
-    "image": "[https://images-na.ssl-images-amazon.com/images/I/81MpiBUkqsL._AC_SL1500_.jpg], [https://images-na.ssl-images-amazon.com/images/I/81SBc3iJvlL._AC_SL1500_.jpg], [https://images-na.ssl-images-amazon.com/images/I/71q-YoZLFjL._AC_SL1500_.jpg], [https://images-na.ssl-images-amazon.com/images/I/71ySlA9VH6L._AC_SL1500_.jpg], [https://images-na.ssl-images-amazon.com/images/I/71HCW7PaCiL._AC_SL1500_.jpg]"
+    "image": ["https://images-na.ssl-images-amazon.com/images/I/81MpiBUkqsL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81SBc3iJvlL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71q-YoZLFjL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71ySlA9VH6L._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71HCW7PaCiL._AC_SL1500_.jpg"]
   },
   {
     "uid": "7aoNkgSg71nPkmFa43vbnk",
@@ -247,7 +247,7 @@
       "free shipping"
     ],
     "description": "OFFER INCLUDES: An Apple iPhone and a wireless plan with unlimited data/talk/text, WIRELESS PLAN: Unlimited talk, text, and data with mobile hotspot, nationwide coverage, and international reach. No long-term contract required, PROGRAM DETAILS: When you add this offer to cart, it will reflect 3 items: the iPhone, SIM kit, and carrier subscription, Ceramic Shield, tougher than any smartphone glass, A14 Bionic chip, the fastest chip ever in a smartphone",
-    "image": "[https://m.media-amazon.com/images/I/71YlH-4MUQL._FMwebp__.jpg], [https://m.media-amazon.com/images/I/81SH4gFInmL._FMwebp__.jpg], [https://m.media-amazon.com/images/I/81JrQqgi0mL._FMwebp__.jpg]"
+    "image": ["https://m.media-amazon.com/images/I/71YlH-4MUQL._FMwebp__.jpg", "https://m.media-amazon.com/images/I/81SH4gFInmL._FMwebp__.jpg", "https://m.media-amazon.com/images/I/81JrQqgi0mL._FMwebp__.jpg"]
   },
   {
     "uid": "7aoNkgSg71nPkmFa43jl2l",
