@@ -26,10 +26,18 @@ export default {
     },
 
     lookupProduct: (productId) => {
-        return axios.get(`/api/products/details/${productId}`)
+        return axios.get(`/api/products/details/${productId}`);
     },
 
     getOrders: (userId) => {
         return axios.get(`/api/user/${userId}/orders`);
-    }
+    },
+
+    getCart: (userId) => {
+        return axios.get(`/api/user/${userId}/cart`);
+    },
+
+    setCart: (cart) => {
+        console.log(cart);
+    },
 };
