@@ -4,8 +4,8 @@ function AboutItemList({ features }) {
     return (
         <>
             <ul>
-                {features.map((feature) => (
-                    <li>{feature}</li>
+                {features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
                 ))}
             </ul>
         </>
