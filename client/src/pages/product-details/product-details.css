@@ -18,3 +18,16 @@
 .inline {
     display: inline;
 }
+
+.inline-block{
+    display: inline-block;
+}
+
+.price{
+    text-align: center;
+    width: 70px;
+}
+
+hr{
+    background-color: green;
+}
