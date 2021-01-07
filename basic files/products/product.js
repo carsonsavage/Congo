@@ -33,7 +33,7 @@ let product = {
         "multiple music options"
     ],
     "description": "Wooden piano magically makes music, 3 sheets of music & 6 different songs, child safe and durable materials, Easy to wipe down and clean, Ships in fully enclosed packaging",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71--Y8HdOQL._AC_SL1500_.jpg"
+    "images": "https://images-na.ssl-images-amazon.com/images/I/71--Y8HdOQL._AC_SL1500_.jpg"
 }
 
 readWriteFile(product);
