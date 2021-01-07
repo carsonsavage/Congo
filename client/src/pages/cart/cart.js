@@ -1,20 +1,28 @@
-import React from 'react';
-import Wrapper from '../../components/wrapper/wrapper.js';
-import CartCallToAction from '../../components/cartPage/cart-callToAction/cart-cta.js';
-import CartItems from '../../components/cartPage/cart-items/cart-items.js';
-import Footer from '../../components/footer/footer.js';
+import React from "react";
+import './cart.css';
+import Wrapper from "../../components/wrapper/wrapper.js";
+import CartCallToAction from "../../components/cartPage/cart-callToAction/cart-cta.js";
+import CartItems from "../../components/cartPage/cart-items/cart-items.js";
+import Footer from "../../components/footer/footer.js";
+import { Row, Col } from "react-bootstrap";
 
-function Cart(){
+function Cart() {
     return (
         <>
-        <Wrapper>
-            <CartCallToAction />
-            <CartItems />
-        </Wrapper>
+            <Wrapper>
+                <Row className="cart-page">
+                    <Col md={9}>
+                        <CartItems />
+                    </Col>
+                    <Col md={3}>
+                        <CartCallToAction />
+                    </Col>
+                </Row>
+            </Wrapper>
 
-        <Footer />
+            <Footer />
         </>
-    )
-};
+    );
+}
 
 export default Cart;
