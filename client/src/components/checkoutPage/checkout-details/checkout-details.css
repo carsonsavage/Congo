@@ -1,7 +1,5 @@
 .checkout-details{
-    background-color: #ff00c8;
-    width: 70%;
-    height: 500px;
     margin-top: 40px;
-    text-align: center;
+    float: left;
 }
+

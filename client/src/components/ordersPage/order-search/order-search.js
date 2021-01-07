@@ -1,13 +1,15 @@
-import React from 'react';
-import './order-search.css';
+import React from "react";
+import "./order-search.css";
 
-function OrderSearch(){
+function OrderSearch() {
     return (
         <div className="order-search">
-            <input type="text" name="orderSearch" />
-            <button type="submit">Search Orders</button>
+            <div class="ui left icon input">
+                <input type="text" placeholder="Search orders..." />
+                <i class="search icon"></i>
+            </div>
         </div>
-    )
-};
+    );
+}
 
 export default OrderSearch;

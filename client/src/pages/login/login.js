@@ -1,19 +1,23 @@
-import React from 'react';
-import Wrapper from '../../components/wrapper/wrapper';
-import Logo from '../../components/loginPage/logo/logo.js';
-import LoginForm from '../../components/loginPage/login-form/login-form.js';
-import LoginBtn from '../../components/loginPage/login-btn/login-btn.js';
 
-function Login(){
+import React from "react";
+import Wrapper from "../../components/wrapper/wrapper";
+import Logo from "../../components/loginPage/logo/logo.js";
+import LoginForm from "../../components/loginPage/login-form/login-form.js";
+import Footer from '../../components/footer/footer.js';
+import './login.css';
+
+function Login() {
     return (
         <>
-        <Wrapper>
-            <Logo />
-            <LoginForm />
-            <LoginBtn />
-        </Wrapper>
+            <Wrapper>
+                <div className="center login-center">
+                    <Logo />
+                    <LoginForm />
+                </div>
+            </Wrapper>
+            <Footer />
         </>
-    )
-};
+    );
+}
 
 export default Login;
