@@ -10,6 +10,7 @@ function StateController(props) {
         search_category: "",
         search_results: [],
         filtered_results: [],
+        product_result: {}
     });
 
     const [cartState, setCartState] = useState({
@@ -69,6 +70,14 @@ function StateController(props) {
         //set into ordersState
     };
 
+    const lookupProduct = (productId) => {
+        API.lookupProduct(productId)
+        .then(({data})=>{
+            console.log(data[0]);
+            setSearchState({...searchState, product_result: data[0]})
+        });
+    };
+
     const handleSearchChange = (event) => {
         setSearchState({ ...searchState, search_query: event.target.value });
     };
@@ -125,7 +134,7 @@ function StateController(props) {
     return (
         <CartContext.Provider value={{ cartState, setCartState }}>
             <SearchContext.Provider
-                value={{ searchState, handleSearchChange, searchProducts }}
+                value={{ searchState, handleSearchChange, searchProducts, lookupProduct }}
             >
                 <UserContext.Provider
                     value={{
