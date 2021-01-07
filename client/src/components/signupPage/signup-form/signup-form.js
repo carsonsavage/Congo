@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Form, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import "./signup-form.css";
+import UserContext from '../../../util/userContext.js';
 
 export default function Login() {
+    const {registerUser} = useContext(UserContext);
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -53,6 +55,8 @@ export default function Login() {
         if (!passwordError) {
             console.log(registerObj);
             //call to register
+            registerUser(registerObj)
+            .then((res)=>{window.location.href = "/login"});
         }
     }
 
@@ -266,9 +270,9 @@ export default function Login() {
                         <Form.Label>Card Number</Form.Label>
                         <Form.Control
                             type="tel"
-                            inputmode="numeric"
+                            inputMode="numeric"
                             pattern="[0-9\s]{13,19}"
-                            maxlength="16"
+                            maxLength="16"
                             placeholder="xxxx xxxx xxxx xxxx"
                             required
                             onChange={(e) =>
