@@ -3,7 +3,7 @@ import { Button, Icon, Label } from "semantic-ui-react";
 import { Form, Row, Col } from "react-bootstrap";
 import AddToCartBtn from './add-to-cart-btn.js';
 
-function ProductCta({ _id, price, qnty }) {
+function ProductCta({ id, price, quantity }) {
     Date.prototype.addDays = function (days) {
         var date = new Date(this.valueOf());
         date.setDate(date.getDate() + days);
@@ -22,7 +22,7 @@ function ProductCta({ _id, price, qnty }) {
         <div className="cart-cta-div">
             <div className="cta-divs">
                 <Label tag className="ui label massive red">
-                    ${234.52}
+                    ${price}
                 </Label>
             </div>
             <div className="cta-divs">
@@ -48,7 +48,7 @@ function ProductCta({ _id, price, qnty }) {
                 </Form.Control>
             </div>
             <div className="cta-divs addtocart">
-                <AddToCartBtn />
+                <AddToCartBtn id={id}/>
                 <Icon name="lock" /> Secure transaction
             </div>
         </div>
