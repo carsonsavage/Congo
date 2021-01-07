@@ -211,8 +211,8 @@
     "uid": "7aoNkgSg71nPkmFa43f7tr",
     "title": "Sony NEW Alpha 7S III Full-frame Interchangeable Lens Mirrorless Camera",
     "price": 3498,
-    "quantity": 41,
-    "category": "electronic",
+    "quantity": 4,
+    "category": "electronics",
     "keywords": [
       "sony",
       "camera",
@@ -233,7 +233,7 @@
     "title": "New Apple iPhone 12 Pro (128GB, Graphite) [Locked] + Carrier Subscription",
     "price": 999,
     "quantity": 31,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "iphone 12 pro",
       "128 gb",
@@ -254,7 +254,7 @@
     "title": "New Apple iPhone 12 Pro Max (256GB, Graphite) [Locked] + Carrier Subscription",
     "price": 1199,
     "quantity": 21,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "iphone 12 pro max",
       "256 gb",
@@ -275,7 +275,7 @@
     "title": "New Apple iPhone 12 (64GB, Blue) [Locked] + Carrier Subscription",
     "price": 829,
     "quantity": 11,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "iphone 12 mini",
       "64 gb",
@@ -293,7 +293,7 @@
   },
   {
     "uid": "7aoNkgSg71nPkmFa43lxst",
-    "title": "Apple AirPods Pro",
+    "title": "Apple AirPods Pros",
     "price": 199,
     "quantity": 12,
     "category": "electronic",
@@ -316,7 +316,7 @@
     "title": "New Apple MacBook Pro (16-inch, 16GB RAM, 1TB Storage, 2.3GHz Intel Core i9) - Space Gray",
     "price": 2549,
     "quantity": 13,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "MacBook",
       "16 inch retina display",
@@ -335,7 +335,7 @@
     "title": "All-new Echo (4th Gen) | With premium sound, smart home hub, and Alexa | Glacier White",
     "price": 99.99,
     "quantity": 14,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "Echo",
       "features Alexa",
@@ -354,7 +354,7 @@
     "title": "New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Space Gray (4th Generation)",
     "price": 949.99,
     "quantity": 15,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "iPad Pro",
       "12.9 inch screen",
@@ -373,7 +373,7 @@
     "title": "Microsoft Surface Pro 7 128GB i5 8GB RAM with Windows 10 Pro (Wi-Fi, Quad-Core i5-1035G4, Newest Version) Platinum PVQ-00001",
     "price": 745.99,
     "quantity": 16,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "MacBook",
       "12.3 inch display",
@@ -392,7 +392,7 @@
     "title": "New Apple iMac with Retina 5K Display (27-inch, 8GB RAM, 256GB SSD Storage)",
     "price": 1679.92,
     "quantity": 17,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "IMac",
       "27 inch retina display",
@@ -806,7 +806,7 @@
     "uid": "de4tEoQpvYvBBjk3WzHLKd",
     "title": "Call of Duty: Black Ops Cold War",
     "price": 49.94,
-    "quantity": 0,
+    "quantity": 1,
     "category": "Video games",
     "keywords": [
       "COD",
