@@ -1,20 +1,9 @@
 import React, { useState } from "react";
 import { Button, Icon, Label } from "semantic-ui-react";
 import { Form, Row, Col } from "react-bootstrap";
+import AddToCartBtn from './add-to-cart-btn.js';
 
 function ProductCta({ _id, price, qnty }) {
-    const [buttonLoading, setButtonLoading] = useState(false);
-
-    const callToAdd = (event)=>{
-        event.preventDefault();
-        setButtonLoading(true);
-
-        setTimeout(()=>{
-            setButtonLoading(false)
-        }, 5000);
-    };
-
-
     Date.prototype.addDays = function (days) {
         var date = new Date(this.valueOf());
         date.setDate(date.getDate() + days);
@@ -59,12 +48,7 @@ function ProductCta({ _id, price, qnty }) {
                 </Form.Control>
             </div>
             <div className="cta-divs addtocart">
-                <Button animated="vertical" className="addToCartBtn green" loading={buttonLoading} onClick={callToAdd}>
-                    <Button.Content hidden>
-                        <Icon name="shop" />
-                    </Button.Content>
-                    <Button.Content visible>Add to Cart</Button.Content>
-                </Button>
+                <AddToCartBtn />
                 <Icon name="lock" /> Secure transaction
             </div>
         </div>
