@@ -1,26 +1,10 @@
 .cart-cta{
     background-color: red;
     color: white;
-    width: 29%;
+    width: inherit;
     height: 200px;
-    float: right;
 }
 
 .cart-cta button{
     width: 100%;
-}
-
-.cart-cta a:link{
-    text-decoration: none;
-    color: inherit;
-}
-
-.cart-cta a:hover{
-    text-decoration: none;
-    color: inherit;
-}
-
-.cart-cta a:visited{
-    text-decoration: none;
-    color: inherit;
 }
