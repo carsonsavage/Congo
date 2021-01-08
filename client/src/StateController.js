@@ -48,7 +48,7 @@ function StateController(props) {
             ...cartState,
             cart_total: total,
             cart_item_count: count,
-            cart_items: savedCartItemsState
+            cart_items: savedCartItemsState,
         });
     }, [savedCartItemsState]);
 
@@ -168,7 +168,26 @@ function StateController(props) {
             console.log(newCookieArray);
             removeCookie(["cookieCart"], { path: "/" });
             setCookie("cookieCart", newCookieArray, { path: "/" });
+            window.location.href = "/cart";
         }
+    };
+
+    const saveCurrentCart = ()=> {
+        if (userState.loggedIn) {
+            console.log("saving user cart");
+        } else {
+            console.log("saving cookie cart");
+            removeCookie(["cookieCart"], { path: "/" });
+            setCookie("cookieCart", cartIdState, { path: "/" });
+            window.location.href = "/cart";
+        }
+    }
+
+    const deleteProductFromCart = (productId) => {
+        const editedCartArray = cartIdState.splice(cartIdState.indexOf(productId), 1);
+        console.log(editedCartArray);
+        setCartIdState(editedCartArray);
+        saveCurrentCart();
     };
 
     const searchProducts = (category, query) => {
@@ -183,7 +202,12 @@ function StateController(props) {
 
     return (
         <CartContext.Provider
-            value={{ cartState, setCartState, addProductToCart }}
+            value={{
+                cartState,
+                setCartState,
+                addProductToCart,
+                deleteProductFromCart,
+            }}
         >
             <SearchContext.Provider
                 value={{
