@@ -25,6 +25,12 @@ export default {
         return axios.get(`/api/products/search/C=${category}&Q=${query}`);
     },
 
+    getMultipleProducts: (productIdArray) => {
+        return axios.post(`/api/products/multiple-search`, {
+            array: productIdArray,
+        });
+    },
+
     lookupProduct: (productId) => {
         return axios.get(`/api/products/details/${productId}`);
     },
@@ -37,7 +43,7 @@ export default {
         return axios.get(`/api/user/${userId}/cart`);
     },
 
-    setCart: (cart) => {
+    setUserCart: (cart) => {
         console.log(cart);
     },
 };
