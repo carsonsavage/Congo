@@ -5,7 +5,7 @@ import { Row, Col, Image, Form } from "react-bootstrap";
 import CartContext from "../../../util/cartContext.js";
 
 function CartCards() {
-    const { cartState } = useContext(CartContext);
+    const { cartState, deleteProductFromCart } = useContext(CartContext);
 
     function generateOptions(count) {
         let i;
@@ -54,6 +54,10 @@ function CartCards() {
                                         icon="delete"
                                         labelPosition="left"
                                         className="mini deleteBtn red"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            deleteProductFromCart(_id);
+                                        }}
                                     />
                                 </div>
                             </Col>
