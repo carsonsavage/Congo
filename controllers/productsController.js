@@ -20,6 +20,14 @@ module.exports = {
     findById: function (id) {
         return db.Product.find({ _id: id });
     },
+    findMultipleId: function ({ body }, res) {
+        db.Product.find()
+            .where("_id")
+            .in(body.array)
+            .exec((err, data) => {
+                res.json(data);
+            });
+    },
     create: function (req, res) {
         db.Product.create(req.body)
             .then((dbModel) => res.json(dbModel))
