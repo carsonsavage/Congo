@@ -219,9 +219,9 @@ function StateController(props) {
     };
 
     const deleteProductFromCart = (productId) => {
-        cartIdState.splice(cartIdState.indexOf(productId), 1);
-        console.log(cartIdState);
-        setCartIdState(cartIdState);
+        let deletedArray = [...cartIdState];
+        deletedArray.splice(0, 1);
+        setCartIdState(deletedArray);
     };
 
     const searchProducts = (category, query) => {
