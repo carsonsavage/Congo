@@ -27,22 +27,30 @@ function StateController(props) {
     });
 
     useEffect(() => {
-        if (cartIdState) {
-            let total = 0;
-            let count = 0;
+        //call to get multiple products
+        API.getMultipleProducts(cartIdState).then(({ data }) => {
+            setSavedCartItemsState(data);
+        });
+        //set into saved cartitemstate
+    }, [cartIdState]);
+
+    useEffect(() => {
+        let total = 0;
+        let count = 0;
+        if (savedCartItemsState[0]) {
             savedCartItemsState.forEach((product) => {
                 total = total + product.price;
                 count = count + 1;
             });
-
-            console.log(total, count);
-            setCartState({
-                ...cartState,
-                cart_total: total,
-                cart_item_count: count,
-            });
         }
-    }, [cartIdState]);
+
+        setCartState({
+            ...cartState,
+            cart_total: total,
+            cart_item_count: count,
+            cart_items: savedCartItemsState
+        });
+    }, [savedCartItemsState]);
 
     const [userState, setUserState] = useState({
         loggedIn: false,
@@ -84,9 +92,10 @@ function StateController(props) {
         //call to get cart if someone is logged in
         if (userState.loggedIn) {
             console.log("logged in, getting cart");
-            API.getCart(userState._id).then(({ data }) => {
-                console.log("got data back");
-            });
+            setCartIdState([""]);
+            // API.getCart(userState._id).then(({ data }) => {
+            //     setCartIdState([""]);
+            // });
         } else {
             //call to get cart if someone is NOT logged in
             console.log("getting cookie cart");
