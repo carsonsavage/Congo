@@ -172,7 +172,7 @@ function StateController(props) {
         }
     };
 
-    const saveCurrentCart = ()=> {
+    const saveCurrentCart = () => {
         if (userState.loggedIn) {
             console.log("saving user cart");
         } else {
@@ -181,10 +181,13 @@ function StateController(props) {
             setCookie("cookieCart", cartIdState, { path: "/" });
             window.location.href = "/cart";
         }
-    }
+    };
 
     const deleteProductFromCart = (productId) => {
-        const editedCartArray = cartIdState.splice(cartIdState.indexOf(productId), 1);
+        const editedCartArray = cartIdState.splice(
+            cartIdState.indexOf(productId),
+            1
+        );
         console.log(editedCartArray);
         setCartIdState(editedCartArray);
         saveCurrentCart();
