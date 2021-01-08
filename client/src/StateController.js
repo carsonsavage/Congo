@@ -208,11 +208,8 @@ function StateController(props) {
 
     const saveCurrentCart = () => {
         if (userState.loggedIn) {
-            console.log("saving user cart");
-            console.log(cartIdState);
             API.saveCart(userState._id, cartIdState).then(({ data }) => {});
         } else {
-            console.log("saving cookie cart");
             removeCookie(["cookieCart"], { path: "/" });
             setCookie("cookieCart", cartIdState, { path: "/" });
         }
@@ -243,7 +240,7 @@ function StateController(props) {
                 deleteProductFromCart,
                 saveCurrentCart,
                 cartIdState,
-                setCartIdState
+                setCartIdState,
             }}
         >
             <SearchContext.Provider
