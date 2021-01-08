@@ -92,10 +92,9 @@ function StateController(props) {
         //call to get cart if someone is logged in
         if (userState.loggedIn) {
             console.log("logged in, getting cart");
-            setCartIdState([""]);
-            // API.getCart(userState._id).then(({ data }) => {
-            //     setCartIdState([""]);
-            // });
+            API.getCart(userState._id).then(({ data }) => {
+                setCartIdState(data.cart_items);
+            });
         } else {
             //call to get cart if someone is NOT logged in
             console.log("getting cookie cart");
@@ -159,15 +158,23 @@ function StateController(props) {
     };
 
     const addProductToCart = (productId) => {
+        let newCartArray;
+        console.log(cartIdState);
+        if (cartIdState) {
+            newCartArray = cartIdState;
+            newCartArray.push(productId);
+        } else {
+            newCartArray = [productId];
+        }
+
         if (userState.loggedIn) {
             console.log("adding to user cart");
+            API.saveCart(userState._id, newCartArray).then((data) => {
+                window.location.href = "/cart";
+            });
         } else {
-            console.log("adding to cookie cart");
-            let newCookieArray = cartIdState;
-            newCookieArray.push(productId);
-            console.log(newCookieArray);
             removeCookie(["cookieCart"], { path: "/" });
-            setCookie("cookieCart", newCookieArray, { path: "/" });
+            setCookie("cookieCart", newCartArray, { path: "/" });
             window.location.href = "/cart";
         }
     };
@@ -175,6 +182,9 @@ function StateController(props) {
     const saveCurrentCart = () => {
         if (userState.loggedIn) {
             console.log("saving user cart");
+            API.saveCart(userState._id, cartIdState).then(({ data }) => {
+                window.location.href = "/cart";
+            });
         } else {
             console.log("saving cookie cart");
             removeCookie(["cookieCart"], { path: "/" });
