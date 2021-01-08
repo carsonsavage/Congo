@@ -1,10 +1,19 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../../util/userContext";
 import "./checkout-details.css";
-import { Segment, Button, Icon } from "semantic-ui-react";
+import { Segment, Button, Image, Loader } from "semantic-ui-react";
+import CartContext from "../../../util/cartContext";
+import API from "../../../util/API.js";
 
 function CheckoutDetails() {
     const { userState } = useContext(UserContext);
+    const { cartState } = useContext(CartContext);
+    const shippingCost = 2.21;
+    const preTax = cartState.cart_total + shippingCost;
+    const tax = parseInt((preTax * 0.08).toFixed(2));
+    const total = preTax + tax;
+
+    const [displayState, setDisplayState] = useState("waiting");
     const [shippingState, setShippingState] = useState("active");
     const [paymentState, setPaymentState] = useState("disabled");
     const [confirmState, setConfirmState] = useState("disabled");
@@ -14,9 +23,20 @@ function CheckoutDetails() {
     );
     const [paymentCard, setPaymentCard] = useState(userState.credit_cards[0]);
 
-    function confirmOrder(event){
-        event.preventDefault();
-    };
+    function confirmOrder() {
+        API.createOrder({
+            user_id: userState._id,
+            items: cartState.cart_items,
+            ship_address: shippingAddress,
+            order_num: "124-34395-3234",
+            total: total,
+        })
+        .then(({data})=>{
+            console.log(data)
+        })
+
+        //setDisplayState("confirmed")
+    }
 
     function Shipping() {
         const {
@@ -146,12 +166,12 @@ function CheckoutDetails() {
                 <hr />
                 <Segment.Group raised>
                     <Segment id="shipping-address">
-                        <p>Delivery date</p>
-                        <p>Items: price</p>
-                        <p>Shipping & handling: price</p>
-                        <p>Total before tax: price</p>
-                        <p>Estimated tax to be collected: price</p>
-                        <h5>Order total: new total</h5>
+                        <p>Delivery date {cartState.delivery_date}</p>
+                        <p>Items: ${cartState.cart_total}</p>
+                        <p>Shipping & handling: ${shippingCost}</p>
+                        <p>Total before tax: ${preTax}</p>
+                        <p>Estimated tax to be collected: ${tax}</p>
+                        <h5>Order total: ${total}</h5>
                     </Segment>
                 </Segment.Group>
 
@@ -177,6 +197,7 @@ function CheckoutDetails() {
                     onClick={(e) => {
                         e.preventDefault();
                         setConfirmState("completed");
+                        confirmOrder();
                     }}
                     floated="right"
                 />
@@ -184,38 +205,59 @@ function CheckoutDetails() {
         );
     }
 
+    function ConfirmingOrder() {
+        return (
+            <>
+                <Loader active inline="centered">
+                    Confirming Order...
+                </Loader>
+            </>
+        );
+    }
+
     return (
         <div className="checkout-details">
-            <div class="ui three top attached steps" id="checkoutDiv">
-                <div class={`step ${shippingState}`}>
-                    <i class="truck icon"></i>
-                    <div class="content">
-                        <div class="title">Shipping</div>
-                        <div class="description">
-                            Choose your shipping options
+            {displayState === "confirmed" ? (
+                <h2>Confirmed order</h2>
+            ) : (
+                <>
+                    <div class="ui three top attached steps" id="checkoutDiv">
+                        <div class={`step ${shippingState}`}>
+                            <i class="truck icon"></i>
+                            <div class="content">
+                                <div class="title">Shipping</div>
+                                <div class="description">
+                                    Choose your shipping options
+                                </div>
+                            </div>
+                        </div>
+                        <div class={`step ${paymentState}`}>
+                            <i class="payment icon"></i>
+                            <div class="content">
+                                <div class="title">Billing</div>
+                                <div class="description">
+                                    Enter billing information
+                                </div>
+                            </div>
+                        </div>
+                        <div class={`step ${confirmState}`}>
+                            <i class="info icon"></i>
+                            <div class="content">
+                                <div class="title">Confirm Order</div>
+                                <div class="description">
+                                    Verify order details
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class={`step ${paymentState}`}>
-                    <i class="payment icon"></i>
-                    <div class="content">
-                        <div class="title">Billing</div>
-                        <div class="description">Enter billing information</div>
+                    <div class="ui attached segment">
+                        {shippingState === "active" && Shipping()}
+                        {paymentState === "active" && Billing()}
+                        {confirmState === "active" && Confirm()}
+                        {confirmState === "completed" && ConfirmingOrder()}
                     </div>
-                </div>
-                <div class={`step ${confirmState}`}>
-                    <i class="info icon"></i>
-                    <div class="content">
-                        <div class="title">Confirm Order</div>
-                        <div class="description">Verify order details</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ui attached segment">
-                {shippingState === "active" && Shipping()}
-                {paymentState === "active" && Billing()}
-                {confirmState === "active" && Confirm()}
-            </div>
+                </>
+            )}
         </div>
     );
 }
