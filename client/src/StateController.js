@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CartContext from "./util/cartContext.js";
 import SearchContext from "./util/searchContext.js";
 import UserContext from "./util/userContext.js";
+import OrderContext from "./util/orderContext.js";
 import API from "./util/API";
 import { useCookies } from "react-cookie";
 
@@ -83,7 +84,7 @@ function StateController(props) {
 
     const [editableUserState, setEditableUserState] = useState(userState);
 
-    const [ordersState, setOrdersState] = useState({});
+    const [ordersState, setOrdersState] = useState([]);
 
     useEffect(() => {
         setEditableUserState(userState);
@@ -135,7 +136,11 @@ function StateController(props) {
 
     const loadOrders = (userId) => {
         //call to get orders by userId
-        //set into ordersState
+        API.getOrders(userId)
+            //set into ordersState
+            .then(({ data }) => {
+                console.log(data);
+            });
     };
 
     const lookupProduct = (productId) => {
@@ -262,7 +267,9 @@ function StateController(props) {
                         logoutUser,
                     }}
                 >
-                    {props.children}
+                    <OrderContext.Provider value={{ ordersState, loadOrders }}>
+                        {props.children}
+                    </OrderContext.Provider>
                 </UserContext.Provider>
             </SearchContext.Provider>
         </CartContext.Provider>
