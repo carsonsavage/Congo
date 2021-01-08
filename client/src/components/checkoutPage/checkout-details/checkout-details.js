@@ -7,7 +7,7 @@ import API from "../../../util/API.js";
 
 function CheckoutDetails() {
     const { userState } = useContext(UserContext);
-    const { cartState } = useContext(CartContext);
+    const { cartState, cartIdState, setCartIdState, saveCurrentCart } = useContext(CartContext);
     const shippingCost = 2.21;
     const preTax = cartState.cart_total + shippingCost;
     const tax = parseInt((preTax * 0.08).toFixed(2));
@@ -30,12 +30,11 @@ function CheckoutDetails() {
             ship_address: shippingAddress,
             order_num: "124-34395-3234",
             total: total,
-        })
-        .then(({data})=>{
-            console.log(data)
-        })
-
-        //setDisplayState("confirmed")
+        }).then(({ data }) => {
+            let array = [];
+            setCartIdState(array);
+            setDisplayState("confirmed");
+        });
     }
 
     function Shipping() {
