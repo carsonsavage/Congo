@@ -1,19 +1,42 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../../util/userContext";
 import "./checkout-details.css";
+import { Segment, Button } from "semantic-ui-react";
 
 function CheckoutDetails() {
-    const {userState} = useContext(UserContext);
+    const { userState } = useContext(UserContext);
     const [shippingState, setShippingState] = useState("active");
     const [paymentState, setPaymentState] = useState("disabled");
     const [confirmState, setConfirmState] = useState("disabled");
 
-    console.log(userState.address)
+    const [shippingAddress, setShippingAddress] = useState(
+        userState.address[0]
+    );
+    const [paymentCard, setPaymentCard] = useState(userState.credit_cards[0]);
 
     function Shipping() {
+        const {
+            name,
+            address1,
+            address2,
+            city,
+            state,
+            zipcode,
+        } = shippingAddress;
+
         return (
             <>
-                <h2>Shipping</h2>
+                <h2>Shipping Address</h2>
+                <hr />
+                <Segment.Group raised>
+                    <Segment id="shipping-address" clearing>
+                        <h5>{name}</h5>
+                        <p>{address1}</p>
+                        <p>{address2}</p>
+                        <p>{city}, {state} {zipcode}</p>
+                    </Segment>
+                </Segment.Group>
+
                 <button
                     onClick={(e) => {
                         e.preventDefault();
@@ -28,6 +51,7 @@ function CheckoutDetails() {
     }
 
     function Billing() {
+        const {card_number, card_name, expire_month, expire_year} = paymentCard;
         return (
             <>
                 <h2>Billing</h2>
@@ -43,7 +67,7 @@ function CheckoutDetails() {
                 <button
                     onClick={(e) => {
                         e.preventDefault();
-                        setPaymentState("disabled")
+                        setPaymentState("disabled");
                         setShippingState("active");
                     }}
                 >
@@ -68,7 +92,7 @@ function CheckoutDetails() {
                 <button
                     onClick={(e) => {
                         e.preventDefault();
-                        setPaymentState("active")
+                        setPaymentState("active");
                         setConfirmState("disabled");
                     }}
                 >
