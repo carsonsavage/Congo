@@ -36,7 +36,11 @@ export default {
     },
 
     getOrders: (userId) => {
-        return axios.get(`/api/user/${userId}/orders`);
+        return axios.get(`/api/orders/${userId}`);
+    },
+
+    createOrder: (orderObj)=> {
+        return axios.post(`/api/orders`, orderObj)
     },
 
     getCart: (userId) => {
