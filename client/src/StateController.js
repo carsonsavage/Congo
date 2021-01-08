@@ -42,6 +42,7 @@ function StateController(props) {
     });
 
     useEffect(() => {
+        saveCurrentCart();
         //call to get multiple products
         API.getMultipleProducts(cartIdState).then(({ data }) => {
             setSavedCartItemsState(data);
@@ -108,7 +109,6 @@ function StateController(props) {
     const loadCart = () => {
         //call to get cart if someone is logged in
         if (userState.loggedIn) {
-            console.log("logged in, getting cart");
             API.getCart(userState._id).then(({ data }) => {
                 let cartArray = [];
                 if (data) {
@@ -127,7 +127,6 @@ function StateController(props) {
             });
         } else {
             //call to get cart if someone is NOT logged in
-            console.log("getting cookie cart");
             if (cookies.cookieCart) {
                 setCartIdState(cookies.cookieCart);
             }
@@ -189,7 +188,6 @@ function StateController(props) {
 
     const addProductToCart = (productId) => {
         let newCartArray;
-        console.log(cartIdState);
         if (cartIdState) {
             newCartArray = cartIdState;
             newCartArray.push(productId);
@@ -198,7 +196,6 @@ function StateController(props) {
         }
         let uniqueArray = [...new Set(newCartArray)];
         if (userState.loggedIn) {
-            console.log("adding to user cart");
             API.saveCart(userState._id, uniqueArray).then((data) => {
                 window.location.href = "/cart";
             });
@@ -212,25 +209,19 @@ function StateController(props) {
     const saveCurrentCart = () => {
         if (userState.loggedIn) {
             console.log("saving user cart");
-            API.saveCart(userState._id, cartIdState).then(({ data }) => {
-                window.location.href = "/cart";
-            });
+            console.log(cartIdState);
+            API.saveCart(userState._id, cartIdState).then(({ data }) => {});
         } else {
             console.log("saving cookie cart");
             removeCookie(["cookieCart"], { path: "/" });
             setCookie("cookieCart", cartIdState, { path: "/" });
-            window.location.href = "/cart";
         }
     };
 
     const deleteProductFromCart = (productId) => {
-        const editedCartArray = cartIdState.splice(
-            cartIdState.indexOf(productId),
-            1
-        );
-        console.log(editedCartArray);
-        setCartIdState(editedCartArray);
-        saveCurrentCart();
+        cartIdState.splice(cartIdState.indexOf(productId), 1);
+        console.log(cartIdState);
+        setCartIdState(cartIdState);
     };
 
     const searchProducts = (category, query) => {
@@ -251,6 +242,7 @@ function StateController(props) {
                 addProductToCart,
                 deleteProductFromCart,
                 saveCurrentCart,
+                cartIdState,
             }}
         >
             <SearchContext.Provider
