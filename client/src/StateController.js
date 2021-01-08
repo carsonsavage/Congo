@@ -243,6 +243,7 @@ function StateController(props) {
                 deleteProductFromCart,
                 saveCurrentCart,
                 cartIdState,
+                setCartIdState
             }}
         >
             <SearchContext.Provider
