@@ -14,28 +14,28 @@ function Cart() {
     return (
         <>
             <Wrapper>
-                <Row className="cart-page">
-                    <Col md={9}>
-                        {cartState.cart_item_count > 0 ? (
+                {cartState.cart_item_count > 0 ? (
+                    <Row className="cart-page">
+                        <Col md={9}>
                             <CartItems />
-                        ) : (
-                            <div className="ui placeholder segment">
-                                <div className="ui icon header">
-                                    <i className="cart icon"></i>
-                                    Your cart is currently empty
-                                </div>
-                                <Link to="/" className="react-link">
-                                    <div className="ui blue mini button">
-                                        Continue Shopping
-                                    </div>
-                                </Link>
+                        </Col>
+                        <Col md={3}>
+                            <CartCallToAction />
+                        </Col>
+                    </Row>
+                ) : (
+                    <div className="ui placeholder segment">
+                        <div className="ui icon header">
+                            <i className="cart icon"></i>
+                            Your cart is currently empty
+                        </div>
+                        <Link to="/" className="react-link">
+                            <div className="ui blue mini button">
+                                Continue Shopping
                             </div>
-                        )}
-                    </Col>
-                    <Col md={3}>
-                        <CartCallToAction />
-                    </Col>
-                </Row>
+                        </Link>
+                    </div>
+                )}
             </Wrapper>
 
             <Footer />
