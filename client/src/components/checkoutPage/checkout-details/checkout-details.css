@@ -3,3 +3,8 @@
     float: left;
 }
 
+#shipping-address p{
+    margin-top: 15px;
+    line-height: .5em;
+}
+
