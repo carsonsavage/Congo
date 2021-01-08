@@ -43,7 +43,7 @@ export default {
         return axios.get(`/api/user/${userId}/cart`);
     },
 
-    setUserCart: (cart) => {
-        console.log(cart);
+    saveCart: (userId, cart) => {
+        return axios.put(`/api/user/${userId}/cart`, cart);
     },
 };
