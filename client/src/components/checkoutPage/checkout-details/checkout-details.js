@@ -14,6 +14,10 @@ function CheckoutDetails() {
     );
     const [paymentCard, setPaymentCard] = useState(userState.credit_cards[0]);
 
+    function confirmOrder(event){
+        event.preventDefault();
+    };
+
     function Shipping() {
         const {
             name,
@@ -138,11 +142,16 @@ function CheckoutDetails() {
     function Confirm() {
         return (
             <div className="clearfix">
-                <h2>Confirm Order</h2>
+                <h2>Order Summary</h2>
                 <hr />
                 <Segment.Group raised>
                     <Segment id="shipping-address">
-                        <p>confirm?</p>
+                        <p>Delivery date</p>
+                        <p>Items: price</p>
+                        <p>Shipping & handling: price</p>
+                        <p>Total before tax: price</p>
+                        <p>Estimated tax to be collected: price</p>
+                        <h5>Order total: new total</h5>
                     </Segment>
                 </Segment.Group>
 
@@ -212,26 +221,3 @@ function CheckoutDetails() {
 }
 
 export default CheckoutDetails;
-
-{
-    /* <>
-    <h2>Confirm Order</h2>
-    <button
-        onClick={(e) => {
-            e.preventDefault();
-            setConfirmState("completed");
-        }}
-    >
-        Confirm
-    </button>
-    <button
-        onClick={(e) => {
-            e.preventDefault();
-            setPaymentState("active");
-            setConfirmState("disabled");
-        }}
-    >
-        Go Back
-    </button>
-</>; */
-}
