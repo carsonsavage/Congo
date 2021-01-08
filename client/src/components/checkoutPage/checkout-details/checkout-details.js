@@ -137,26 +137,41 @@ function CheckoutDetails() {
 
     function Confirm() {
         return (
-            <>
-                <h2>Confirm Order</h2>
-                <button
+            <div className="clearfix">
+                <h2>Shipping Address</h2>
+                <hr />
+                <Segment.Group raised>
+                    <Segment id="shipping-address">
+                        <Button
+                            circular
+                            icon="edit"
+                            className="mini"
+                            id="edit-btn"
+                            floated="right"
+                        />
+                        <h5>{name}</h5>
+                        <p>{address1}</p>
+                        <p>{address2}</p>
+                        <p>
+                            {city}, {state} {zipcode}
+                        </p>
+                    </Segment>
+                </Segment.Group>
+
+                <Button
+                    content="Looks good"
+                    icon="right arrow"
+                    labelPosition="right"
+                    id="confirm-btn"
+                    className="mini green"
                     onClick={(e) => {
                         e.preventDefault();
-                        setConfirmState("completed");
-                    }}
-                >
-                    Confirm
-                </button>
-                <button
-                    onClick={(e) => {
-                        e.preventDefault();
+                        setShippingState("completed");
                         setPaymentState("active");
-                        setConfirmState("disabled");
                     }}
-                >
-                    Go Back
-                </button>
-            </>
+                    floated="right"
+                />
+            </div>
         );
     }
 
@@ -197,3 +212,24 @@ function CheckoutDetails() {
 }
 
 export default CheckoutDetails;
+
+{/* <>
+    <h2>Confirm Order</h2>
+    <button
+        onClick={(e) => {
+            e.preventDefault();
+            setConfirmState("completed");
+        }}
+    >
+        Confirm
+    </button>
+    <button
+        onClick={(e) => {
+            e.preventDefault();
+            setPaymentState("active");
+            setConfirmState("disabled");
+        }}
+    >
+        Go Back
+    </button>
+</>; */}
