@@ -56,6 +56,7 @@ function CartCards() {
                                         className="mini deleteBtn red"
                                         onClick={(e) => {
                                             e.preventDefault();
+                                            console.log("clicked")
                                             deleteProductFromCart(_id);
                                         }}
                                     />
