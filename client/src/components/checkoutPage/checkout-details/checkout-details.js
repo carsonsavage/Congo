@@ -138,36 +138,36 @@ function CheckoutDetails() {
     function Confirm() {
         return (
             <div className="clearfix">
-                <h2>Shipping Address</h2>
+                <h2>Confirm Order</h2>
                 <hr />
                 <Segment.Group raised>
                     <Segment id="shipping-address">
-                        <Button
-                            circular
-                            icon="edit"
-                            className="mini"
-                            id="edit-btn"
-                            floated="right"
-                        />
-                        <h5>{name}</h5>
-                        <p>{address1}</p>
-                        <p>{address2}</p>
-                        <p>
-                            {city}, {state} {zipcode}
-                        </p>
+                        <p>confirm?</p>
                     </Segment>
                 </Segment.Group>
 
                 <Button
-                    content="Looks good"
+                    content="Go back"
+                    icon="left arrow"
+                    labelPosition="left"
+                    id="confirm-btn"
+                    className="mini red"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        setPaymentState("active");
+                        setConfirmState("disabled");
+                    }}
+                    floated="left"
+                />
+                <Button
+                    content="Place Order"
                     icon="right arrow"
                     labelPosition="right"
                     id="confirm-btn"
                     className="mini green"
                     onClick={(e) => {
                         e.preventDefault();
-                        setShippingState("completed");
-                        setPaymentState("active");
+                        setConfirmState("completed");
                     }}
                     floated="right"
                 />
@@ -213,7 +213,8 @@ function CheckoutDetails() {
 
 export default CheckoutDetails;
 
-{/* <>
+{
+    /* <>
     <h2>Confirm Order</h2>
     <button
         onClick={(e) => {
@@ -232,4 +233,5 @@ export default CheckoutDetails;
     >
         Go Back
     </button>
-</>; */}
+</>; */
+}
