@@ -60,4 +60,6 @@ router.route("/details/:id").get(({ params }, res) => {
         });
 });
 
+router.route("/multiple-search").post(productsController.findMultipleId);
+
 module.exports = router;
