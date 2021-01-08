@@ -6,6 +6,12 @@ import API from "./util/API";
 import { useCookies } from "react-cookie";
 
 function StateController(props) {
+    Date.prototype.addDays = function (days) {
+        var date = new Date(this.valueOf());
+        date.setDate(date.getDate() + days);
+        return date;
+    };
+
     const [cookies, setCookie, removeCookie] = useCookies(["cookieCart"]);
 
     const [searchState, setSearchState] = useState({
@@ -20,10 +26,19 @@ function StateController(props) {
 
     const [savedCartItemsState, setSavedCartItemsState] = useState([]);
 
+    const daysToAdd = Math.floor(Math.random() * 9);
+    const date = new Date().addDays(daysToAdd);
+    const formatedDate = date.toLocaleDateString(undefined, {
+        weekday: "long",
+        month: "short",
+        day: "numeric",
+    });
+
     const [cartState, setCartState] = useState({
         cart_total: 0,
         cart_item_count: 0,
         cart_items: [],
+        delivery_date: formatedDate,
     });
 
     useEffect(() => {
@@ -43,6 +58,8 @@ function StateController(props) {
                 count = count + 1;
             });
         }
+
+        total = parseFloat(total.toFixed(2));
 
         setCartState({
             ...cartState,
@@ -93,12 +110,19 @@ function StateController(props) {
         if (userState.loggedIn) {
             console.log("logged in, getting cart");
             API.getCart(userState._id).then(({ data }) => {
-                let cartArray = data.cart_items;
-                if(cookies.cookieCart) {
+                let cartArray = [];
+                if (data) {
+                    cartArray = data.cart_items;
+                    if (cookies.cookieCart) {
+                        cartArray = cartArray.concat(cookies.cookieCart);
+                        removeCookie(["cookieCart"], { path: "/" });
+                    }
+                } else if (cookies.cookieCart) {
                     cartArray = cartArray.concat(cookies.cookieCart);
                     removeCookie(["cookieCart"], { path: "/" });
                 }
-                let uniqueArray = [...new Set(cartArray)]
+
+                let uniqueArray = [...new Set(cartArray)];
                 setCartIdState(uniqueArray);
             });
         } else {
@@ -226,7 +250,7 @@ function StateController(props) {
                 setCartState,
                 addProductToCart,
                 deleteProductFromCart,
-                saveCurrentCart
+                saveCurrentCart,
             }}
         >
             <SearchContext.Provider
