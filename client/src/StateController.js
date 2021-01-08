@@ -93,7 +93,13 @@ function StateController(props) {
         if (userState.loggedIn) {
             console.log("logged in, getting cart");
             API.getCart(userState._id).then(({ data }) => {
-                setCartIdState(data.cart_items);
+                let cartArray = data.cart_items;
+                if(cookies.cookieCart) {
+                    cartArray = cartArray.concat(cookies.cookieCart);
+                    removeCookie(["cookieCart"], { path: "/" });
+                }
+                let uniqueArray = [...new Set(cartArray)]
+                setCartIdState(uniqueArray);
             });
         } else {
             //call to get cart if someone is NOT logged in
@@ -166,15 +172,15 @@ function StateController(props) {
         } else {
             newCartArray = [productId];
         }
-
+        let uniqueArray = [...new Set(newCartArray)];
         if (userState.loggedIn) {
             console.log("adding to user cart");
-            API.saveCart(userState._id, newCartArray).then((data) => {
+            API.saveCart(userState._id, uniqueArray).then((data) => {
                 window.location.href = "/cart";
             });
         } else {
             removeCookie(["cookieCart"], { path: "/" });
-            setCookie("cookieCart", newCartArray, { path: "/" });
+            setCookie("cookieCart", uniqueArray, { path: "/" });
             window.location.href = "/cart";
         }
     };
@@ -220,6 +226,7 @@ function StateController(props) {
                 setCartState,
                 addProductToCart,
                 deleteProductFromCart,
+                saveCurrentCart
             }}
         >
             <SearchContext.Provider
