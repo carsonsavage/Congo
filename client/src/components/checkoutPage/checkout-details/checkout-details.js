@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../../util/userContext";
 import "./checkout-details.css";
-import { Segment, Button } from "semantic-ui-react";
+import { Segment, Button, Icon } from "semantic-ui-react";
 
 function CheckoutDetails() {
     const { userState } = useContext(UserContext);
@@ -25,55 +25,113 @@ function CheckoutDetails() {
         } = shippingAddress;
 
         return (
-            <>
+            <div className="clearfix">
                 <h2>Shipping Address</h2>
                 <hr />
                 <Segment.Group raised>
-                    <Segment id="shipping-address" clearing>
+                    <Segment id="shipping-address">
+                        <Button
+                            circular
+                            icon="edit"
+                            className="mini"
+                            id="edit-btn"
+                            floated="right"
+                        />
                         <h5>{name}</h5>
                         <p>{address1}</p>
                         <p>{address2}</p>
-                        <p>{city}, {state} {zipcode}</p>
+                        <p>
+                            {city}, {state} {zipcode}
+                        </p>
                     </Segment>
                 </Segment.Group>
 
-                <button
+                <Button
+                    content="Looks good"
+                    icon="right arrow"
+                    labelPosition="right"
+                    id="confirm-btn"
+                    className="mini green"
                     onClick={(e) => {
                         e.preventDefault();
                         setShippingState("completed");
                         setPaymentState("active");
                     }}
-                >
-                    Confirm
-                </button>
-            </>
+                    floated="right"
+                />
+            </div>
         );
     }
 
     function Billing() {
-        const {card_number, card_name, expire_month, expire_year} = paymentCard;
+        const {
+            card_number,
+            card_name,
+            expire_month,
+            expire_year,
+        } = paymentCard;
         return (
-            <>
-                <h2>Billing</h2>
-                <button
-                    onClick={(e) => {
-                        e.preventDefault();
-                        setPaymentState("completed");
-                        setConfirmState("active");
-                    }}
-                >
-                    Confirm
-                </button>
-                <button
+            <div className="clearfix">
+                <h2>Payment Method</h2>
+                <hr />
+
+                <div class="ui segment clearfix">
+                    <div className="row">
+                        <div className="col-3">
+                            <i className="credit card icon"></i>
+                            <span>
+                                {" "}
+                                Card ending in{" "}
+                                {card_number.toString().slice(-4)}
+                            </span>
+                        </div>
+                        <div className="col-3">
+                            <p>{card_name}</p>
+                        </div>
+
+                        <div className="col-3">
+                            <p>
+                                {expire_month} / {expire_year}
+                            </p>
+                        </div>
+                        <div className="col-3">
+                            <Button
+                                circular
+                                icon="edit"
+                                className="mini"
+                                id="edit-btn"
+                                floated="right"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <Button
+                    content="Hold up, go back"
+                    icon="left arrow"
+                    labelPosition="left"
+                    id="confirm-btn"
+                    className="mini red"
                     onClick={(e) => {
                         e.preventDefault();
                         setPaymentState("disabled");
                         setShippingState("active");
                     }}
-                >
-                    Go Back
-                </button>
-            </>
+                    floated="left"
+                />
+                <Button
+                    content="All good here"
+                    icon="right arrow"
+                    labelPosition="right"
+                    id="confirm-btn"
+                    className="mini green"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        setPaymentState("completed");
+                        setConfirmState("active");
+                    }}
+                    floated="right"
+                />
+            </div>
         );
     }
 
