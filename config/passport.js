@@ -25,13 +25,16 @@ passport.use(
                 },
                 (err, dbUser) => {
                     // If there's no user with the given email
+                    let passwordCheck = isValidPassword(dbUser.password, password);
+                    console.log(passwordCheck)
+
                     if (!dbUser) {
                         return done(null, false, {
                             message: "Incorrect email.",
                         });
                     }
                     // If there is a user with the given email, but the password the user gives us is incorrect
-                    else if (isValidPassword(dbUser.password, password)) {
+                    else if (passwordCheck) {
                         return done(null, false, {
                             message: "Incorrect password.",
                         });
