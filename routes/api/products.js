@@ -60,6 +60,10 @@ router.route("/details/:id").get(({ params }, res) => {
         });
 });
 
+router
+.route("/featurd")
+.get(productsController.findFeatured);
+
 router.route("/multiple-search").post(productsController.findMultipleId);
 
 module.exports = router;
