@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../../util/userContext";
 import "./checkout-details.css";
-import { Segment, Button, Image, Loader } from "semantic-ui-react";
+import { Segment, Button, Loader } from "semantic-ui-react";
 import CartContext from "../../../util/cartContext";
 import API from "../../../util/API.js";
 
 function CheckoutDetails() {
     const { userState } = useContext(UserContext);
-    const { cartState, cartIdState, setCartIdState, saveCurrentCart } = useContext(CartContext);
+    const { cartState, setCartIdState } = useContext(CartContext);
     const shippingCost = 2.21;
     const preTax = cartState.cart_total + shippingCost;
     const tax = parseInt((preTax * 0.08).toFixed(2));
