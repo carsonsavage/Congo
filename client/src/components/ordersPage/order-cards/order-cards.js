@@ -1,64 +1,97 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../../util/userContext.js";
+import OrderContext from "../../../util/orderContext.js";
+import { Popup, Icon } from "semantic-ui-react";
 import "./order-cards.css";
 
 function OrderCards() {
-    const { userState, handleUserInfoChange } = useContext(UserContext);
+    const { userState } = useContext(UserContext);
+    const { ordersState } = useContext(OrderContext);
+
+    function convertDate(date) {
+        const formatedDate = new Date(date).toLocaleDateString(undefined, {
+            weekday: "long",
+            month: "short",
+            day: "numeric",
+        });
+        return formatedDate;
+    }
 
     return (
         <>
-            {userState.orders ? (
-                userState.orders.map((order, index) => (
-                    <Link
-                        to={`/user/${userState._id}/order/${order.order_id}`}
-                        className="react-link"
-                    >
-                        <div class="ui segment order-segment" key={index}>
-                            <div className="row">
-                                <div className="col-3">
-                                    <p>Order #: </p>
-                                    <span>{order.order_id}</span>
-                                </div>
-                                <div className="col-3">
-                                    <p>Item Count: </p>
-                                    <span>{order.items.length}</span>
-                                </div>
-
-                                <div className="col-3"></div>
-                                <div className="col-3">
-                                    <p>Order total: </p>
-                                    <span>${order.total}</span>
-                                </div>
+            {ordersState.filtered_orders ? (
+                ordersState.filtered_orders.map((order, index) => (
+                    <div class="ui segment order-segment" key={index}>
+                        <div className="row">
+                            <div className="col-2">
+                                <p>Order #: </p>
+                                <Link
+                                    to={`/user/${userState._id}/order/${order._id}`}
+                                >
+                                    <span>{order.order_num}</span>
+                                </Link>
                             </div>
-                            <div className="row">
-                                <div className="col-2">
-                                    <div className="order-segment-img">
-                                        <img src="https://images-na.ssl-images-amazon.com/images/I/711Z3yoMpRL._SL1500_.jpg" />
-                                        <p>Dove mens wash</p>
-                                    </div>
-                                </div>
-                                <div className="col-2">
-                                    <div className="order-segment-img">
-                                        <img src="https://images-na.ssl-images-amazon.com/images/I/71mldsB9WHL._AC_SL1500_.jpg" />
-                                        <p>SolMo coconut Milk & Jasmine Scented Body</p>
-                                    </div>
-                                </div>
-                                <div className="col-2">
-                                    <div className="order-segment-img">
-                                        <img src="https://images-na.ssl-images-amazon.com/images/I/416Fv71ownL._AC_SL1000_.jpg" />
-                                        <p>Echo Frames | Smart Glasses</p>
-                                    </div>
-                                </div>
-                                <div className="col-2">
-                                    <div className="order-segment-img">
-                                        <img src="https://images-na.ssl-images-amazon.com/images/I/61iMqvGqulL._AC_SL1000_.jpg" />
-                                        <p>Small Table Lamp</p>
-                                    </div>
-                                </div>
+                            <div className="col-2">
+                                <p>Item Count: </p>
+                                <span>{order.items.length}</span>
+                            </div>
+
+                            <div className="col-2">
+                                <p>Order date: </p>
+                                <span>{convertDate(order.order_date)}</span>
+                            </div>
+                            <div className="col-2 float-left">
+                                <p>Shipping to: </p>
+                                <Popup
+                                    trigger={
+                                        <span>
+                                            {order.ship_address.name}{" "}
+                                            <Icon name="angle down" />
+                                        </span>
+                                    }
+                                    content={
+                                        <>
+                                            <p>{order.ship_address.address1}</p>
+                                            <p>{order.ship_address.address2}</p>
+                                            <p>
+                                                {order.ship_address.city},
+                                                {order.ship_address.state}{" "}
+                                                {order.ship_address.zipcode}
+                                            </p>
+                                        </>
+                                    }
+                                    position="bottom center"
+                                />
+                            </div>
+                            <div className="col-2"></div>
+                            <div className="col-2">
+                                <p>Order total: </p>
+                                <span>${order.total}</span>
                             </div>
                         </div>
-                    </Link>
+                        <div className="row">
+                            {order.items.map(
+                                ({ images, title, _id }, index) => {
+                                    return (
+                                        <div className="col-2">
+                                            <div className="order-segment-img">
+                                                <Link
+                                                    to={`/product/details/${_id}`}
+                                                    className="react-link"
+                                                >
+                                                    <img src={images[0]} />
+                                                </Link>
+                                                <p className="small-img-title">
+                                                    {title}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                            )}
+                        </div>
+                    </div>
                 ))
             ) : (
                 <div class="ui segment">
