@@ -254,7 +254,7 @@ function StateController(props) {
 
     const saveCurrentCart = () => {
         if (userState.loggedIn) {
-            API.saveCart(userState._id, cartIdState).then(({ data }) => {});
+            API.saveCart(userState._id, cartIdState).then(({ data }) => { });
         } else {
             removeCookie(["cookieCart"], { path: "/" });
             setCookie("cookieCart", cartIdState, { path: "/" });
@@ -306,6 +306,9 @@ function StateController(props) {
                         registerUser,
                         loginUser,
                         logoutUser,
+                        loginErrorState,
+                        signupErrorState,
+                        setSignupErrorState
                     }}
                 >
                     <OrderContext.Provider
