@@ -4,7 +4,7 @@ import './footer.css';
 function Footer(){
     return(
         <div className="footer">
-            <h3>footer</h3>
+            <img src = "https://i.imgur.com/WtADeG3.png" class= "footerimage"></img>
         </div>
     )
 };

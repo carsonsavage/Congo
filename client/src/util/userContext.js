@@ -8,8 +8,7 @@ const UserContext = React.createContext({
     phone: "",
     email: "",
     saved_address: [],
-    saved_payments: [],
-    orders: []
+    saved_payments: []
 });
 
 export default UserContext;

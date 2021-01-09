@@ -8,7 +8,7 @@ function OrderCards() {
 
     return (
         <>
-            {userState.orders.length > 0 ? (
+            {userState.orders ? (
                 userState.orders.map((order, index) => (
                     <Link
                         to={`/user/${userState._id}/order/${order.order_id}`}
