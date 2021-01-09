@@ -6,9 +6,9 @@ const db = require("../models");
 
 function isValidPassword(dbpassword, password) {
     bcrypt.compare(password, dbpassword, (err, result) => {
-        return result
+        console.log(result)
     });
-};
+}
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use(
@@ -25,22 +25,23 @@ passport.use(
                 },
                 (err, dbUser) => {
                     // If there's no user with the given email
-                    let passwordCheck = isValidPassword(dbUser.password, password);
-                    console.log(passwordCheck)
-
-                    if (!dbUser) {
-                        return done(null, false, {
-                            message: "Incorrect email.",
-                        });
+                    if(dbUser){
+                        console.log(isValidPassword(dbUser.password, password))
+                        
                     }
-                    // If there is a user with the given email, but the password the user gives us is incorrect
-                    else if (passwordCheck) {
-                        return done(null, false, {
-                            message: "Incorrect password.",
-                        });
-                    }
-                    // If none of the above, return the user
-                    return done(null, dbUser);
+                    // if (!dbUser) {
+                    //     return done(null, false, {
+                    //         message: "Incorrect email.",
+                    //     });
+                    // }
+                    // // If there is a user with the given email, but the password the user gives us is incorrect
+                    // else if (isValidPassword(dbUser.password, password)) {
+                    //     return done(null, false, {
+                    //         message: "Incorrect password.",
+                    //     });
+                    // }
+                    // // If none of the above, return the user
+                    // return done(null, dbUser);
                 }
             );
         }
