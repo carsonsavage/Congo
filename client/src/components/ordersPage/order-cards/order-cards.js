@@ -83,7 +83,9 @@ function OrderCards() {
                                                     <img src={images[0]} />
                                                 </Link>
                                                 <p className="small-img-title">
-                                                    {title}
+                                                    {title.length > 60
+                                                        ? title.substring(0, 60) + " ..."
+                                                        : title}
                                                 </p>
                                             </div>
                                         </div>
