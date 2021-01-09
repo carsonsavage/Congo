@@ -88,7 +88,46 @@ export default () => {
     ],
     "description": "From the land of notoriously bad weather comes famously great coffee. Almost 50 years ago, Sergio and Bruno Costa came to London and discovered their calling - to bring great tasting coffee to the tea drinkers of Great Britain. After blind-testing 112 variations of coffee the Costa Brothers discovered our first Signature Blend. Now Costa Coffee has arrived in the U.S. and whether you go for exceptionally smooth or delightfully bold, we’ve got you covered",
     "images": ["https://images-na.ssl-images-amazon.com/images/I/81lzzU0XPNL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81vmWMERDzL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91ALJS6oy5L._SL1500_.jpg"]
-  },];
+  },
+  {
+    "uid": "93W7rhFPmzboCyax1QeNmK",
+    "title": "RITZ Peanut Butter Sandwich Cracker Snacks and Cheese Sandwich Crackers, Snack Crackers Variety Pack, 32 Snack Packs",
+    "price": 12.79,
+    "quantity": 32,
+    "category": "food",
+    "keywords": [
+      "ritz crackers",
+      "cheese",
+      "peanut butter",
+      "snack"
+    ],
+    "features": [
+      "Portable, go-anywhere snack packs ",
+      "Cracker sandwiches have filling made with real cheese or real peanut butter",
+      "6 sandwiches per pack"
+    ],
+    "description": "16 RITZ Peanut Butter Sandwich Crackers snack packs and 16 RITZ Cheese Sandwich Crackers ",
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81gMrFSTe9L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81EvUsHVOYL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81tgayXQkrL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/810rzhF-DNL._SL1500_.jpg"]
+  },
+  {
+    "uid": "wAe8RoybBbKtUh1P1nTtai",
+    "title": "Quaker Instant Oatmeal, 4 Flavor Variety Pack, Individual Packets, 48 Count",
+    "price": 12.99,
+    "quantity": 48,
+    "category": "food",
+    "keywords": [
+      "instant oatmeal",
+      "4 flavors",
+      "breakfast"
+    ],
+    "features": [
+      "Oats",
+      "Variety Pack",
+      "Good Source of Fiber"
+    ],
+    "description": "Quaker Instant Oatmeal",
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/911XLyCu1RL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91NG6aef2cL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81vlXmG5opL._SL1500_.jpg"]
+  }];
 
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const chevronWidth = 30;
@@ -106,6 +145,7 @@ export default () => {
       >
       {array.map(({title, images, price})=>(
 <>
+<br></br>
 <div style={{ height:400, background: '#f0f7f0' }}>
 <h3>{title}</h3>
 <div className="product-img-wrapper" id="featuredimage"><img src ={images[0]} height="200">
