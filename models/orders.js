@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
+const orderid = require('order-id')('supersecret');
 
 const orderSchema = new mongoose.Schema({
     user_id: String,
     items: Array,
     ship_address: Object,
-    order_num: String,
+    order_num: { type: String, default: orderid.generate() },
     total: Number,
     order_date: { type: Date, default: Date.now },
 });
