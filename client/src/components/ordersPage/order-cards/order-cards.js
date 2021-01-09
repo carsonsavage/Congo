@@ -22,7 +22,7 @@ function OrderCards() {
         <>
             {ordersState.filtered_orders ? (
                 ordersState.filtered_orders.map((order, index) => (
-                    <div class="ui segment order-segment" key={index}>
+                    <div class="ui raised segment order-segment" key={index}>
                         <div className="row">
                             <div className="col-2">
                                 <p>Order #: </p>
