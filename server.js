@@ -28,7 +28,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/congo", {
+mongoose.connect("mongodb+srv://arampenthal:Batmanisc00l@cluster0.ehpyg.mongodb.net/Congo?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
