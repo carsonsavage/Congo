@@ -82,6 +82,9 @@ function StateController(props) {
         saved_payments: [],
     });
 
+    const [loginErrorState, setLoginErrorState] = useState("");
+    const [signupErrorState, setSignupErrorState] = useState("")
+
     const [editableUserState, setEditableUserState] = useState(userState);
 
     const [ordersState, setOrdersState] = useState({
@@ -212,11 +215,12 @@ function StateController(props) {
     const loginUser = (user) => {
         API.login(user)
             .then(({ data }) => {
+                setLoginErrorState("");
                 setUserState({ ...userState, loggedIn: true, ...data });
                 window.location.href = "/";
             })
             .catch((err) => {
-                console.log(err);
+                setLoginErrorState("Invalid Username/password");
             });
     };
 
