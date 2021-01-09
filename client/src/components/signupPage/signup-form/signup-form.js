@@ -355,7 +355,7 @@ export default function Login() {
                     </Form.Group>
                 </Form.Row>
 
-                <Button block size="lg" type="submit">
+                <Button block size="lg" type="submit" id="signup-btn">
                     Signup
                 </Button>
             </Form>
