@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Form, Col } from "react-bootstrap";
 import BootstrapBtn from "react-bootstrap/Button";
-import { Button, Header, Icon, Modal } from 'semantic-ui-react'
 import "./signup-form.css";
-import UserContext from '../../../util/userContext.js';
-import API from '../../../util/API.js';
+import UserContext from "../../../util/userContext.js";
+import API from "../../../util/API.js";
 
 export default function Login() {
-    const [open, setOpen] = useState(false)
-    const { registerUser, signupErrorState, setSignupErrorState } = useContext(UserContext);
+    const { registerUser, signupErrorState, setSignupErrorState } = useContext(
+        UserContext
+    );
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -41,7 +41,7 @@ export default function Login() {
     }, [confirmPassword]);
 
     useEffect(() => {
-        setAddress({ ...address, name: `${firstName} ${lastName}` })
+        setAddress({ ...address, name: `${firstName} ${lastName}` });
     }, [firstName, lastName]);
 
     function handleSubmit(event) {
@@ -60,12 +60,12 @@ export default function Login() {
             API.checkUser(registerObj.email).then(({ data }) => {
                 if (data[0]) {
                     setSignupErrorState("Email already in use");
-                    setOpen(true);
                 } else {
-                    registerUser(registerObj)
-                        .then((res) => { window.location.href = "/login" });
+                    registerUser(registerObj).then((res) => {
+                        window.location.href = "/login";
+                    });
                 }
-            })
+            });
         }
     }
 
@@ -107,7 +107,6 @@ export default function Login() {
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
-                        <div>{signupErrorState}</div>
                     </Col>
                     <Col>
                         <Form.Label>Phone number</Form.Label>
@@ -364,29 +363,10 @@ export default function Login() {
                         </Form.Row>
                     </Form.Group>
                 </Form.Row>
-
+                <div className="error-statement">{signupErrorState}</div>
                 <BootstrapBtn block size="lg" type="submit" id="signup-btn">
                     Signup
                 </BootstrapBtn>
-                <Modal
-                    basic
-                    onClose={(e) => { e.preventDefault(); setOpen(false) }}
-                    open={open}
-                    size='small'
-                >
-                    <Header icon>
-                        <Icon name='archive' />
-                    Uh Oh. Something went wrong...
-                    </Header>
-                    <Modal.Content>
-                        <p>{signupErrorState}</p>
-                    </Modal.Content>
-                    <Modal.Actions>
-                        <Button color='green' inverted onClick={(e) => { e.preventDefault(); setOpen(false) }}>
-                            <Icon name='checkmark' /> Try again
-                        </Button>
-                    </Modal.Actions>
-                </Modal>
             </Form>
         </div>
     );
