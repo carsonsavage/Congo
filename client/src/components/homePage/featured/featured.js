@@ -9,6 +9,7 @@ export default () => {
 
     useEffect(() => {
         API.getFeatured().then(({ data }) => {
+          console.log(data)
             setFeaturedProducts(data);
         });
     }, []);
