@@ -17,6 +17,10 @@ export default {
         return axios.get("/api/user");
     },
 
+    checkUser: (email) => {
+        return axios.post('/api/user/check', { email: email })
+    },
+
     logout: () => {
         return axios.get("/api/user/logout");
     },
@@ -39,7 +43,7 @@ export default {
         return axios.get(`/api/orders/${userId}`);
     },
 
-    createOrder: (orderObj)=> {
+    createOrder: (orderObj) => {
         return axios.post(`/api/orders`, orderObj)
     },
 
