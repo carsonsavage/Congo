@@ -1,19 +1,25 @@
-.react-link:link{
+.react-link:link {
     text-decoration: none;
     color: inherit;
 }
 
-.react-link:hover{
+.react-link:hover {
     text-decoration: none;
     color: inherit;
 }
 
-.react-link:visited{
+.react-link:visited {
     text-decoration: none;
     color: inherit;
 }
 
-
-.ui.container{
+.ui.container {
     width: 80%;
+}
+
+.error-statement {
+    color: red;
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-family: "Yanone Kaffeesatz", sans-serif;
 }
