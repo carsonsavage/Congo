@@ -9,7 +9,7 @@ export default () => {
 
     useEffect(() => {
         API.getFeatured().then(({ data }) => {
-          console.log(data)
+            console.log(data);
             setFeaturedProducts(data);
         });
     }, []);
@@ -28,7 +28,7 @@ export default () => {
                 outsideChevron
                 chevronWidth={chevronWidth}
             >
-                {featuredProducts.map(({_id, title, images, price }) => (
+                {featuredProducts.map(({ _id, title, images, price }) => (
                     <>
                         <br></br>
                         <div style={{ height: 400, background: "#f0f7f0" }}>
@@ -45,7 +45,7 @@ export default () => {
                                 </p>
                             </div>
                             <div className="cartbutton">
-                                <AddToCartBtn id={_id}/>
+                                <AddToCartBtn id={_id} />
                             </div>
                         </div>
                     </>
