@@ -14,7 +14,7 @@ function Header() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Brand href="#home" className="brand">
                 <Link to="/" className="react-link">
-                    Congo
+                    <img src="./logo.svg" className="header-logo" />
                 </Link>
             </Navbar.Brand>
             <div className="search-bar">
