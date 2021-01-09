@@ -7,14 +7,66 @@
 }
 
 .title {
-    height: 700px;
+    max-height: 700px;
 }
 
 .product-cta {
-    background-color: green;
-    height: 700px;
+    border: green 1px solid;
+    padding: 10px;
 }
 
 .inline {
     display: inline;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.price{
+    text-align: center;
+    width: 70px;
+}
+
+hr{
+    background-color: green;
+}
+
+.select{
+    width: 60px;
+}
+
+.col#description{
+    margin-top: 10px;
+}
+
+.addToCartBtn{
+    width: 200px;
+    margin-top: 50px;
+}
+
+.cta-divs{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.cta-divs.addtocart{
+    margin-top: 70px;
+}
+
+.inStock{
+    color: green;
+}
+
+.limitedStock{
+    color: orange;
+}
+
+.outOfStock{
+    color: red;
+}
+
+#back-to-results{
+    margin-top: 10px;
+    width: 200px;
 }

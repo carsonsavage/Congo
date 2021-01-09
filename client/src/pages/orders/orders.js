@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./orders.css";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/footer";
@@ -6,11 +6,17 @@ import Wrapper from "../../components/wrapper/wrapper";
 import OrderSearch from "../../components/ordersPage/order-search/order-search.js";
 import OrderDisplay from "../../components/ordersPage/prev-orders/prev-orders.js";
 import UserContext from "../../util/userContext.js";
+import OrderContext from "../../util/orderContext.js";
 
 function Orders() {
-
     const { userState, handleUserInfoChange } = useContext(UserContext);
+    const { ordersState, loadOrders } = useContext(OrderContext);
 
+    useEffect(() => {
+        if (userState.loggedIn) {
+            loadOrders(userState._id);
+        }
+    }, []);
     return (
         <>
             <Wrapper>
@@ -22,7 +28,6 @@ function Orders() {
                 </div>
                 <hr />
                 {userState.loggedIn ? (
-
                     <>
                         <OrderSearch />
                         <OrderDisplay />

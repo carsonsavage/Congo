@@ -2,21 +2,74 @@ import React, { useState, useEffect } from "react";
 import CartContext from "./util/cartContext.js";
 import SearchContext from "./util/searchContext.js";
 import UserContext from "./util/userContext.js";
+import OrderContext from "./util/orderContext.js";
 import API from "./util/API";
+import { useCookies } from "react-cookie";
 
 function StateController(props) {
+    Date.prototype.addDays = function (days) {
+        var date = new Date(this.valueOf());
+        date.setDate(date.getDate() + days);
+        return date;
+    };
+
+    const [cookies, setCookie, removeCookie] = useCookies(["cookieCart"]);
+
     const [searchState, setSearchState] = useState({
         search_query: "",
         search_category: "",
         search_results: [],
         filtered_results: [],
+        product_result: {},
+    });
+
+    const [cartIdState, setCartIdState] = useState([]);
+
+    const [savedCartItemsState, setSavedCartItemsState] = useState([]);
+
+    const daysToAdd = Math.floor(Math.random() * 9);
+    const date = new Date().addDays(daysToAdd);
+    const formatedDate = date.toLocaleDateString(undefined, {
+        weekday: "long",
+        month: "short",
+        day: "numeric",
     });
 
     const [cartState, setCartState] = useState({
         cart_total: 0,
         cart_item_count: 0,
         cart_items: [],
+        delivery_date: formatedDate,
     });
+
+    useEffect(() => {
+        saveCurrentCart();
+        //call to get multiple products
+        API.getMultipleProducts(cartIdState).then(({ data }) => {
+            setSavedCartItemsState(data);
+        });
+        //set into saved cartitemstate
+    }, [cartIdState]);
+
+    useEffect(() => {
+        let total = 0;
+        let count = 0;
+        if (savedCartItemsState[0]) {
+            savedCartItemsState.forEach((product) => {
+                total = total + product.price;
+                count = count + 1;
+            });
+        }
+
+        total = parseFloat(total.toFixed(2));
+
+        setCartState({
+            ...cartState,
+            cart_total: total,
+            cart_item_count: count,
+            cart_items: savedCartItemsState,
+        });
+    }, [savedCartItemsState]);
 
     const [userState, setUserState] = useState({
         loggedIn: false,
@@ -29,9 +82,16 @@ function StateController(props) {
         saved_payments: [],
     });
 
+    const [loginErrorState, setLoginErrorState] = useState("");
+    const [signupErrorState, setSignupErrorState] = useState("")
+
     const [editableUserState, setEditableUserState] = useState(userState);
 
-    const [ordersState, setOrdersState] = useState({});
+    const [ordersState, setOrdersState] = useState({
+        orders: [],
+        filtered_orders: [],
+        order_query: "",
+    });
 
     useEffect(() => {
         setEditableUserState(userState);
@@ -57,16 +117,76 @@ function StateController(props) {
     const loadCart = () => {
         //call to get cart if someone is logged in
         if (userState.loggedIn) {
-            console.log("logged in, getting cart");
+            API.getCart(userState._id).then(({ data }) => {
+                let cartArray = [];
+                if (data) {
+                    cartArray = data.cart_items;
+                    if (cookies.cookieCart) {
+                        cartArray = cartArray.concat(cookies.cookieCart);
+                        removeCookie(["cookieCart"], { path: "/" });
+                    }
+                } else if (cookies.cookieCart) {
+                    cartArray = cartArray.concat(cookies.cookieCart);
+                    removeCookie(["cookieCart"], { path: "/" });
+                }
+
+                let uniqueArray = [...new Set(cartArray)];
+                setCartIdState(uniqueArray);
+            });
         } else {
             //call to get cart if someone is NOT logged in
-            console.log("not logged in, getting cookie cart");
+            if (cookies.cookieCart) {
+                setCartIdState(cookies.cookieCart);
+            }
         }
     };
 
     const loadOrders = (userId) => {
         //call to get orders by userId
-        //set into ordersState
+        API.getOrders(userId)
+            //set into ordersState
+            .then(({ data }) => {
+                setOrdersState({
+                    ...ordersState,
+                    orders: [...data],
+                    filtered_orders: [...data],
+                });
+            });
+    };
+
+    const handleOrderSearchChange = (event) => {
+        setOrdersState({ ...ordersState, order_query: event.target.value });
+    };
+
+    useEffect(() => {
+        if (ordersState.order_query) {
+            let filteredArray = [];
+            ordersState.orders.forEach((order) => {
+                order.items.forEach((item) => {
+                    if (
+                        item.title
+                            .toUpperCase()
+                            .includes(ordersState.order_query.toUpperCase())
+                    ) {
+                        filteredArray.push(order);
+                    }
+                });
+            });
+
+            setOrdersState({ ...ordersState, filtered_orders: filteredArray });
+        } else {
+            //set orders array
+            setOrdersState({
+                ...ordersState,
+                filtered_orders: ordersState.orders,
+            });
+        }
+    }, [ordersState.order_query]);
+
+    const lookupProduct = (productId) => {
+        API.lookupProduct(productId).then(({ data }) => {
+            setSearchState({ ...searchState, product_result: data[0] });
+        });
     };
 
     const handleSearchChange = (event) => {
@@ -95,11 +215,12 @@ function StateController(props) {
     const loginUser = (user) => {
         API.login(user)
             .then(({ data }) => {
+                setLoginErrorState("");
                 setUserState({ ...userState, loggedIn: true, ...data });
                 window.location.href = "/";
             })
             .catch((err) => {
-                console.log(err);
+                setLoginErrorState("Invalid Username/password");
             });
     };
 
@@ -111,9 +232,43 @@ function StateController(props) {
         });
     };
 
+    const addProductToCart = (productId) => {
+        let newCartArray;
+        if (cartIdState) {
+            newCartArray = cartIdState;
+            newCartArray.push(productId);
+        } else {
+            newCartArray = [productId];
+        }
+        let uniqueArray = [...new Set(newCartArray)];
+        if (userState.loggedIn) {
+            API.saveCart(userState._id, uniqueArray).then((data) => {
+                window.location.href = "/cart";
+            });
+        } else {
+            removeCookie(["cookieCart"], { path: "/" });
+            setCookie("cookieCart", uniqueArray, { path: "/" });
+            window.location.href = "/cart";
+        }
+    };
+
+    const saveCurrentCart = () => {
+        if (userState.loggedIn) {
+            API.saveCart(userState._id, cartIdState).then(({ data }) => { });
+        } else {
+            removeCookie(["cookieCart"], { path: "/" });
+            setCookie("cookieCart", cartIdState, { path: "/" });
+        }
+    };
+
+    const deleteProductFromCart = (productId) => {
+        let deletedArray = [...cartIdState];
+        deletedArray.splice(0, 1);
+        setCartIdState(deletedArray);
+    };
+
     const searchProducts = (category, query) => {
         API.searchProducts(category, query).then(({ data }) => {
-            console.log(data);
             setSearchState({
                 ...searchState,
                 search_results: data,
@@ -123,9 +278,24 @@ function StateController(props) {
     };
 
     return (
-        <CartContext.Provider value={{ cartState, setCartState }}>
+        <CartContext.Provider
+            value={{
+                cartState,
+                setCartState,
+                addProductToCart,
+                deleteProductFromCart,
+                saveCurrentCart,
+                cartIdState,
+                setCartIdState,
+            }}
+        >
             <SearchContext.Provider
-                value={{ searchState, handleSearchChange, searchProducts }}
+                value={{
+                    searchState,
+                    handleSearchChange,
+                    searchProducts,
+                    lookupProduct,
+                }}
             >
                 <UserContext.Provider
                     value={{
@@ -136,13 +306,24 @@ function StateController(props) {
                         registerUser,
                         loginUser,
                         logoutUser,
+                        loginErrorState,
+                        signupErrorState,
+                        setSignupErrorState
                     }}
                 >
-                    {props.children}
+                    <OrderContext.Provider
+                        value={{
+                            ordersState,
+                            loadOrders,
+                            handleOrderSearchChange,
+                        }}
+                    >
+                        {props.children}
+                    </OrderContext.Provider>
                 </UserContext.Provider>
             </SearchContext.Provider>
         </CartContext.Provider>
     );
-};
+}
 
 export default StateController;
