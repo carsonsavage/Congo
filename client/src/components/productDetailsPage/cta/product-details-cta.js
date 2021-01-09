@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Icon, Label } from "semantic-ui-react";
 import { Form, Row, Col } from "react-bootstrap";
-import AddToCartBtn from './add-to-cart-btn.js';
+import AddToCartBtn from "./add-to-cart-btn.js";
 
 function ProductCta({ id, price, quantity }) {
     Date.prototype.addDays = function (days) {
@@ -17,6 +17,21 @@ function ProductCta({ id, price, quantity }) {
         month: "short",
         day: "numeric",
     });
+
+    function generateOptions(count) {
+        let i;
+        let genQty = [];
+        for (i = 0; i < count; i++) {
+            genQty.push(i + 1);
+        }
+        return (
+            <>
+                {genQty.map((num, index) => (
+                    <option key={index}>{num}</option>
+                ))}
+            </>
+        );
+    }
 
     return (
         <div className="cart-cta-div">
@@ -40,15 +55,11 @@ function ProductCta({ id, price, quantity }) {
                     size="sm"
                     className="select float-left"
                 >
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    {generateOptions(quantity)}
                 </Form.Control>
             </div>
             <div className="cta-divs addtocart">
-                <AddToCartBtn id={id}/>
+                <AddToCartBtn id={id} />
                 <Icon name="lock" /> Secure transaction
             </div>
         </div>
