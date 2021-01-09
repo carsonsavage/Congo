@@ -18,7 +18,7 @@
       "HEALTHY SNACKS AND JUICES"
     ],
     "description": "Dole Pineapple Slices, 20 Oz. Founded in Hawaii in 1851, Dole is the world's largest producer and marketer of high-quality fresh fruit and fresh vegetables. The Dole brand means the finest, high-quality products. Dole will continue to meet customers' expectations by consistently providing products that meet the highest standard - the Dole standard. Dole is focused on four pillars of sustainability in all of its operations: water management, carbon footprint, soil conservation and waste reduction. For Dole, anything less is unacceptable. You already know it’s important to have at least 5 servings of fruit and vegetables a day. With Dole Jarred Fruit, it’s easier than ever to get your daily fruit. There’s no cutting, peeling or mess. Just open the jar and taste the goodness of ready-to-eat fruit.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/61UxD42OI%2BL._SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/81K9TkNtjPL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81HDovdRFcL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/61UxD42OI%2BL._SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81K9TkNtjPL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81HDovdRFcL._SL1500_.jpg"]
   },
   {
     "uid": "7aoNkgSg71nPkmFa43f2kg",
@@ -39,7 +39,7 @@
       "NO Artificial Dyes"
     ],
     "description": "Kraft Thick and Creamy Mac and Cheese Dinner is a convenient boxed dinner. A delicious twist on a classic comfort food, kids and adults love the rich taste of mac pasta mixed with thick and creamy cheddar cheesy goodness. This easy dinner includes macaroni pasta and thick'n creamy cheddar cheese sauce mix, so you just need milk and margarine or butter to make a tasty lunch or dinner. With no artificial flavors, no artificial preservatives and no artificial dyes, thick mac and cheese always makes a great family dinner choice. Preparing boxed mac and cheese is a breeze just boil the noodles for 8 to 10 minutes, drain the water and stir in the cheese mix, milk and margarine or butter. One 7.25 ounce box makes about 3 servings.",
-    "image": "https://m.media-amazon.com/images/I/61z0mD9L7OL.jpg, https://images-na.ssl-images-amazon.com/images/I/71aU4h6BUXL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81-DU7chJsL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71ekyOy8JoL._SL1500_.jpg"
+    "images": ["https://m.media-amazon.com/images/I/61z0mD9L7OL.jpg", "https://images-na.ssl-images-amazon.com/images/I/71aU4h6BUXL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81-DU7chJsL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71ekyOy8JoL._SL1500_.jpg"]
   },
   {
     "uid": "878VDBbxLSqBU9WGvU95ZY",
@@ -60,7 +60,7 @@
       "Better than your grandma's"
     ],
     "description": "Our bakers combine a traditional artisan bakery with a wholesome and creative touch. Our breads, cakes, cookies, pies and more are made with unbleached, unbromated flour — and we don’t use hydrogenated fats, high-fructose corn syrup or artificial sweeteners.",
-    "image": "https://previews.123rf.com/images/serezniy/serezniy1812/serezniy181230016/113476627-tasty-homemade-apple-pie-on-white-background.jpg, https://images-na.ssl-images-amazon.com/images/I/71NCM2fGduL._SL1024_.jpg, https://images-na.ssl-images-amazon.com/images/I/516cYU25zgL.jpg"
+    "images": ["https://previews.123rf.com/images/serezniy/serezniy1812/serezniy181230016/113476627-tasty-homemade-apple-pie-on-white-background.jpg", "https://images-na.ssl-images-amazon.com/images/I/71NCM2fGduL._SL1024_.jpg", "https://images-na.ssl-images-amazon.com/images/I/516cYU25zgL.jpg"]
   },
   {
     "uid": "2wbEMpDB9wmXWRWK3YP9JT",
@@ -81,7 +81,7 @@
       "Real pizza taste and flavor"
     ],
     "description": "Why have just another frozen pizza when you could have Red Baron Classic Pizza?? Red Baron Classic Pizza is the best selling premium topped pizza in the nation. Enjoy the generous toppings that feature 100% real cheeses, premium vegetables and pre-cooked meats. These premium toppings sit on a traditional crust that bakes up crispy every time. Enjoy the best in premium pizza with Red Baron Classic.",
-    "image": "https://www.redbaron.com/images/multi-classic/img-products-multi-classic-4-cheese_703.jpg, https://images-na.ssl-images-amazon.com/images/I/71FAL%2BQscTL._SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/71xf04K%2Bw4L._SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/71lxhn0K12L._SL1000_.jpg"
+    "images": ["https://www.redbaron.com/images/multi-classic/img-products-multi-classic-4-cheese_703.jpg", "https://images-na.ssl-images-amazon.com/images/I/71FAL%2BQscTL._SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71xf04K%2Bw4L._SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71lxhn0K12L._SL1000_.jpg"]
   },
   {
     "uid": "9GNrc1e5uPSbyTDUqyuh4z",
@@ -103,7 +103,7 @@
       "No trans fat, no saturated fat, no cholesterol"
     ],
     "description": "Uncle Ben's Whole Grain Medley: Brown & Wild Rice is a savory mix of brown rice, wild rice and red rice, perfectly seasoned with herbs and spices. This flavorful whole grain medley gives your family the goodness of 100% whole grains and meets the whole grains full daily requirement, in just one serving. Uncle Ben's can help you with a great dinner solution, ready in no time. If you’ve got 90 seconds, then you have the beginnings of a great meal. Plus, the convenient microwaveable pouch eliminates prep and cleanup, so cooking is even quicker and easier. ‡USDA Dietary Guidelines recommend eating 3 servings (48g) or more of whole grains daily.",
-    "image": "https://fa74d61d848a20b729bb-0251b36b713060ab3e0e8321940e01ff.ssl.cf2.rackcdn.com/0054800233350_CF_default_default_large.jpeg"
+    "images": ["https://fa74d61d848a20b729bb-0251b36b713060ab3e0e8321940e01ff.ssl.cf2.rackcdn.com/0054800233350_CF_default_default_large.jpeg"]
   },
   {
     "uid": "wAe8RoybBbKtUh1P1nKkia",
@@ -124,7 +124,7 @@
       "CHOOSE YOUR BREW: How many cups of coffee does it take for you to take on the day? No judgement here. Whether your favorite method is filtered drip, French press, or pour-over Costa Coffee can create the perfect cup"
     ],
     "description": "From the land of notoriously bad weather comes famously great coffee. Almost 50 years ago, Sergio and Bruno Costa came to London and discovered their calling - to bring great tasting coffee to the tea drinkers of Great Britain. After blind-testing 112 variations of coffee the Costa Brothers discovered our first Signature Blend. Now Costa Coffee has arrived in the U.S. and whether you go for exceptionally smooth or delightfully bold, we’ve got you covered",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81lzzU0XPNL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81vmWMERDzL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91ALJS6oy5L._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81lzzU0XPNL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81vmWMERDzL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91ALJS6oy5L._SL1500_.jpg"]
   },
   {
     "uid": "93W7rhFPmzboCyax1QeNmK",
@@ -144,7 +144,7 @@
       "6 sandwiches per pack"
     ],
     "description": "16 RITZ Peanut Butter Sandwich Crackers snack packs and 16 RITZ Cheese Sandwich Crackers ",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81gMrFSTe9L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81EvUsHVOYL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81tgayXQkrL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/810rzhF-DNL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81gMrFSTe9L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81EvUsHVOYL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81tgayXQkrL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/810rzhF-DNL._SL1500_.jpg"]
   },
   {
     "uid": "wAe8RoybBbKtUh1P1nTtai",
@@ -163,7 +163,7 @@
       "Good Source of Fiber"
     ],
     "description": "Quaker Instant Oatmeal",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/911XLyCu1RL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91NG6aef2cL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81vlXmG5opL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/911XLyCu1RL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91NG6aef2cL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81vlXmG5opL._SL1500_.jpg"]
   },
   {
     "uid": "7aoNkgSg71nPkmFa43h1nk",
@@ -184,7 +184,7 @@
       "Full on flavor"
     ],
     "description": "Jack Link’s Beef Jerky Variety Pack Includes Original and Teriyaki Beef Jerky, Good Source of Protein, 96% Fat Free, No Added MSG, (9 Count of 1.25 oz Bags) 11.25 oz",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81aIHnTWATL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91M3jKLR%2BDL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/A1zXhq9YEML._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81Vg3d%2BhiEL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81aIHnTWATL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91M3jKLR%2BDL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/A1zXhq9YEML._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81Vg3d%2BhiEL._SL1500_.jpg"]
   },
   {
     "uid": "7aoNkgSg71nPkmFa43g5ft",
@@ -205,14 +205,14 @@
       "HEALTHY SNACK"
     ],
     "description": "EPIC Smoked Salmon Strips",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81P4eLhHq3L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/713smHw10YL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81Mpke9QRKL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81P4eLhHq3L._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81P4eLhHq3L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/713smHw10YL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81Mpke9QRKL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81P4eLhHq3L._SL1500_.jpg"]
   },
   {
     "uid": "7aoNkgSg71nPkmFa43f7tr",
     "title": "Sony NEW Alpha 7S III Full-frame Interchangeable Lens Mirrorless Camera",
     "price": 3498,
-    "quantity": 41,
-    "category": "electronic",
+    "quantity": 4,
+    "category": "electronics",
     "keywords": [
       "sony",
       "camera",
@@ -226,14 +226,14 @@
       "4k video"
     ],
     "description": "12.1MP1 Exmor R sensor, optimized for 4K, sensitivity and speed, New BIONZ XR processing engine delivers 8x more processing power2, Low noise images w/ ISO up to 409,6003 and 15+stop dynamic range4, Up to 4K 120p5 10-bit 4:2:2 and full pixel readout in all rec. modes, Up to 4K 120p5 in XAVC S (AVC), XAVC HS (HEVC) and XAVC S-I (All-I), Video capture resolution: 4K UHD 2160p",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81MpiBUkqsL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81SBc3iJvlL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71q-YoZLFjL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71ySlA9VH6L._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71HCW7PaCiL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81MpiBUkqsL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81SBc3iJvlL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71q-YoZLFjL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71ySlA9VH6L._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71HCW7PaCiL._AC_SL1500_.jpg"]
   },
   {
     "uid": "7aoNkgSg71nPkmFa43vbnk",
     "title": "New Apple iPhone 12 Pro (128GB, Graphite) [Locked] + Carrier Subscription",
     "price": 999,
     "quantity": 31,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "iphone 12 pro",
       "128 gb",
@@ -247,14 +247,14 @@
       "free shipping"
     ],
     "description": "OFFER INCLUDES: An Apple iPhone and a wireless plan with unlimited data/talk/text, WIRELESS PLAN: Unlimited talk, text, and data with mobile hotspot, nationwide coverage, and international reach. No long-term contract required, PROGRAM DETAILS: When you add this offer to cart, it will reflect 3 items: the iPhone, SIM kit, and carrier subscription, Ceramic Shield, tougher than any smartphone glass, A14 Bionic chip, the fastest chip ever in a smartphone",
-    "image": "https://m.media-amazon.com/images/I/71YlH-4MUQL._FMwebp__.jpg, https://m.media-amazon.com/images/I/81SH4gFInmL._FMwebp__.jpg, https://m.media-amazon.com/images/I/81JrQqgi0mL._FMwebp__.jpg"
+    "images": ["https://m.media-amazon.com/images/I/71YlH-4MUQL._FMwebp__.jpg", "https://m.media-amazon.com/images/I/81SH4gFInmL._FMwebp__.jpg", "https://m.media-amazon.com/images/I/81JrQqgi0mL._FMwebp__.jpg"]
   },
   {
     "uid": "7aoNkgSg71nPkmFa43jl2l",
     "title": "New Apple iPhone 12 Pro Max (256GB, Graphite) [Locked] + Carrier Subscription",
     "price": 1199,
     "quantity": 21,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "iphone 12 pro max",
       "256 gb",
@@ -268,14 +268,14 @@
       "free shipping"
     ],
     "description": "OFFER INCLUDES: An Apple iPhone and a wireless plan with unlimited data/talk/text, WIRELESS PLAN: Unlimited talk, text, and data with mobile hotspot, nationwide coverage, and international reach. No long-term contract required, PROGRAM DETAILS: When you add this offer to cart, it will reflect 3 items: the iPhone, SIM kit, and carrier subscription, Ceramic Shield, tougher than any smartphone glass, A14 Bionic chip, the fastest chip ever in a smartphone",
-    "image": "https://m.media-amazon.com/images/I/71XXJC7V8tL._FMwebp__.jpg"
+    "images": ["https://m.media-amazon.com/images/I/71XXJC7V8tL._FMwebp__.jpg"]
   },
   {
     "uid": "7aoNkgSg71nPkmFa43km3c",
     "title": "New Apple iPhone 12 (64GB, Blue) [Locked] + Carrier Subscription",
     "price": 829,
     "quantity": 11,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "iphone 12 mini",
       "64 gb",
@@ -289,11 +289,11 @@
       "free shipping"
     ],
     "description": "OFFER INCLUDES: An Apple iPhone and a wireless plan with unlimited data/talk/text, WIRELESS PLAN: Unlimited talk, text, and data with mobile hotspot, nationwide coverage, and international reach. No long-term contract required, PROGRAM DETAILS: When you add this offer to cart, it will reflect 3 items: the iPhone, SIM kit, and carrier subscription, Ceramic Shield, tougher than any smartphone glass, A14 Bionic chip, the fastest chip ever in a smartphone",
-    "image": "https://m.media-amazon.com/images/I/71W6wUKOgtL._FMwebp__.jpg, https://m.media-amazon.com/images/I/81B2N8LajEL._FMwebp__.jpg, https://m.media-amazon.com/images/I/81cB4-9KczL._FMwebp__.jpg"
+    "images": ["https://m.media-amazon.com/images/I/71W6wUKOgtL._FMwebp__.jpg", "https://m.media-amazon.com/images/I/81B2N8LajEL._FMwebp__.jpg", "https://m.media-amazon.com/images/I/81cB4-9KczL._FMwebp__.jpg"]
   },
   {
     "uid": "7aoNkgSg71nPkmFa43lxst",
-    "title": "Apple AirPods Pro",
+    "title": "Apple AirPods Pros",
     "price": 199,
     "quantity": 12,
     "category": "electronic",
@@ -309,14 +309,14 @@
       "free shipping"
     ],
     "description": "Active noise cancellation for immersive sound, Transparency mode for hearing and connecting with the world around you, Three sizes of soft, tapered silicone tips for a customizable fit, Sweat and water resistant, Adaptive EQ automatically tunes music to the shape of your ear, Easy setup for all your Apple devices, Quick access to Siri by saying “Hey Siri”, The Wireless Charging Case delivers more than 24 hours of battery life",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71llQwico7L._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81nuOe%2BXCtL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71bhWgQK-cL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71llQwico7L._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81nuOe%2BXCtL._AC_SL1500_.jpg"]
   },
   {
     "uid": "7aoNkgSg71nPkmFa43fres",
     "title": "New Apple MacBook Pro (16-inch, 16GB RAM, 1TB Storage, 2.3GHz Intel Core i9) - Space Gray",
     "price": 2549,
     "quantity": 13,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "MacBook",
       "16 inch retina display",
@@ -328,14 +328,14 @@
       "free shipping"
     ],
     "description": "Ninth-generation 8-Core Intel Core i9 Processor, Stunning 16-inch Retina Display with True Tone technology, Touch Bar and Touch ID, AMD Radeon Pro 5500M Graphics with GDDR6 memory, Ultrafast SSD, Intel UHD Graphics 630, Six-speaker system with force-cancelling woofers, Four Thunderbolt 3 (USB-C) ports, Up to 11 hours of battery life, 802.11AC Wi-Fi",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/718Pz9bYxWL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81aot0jAfFL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81mJ-Mdc-OL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/718Pz9bYxWL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/718Pz9bYxWL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81aot0jAfFL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81mJ-Mdc-OL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/718Pz9bYxWL._AC_SL1500_.jpg"]
   },
   {
     "uid": "hbYjm7jfpzWecm3ns8eDG4",
     "title": "All-new Echo (4th Gen) | With premium sound, smart home hub, and Alexa | Glacier White",
     "price": 99.99,
     "quantity": 14,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "Echo",
       "features Alexa",
@@ -347,14 +347,14 @@
       "free shipping"
     ],
     "description": "New look, new sound - Echo delivers clear highs, dynamic mids, and deep bass for rich, detailed sound that automatically adapts to any room. Voice control your entertainment - Stream songs from Amazon Music, Apple Music, Spotify, SiriusXM, and more. Plus listen to radio stations, podcasts, and Audible audiobooks. Ready to help - Ask Alexa to play music, answer questions, play the news, check the weather, set alarms, control compatible smart home devices, and more. Smart home made simple - With the built-in hub, easily set up compatible Zigbee devices or Ring Smart Lighting products (coming soon) to voice control lights, locks, and sensors. Fill your home with sound - With multi-room music, play synchronized music across Echo devices in different rooms. Or pair your Echo with compatible Fire TV devices to feel scenes come to life with home theater audio. Connect with others - Call almost anyone hands-free. Instantly drop in on other rooms or announce to the whole house that dinner's ready. Designed to protect your privacy - Built with multiple layers of privacy protections and controls, including a microphone off button that electronically disconnects the microphones.",
-    "image": "https://m.media-amazon.com/images/I/61lO8h4fyYL._AC_SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/61MHd2%2BjZKL._AC_SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/61JlDVS%2BoXL._AC_SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/71yM8oN1IPL._AC_SL1000_.jpg"
+    "images": ["https://m.media-amazon.com/images/I/61lO8h4fyYL._AC_SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/61MHd2%2BjZKL._AC_SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/61JlDVS%2BoXL._AC_SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71yM8oN1IPL._AC_SL1000_.jpg"]
   },
   {
     "uid": "hbYjm7jfpzWecm3ns8nAip",
     "title": "New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Space Gray (4th Generation)",
     "price": 949.99,
     "quantity": 15,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "iPad Pro",
       "12.9 inch screen",
@@ -366,14 +366,14 @@
       "free shipping"
     ],
     "description": "12.9-inch edge-to-edge Liquid Retina display with ProMotion, True Tone, and P3 wide color, A12Z Bionic chip with Neural Engine, 12MP Wide camera, 10MP Ultra Wide camera, and LiDAR Scanner, 7MP TrueDepth front camera, Face ID for secure authentication and Apple Pay, Four speaker audio and five studio-quality microphones, 802.11ax Wi-Fi 6, Up to 10 hours of battery life, USB-C connector for charging and accessories, Support for Magic Keyboard, Smart Keyboard Folio, and Apple Pencil",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81SGb5l%2BlZL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81sEk9n0DbL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81gyPqvQiDL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81gyPqvQiDL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91zyHoys2jL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81SGb5l%2BlZL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81sEk9n0DbL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81gyPqvQiDL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81gyPqvQiDL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91zyHoys2jL._AC_SL1500_.jpg"]
   },
   {
     "uid": "hbYjm7jfpzWecm3ns8MSp7",
     "title": "Microsoft Surface Pro 7 128GB i5 8GB RAM with Windows 10 Pro (Wi-Fi, Quad-Core i5-1035G4, Newest Version) Platinum PVQ-00001",
     "price": 745.99,
     "quantity": 16,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "MacBook",
       "12.3 inch display",
@@ -385,14 +385,14 @@
       "free shipping"
     ],
     "description": "Business and Student Edition with Windows 10 Pro, Commercial Packaging, 12.3 inch 2736 x 1824 PixelSense Touchscreen, 128GB PCIe SSD Storage, 8GB LPDDR4x RAM, Integrated Intel Iris Plus Graphics, 1.1GHz (Up to 3.7GHz) 10th Gen Intel Quad-Core i5-1035G4, SD Card Reader, Up to 10.5 Hours of Battery Life, Windows 10 Pro, Wi-Fi 6, Bluetooth 5.0, USB Type-C port, USB Type-A Port, 1 x 1 3.5 mm Headphone/Microphone Input/Output, 1 x Surface Connect Port, Surface Type Cover Port, MicroSDXC Card REader, Compatible with Surface Dial* off-screen interaction",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/51qmq6PgthL._AC_SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/51qmq6PgthL._AC_SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/515oDfy2XzL._AC_SL1000_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/51qmq6PgthL._AC_SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/51qmq6PgthL._AC_SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/515oDfy2XzL._AC_SL1000_.jpg"]
   },
   {
     "uid": "hbYjm7jfpzWecm3ns8ImAc",
     "title": "New Apple iMac with Retina 5K Display (27-inch, 8GB RAM, 256GB SSD Storage)",
     "price": 1679.92,
     "quantity": 17,
-    "category": "electronic",
+    "category": "electronics",
     "keywords": [
       "IMac",
       "27 inch retina display",
@@ -404,7 +404,7 @@
       "free shipping"
     ],
     "description": "27-inch (diagonal) 5120-by-2880 Retina 5K display, 3.1GHz 6-core 10th-generation Intel Core i5, AMD Radeon Pro 5300 graphics, Ultrafast SSD storage, Two Thunderbolt 3 (USB-C) ports, Four USB-A ports, Gigabit Ethernet port, 1080p FaceTime HD camera, 802.11ac Wi-Fi and Bluetooth 5.0, iMac, Magic Keyboard, Magic Mouse 2, Power cord, Lightning to USB Cable",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71KR2i6-WaL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71Y5raKAYML._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71gEG%2BBx93L._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71SvcctFTWL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71KR2i6-WaL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71Y5raKAYML._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71gEG%2BBx93L._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71SvcctFTWL._AC_SL1500_.jpg"]
   },
   {
     "uid": "hbYjm7jfpzWecm3ns8rPSb",
@@ -423,14 +423,14 @@
       "Pedestal Base"
     ],
     "description": "ALL PURPOSE PEDESTAL GAMING CHAIR: Leather lounging game chair can be used for playing video games, watching movies and TV, listening to music, reading, and relaxing. COMPLETE MEDIA EXPERIENCE: Chair incorporates two forward facing speakers, audio force modulation technology, and ported power subwoofers into the open space inside the chair for full immersion in your game, movie, or music. ADDITIONAL VIBRATION MOTORS: The Pro Series H3 includes additional vibration motors that sync with your audio's bass tones to create an even more powerful full-body sensation keeping you comfortable and entertained for hours. RADIO WIRELESS RECEIVER: Built-in radio wireless receiver and included wireless transmitter work with any source with RCA stereo outputs; optional RCA cables included, COMPATIBILITY: Compatible with Xbox, PlayStation, and all other gaming systems. CONNECTS WITH MULTIPLE CHAIRS: Control panel includes separate volume and bass controls, and input and output jacks for connecting to your audio source so other X-Rocker chairs can join in multi-game mode.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81P%2BF5lBRNL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81P%2BF5lBRNL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81ZBoBDVUXL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81eqOrqA1uL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81NbeyHlnmL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81P%2BF5lBRNL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81P%2BF5lBRNL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81ZBoBDVUXL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81eqOrqA1uL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81NbeyHlnmL._AC_SL1500_.jpg"]
   },
   {
     "uid": "hbYjm7jfpzWecm3ns8fEBc",
     "title": "Forever Eclectic by Child Craft Long Beach 4-in-1 Convertible Crib, Seascape Gray",
     "price": 299.9,
     "quantity": 19,
-    "category": "furniture, baby",
+    "category": "furniture",
     "keywords": [
       "Seascape Gray Finish",
       "convertible crib ",
@@ -442,14 +442,14 @@
       "free shipping"
     ],
     "description": "The Long Beach crib is crafted of strong, sturdy pine wood with a baby safe, non-toxic finish, 4-in-1 Convertible crib grows with your child by converting from a crib into a toddler bed, day bed and full size bed, Mattress support adjusts to three positions to fit the growing needs of your child, Measures 55.75” L x 31.5” W x 51.3” H, assembled",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71gd41QbEKL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71iJBMV6mOL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71cnC42K6oL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71wMjqDQWoL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71gd41QbEKL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71iJBMV6mOL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71cnC42K6oL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71wMjqDQWoL._SL1500_.jpg"]
   },
   {
     "uid": "hbYjm7jfpzWecm3ns8aJHy",
     "title": "Forever Eclectic by Child Craft Long Beach 6-Drawer Dresser, Seascape Gray",
     "price": 494.84,
     "quantity": 25,
-    "category": "furniture, baby",
+    "category": "furniture",
     "keywords": [
       "6-Drawer Dresser",
       "gray tones",
@@ -461,14 +461,14 @@
       "free shipping"
     ],
     "description": "Modern ombre-inspired drawer fronts feature a serene blend of neutral gray and white finishes encompassed around an airy Seascape Gray finish, Crafted of pine and pine veneers, 6-Drawers feature decorative metal drawer pulls and smooth metal glides, Anti-tip kit included, Measures 42” L x 18.5” W x 33” H, assembled",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/31Z0cqvGXEL.jpg, https://images-na.ssl-images-amazon.com/images/I/31VSGdNiCBL.jpg, https://images-na.ssl-images-amazon.com/images/I/41jau95-LLL.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/31Z0cqvGXEL.jpg", "https://images-na.ssl-images-amazon.com/images/I/31VSGdNiCBL.jpg", "https://images-na.ssl-images-amazon.com/images/I/41jau95-LLL.jpg"]
   },
   {
     "uid": "hbYjm7jfpzWecm3ns8fGHt",
     "title": "Forever Eclectic by Child Craft Long Beach Nightstand, Seascape Gray",
     "price": 112.31,
     "quantity": 45,
-    "category": "furniture, baby",
+    "category": "furniture",
     "keywords": [
       "nightstand",
       "long beach collection",
@@ -480,7 +480,7 @@
       "1 drawer and storage door"
     ],
     "description": "Modern shiplap-style paneling features a serene blend of neutral gray and white finishes encompassed around an airy Seascape Gray finish, Drawer with metal runners and safety stops features patented T-lock assembly system, Crafted from pine and pine veneers with decorative pulls on the drawer and cabinet, Anti-tip kit included, Measures 21” L x 17.5” W x 24” H, assembled",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/31wqClC7CfL.jpg, https://images-na.ssl-images-amazon.com/images/I/31gGjVAiUhL.jpg, https://images-na.ssl-images-amazon.com/images/I/418vTALAVQL.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/31wqClC7CfL.jpg", "https://images-na.ssl-images-amazon.com/images/I/31gGjVAiUhL.jpg", "https://images-na.ssl-images-amazon.com/images/I/418vTALAVQL.jpg"]
   },
   {
     "uid": "hbYjm7jfpzWecm3ns8qCPh",
@@ -499,7 +499,7 @@
       "gold accents"
     ],
     "description": "The slender shape and channel-tufted upholstery are unmistakably mid-century, while soft velvet and shiny metal legs bring contemporary elegance. This piece is a stunning style statement for glam, modern and mid-century rooms. Overall: 77.5 inch W x 34.6 inch D x 31.4 inch H; Seat Height: 17.7 inch H ; Seat Depth: 23.2 inch D; Seat Back Height: 22.2 inch H; Arm Height: 31.4 inch H; Leg Height: 9.3 inch H, Velvet fabric on sturdy wood frame with aluminum legs in a brass finish, Mid-Century Modern meets glam in this elegant living room sofa, Easy assembly in less than 30 minutes; just screw in legs, Free returns for 30 days. 1-year warranty.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/816VP-arPsL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91M-6APIQ4L._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/816ky3Jq%2BIL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91Wpnoy4h%2BL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/510HVPuELfL._AC_SL1048_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/816VP-arPsL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91M-6APIQ4L._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/816ky3Jq%2BIL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91Wpnoy4h%2BL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/510HVPuELfL._AC_SL1048_.jpg"]
   },
   {
     "uid": "7KexCtGrYSDBStGfyZftP8",
@@ -518,7 +518,7 @@
       "Chill Sack Bean Bag Chair"
     ],
     "description": "FUN FOR EVERYONE A great size for both kids and adults, this comfy bean bag is the perfect furniture addition to any basement, family room, dorm, or bedroom whether as a gaming chair or a study spot, OVERSIZED LOUNGER 72x48x34 inches, Collapse into a seat that loves you back and forms to fit your body; with space for two, you can cuddle close, share with a friend, or spread out to really relax, SHREDDED MEMORY FOAM: Chill Sack bean bag chairs are stuffed with a shredded, soft, memory foam blend that is highly durable to maintain shape while increasing comfort levels for the ultimate chill moments, COMFY FURNITURE COVER: The removable double stitched Microsuede Fiber is soft to the touch, machine washable, and resistant to stains, and discoloration for easy maintenance, MADE IN THE USA: Made with high quality, light and fluffy US shredded foam, premium zippers, and hand selected fabrics that are double stitched for maximum strength and durability. Covers are soft, supple and sensuous to the touch. Yet its also resistant to stains and discoloration. Its even machine-washable. Our Premium Micro Fiber covers are the perfect blend of comfort, ease of care and durability.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71o6BPqt2nL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71Xv55LhrmL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81F9Lj2nRFL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71MrO6ZePKL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71o6BPqt2nL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71Xv55LhrmL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81F9Lj2nRFL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71MrO6ZePKL._AC_SL1500_.jpg"]
   },
   {
     "uid": "bCrzZZtS5HHTp3bYiAwCfW",
@@ -537,7 +537,7 @@
       "Storage"
     ],
     "description": "Important Notice : For reducing the risk of damage, this bed frame will be shipped by 2 boxes and they may arrive on different days, please feel free to contact us in your order detail page by click the button contact seller if you only received one box, Lavish & Modern : Upholstered in linen fabric with button-tufted and square-stitched surface, this deluxe platform bed will adds sophisticated style to any bedroom, Space-saving Functionality : With four steel drawers underneath, offers a perfect storage space for bed sheets, accessories, off-season clothing, Sturdy Structure : Strong wooden slats system does not require a box spring or any other additional foundation, Adjustable Headbaord : The headboard can be adjusted to 38.5 or 41.3 inches high so as to adjust for 6-10 inches mattress.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71Jf%2BYjt9GL._AC_SL1200_.jpg, https://images-na.ssl-images-amazon.com/images/I/81egD%2BK%2BdYL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91XGyhp9qUL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/911jPC595PL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91Dzr-tKvLL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91Dzr-tKvLL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71Jf%2BYjt9GL._AC_SL1200_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81egD%2BK%2BdYL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91XGyhp9qUL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/911jPC595PL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91Dzr-tKvLL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91Dzr-tKvLL._AC_SL1500_.jpg"]
   },
   {
     "uid": "vrUbuqBjWFCGFqAsDm6Tj4",
@@ -556,7 +556,7 @@
       "Bonnlo Brand"
     ],
     "description": "The LED tv stand features one large center drawer, which provide plenty of ample storage space for your CDs, DVDs and even books and magazines etc plus plenty of decorations in the cabinet that can help you keep your home tidy and clean. And you just need to clean the stand by the wet towel.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71t7PQjeSsL._AC_SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/61aq8BtbEzL._AC_SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/51Tic3HTPoL._AC_SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/61ttiiyZGJL._AC_SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/61vPx21X70L._AC_SL1000_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71t7PQjeSsL._AC_SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/61aq8BtbEzL._AC_SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/51Tic3HTPoL._AC_SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/61ttiiyZGJL._AC_SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/61vPx21X70L._AC_SL1000_.jpg"]
   },
   {
     "uid": "ggR8QeX39yKn7aZShw2Pcj",
@@ -575,7 +575,7 @@
       "multi use"
     ],
     "description": "The desktop uses a first-grade fire board, a large and comfortable table top. The overall structure is stable, the workbench is wear resistant, scratch resistant, waterproof, and has no odor, Precision workmanship, meticulous and excellent environmentally friendly plates. Function: Multi-function table can be used as table, dining table, desk, etc. Scope of application: office, bedroom, study, etc., the product has been rigorously tested, carrying a certain weight or placed for a period of time without deformation and bending.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71qpSpGgSqL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71qpSpGgSqL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71X7cR8H55L._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/61GJEl1T6FL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71qpSpGgSqL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71qpSpGgSqL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71X7cR8H55L._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/61GJEl1T6FL._AC_SL1500_.jpg"]
   },
   {
     "uid": "pjehZRr4awfYKa2TqfyrCe",
@@ -594,14 +594,14 @@
       "shelf and storage"
     ],
     "description": "The 3-in-1 Cuboid Shelf Floor Lamp: With a TC lamp shade and a wood grain appearance,the 3-in-1 3-tiered cuboid 63inch height shelf floor lamp has a simple and elegant appearance which is suitable for any decoration style such as modern, contemporary, rural style and so on. Pulling chain on/off easily to control the light on and off.Customized clips can easily secure the wire to the pole of the lamp to reduce the redundancy of the wire and increase the beauty. Fast Charging Function: The biggest innovation of the latest generation of shelf lights compared to previous models is the addition of 2 fast-charging 5V/2A USB ports and a power outlet, which allows you to charge three devices such as smart phones, kindle, iPad, and so on at the same time. This will reduce the clutter of charging wires in your living room or bedroom and improve the convenience of your life. Illuminating& Smart Surprise: This shelf floor lamp is equipped with an E26 base with the highest public acceptance to meet your local lighting requirements. You can choose a LED, incandescent or CFL bulb with warm, white or RGB colored changing lighting.But a maximum of bulb no more than 100W. Also if you choose a smart light bulb or Wi-Fi socket, you will be able to connect it to the Alexa for the convenience of brightness and color adjustment and smart switches. Freedom Display& Storage: The space of the shelf board can realize your storage and display function. The books you often read, knickknacks, picture frames, collectibles, flowerpots, vase, plants and so on can be placed on the second or third board. The length and width of the shelf board is 10.24inch and 10.24inch, and the area is 103sq.in, which is almost equal to the area of iPad Air. 24 Months Quality Service& Wide Applications: We provide 24 months quality service to bring you a great value shopping experience. If you have any query, please contact us via Amazon message box. Beautiful and practical shelf floor lamps can be placed next to the sofa, TV, fish tank in the living room, bed nook in the bedroom and etc to meet your home decoration needs.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71gNaZDav5L._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/61yD3nNk6XL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71Sd70n%2BpVL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81a24SXLlUL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71Jsty2Od8L._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71gNaZDav5L._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/61yD3nNk6XL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71Sd70n%2BpVL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81a24SXLlUL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71Jsty2Od8L._AC_SL1500_.jpg"]
   },
   {
     "uid": "5EhTbjT6xQd2cTXgH2V9m3",
     "title": "Thriller",
     "price": 16.59,
-    "quantity": 50,
-    "category": "Cds and Vinyl",
+    "quantity": 5,
+    "category": "cds and vinyl",
     "keywords": [
       "Michael Jackson",
       "Vinyl",
@@ -613,14 +613,14 @@
       "Record"
     ],
     "description": "disco music",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81wfye0hsDL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81wfye0hsDL._SL1500_.jpg"]
   },
   {
     "uid": "m9ssnFa7e6w3AbuJXULGwz",
     "title": "Lady Sings the Blues",
     "price": 9.65,
-    "quantity": 44,
-    "category": "Cds and Vinyl",
+    "quantity": 8,
+    "category": "cds and vinyl",
     "keywords": [
       "Rebecca Ferguson",
       "CD"
@@ -631,14 +631,14 @@
       "soul music"
     ],
     "description": "Third studio album by the British singer/songwriter. Debuting at #7 in the UK Albums Chart, the album features songs made famous by the American jazz singer Billie Holiday. Songs on the album include 'Get Happy', 'That Ole Devil Called Love', 'Summertime' and 'Stormy Weather'.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/714ba%2BesQfL._SL1200_.jpg, https://images-na.ssl-images-amazon.com/images/I/61FWpS6qFOL._SX355_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/714ba%2BesQfL._SL1200_.jpg", "https://images-na.ssl-images-amazon.com/images/I/61FWpS6qFOL._SX355_.jpg"]
   },
   {
     "uid": "6XAw5PVAQYEbUxMbLWXDxB",
     "title": "Come On Over [2 LP]",
     "price": 24.27,
     "quantity": 7,
-    "category": "Cds and Vinyl",
+    "category": "cds and vinyl",
     "keywords": [
       "Shania Twain",
       "vinyl",
@@ -650,14 +650,14 @@
       "best selling album"
     ],
     "description": "Come On Over became the best selling studio album of all time by a female artist in any genre and best selling country album of all time moving 40 million copies worldwide. Featuring 'You're Still The One', 'From This Moment On', and 'Man! I Feel Like A Woman' the record earned her four Grammy awards. Issued on 120g vinyl for the first time ever.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/7111DEDz-NL._SL1200_.jpg, https://images-na.ssl-images-amazon.com/images/I/51uH5bDqgeL._SX355_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/7111DEDz-NL._SL1200_.jpg", "https://images-na.ssl-images-amazon.com/images/I/51uH5bDqgeL._SX355_.jpg"]
   },
   {
     "uid": "jUs1Gd5ZkxDcG1MsoPCUox",
     "title": "Solid Gold Hits [Explicit]",
     "price": 9.69,
     "quantity": 2,
-    "category": "Cds and Vinyl",
+    "category": "cds and vinyl",
     "keywords": [
       "beasty Boys",
       "cd",
@@ -669,14 +669,14 @@
       "best selling songs"
     ],
     "description": "In celebration of the Beastie Boys' 24th anniversary, Capitol Records has decided to pay tribute to one their best bands with a greatest hits record tilted Solid Gold Hits. This 15-track CD features 'No Sleep 'Til Brooklyn', 'Fight For Your Right', 'Shake Your Rump', 'So What'cha Want', 'Sabotage', 'Ch-Check It Out', 'An Open Letter To NYC' and 'Triple Trouble'. Capitol. 2005.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81g%2BzZCCUNL._SL1300_.jpg, https://images-na.ssl-images-amazon.com/images/I/81L%2Bh8hVRGL._SX355_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81g%2BzZCCUNL._SL1300_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81L%2Bh8hVRGL._SX355_.jpg"]
   },
   {
     "uid": "7dkNUvvW6j7aBBkztiXjaR",
     "title": "Run-D.M.C. - Greatest Hits",
     "price": 7.48,
     "quantity": 27,
-    "category": "Cds and Vinyl",
+    "category": "cds and vinyl",
     "keywords": [
       "Run-D.M.C.",
       "cd",
@@ -688,14 +688,14 @@
       "best selling songs"
     ],
     "description": "Is Run-DMC the most important group of the past 25 years? Well, if you believe that the rise of hip-hop is the most significant musical development in a quarter century, what other conclusion can you draw? Though they may not have been responsible for the birth of rap, the Hollis, Queens, trio represents the genre's coming of age. They were the ones who brought what was largely a regional street phenomenon to the masses. The rhymes, the beats, the style, the attitude--Run-DMC introduced it all to the world. Focusing mostly on the group's first three albums--each of them a cornerstone of rap music--this 18-track collection is a reminder of a time when rap enjoyed a kind of childlike innocence: their boasts are forceful but not angry; the beats are simple but exciting; the overall effect (fueled by heavy-metal riffs) is edgy and aggressive, but not violent or destructive. But most of all, it's fun. In the 1990s, rap artists would take Run-DMC's ideas to wide extremes, but the roots of this next generation--gangsta rap's street realism, political rap's social agendas, rock-rap's antagonism--are found right here. Run-DMC--like almost all pioneers from Elvis to Louis Armstrong--suffered a period of irrelevancy when they were looked upon as quaint or outdated, but, their time will come. Rest assured, this is not '80s retro kitsch. --Marc Greilsamer",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71bDXbCgMIL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/718tQrCxBNL._SX355_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71bDXbCgMIL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/718tQrCxBNL._SX355_.jpg"]
   },
   {
     "uid": "qMZrGUkc82AZTtMizTJodv",
     "title": "Greatest Hits",
     "price": 6.75,
     "quantity": 39,
-    "category": "Cds and Vinyl",
+    "category": "cds and vinyl",
     "keywords": [
       "Will Smith",
       "cd",
@@ -707,14 +707,14 @@
       "1 hr 2 minutes rum time"
     ],
     "description": "Free mp3 version",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71sa-2vyUdL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71sa-2vyUdL._SL1500_.jpg"]
   },
   {
     "uid": "dEh2zTxZ7hThi3WCDKadK8",
     "title": "Greatest Hits [LP]",
     "price": 22.79,
     "quantity": 47,
-    "category": "Cds and Vinyl",
+    "category": "cds and vinyl",
     "keywords": [
       "Wannabe single",
       "vinyl",
@@ -726,14 +726,14 @@
       "girl group"
     ],
     "description": "The Spice Girls' Greatest Hits album is back! This time on 180-gram black vinyl with smash hit singles including `Wannabe', `2 Become 1', `Spice Up Your Life', Viva Forever, Goodbye and many more. The Greatest Hits release retains the original cover art, with printed inner sleeve to house the deluxe 180g vinyl.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71hfIbtb0QL._SL1200_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71hfIbtb0QL._SL1200_.jpg"]
   },
   {
     "uid": "cGVGhuQrfhQKWvZF4zBRxi",
     "title": "No Strings Attached",
     "price": 21.24,
     "quantity": 46,
-    "category": "Cds and Vinyl",
+    "category": "cds and vinyl",
     "keywords": [
       "Nsync",
       "vinyl",
@@ -745,14 +745,14 @@
       "47 minutes rum time"
     ],
     "description": "Free mp3 version",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71sa-2vyUdL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71sa-2vyUdL._SL1500_.jpg"]
   },
   {
     "uid": "hMcteK75XXrz556Qtbzbst",
     "title": "20th Century Masters: The Best Of Salt-N-Pepa [Jewel]",
     "price": 12.79,
     "quantity": 21,
-    "category": "Cds and Vinyl",
+    "category": "cds and vinyl",
     "keywords": [
       "Salt n Pepa",
       "CD",
@@ -763,14 +763,14 @@
       "girl group"
     ],
     "description": "Free mp3 version",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71eAexP3gJL._SL1050_.jpg, https://images-na.ssl-images-amazon.com/images/I/71eQPlevfuL._SL1072_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71eAexP3gJL._SL1050_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71eQPlevfuL._SL1072_.jpg"]
   },
   {
     "uid": "1b8wz47n2ajLZ3J6DcBHfN",
     "title": "Triple Feature: Britney Spears",
     "price": 9.79,
     "quantity": 41,
-    "category": "Cds and Vinyl",
+    "category": "cds and vinyl",
     "keywords": [
       "Britney Spears",
       "CD",
@@ -781,14 +781,14 @@
       "pop music"
     ],
     "description": "Free mp3 version, TRIPLE FEATURE includes the following 3 Britney Spears Studio Albums at a great Low Price: Baby One More Time, Oops! I Did It Again, Britney. This configuration features the 3 CD's in a slim Soft Pack.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71eAexP3gJL._SL1050_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71eAexP3gJL._SL1050_.jpg"]
   },
   {
     "uid": "nFgkZpgUdo4UFPHdGapBYf",
     "title": "Beware Of Dog",
     "price": 11.78,
     "quantity": 15,
-    "category": "Cds and Vinyl",
+    "category": "cds and vinyl",
     "keywords": [
       "Bow Wow",
       "CD",
@@ -800,14 +800,14 @@
       "35 minute runtime"
     ],
     "description": "Released in 2000",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/8154TjNbI4L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/51lQanVe%2BNL.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/8154TjNbI4L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/51lQanVe%2BNL.jpg"]
   },
   {
     "uid": "de4tEoQpvYvBBjk3WzHLKd",
     "title": "Call of Duty: Black Ops Cold War",
     "price": 49.94,
-    "quantity": 0,
-    "category": "Video games",
+    "quantity": 1,
+    "category": "video games",
     "keywords": [
       "COD",
       "shooting game",
@@ -819,14 +819,14 @@
       "online and offline"
     ],
     "description": "The iconic black Ops series is back with Call of Duty: Black Ops cold war - the direct sequel to the original and fan-favorite Call of Duty: Black Ops. Black Ops cold war will drop fans into the depths of the cold War's volatile geopolitical battle of the early 1980S. Nothing is ever as it seems in a gripping single-player campaign, where players will come face-to-face with historical figures and hard truths, as they battle around the globe through iconic",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71Fgipk4rJL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81DHEZmNfkL._SL1346_.jpg, https://images-na.ssl-images-amazon.com/images/I/61JmeTr9VSL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/6124xJX3ArL._SL1500_.jpg,"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71Fgipk4rJL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81DHEZmNfkL._SL1346_.jpg", "https://images-na.ssl-images-amazon.com/images/I/61JmeTr9VSL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/6124xJX3ArL._SL1500_.jpg"]
   },
   {
     "uid": "prJoia7Yc35CW6uNkV3Amw",
     "title": "Marvel’s Spider-Man: Miles Morales Launch Edition – PlayStation 5",
     "price": 49.44,
     "quantity": 45,
-    "category": "Video games",
+    "category": "video games",
     "keywords": [
       "Spiderman",
       "Animated game",
@@ -838,14 +838,14 @@
       "online and offline"
     ],
     "description": "Miles Morales discovers explosive powers that set him apart from his mentor, Peter Parker. Master his unique, bio electric venom blast attacks and covert camouflage power alongside spectacular web slinging acrobatics, gadgets and skills. A war for control of Marvels New York has broken out between a devious energy corporation and a high tech criminal army. With his new home at the heart of the battle, Miles must learn the cost of becoming a hero and decide what he must sacrifice for the greater good. Traverse the snowy streets of his new, vibrant and bustling neighborhood as Miles searches for a sense of belonging. When the lines blur between his personal and crime fighting lives, he discovers who he can trust, and what it feels like to truly be home.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg, https://images-na.ssl-images-amazon.com/images/I/81L0X99ZEOL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81Ke1uk4VwL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81SZHiAq53L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/710sTS5%2B6qL._SL1500_.jpg, "
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81L0X99ZEOL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81Ke1uk4VwL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81SZHiAq53L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/710sTS5%2B6qL._SL1500_.jpg"]
   },
   {
     "uid": "dnKTKhuSbrdBYuRikoYTxb",
     "title": "Assassin’s Creed Valhalla PlayStation 5 Standard Edition",
     "price": 39.88,
     "quantity": 22,
-    "category": "Video games",
+    "category": "video games",
     "keywords": [
       "Assassin’s Creed",
       "shooting game",
@@ -857,14 +857,14 @@
       "online and offline"
     ],
     "description": "Lead epic Viking raids against Saxon troops and fortresses, Relive the visceral fighting style of the Vikings as you dual-wield powerful weapons, Challenge yourself with the most varied collection of enemies ever in Assassin's Creed, Shape the growth of your character and your clan's settlement with every choice you make, Explore a Dark Age open world, from the harsh shores of Norway to the beautiful kingdoms of England",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/818BQbUANnL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91jwZ1qFakL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71FGqKJIwuL._SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/71fm6C1GpqL._SL1000_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/818BQbUANnL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91jwZ1qFakL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71FGqKJIwuL._SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71fm6C1GpqL._SL1000_.jpg"]
   },
   {
     "uid": "7Ci1b9TXCPuJnExj9G3o6t",
     "title": "Just Dance 2021 - Nintendo Switch Standard Edition",
     "price": 29.83,
     "quantity": 19,
-    "category": "Video games",
+    "category": "video games",
     "keywords": [
       "Just Dance",
       "dancing game",
@@ -876,14 +876,14 @@
       "online and offline"
     ],
     "description": "Dance to over 600 songs with the Just Dance Unlimited subscription streaming service. One month FREE included with the game, Play with friends and share the fun with co-op mode, Dance the way you like by creating your own personalized custom playlists, Enjoy eight new kid-friendly songs and choreographies for a family-fun experience, Use your smartphone to track moves with the Just Dance Controller app – no additional accessories required! Up to six players can join",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81JMb%2BkSAAL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71mg3OhdxAL._SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/71tJ5xja3BL._SL1000_.jpg, "
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81JMb%2BkSAAL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71mg3OhdxAL._SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71tJ5xja3BL._SL1000_.jpg"]
   },
   {
     "uid": "cKV9MdCuvQSTQ2gDqc4xxj",
     "title": "Captain Toad: Treasure Tracker (Nintendo Switch)",
     "price": 60.8,
     "quantity": 18,
-    "category": "Video games",
+    "category": "video games",
     "keywords": [
       "Treasure Tracker",
       "Nintindo"
@@ -894,14 +894,14 @@
       "online and offline"
     ],
     "description": "A free demo of Captain Toad: Treasure Tracker is now available, Explore a variety of tricky sandbox-style levels in Captain Toad: Treasure Tracker, you can rotate the camera and touch the screen for a better view of hidden treasures, We've included a few super mario odyssey levels, too, now you can explore locales from a variety of kingdoms - like new donk city;The Nintendo Switch version can be played with a friend by sharing a pair of Joy-Con controllers; while one player controls Captain Toad, the other can assist with things like turnip cover fire, so you can enjoy tracking treasure together;Compatible with Nintendo Switch only",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81v8i3wCT2L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81ETsEfr7gL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/710E7BX3wSL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81jURb6%2BplL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81PPTwB8uuL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81v8i3wCT2L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81ETsEfr7gL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/710E7BX3wSL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81jURb6%2BplL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81PPTwB8uuL._SL1500_.jpg"]
   },
   {
     "uid": "epWtQHX5VnPnwMXxfNJ9LF",
     "title": "New World - Deluxe Edition",
     "price": 49.99,
     "quantity": 12,
-    "category": "Video games",
+    "category": "video games",
     "keywords": [
       "PC Games",
       "Fighting Game"
@@ -912,14 +912,14 @@
       "online and offline"
     ],
     "description": "Overcome the brutal legions of The Corrupted and draw battle lines with competing players in this land of danger and opportunity. Combine skill and strength in melee combat, attack at range with precision, or master arcane attacks. Bend the wilds to your will by hunting fierce beasts for food and crafting materials, and harvesting valuable resources from the land to fuel your ascent to power. The Deluxe Edition includes the Woodsman armor skin, Woodsman hatchet skin, Mastiff house pet, Rock/Paper/Scissors emote set, and the New World digital art book. Pre-order before New World launches to secure Closed Beta access beginning in Spring 2021 and get Isabella’s amulet, the Fist Bump emote, a guild crest set, and the “Expedition One” unique title.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71OOpvlO4WL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/719uCyMF0IL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71YKunAzbjL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/814Cb1wTZcL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/812PCZ8ELxL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71OOpvlO4WL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/719uCyMF0IL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71YKunAzbjL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/814Cb1wTZcL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/812PCZ8ELxL._SL1500_.jpg"]
   },
   {
     "uid": "ebxbdN5YNeQh6xbUkLfssn",
     "title": "Minecraft: Java Edition for PC/Mac [Online Game Code]",
     "price": 26.95,
     "quantity": 7,
-    "category": "Video games",
+    "category": "video games",
     "keywords": [
       "Minecraft",
       "PC Game",
@@ -931,14 +931,14 @@
       "online and offline"
     ],
     "description": "Build, create, and explore in Minecraft for PC and Mac! Have ridiculous amounts of fun! Play alone or with friends. Minecraft for PC/Mac supports online multiplayer and solo play. Take advantage of limitless supplies and create anything you can imagine in Creative Mode. Mine, craft, and go on exciting adventures in Survival Mode. Journey into the depths and take on the Ender Dragon, if you dare! Also features horses, rabbits, chickens, zombies, pigs with saddles, boats, minecarts, TNT, zombies, redstone, villagers, iron golems, potions, maps, books, pickaxes, carrots, and lots, lots more. Honestly, there’s a ludicrous amount of cool things to mess about with. You should give it a go!",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/91Vk1mS1x3L.png, https://images-na.ssl-images-amazon.com/images/I/A1y9atwaTpL.png, https://images-na.ssl-images-amazon.com/images/I/91%2BT62D31jL.png"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/91Vk1mS1x3L.png", "https://images-na.ssl-images-amazon.com/images/I/A1y9atwaTpL.png", "https://images-na.ssl-images-amazon.com/images/I/91%2BT62D31jL.png"]
   },
   {
     "uid": "8isRArpFu3oP9VVKGHuFxy",
     "title": "Sonic & All-Stars Racing Transformed - Xbox 360",
     "price": 18.4,
     "quantity": 5,
-    "category": "Video games",
+    "category": "video games",
     "keywords": [
       "Sonic",
       "XBOX 360 Game",
@@ -950,14 +950,14 @@
       "online and offline"
     ],
     "description": "This is no ordinary race. Each character is equipped with their own unique vehicle that can transform into a car, boat and plane to take advantage of the changing terrains. Take to land, sea & air as you race through 16 dynamically changing courses inspired by SEGA's illustrious gaming history. Race as one of the 20+ legendary All-Stars. The starting line-up has been transformed as new iconic characters from the world of SEGA join the race. Utilize an arsenal of devastating weapons which require skill to aim, shoot, evade and block.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/91-25T1iVYL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71ROX1r3BVL._SL1280_.jpg, https://images-na.ssl-images-amazon.com/images/I/71a5dN8dOvL._SL1280_.jpg, https://images-na.ssl-images-amazon.com/images/I/71HmHyA7aOL._SL1280_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/91-25T1iVYL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71ROX1r3BVL._SL1280_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71a5dN8dOvL._SL1280_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71HmHyA7aOL._SL1280_.jpg"]
   },
   {
     "uid": "dxDk45TVd41bPtW7oaP29d",
     "title": "NBA 2K21 Mamba Forever Edition - Xbox Series X Mamba Forever Edition",
     "price": 96.99,
     "quantity": 6,
-    "category": "Video games",
+    "category": "video games",
     "keywords": [
       "2k21",
       "XBOX Series X Game",
@@ -969,14 +969,14 @@
       "online and offline"
     ],
     "description": "Physical copies of NBA 2K21 Mamba Forever Edition for Xbox Series X will include a digital copy of NBA 2K21 Standard for Xbox One in box, This edition includes 100,000 Virtual Currency, 10,000 MyTEAM points, MyTEAM packs, digital items for your MyPLAYER, and more.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/91MjlfzVF1L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71qM%2B32r31L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81h5bVCjl3L._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/91MjlfzVF1L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71qM%2B32r31L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81h5bVCjl3L._SL1500_.jpg"]
   },
   {
     "uid": "kMDu8yDSbmGCcUnGHPaRtN",
     "title": "Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)",
     "price": 299.99,
     "quantity": 24,
-    "category": "Video games",
+    "category": "video games",
     "keywords": [
       "Game Console",
       "Nintendo Switch",
@@ -988,14 +988,14 @@
       "online and offline"
     ],
     "description": "3 Play Styles: TV Mode, Tabletop Mode, Handheld Mode, 6.2-inch, multi-touch capacitive touch screen, 4.5-9+ Hours of Battery Life *Will vary depending on software usage conditions, Connects over Wi-Fi for multiplayer gaming; Up to 8 consoles can be connected for local wireless multiplayer, Model number: HAC-001(-01)",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/61JnrafZ7zL._AC_SL1457_.jpg, https://images-na.ssl-images-amazon.com/images/I/41PSrh5lpdL._AC_SX355_.jpg, https://images-na.ssl-images-amazon.com/images/I/71lfEWM9AYL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71ILSOE6ovL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71Qk2M1CIgL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/61JnrafZ7zL._AC_SL1457_.jpg", "https://images-na.ssl-images-amazon.com/images/I/41PSrh5lpdL._AC_SX355_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71lfEWM9AYL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71ILSOE6ovL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71Qk2M1CIgL._AC_SL1500_.jpg"]
   },
   {
     "uid": "aHw7zoycNGvUE6mQHTHB6X",
     "title": "Baby Wipes, Pampers Sensitive Water Based Baby Diaper Wipes, Hypoallergenic and Unscented, 8 Refill Packs (Tub Not Included), 72 each, Pack of 8 (Packaging May Vary)",
     "price": 13.99,
     "quantity": 8,
-    "category": "Baby",
+    "category": "baby",
     "keywords": [
       "Baby wipes",
       "Pampers Brand",
@@ -1006,14 +1006,14 @@
       "8 packs"
     ],
     "description": "#1 Choice of U.S. Hospitals based on hospital sales data, pH balancing formula helps protect sensitive skin, Free of alcohol, perfume, parabens, phenoxyethanol, and dyes, 20% thicker for a soft and comfortable clean vs. Pampers Complete Clean, Dermatologist-tested and hypoallergenic, Refill Packs are designed for use with Pampers tubs, Zero percentage of Paraben, Alcohol, perfume and phenoxyethanol in this sensitive water based wipe",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/8152rBrraCL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81I86PumEML._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91%2BVhtUZ3OL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/8152rBrraCL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81I86PumEML._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91%2BVhtUZ3OL._AC_SL1500_.jpg"]
   },
   {
     "uid": "2yqA2tghxRXPHMcmREukEM",
     "title": "3 in 1 Diaper Bag Backpack with Changing Station, Travel Bassinet Foldable Baby Bed, Baby Bag Portable Crib, Mummy Bag, Large Capacity, Waterproof, USB Charging Port, Gray (Gray)",
     "price": 49.89,
     "quantity": 12,
-    "category": "Baby",
+    "category": "baby",
     "keywords": [
       "Diaper Bag",
       "Multi use",
@@ -1025,14 +1025,14 @@
       "gray bag"
     ],
     "description": "polyester, baby Foldable bed, Diaper changing station, Mommy backpack It provides a safe and hygienic space for you to change diapers or let your baby lie down and rest anytime, anywhere. You can Use it as a removable diaper changing table in the car trunk when you are out with your family. giving your baby a safe, clean, and comfortable nest for him to sleep.large-capacity storage space can Satisfy what your needs. It can also be used as a fashionable backpack, messenger bag, handbag. MultiFunction Pocket with changing pad】 The backpack has 16 pockets, with scientific partition. It can be loaded all essential stuffs like diapers，creams，wipes ect. insulated 3-bottle pockets, can keep the bottle warm or cool. backpack Its large capacity can hold a laptop or breast pump. Soft Changing Pad:makes a baby comfortable while changing.Baby diaper bag comes with everything you need when on-the-go, to hold everything for baby plus, diaper bag is a perfect travel assistant. Portable Baby Bassinet design Combo】 Easily turn the backpack into a travel bassinet : creating a warm and exclusive game and sleeping space for the baby. Backpack with shade cloth: Protect your baby's eyes from the sun.This perfect and practical solution makes it easier for mothers to take the baby’s entire travel , More relaxed, the side panel of the sleeper has a breathable structure mesh structuret, Two fences also provide safety protection. Waterproof, Easy to clean, USB Charging Port】 the outer surface of the backpack is waterproof fabric. you won’t afraid of getting wet in rainy days, the cushion of the cradle is also waterproof, so you don't have to worry about splashing, dirty. The entire removable lining is washable. with USB charging Port design, more easily for you to charge phone(Built with power cable, you have to connect your cable with your power bank to charge the phone), freeing your hands. Perfect Backpack】 When The baby is tired, it can become a crib in a few minute, giving the baby a comfortable place to rest. this is excellent for any new moms, or as a baby shower gift. Try it now! Even if you don’t like it, Please contact us, we will refund or replace it!",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/7123ky-IuoL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/718WW4uPmuL._SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/718WW4uPmuL._SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/71hU1NXmzDL._SL1000_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/7123ky-IuoL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/718WW4uPmuL._SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/718WW4uPmuL._SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71hU1NXmzDL._SL1000_.jpg"]
   },
   {
     "uid": "kG4RjgWRdijghVs7WHb7jD",
     "title": "Chicco NextFit Zip Convertible Car Seat - Carbon",
     "price": 299.99,
     "quantity": 8,
-    "category": "Baby",
+    "category": "baby",
     "keywords": [
       "Car Seat",
       "Multi use",
@@ -1044,14 +1044,14 @@
       "gray and black seat"
     ],
     "description": "Zip-off padding is soft and machine washable for comfort and convenience, Remarkably easy installation with a 9-position Recline Sure leveling system, Super Cinch LATCH Tightened and Lock Sure seat belt tightening system, Superior Duo Guard protection with a deep rigid shell and EPS energy-absorbing foam, plus a steel-reinforced frame, Accommodates growing children with a removable newborn positioner, no-rethread harness, 9-position headrest, and easy transition from rear-facing to forward-facing, Includes dishwasher-safe, space-saving Cup Folder. Material - polyester",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81TCiDbhT9L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/911jZ4ElP9L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91Igc13A36L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91J7J%2BUxhaL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81TCiDbhT9L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/911jZ4ElP9L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91Igc13A36L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91J7J%2BUxhaL._SL1500_.jpg"]
   },
   {
     "uid": "ngNAsHy2wUV8kxShxvgudr",
     "title": "Chicco Close to You 3-in-1 Bedside Bassinet - Heather Grey",
     "price": 299.99,
     "quantity": 3,
-    "category": "Baby",
+    "category": "baby",
     "keywords": [
       "Bassinet",
       "Multi use sleeper",
@@ -1063,14 +1063,14 @@
       "gray and white seat"
     ],
     "description": "3 modes of use: Bedside sleeper, portable Bassinet and a height adjustable changing table for extended use up to 35 lbs. Electronic module includes 6 melodies, 2 vibration settings and a nightlight, Features machine washable, zip-off fabrics for easy cleaning and a reversible mattress that's quilted for comfortable sleep and waterproof for changing, Height adjusts between 24” – 33.5” tall to fit over beds and allow for standing when used as a changing station, Dual-function handle/brake and rubberized swivel wheels make it easy to move from room-to-room and lock in place during daytime use",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/81WU2pzpvUL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91t%2Bobk3%2BRL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81DQV6IR84L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81l1cNt%2BmZL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81DdN-7nIwL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/91RfdZWfwLL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/81WU2pzpvUL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91t%2Bobk3%2BRL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81DQV6IR84L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81l1cNt%2BmZL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81DdN-7nIwL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/91RfdZWfwLL._SL1500_.jpg"]
   },
   {
     "uid": "ejGcrZ8pP6fAd5RHuTiF5j",
     "title": "Chicco Stack 1-2-3 Highchair, Dots",
     "price": 99.99,
     "quantity": 32,
-    "category": "Baby",
+    "category": "baby",
     "keywords": [
       "Highchair",
       "Multi use"
@@ -1081,14 +1081,14 @@
       "gray and white seat, dots"
     ],
     "description": "3 unique configurations grow with baby from highchair, to booster, to youth stool, for extended use up to 60 pounds, Offers all the conveniences of a standard highchair with a 5-point padded harness, 3-position recline with one-hand adjustment and a machine-washable seat pad, Snap-on tray with lift off liner conveniently slides onto the rear legs for space-saving storage, Highchair detaches from the frame to create a lightweight, portable high-back booster that secures to dining chairs for meals at home or away, Highchair frame doubles as a big kid stool with a contoured seat and sturdy backrest",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71c-moPzdLL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71CiNIxQ06L._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71dlv9S%2Bv%2BL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71yehmlPiQL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81SIIFhF%2BDL._SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/81B%2Bom5bpOL._SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71c-moPzdLL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71CiNIxQ06L._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71dlv9S%2Bv%2BL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71yehmlPiQL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81SIIFhF%2BDL._SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/81B%2Bom5bpOL._SL1500_.jpg"]
   },
   {
     "uid": "mYarXqGxvrzuiwF7Lim3ei",
     "title": "Shopping Cart Cover for Baby Cotton, Minky Bolster Positioner, 6.5 inch Cellphone Holder, High Chair Cover for Boy Girl,Infant Grocery Cart Cushion Liner Large",
     "price": 32.99,
     "quantity": 43,
-    "category": "Baby",
+    "category": "baby",
     "keywords": [
       "cart cover",
       "Multi use"
@@ -1099,14 +1099,14 @@
       "gray and white seat, dots"
     ],
     "description": "Made of 100% cotton fabric for sitting area, Thick padding offers a feel of great comfort; Features 6.5 inch Cell phone carrier for child’s entertainment; Fit for the cart size of most supermarkets, contain Costco, Target, Sam etc. It’s a can’t- miss tool to leave your hands free; The cover can be folded into a self contained pouch within mins, easy to go; Enough strong fasten accessories enable the cover to stay firmly in place, no slip away;",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/61guz4EiobL._SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/71lu3K6CqAL._SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/61A55k%2B4-KL._SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/61bTYAGK3nL._SL1000_.jpg, https://images-na.ssl-images-amazon.com/images/I/71XuPHBszLL._SL1000_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/61guz4EiobL._SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71lu3K6CqAL._SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/61A55k%2B4-KL._SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/61bTYAGK3nL._SL1000_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71XuPHBszLL._SL1000_.jpg"]
   },
   {
     "uid": "hnzQfgBVwNMFBXBZnVhXfC",
     "title": "Baby Einstein Magic Touch Piano Wooden Musical Toy Toddler Toy, Ages 6 months and up",
     "price": 24.99,
     "quantity": 11,
-    "category": "Baby",
+    "category": "baby",
     "keywords": [
       "toy",
       "Multi use"
@@ -1117,6 +1117,6 @@
       "multiple music options"
     ],
     "description": "Wooden piano magically makes music, 3 sheets of music & 6 different songs, child safe and durable materials, Easy to wipe down and clean, Ships in fully enclosed packaging",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71--Y8HdOQL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/716%2BfSCgUcL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71rUqBmrKTL._AC_SL1500_.jpg, https://images-na.ssl-images-amazon.com/images/I/71BTPCAVE%2BL._AC_SL1500_.jpg"
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/71--Y8HdOQL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/716%2BfSCgUcL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71rUqBmrKTL._AC_SL1500_.jpg", "https://images-na.ssl-images-amazon.com/images/I/71BTPCAVE%2BL._AC_SL1500_.jpg"]
   }
 ]

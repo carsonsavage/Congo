@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Form, Col } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+import BootstrapBtn from "react-bootstrap/Button";
 import "./signup-form.css";
-import UserContext from '../../../util/userContext.js';
+import UserContext from "../../../util/userContext.js";
+import API from "../../../util/API.js";
 
 export default function Login() {
-    const {registerUser} = useContext(UserContext);
+    const { registerUser, signupErrorState, setSignupErrorState } = useContext(
+        UserContext
+    );
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -37,8 +40,8 @@ export default function Login() {
         }
     }, [confirmPassword]);
 
-    useEffect(()=>{
-        setAddress({...address, name: `${firstName} ${lastName}`})
+    useEffect(() => {
+        setAddress({ ...address, name: `${firstName} ${lastName}` });
     }, [firstName, lastName]);
 
     function handleSubmit(event) {
@@ -53,10 +56,16 @@ export default function Login() {
             credit_cards: [creditCard],
         };
         if (!passwordError) {
-            console.log(registerObj);
             //call to register
-            registerUser(registerObj)
-            .then((res)=>{window.location.href = "/login"});
+            API.checkUser(registerObj.email).then(({ data }) => {
+                if (data[0]) {
+                    setSignupErrorState("Email already in use");
+                } else {
+                    registerUser(registerObj).then((res) => {
+                        window.location.href = "/login";
+                    });
+                }
+            });
         }
     }
 
@@ -354,10 +363,10 @@ export default function Login() {
                         </Form.Row>
                     </Form.Group>
                 </Form.Row>
-
-                <Button block size="lg" type="submit">
+                <div className="error-statement">{signupErrorState}</div>
+                <BootstrapBtn block size="lg" type="submit" id="signup-btn">
                     Signup
-                </Button>
+                </BootstrapBtn>
             </Form>
         </div>
     );

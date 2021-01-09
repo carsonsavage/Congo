@@ -9,6 +9,10 @@ router
     res.json(req.user);
   });
 
+router
+  .route("/check")
+  .post(usersController.findByEmail);
+
 // Matches with "/api/user/register"
 router
   .route("/register")

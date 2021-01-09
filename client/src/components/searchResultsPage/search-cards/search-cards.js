@@ -8,14 +8,14 @@ function SearchCards() {
     return (
         <>
             {searchState.filtered_results.map(
-                ({ _id, title, price, image, quantity }, index) => (
+                ({ _id, title, price, images, quantity }, index) => (
                     <Col>
                         <Link to={`/product/details/${_id}`} key={index}>
                             <Card
                                 style={{ width: "20rem" }}
                                 className="product-cards"
                             >
-                                <Card.Img variant="top" src={image} />
+                                <Card.Img variant="top" src={images[0]} />
                                 <Card.Body>
                                     <Card.Title>{title}</Card.Title>
                                     <h3>${price}</h3>

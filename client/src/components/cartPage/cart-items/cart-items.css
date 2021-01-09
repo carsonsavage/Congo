@@ -1,7 +1,7 @@
-.cart-items{
-    background-color: blue;
-    color: white;
-    width: 70%;
-    height: 500px;
-    margin: 40px 0;
+.ui.right.aligned.header{
+    font-size: 2em;
+}
+
+.ui.right.aligned.header h5{
+    padding-right: 30px;
 }
