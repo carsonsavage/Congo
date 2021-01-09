@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const orderid = require('order-id')('supersecret');
 
 const orderSchema = new mongoose.Schema({
-    user_id: String,
+    user_id: { type: String, trim: true },
     items: Array,
     ship_address: Object,
     order_num: { type: String, default: orderid.generate() },
