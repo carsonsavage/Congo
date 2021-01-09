@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
-    uid: String,
-    title: String,
+    uid: { type: String, trim: true },
+    title: { type: String, trim: true },
     price: Number,
     quantity: Number,
-    category: String,
+    category: { type: String, trim: true, lowercase: true },
     keywords: Array,
     features: Array,
     description: String,
-    image: String,
+    images: Array,
     date_Updated: { type: Date, default: Date.now }
 });
 
