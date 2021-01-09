@@ -60,6 +60,7 @@ export default function Login() {
             API.checkUser(registerObj.email).then(({ data }) => {
                 if (data[0]) {
                     setSignupErrorState("Email already in use");
+                    setOpen(true);
                 } else {
                     registerUser(registerObj)
                         .then((res) => { window.location.href = "/login" });
@@ -370,21 +371,19 @@ export default function Login() {
                 <Modal
                     basic
                     onClose={(e) => { e.preventDefault(); setOpen(false) }}
-                    onOpen={(e) => { e.preventDefault(); setOpen(true) }}
                     open={open}
                     size='small'
-                    trigger={signupErrorState}
                 >
                     <Header icon>
                         <Icon name='archive' />
-                    Archive Old Messages
+                    Uh Oh. Something went wrong...
                     </Header>
                     <Modal.Content>
-                        <p>{}</p>
+                        <p>{signupErrorState}</p>
                     </Modal.Content>
                     <Modal.Actions>
                         <Button color='green' inverted onClick={(e) => { e.preventDefault(); setOpen(false) }}>
-                            <Icon name='checkmark' /> Yes
+                            <Icon name='checkmark' /> Try again
                         </Button>
                     </Modal.Actions>
                 </Modal>
