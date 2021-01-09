@@ -6,13 +6,14 @@ function AddressCards() {
 
     return (
         <>
-            {userState.saved_address.map((address, index) => (
+            {userState.address.map((address, index) => (
                 <div className="card" key={index}>
                     <div className="content">
                         <div className="cardHeader">{address.name}</div>
                         <div className="description">
                             <address>
-                                <p>{address.address}</p>
+                                <p>{address.address1}</p>
+                                <p>{address.address2}</p>
                                 <p>{address.city},{address.state}</p>
                                 <p>{address.zipcode}</p>
                             </address>

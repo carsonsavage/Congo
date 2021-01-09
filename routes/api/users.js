@@ -1,17 +1,31 @@
 const router = require("express").Router();
 const usersController = require("../../controllers/usersController");
+var passport = require("../../config/passport.js");
 
-// Matches with "/api/posts"
+// Matches with "/api/user/"
 router
   .route("/")
-  .get(usersController.findAll)
+  .get((req,res)=>{
+    res.json(req.user);
+  });
+
+// Matches with "/api/user/register"
+router
+  .route("/register")
   .post(usersController.create);
 
-// Matches with "/api/posts/:id"
+  // Matches with "/api/user/login"
 router
-  .route("/:id")
-  .get(usersController.findById)
-  .put(usersController.update)
-  .delete(usersController.remove);
+  .route("/login")
+  .post(passport.authenticate("local"), (req, res)=>{res.json(req.user)});
+
+  router
+  .route("/logout")
+  .get((req,res)=>{
+    console.log("logging out");
+    req.logout();
+    res.sendStatus(200);
+  });
+
 
 module.exports = router;

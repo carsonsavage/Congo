@@ -8,7 +8,6 @@ const userSchema = new mongoose.Schema({
     phone_num: String,
     address: Array,
     credit_cards: Array,
-    orders: Array,
     date_Updated: { type: Date, default: Date.now }
 });
 
