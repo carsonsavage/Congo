@@ -18,9 +18,10 @@ function OrderCards() {
         return formatedDate;
     }
 
+
     return (
         <>
-            {ordersState.filtered_orders ? (
+            {ordersState.filtered_orders[0] ? (
                 ordersState.filtered_orders.map((order, index) => (
                     <div class="ui raised segment order-segment" key={index}>
                         <div className="row">

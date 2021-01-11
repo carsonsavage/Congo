@@ -6,6 +6,7 @@ export default {
     },
 
     register: (user) => {
+        console.log("here")
         return axios.post("/api/user/register", user);
     },
 
@@ -18,7 +19,8 @@ export default {
     },
 
     checkUser: (email) => {
-        return axios.post('/api/user/check', { email: email })
+        console.log("checking")
+        return axios.post("/api/user/check", { email: email });
     },
 
     logout: () => {
@@ -44,7 +46,7 @@ export default {
     },
 
     createOrder: (orderObj) => {
-        return axios.post(`/api/orders`, orderObj)
+        return axios.post(`/api/orders`, orderObj);
     },
 
     getCart: (userId) => {
@@ -53,5 +55,9 @@ export default {
 
     saveCart: (userId, cart) => {
         return axios.put(`/api/user/${userId}/cart`, cart);
+    },
+
+    getFeatured: () => {
+        return axios.get("/api/products/featured");
     },
 };
