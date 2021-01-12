@@ -31,7 +31,7 @@ app.use(routes);
 // Connect to the Mongo DB
 const mongoose = require("mongoose");
 mongoose.connect(
-    "mongodb+srv://aramp:batmanisc00l@cluster0.ehpyg.mongodb.net/Congo?retryWrites=true&w=majority",
+    `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.ehpyg.mongodb.net/Congo?retryWrites=true&w=majority`,
     {
         useNewUrlParser: true,
         useFindAndModify: false,
