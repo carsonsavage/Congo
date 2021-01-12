@@ -4,7 +4,7 @@ import UserContext from "../../../util/userContext.js";
 import AddressCards from "../address-card/address-card.js";
 import { Button, Modal } from "semantic-ui-react";
 import AddAddressModal from "../add-address-modal/add-address-modal.js";
-import EditAddressModal from '../edit-address-modal/edit-address-modal.js';
+import EditAddressModal from "../edit-address-modal/edit-address-modal.js";
 
 function exampleReducer(state, action) {
     switch (action.type) {
@@ -26,7 +26,7 @@ function SavedAddress() {
 
     const [modalState, setModalState] = useState("");
 
-    const { handleAddressAdd } = useContext(UserContext);
+    const { userState, handleAddressAdd } = useContext(UserContext);
 
     const [address, setAddress] = useState({
         name: "",
@@ -52,7 +52,11 @@ function SavedAddress() {
             </button>
             <hr />
             <div className="ui cards">
-                <AddressCards setModalState={setModalState} />
+                <AddressCards
+                    setModalState={setModalState}
+                    setAddress={setAddress}
+                    dispatch={dispatch}
+                />
             </div>
             <Modal
                 dimmer={dimmer}
@@ -71,7 +75,6 @@ function SavedAddress() {
                 {modalState === "edit" && (
                     <EditAddressModal
                         dispatch={dispatch}
-                        handleAddressAdd={handleAddressAdd}
                         setAddress={setAddress}
                         address={address}
                     />
