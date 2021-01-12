@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import UserContext from "../../../util/userContext.js";
 
 function AddressCards() {
-    const { userState, handleUserInfoChange } = useContext(UserContext);
+    const { userState, handleAddressRemoval } = useContext(UserContext);
 
     return (
         <>
@@ -14,7 +14,9 @@ function AddressCards() {
                             <address>
                                 <p>{address.address1}</p>
                                 <p>{address.address2}</p>
-                                <p>{address.city},{address.state}</p>
+                                <p>
+                                    {address.city},{address.state}
+                                </p>
                                 <p>{address.zipcode}</p>
                             </address>
                         </div>
@@ -22,7 +24,15 @@ function AddressCards() {
                     <div className="ui buttons">
                         <button className="ui blue button">Edit</button>
                         <div className="or"></div>
-                        <button className="ui red button">Remove</button>
+                        <button
+                            className="ui red button"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleAddressRemoval(index);
+                            }}
+                        >
+                            Remove
+                        </button>
                     </div>
                 </div>
             ))}
