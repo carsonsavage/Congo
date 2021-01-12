@@ -19,7 +19,6 @@
 
 .cartbutton {
     display: flex;
-    position: relative;
     justify-content: center;
     align-items: center;
     bottom: 0;
