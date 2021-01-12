@@ -2,7 +2,13 @@ import React from "react";
 import { Button, Modal } from "semantic-ui-react";
 import { Form, Col } from "react-bootstrap";
 
-function EditAddressModal({ address, setAddress, handleAddressAdd, dispatch }) {
+function EditAddressModal({
+    address,
+    setAddress,
+    handleAddressEdit,
+    dispatch,
+    index,
+}) {
     return (
         <>
             <Modal.Header>Edit Your Address</Modal.Header>
@@ -170,7 +176,10 @@ function EditAddressModal({ address, setAddress, handleAddressAdd, dispatch }) {
                 <div id="model-buttons">
                     <Button
                         negative
-                        onClick={() => dispatch({ type: "CLOSE_MODAL" })}
+                        onClick={() => {
+                            setAddress("");
+                            dispatch({ type: "CLOSE_MODAL" });
+                        }}
                     >
                         Cancel
                     </Button>
@@ -179,11 +188,11 @@ function EditAddressModal({ address, setAddress, handleAddressAdd, dispatch }) {
                         type="submit"
                         onClick={(e) => {
                             e.preventDefault();
-                            handleAddressAdd(address);
+                            handleAddressEdit(address, address.index);
                             dispatch({ type: "CLOSE_MODAL" });
                         }}
                     >
-                        Submit
+                        Save Edit
                     </Button>
                 </div>
             </Modal.Actions>
