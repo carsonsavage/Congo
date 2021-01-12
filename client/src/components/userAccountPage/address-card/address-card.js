@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../../util/userContext.js";
 
-function AddressCards() {
+function AddressCards({ setAddress, setModalState, dispatch }) {
     const { userState, handleAddressRemoval } = useContext(UserContext);
 
     return (
@@ -22,7 +22,17 @@ function AddressCards() {
                         </div>
                     </div>
                     <div className="ui buttons">
-                        <button className="ui blue button">Edit</button>
+                        <button
+                            className="ui blue button"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setAddress(userState.address[index]);
+                                setModalState("edit");
+                                dispatch({ type: "OPEN_MODAL", dimmer: "blurring" });
+                            }}
+                        >
+                            Edit
+                        </button>
                         <div className="or"></div>
                         <button
                             className="ui red button"
