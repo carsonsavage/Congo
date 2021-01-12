@@ -26,9 +26,15 @@ function AddressCards({ setAddress, setModalState, dispatch }) {
                             className="ui blue button"
                             onClick={(e) => {
                                 e.preventDefault();
-                                setAddress(userState.address[index]);
+                                setAddress({
+                                    index: index,
+                                    ...userState.address[index],
+                                });
                                 setModalState("edit");
-                                dispatch({ type: "OPEN_MODAL", dimmer: "blurring" });
+                                dispatch({
+                                    type: "OPEN_MODAL",
+                                    dimmer: "blurring",
+                                });
                             }}
                         >
                             Edit
