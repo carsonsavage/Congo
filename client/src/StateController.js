@@ -201,7 +201,9 @@ function StateController(props) {
     };
 
     const handleAddressEdit = (editedAddress, index) => {
-        console.log(editedAddress);
+        let addressArray = editableUserState.address;
+        addressArray[index] = editedAddress;
+        setUserState({ ...userState, address: addressArray });
     };
 
     const handleAddressAdd = (newAddress) => {
@@ -345,6 +347,7 @@ function StateController(props) {
                         setSignupErrorState,
                         handleAddressAdd,
                         handleAddressRemoval,
+                        handleAddressEdit,
                     }}
                 >
                     <OrderContext.Provider
