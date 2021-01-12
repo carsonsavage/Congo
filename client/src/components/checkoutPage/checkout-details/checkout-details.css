@@ -1,5 +1,18 @@
 .checkout-details{
-    margin-top: 40px;
-    float: left;
+    width: 70%;
+    margin: 40px auto;
+}
+
+#shipping-address p{
+    margin-top: 15px;
+    line-height: .5em;
+}
+
+#confirm-btn{
+    width: 150px;
+}
+
+#edit-btn{
+    display: inline-block;
 }
 

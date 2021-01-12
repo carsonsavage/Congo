@@ -1,0 +1,7 @@
+img.img-thumbnail{
+    border: none;
+}
+
+button.ui.button.deleteBtn{
+    width: 100px;
+}

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import UserContext from '../../../util/userContext.js';
 
 export default function Login() {
-    const {loginUser} = useContext(UserContext);
+    const {loginUser, loginErrorState} = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -24,6 +24,7 @@ export default function Login() {
         <div className="Login">
             <Form onSubmit={handleSubmit}>
                 <Form.Group size="lg" controlId="email">
+                    <div className="error-statement">{loginErrorState}</div>
                     <Form.Label>Email</Form.Label>
                     <Form.Control
                         autoFocus

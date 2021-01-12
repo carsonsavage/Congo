@@ -8,3 +8,8 @@
     box-sizing: none;
     background-color: #ffffff00;
 }
+
+.ui.massive.active.text.centered.inline.loader.center{
+    margin-top: 10%;
+}
+
