@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Modal } from "semantic-ui-react";
 import { Form, Col } from "react-bootstrap";
 
-function AddAddressModal({address, setAddress, handleAddressAdd, dispatch}) {
+function AddAddressModal({ address, setAddress, handleAddressAdd, dispatch }) {
     return (
         <>
             <Modal.Header>Add an address</Modal.Header>
@@ -173,7 +173,10 @@ function AddAddressModal({address, setAddress, handleAddressAdd, dispatch}) {
                 <div id="model-buttons">
                     <Button
                         negative
-                        onClick={() => dispatch({ type: "CLOSE_MODAL" })}
+                        onClick={() => {
+                            setAddress("");
+                            dispatch({ type: "CLOSE_MODAL" });
+                        }}
                     >
                         Cancel
                     </Button>
