@@ -209,6 +209,7 @@ function StateController(props) {
     };
 
     const registerUser = (user) => {
+        console.log("reg")
         return API.register(user);
     };
 
