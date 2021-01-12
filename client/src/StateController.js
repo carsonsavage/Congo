@@ -76,16 +76,14 @@ function StateController(props) {
         _id: "",
         first_name: "",
         last_name: "",
-        phone: "",
         email: "",
-        saved_address: [],
-        saved_payments: [],
     });
 
     const [loginErrorState, setLoginErrorState] = useState("");
-    const [signupErrorState, setSignupErrorState] = useState("")
+    const [signupErrorState, setSignupErrorState] = useState("");
 
     const [editableUserState, setEditableUserState] = useState(userState);
+    const [saveableUserState, setSaveableUserState] = useState();
 
     const [ordersState, setOrdersState] = useState({
         orders: [],
@@ -199,17 +197,54 @@ function StateController(props) {
 
     const handleUserInfoChange = (event) => {
         const { name, value } = event.target;
-        setEditableUserState({ ...editableUserState, [name]: [value] });
+        setEditableUserState({ ...editableUserState, [name]: value });
+    };
+
+    const handleAddressEdit = (editedAddress, index) => {
+        let addressArray = editableUserState.address;
+        addressArray[index] = editedAddress;
+        setUserState({ ...userState, address: addressArray });
+    };
+
+    const handleAddressAdd = (newAddress) => {
+        let addressArray = editableUserState.address;
+        addressArray.push(newAddress);
+        setUserState({ ...userState, address: addressArray });
+    };
+
+    const handleAddressRemoval = (index) => {
+        let addressArray = editableUserState.address;
+        addressArray.splice(index, 1);
+        setUserState({ ...userState, address: addressArray });
+    };
+
+    const handleCardEdit = (editedCard) => {
+        console.log(editedCard);
+    };
+
+    const handleCardAdd = (newCard) => {
+        console.log(newCard);
+    };
+
+    const handleCardRemoval = (index) => {
+        console.log(index);
     };
 
     const saveUserInfoChange = () => {
-        //make api call to save updated user
         //on success, change userState
         setUserState(editableUserState);
     };
 
+    useEffect(() => {
+        if (userState.loggedIn) {
+            API.update(userState._id, editableUserState).then((updatedUser) => {
+                console.log("got something back", editableUserState);
+            });
+        }
+    }, [userState]);
+
     const registerUser = (user) => {
-        console.log("reg")
+        console.log("reg");
         return API.register(user);
     };
 
@@ -255,7 +290,7 @@ function StateController(props) {
 
     const saveCurrentCart = () => {
         if (userState.loggedIn) {
-            API.saveCart(userState._id, cartIdState).then(({ data }) => { });
+            API.saveCart(userState._id, cartIdState).then(({ data }) => {});
         } else {
             removeCookie(["cookieCart"], { path: "/" });
             setCookie("cookieCart", cartIdState, { path: "/" });
@@ -309,7 +344,10 @@ function StateController(props) {
                         logoutUser,
                         loginErrorState,
                         signupErrorState,
-                        setSignupErrorState
+                        setSignupErrorState,
+                        handleAddressAdd,
+                        handleAddressRemoval,
+                        handleAddressEdit,
                     }}
                 >
                     <OrderContext.Provider
