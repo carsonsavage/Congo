@@ -148,7 +148,7 @@ export default () => {
 <br></br>
 <div style={{ height:400, background: '#f0f7f0' }}>
 <h3>{title}</h3>
-<div className="product-img-wrapper" id="featuredimage"><img src ={images[0]} height="200">
+<div className="product-img-wrapper" id="featuredimage"><img src ={images[0]} height="175" alt="featured product image">
 </img>
 </div>
 <div className="productprice"><p><br></br>${price}</p></div>
