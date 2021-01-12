@@ -11,7 +11,7 @@ export default {
     },
 
     update: (userId, data) => {
-        return axios.post(`/api/user/update/${userId}`, data);
+        return axios.put(`/api/user/update/${userId}`, data);
     },
 
     getUser: () => {
