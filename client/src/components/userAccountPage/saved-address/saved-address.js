@@ -26,7 +26,7 @@ function SavedAddress() {
 
     const [modalState, setModalState] = useState("");
 
-    const { userState, handleAddressAdd } = useContext(UserContext);
+    const { userState, handleAddressAdd, handleAddressEdit } = useContext(UserContext);
 
     const [address, setAddress] = useState({
         name: "",
@@ -77,6 +77,7 @@ function SavedAddress() {
                         dispatch={dispatch}
                         setAddress={setAddress}
                         address={address}
+                        handleAddressEdit={handleAddressEdit}
                     />
                 )}
             </Modal>
