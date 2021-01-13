@@ -25,4 +25,7 @@ router.route("/logout").get((req, res) => {
 
 router.route("/update/:id").put(usersController.update);
 
+// router.route("/forgot-password:email")
+// .get(usersController.findByEmail);
+
 module.exports = router;
