@@ -137,10 +137,7 @@ export function MobileHeader() {
                                         {userState.loggedIn ? (
                                             <NavDropdown
                                                 title={
-                                                    <>
-                                                        Hello, <br />{" "}
-                                                        {userState.first_name}
-                                                    </>
+                                                    <i className="ui icon user" id="user-loggedIn"></i>
                                                 }
                                                 id="collasible-nav-dropdown"
                                             >
