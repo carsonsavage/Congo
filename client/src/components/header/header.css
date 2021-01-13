@@ -52,6 +52,7 @@ a.dropdown-item button {
         position: absolute;
         width: 20px;
         margin-left: 20%;
+        color: green;
     }
 
     #user-loggedIn{
