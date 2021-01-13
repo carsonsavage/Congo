@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../../util/userContext.js";
+import { Button } from "semantic-ui-react";
 
 function AddressCards({ setAddress, setModalState, dispatch }) {
     const { userState, handleAddressRemoval } = useContext(UserContext);
