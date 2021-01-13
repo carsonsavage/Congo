@@ -24,10 +24,15 @@ function Cart() {
                         </Col>
                     </Row>
                 ) : (
-                    <div className="ui placeholder segment" id="cart-placeholder">
+                    <div
+                        className="ui placeholder segment"
+                        id="cart-placeholder"
+                    >
                         <div className="ui icon header">
                             <i className="cart icon"></i>
-                            Your cart is currently empty
+                        </div>
+                        <div className="center-text">
+                            <span>Your cart is currently empty</span>
                         </div>
                         <Link to="/" className="react-link">
                             <div className="ui blue mini button">
