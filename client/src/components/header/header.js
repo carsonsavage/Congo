@@ -1,23 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import "./header.css";
-import {
-    Nav,
-    Navbar,
-    NavDropdown,
-    Row,
-    Col,
-    Form,
-    FormControl,
-    Button,
-} from "react-bootstrap";
+import { Nav, Navbar, NavDropdown, Row, Col } from "react-bootstrap";
+import { Button, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import SearchBar from "./searchBar/search-bar.js";
 import Cart from "./cart/cart.js";
 import UserContext from "../../util/userContext.js";
+import CartContext from "../../util/cartContext.js";
 import logo from "./logo.svg";
 
 export function Header() {
-    const { userState } = useContext(UserContext);
+    const { userState, logoutUser } = useContext(UserContext);
+    const { saveCurrentCart } = useContext(CartContext);
 
     return (
         <Navbar bg="dark" variant="dark" id="desktop-header">
@@ -25,50 +19,87 @@ export function Header() {
                 <Row>
                     <Col lg={3}>
                         <div className="logo-div">
-                            <Navbar.Brand>Navbar</Navbar.Brand>
+                            <Navbar.Brand>
+                                <Link to="/" className="react-link">
+                                    <img
+                                        src={logo}
+                                        alt="Congo logo"
+                                        className="header-logo"
+                                    />
+                                </Link>
+                            </Navbar.Brand>
                         </div>
                     </Col>
                     <Col lg={6}>
-                        <div className="search-div">
+                        <div className="search-bar">
                             <SearchBar />
                         </div>
                     </Col>
                     <Col lg={3}>
-                        <div className="right-div">
-                            <Nav>
-                                {userState.loggedIn ? (
-                                    <NavDropdown
-                                        title={`Hello, ${userState.first_name}`}
-                                        id="collasible-nav-dropdown"
-                                    >
-                                        <NavDropdown.Item>
+                        <Col lg={12}>
+                            <div className="right-div">
+                                <Nav>
+                                    <Col lg={4}>
+                                        {userState.loggedIn ? (
+                                            <NavDropdown
+                                                title={
+                                                    <>
+                                                        Hello, <br />{" "}
+                                                        {userState.first_name}
+                                                    </>
+                                                }
+                                                id="collasible-nav-dropdown"
+                                            >
+                                                <NavDropdown.Item>
+                                                    <Link
+                                                        to={`/user/dashboard/${userState._id}`}
+                                                        className="react-link"
+                                                    >
+                                                        View Account
+                                                    </Link>
+                                                </NavDropdown.Item>
+                                                <NavDropdown.Item>
+                                                    <Button
+                                                        color="red"
+                                                        onClick={
+                                                            (saveCurrentCart,
+                                                            logoutUser)
+                                                        }
+                                                    >
+                                                        Logout
+                                                    </Button>
+                                                </NavDropdown.Item>
+                                            </NavDropdown>
+                                        ) : (
+                                            <Nav.Link>
+                                                <Link
+                                                    to="/login"
+                                                    className="react-link"
+                                                >
+                                                    Login/
+                                                    <br /> Signup
+                                                </Link>
+                                            </Nav.Link>
+                                        )}
+                                    </Col>
+                                    <Col lg={4}>
+                                        <Nav.Link>
                                             <Link
-                                                to={`/user/dashboard/${userState._id}`}
+                                                to="/orders"
                                                 className="react-link"
                                             >
-                                                View Account
+                                                Returns & Orders
                                             </Link>
-                                        </NavDropdown.Item>
-                                        <NavDropdown.Item>
-                                            Logout
-                                        </NavDropdown.Item>
-                                    </NavDropdown>
-                                ) : (
-                                    <Nav.Link>
-                                        <Link
-                                            to="/login"
-                                            className="react-link"
-                                        >
-                                            Login/ Signup
-                                        </Link>
-                                    </Nav.Link>
-                                )}
-                                <Nav.Link>Dank memes</Nav.Link>
-                                <Nav.Link>
-                                    <Cart />
-                                </Nav.Link>
-                            </Nav>
-                        </div>
+                                        </Nav.Link>
+                                    </Col>
+                                    <Col lg={4}>
+                                        <Nav.Link>
+                                            <Cart />
+                                        </Nav.Link>
+                                    </Col>
+                                </Nav>
+                            </div>
+                        </Col>
                     </Col>
                 </Row>
             </Col>
