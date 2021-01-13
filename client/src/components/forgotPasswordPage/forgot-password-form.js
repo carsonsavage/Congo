@@ -15,11 +15,19 @@ function ForgotPasswordForm() {
     const [messageState, setMessageState] = useState("");
     const [email, setEmail] = useState("");
 
-    function sendPasswordReset(event) {
+    function checkUserEmail(event) {
         event.preventDefault();
         API.checkUserEmail(email).then(({ data }) => {
-            console.log(data);
+            if (data[0]) {
+                setMessageState("success");
+            } else {
+                setMessageState("negative");
+            }
         });
+    }
+
+    function sendPasswordReset(_id, email) {
+        //donothingrn
     }
 
     return (
@@ -39,7 +47,7 @@ function ForgotPasswordForm() {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </Form.Field>
-                    <Button type="submit" onClick={sendPasswordReset}>
+                    <Button type="submit" onClick={checkUserEmail}>
                         Submit
                     </Button>
                 </Form>
