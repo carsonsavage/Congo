@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./search-bar.css";
 import SearchContext from "../../../util/searchContext";
+import { Form } from "react-bootstrap";
 
 function SearchBar() {
     const history = useHistory();
@@ -25,6 +26,21 @@ function SearchBar() {
     return (
         <div className="search-bar">
             <form onSubmit={handleSubmit}>
+                <Form.Control
+                    as="select"
+                    defaultValue="All"
+                    className="mr-sm-2"
+                    id="category-select"
+                >
+                    <option>All</option>
+                    <option value="food">Food</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="baby">Baby</option>
+                    <option value="cd's & vinyl">Cd's & Vinyl</option>
+                    <option value="video games">Video Games</option>
+                </Form.Control>
+
                 <div className="ui input">
                     <input
                         name="search"
@@ -35,7 +51,11 @@ function SearchBar() {
                 </div>
 
                 <Link to={generateSearchQuery()}>
-                    <button type="submit" className="ui inverted blue button" onClick={handleSubmit}>
+                    <button
+                        type="submit"
+                        className="ui inverted blue button"
+                        onClick={handleSubmit}
+                    >
                         <i className="search icon" />
                     </button>
                 </Link>
