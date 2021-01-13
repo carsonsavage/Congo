@@ -217,16 +217,22 @@ function StateController(props) {
         setUserState({ ...userState, address: addressArray });
     };
 
-    const handleCardEdit = (editedCard) => {
-        console.log(editedCard);
+    const handleCardEdit = (editedCard, index) => {
+        let cardArray = editableUserState.credit_cards;
+        cardArray[index] = editedCard;
+        setUserState({ ...userState, credit_cards: cardArray });
     };
 
     const handleCardAdd = (newCard) => {
-        console.log(newCard);
+        let cardArray = editableUserState.credit_cards;
+        cardArray.push(newCard);
+        setUserState({ ...userState, credit_cards: cardArray });
     };
 
     const handleCardRemoval = (index) => {
-        console.log(index);
+        let cardArray = editableUserState.credit_cards;
+        cardArray.splice(index, 1);
+        setUserState({ ...userState, credit_cards: cardArray });
     };
 
     const saveUserInfoChange = () => {
@@ -347,6 +353,9 @@ function StateController(props) {
                         handleAddressAdd,
                         handleAddressRemoval,
                         handleAddressEdit,
+                        handleCardAdd,
+                        handleCardEdit,
+                        handleCardRemoval,
                     }}
                 >
                     <OrderContext.Provider
