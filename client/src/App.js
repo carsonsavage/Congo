@@ -8,6 +8,7 @@ import Checkout from "./pages/checkout/checkout.js";
 import Cart from "./pages/cart/cart.js";
 import Login from "./pages/login/login.js";
 import Orders from "./pages/orders/orders.js";
+import ContactUs from "./pages/contact-us/contact-us.js";
 import Signup from "./pages/signup/signup.js";
 import ProductDetails from "./pages/product-details/product-details.js";
 import "./app.css";
@@ -53,7 +54,7 @@ function App() {
 
                 <Route path="/forgot-password" component={ForgotPassword} />
 
-                
+                <Route path="/contact-us" component={ContactUs} />
             </Switch>
         </Router>
     );
