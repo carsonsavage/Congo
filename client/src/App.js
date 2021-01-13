@@ -12,6 +12,7 @@ import Signup from "./pages/signup/signup.js";
 import ProductDetails from "./pages/product-details/product-details.js";
 import "./app.css";
 import UserContext from "./util/userContext";
+import ForgotPassword from "./pages/forgot-password/forgot-password.js";
 
 function App() {
     const { userState } = useContext(UserContext);
@@ -49,6 +50,10 @@ function App() {
                 <Route path="/signup" component={Signup} />
 
                 <Route path="/orders" component={Orders} />
+
+                <Route path="/forgot-password" component={ForgotPassword} />
+
+                
             </Switch>
         </Router>
     );
