@@ -4,7 +4,20 @@
     clear: both;
 }
 
-div.ui.mini button{
+div.ui.mini button {
     width: 70px;
     display: inline-block;
+}
+
+button.ui.fade.animated.button{
+    width: 300px;
+}
+
+.fade:not(.show) {
+    opacity: 1;
+}
+
+#center-btn{
+    color: white;
+    margin-left: 40%;
 }
