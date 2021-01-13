@@ -1,4 +1,4 @@
-.header {
+/* .header {
     height: 100px;
     width: 100%;
     background-color: transparent;
@@ -6,9 +6,6 @@
     position: relative;
 }
 
-/* .bg{
-    background-image: url("https://imgur.com/sKQZp7j");
-} */
 .header-text {
     font-size: 20px;
     text-align: center;
@@ -28,10 +25,25 @@
     padding-left: 100px;
     background-image: url(https://imgur.com/sKQZp7j);
 }
-
+*/
 .header-logo {
-    width: 200px;
-    position: absolute;
-    left: 0;
-    top: -15px;
+    width: 100px;
+}
+
+.logo-div {
+    width: 100%;
+    height: 80px;
+    background-color: red;
+}
+
+.search-div {
+    width: 100%;
+    height: 80px;
+    background-color: blue;
+}
+
+.right-div {
+    width: 100%;
+    height: 80px;
+    background-color: green;
 }
