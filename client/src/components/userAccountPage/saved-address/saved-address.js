@@ -26,7 +26,9 @@ function SavedAddress() {
 
     const [modalState, setModalState] = useState("");
 
-    const { userState, handleAddressAdd, handleAddressEdit } = useContext(UserContext);
+    const { userState, handleAddressAdd, handleAddressEdit } = useContext(
+        UserContext
+    );
 
     const [address, setAddress] = useState({
         name: "",
@@ -51,13 +53,35 @@ function SavedAddress() {
                 <i class="plus icon"></i>
             </button>
             <hr />
-            <div className="ui cards">
-                <AddressCards
-                    setModalState={setModalState}
-                    setAddress={setAddress}
-                    dispatch={dispatch}
-                />
-            </div>
+            {userState.address.length > 0 ? (
+                <div className="ui cards">
+                    <AddressCards
+                        setModalState={setModalState}
+                        setAddress={setAddress}
+                        dispatch={dispatch}
+                    />
+                </div>
+            ) : (
+                <div className="ui stacked segments">
+                    <div className="ui segment clearfix">
+                        <h4 className="center-text">
+                            Where do we send your orders?
+                        </h4>
+
+                        <Button
+                            animated="fade"
+                            className="blue"
+                            id="center-btn"
+                        >
+                            <Button.Content visible>Add an address</Button.Content>
+                            <Button.Content hidden>
+                                <i className="icon address book"></i>
+                            </Button.Content>
+                        </Button>
+                    </div>
+                </div>
+            )}
+
             <Modal
                 dimmer={dimmer}
                 open={open}
