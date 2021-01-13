@@ -76,7 +76,18 @@ function PaymentCards({ setCreditCard, setModalState, dispatch }) {
                         Uh Oh... it looks like you have no cards saved
                     </h4>
 
-                    <Button animated="fade" className="green" id="center-btn">
+                    <Button
+                        animated="fade"
+                        className="green"
+                        id="center-btn"
+                        onClick={() => {
+                            setModalState("card");
+                            dispatch({
+                                type: "OPEN_MODAL",
+                                dimmer: "blurring",
+                            });
+                        }}
+                    >
                         <Button.Content visible>Add a card</Button.Content>
                         <Button.Content hidden>
                             <i className="icon dollar"></i>
