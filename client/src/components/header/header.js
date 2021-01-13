@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "./searchBar/search-bar.js";
 import Cart from "./cart/cart.js";
 import UserContext from "../../util/userContext.js";
+import logo from "./logo.svg"
 
 function Header() {
     const { userState } = useContext(UserContext);
@@ -14,7 +15,7 @@ function Header() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Brand href="#home" className="brand">
                 <Link to="/" className="react-link">
-                    <img src="./logo.svg" className="header-logo" alt="congo logo with toucan on top of title" />
+                    <img src={logo} className="header-logo" alt="congo logo with toucan on top of title" />
                 </Link>
             </Navbar.Brand>
             <div className="search-bar">
