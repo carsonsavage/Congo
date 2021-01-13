@@ -334,6 +334,7 @@ function StateController(props) {
                 value={{
                     searchState,
                     handleSearchChange,
+                    handleCategoryChange,
                     searchProducts,
                     lookupProduct,
                 }}
