@@ -50,7 +50,12 @@ a.dropdown-item button {
     #mobile-cart-count{
         font-size: 20px;
         position: absolute;
-        padding-left: 10px;
+        width: 20px;
+        margin-left: 20%;
+    }
+
+    #user-loggedIn{
+        margin-left: -20px;
     }
 }
 
