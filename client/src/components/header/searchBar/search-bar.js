@@ -7,9 +7,12 @@ import { Form } from "react-bootstrap";
 function SearchBar() {
     const history = useHistory();
 
-    const { searchState, handleSearchChange, searchProducts } = useContext(
-        SearchContext
-    );
+    const {
+        searchState,
+        handleSearchChange,
+        searchProducts,
+        handleCategoryChange,
+    } = useContext(SearchContext);
 
     function generateSearchQuery() {
         let query = `/search/C=${searchState.search_category}&Q=${searchState.search_query}`;
@@ -31,6 +34,7 @@ function SearchBar() {
                     defaultValue="All"
                     className="mr-sm-2"
                     id="category-select"
+                    onChange={handleCategoryChange}
                 >
                     <option>All</option>
                     <option value="food">Food</option>
