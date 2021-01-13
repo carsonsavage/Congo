@@ -73,7 +73,9 @@ function SavedAddress() {
                             className="blue"
                             id="center-btn"
                         >
-                            <Button.Content visible>Add an address</Button.Content>
+                            <Button.Content visible>
+                                Add an address
+                            </Button.Content>
                             <Button.Content hidden>
                                 <i className="icon address book"></i>
                             </Button.Content>
@@ -110,21 +112,3 @@ function SavedAddress() {
 }
 
 export default SavedAddress;
-
-// {editState ? (
-//     <>
-//         <button className="circular ui icon button" onClick={saveEdit}>
-//             <i class="save icon"></i>
-//         </button>
-//         <hr />
-
-//     </>
-// ) : (
-//     <>
-//         <button className="circular ui icon button" onClick={enableEdit}>
-//             <i class="edit icon"></i>
-//         </button>
-//         <hr />
-
-//     </>
-// )}
