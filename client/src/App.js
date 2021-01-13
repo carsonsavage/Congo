@@ -37,7 +37,10 @@ function App() {
                     component={ProductDetails}
                 />
 
-                <Route path="/checkout" component={userState.loggedIn ? Checkout : Login} />
+                <Route
+                    path="/checkout"
+                    component={userState.loggedIn ? Checkout : Login}
+                />
 
                 <Route path="/cart" component={Cart} />
 
