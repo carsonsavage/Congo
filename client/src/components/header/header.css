@@ -39,6 +39,19 @@ a.dropdown-item button {
     #mobile-header {
         display: block;
     }
+
+    .right-div {
+        text-align: center;
+        font-size: 25px;
+    }
+    .header-logo {
+        width: 100px;
+    }
+    #mobile-cart-count{
+        font-size: 20px;
+        position: absolute;
+        padding-left: 10px;
+    }
 }
 
 @media only screen and (min-width: 996px) {
