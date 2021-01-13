@@ -1,12 +1,21 @@
-.search-bar{
+.search-bar {
     width: 100%;
 }
 
-.ui.input{
+.ui.input {
     width: 85%;
+    padding-left: 123px;
 }
 
-button{
+button {
     padding: 0;
     width: 55px;
 }
+#category-select {
+    width: 130px;
+    height: 38px;
+    position: absolute;
+    z-index: 20;
+}
+
+
