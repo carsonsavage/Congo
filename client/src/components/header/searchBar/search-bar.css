@@ -3,7 +3,7 @@
 }
 
 .ui.input {
-    width: 100%;
+    width: 85%;
     padding-left: 123px;
 }
 
@@ -21,6 +21,10 @@ button {
 @media only screen and (max-width: 995px) {
     button {
         padding: 0;
+        width: 100%;
+    }
+
+    .ui.input {
         width: 100%;
     }
 }
