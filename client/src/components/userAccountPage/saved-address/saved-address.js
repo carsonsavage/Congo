@@ -72,6 +72,13 @@ function SavedAddress() {
                             animated="fade"
                             className="blue"
                             id="center-btn"
+                            onClick={() => {
+                                setModalState("address");
+                                dispatch({
+                                    type: "OPEN_MODAL",
+                                    dimmer: "blurring",
+                                });
+                            }}
                         >
                             <Button.Content visible>
                                 Add an address
