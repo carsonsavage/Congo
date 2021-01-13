@@ -83,6 +83,7 @@ export default function Login() {
                             type="text"
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
+                            placeholder="John"
                             required
                         />
                     </Col>
@@ -93,6 +94,7 @@ export default function Login() {
                             type="text"
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
+                            placeholder="Doe"
                             required
                         />
                     </Col>
@@ -105,6 +107,7 @@ export default function Login() {
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            placeholder="your@email.com"
                             required
                         />
                     </Col>
@@ -280,9 +283,8 @@ export default function Login() {
                         <Form.Control
                             type="tel"
                             inputMode="numeric"
-                            pattern="[0-9\s]{13,19}"
-                            maxLength="16"
-                            placeholder="xxxx xxxx xxxx xxxx"
+                            maxLength="4"
+                            placeholder="xxxx"
                             required
                             onChange={(e) =>
                                 setCreditCard({
