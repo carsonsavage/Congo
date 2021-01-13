@@ -25,7 +25,7 @@ function Cart() {
                     </Row>
                 ) : (
                     <div
-                        className="ui placeholder segment"
+                        className="ui placeholder segment darktheme"
                         id="cart-placeholder"
                     >
                         <div className="ui icon header">
