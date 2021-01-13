@@ -83,7 +83,6 @@ function StateController(props) {
     const [signupErrorState, setSignupErrorState] = useState("");
 
     const [editableUserState, setEditableUserState] = useState(userState);
-    const [saveableUserState, setSaveableUserState] = useState();
 
     const [ordersState, setOrdersState] = useState({
         orders: [],
