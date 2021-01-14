@@ -19,25 +19,21 @@ function readWriteFile(product) {
 
 let product = {
     "uid": translator.new(),
-    "title": "Little Blue Truck's Valentine Hardcover – Picture Book, December 8, 2020",
-    "price": 9.29,
-    "quantity": 35,
+    "title": "Llama Llama I Love You Board book – Illustrated, December 26, 2014",
+    "price": 5.00,
+    "quantity": 12,
     "category": "Books",
     "keywords": [
-        "valentine book",
+        "Llama book",
         "reading",
         "kids book"
     ],
     "features": [
-        "story about little blue truck",
-        "kids valentine book"
+        "story about llamas",
+        "kids i love you book"
     ],
-<<<<<<< HEAD
-    "description": "Spread the love with Little Blue Truck—a perfect Valentine's Day read-aloud in this best-selling series! Beep! said Blue. Happy Valentine's Day!,Join Little Blue Truck as he delivers Valentine's Day cards to all his farm animal friends. But as Blue beeps along, he starts to wonder: will he get any cards of his own? With brightly colored foil accents throughout and a large gatefold at the end, this book is the perfect Valentine's Day gift.",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/511fkcXCwBL._SX258_BO1,204,203,200_.jpg"
-=======
-    "description": "Wooden piano magically makes music, 3 sheets of music & 6 different songs, child safe and durable materials, Easy to wipe down and clean, Ships in fully enclosed packaging",
-    "images": "https://images-na.ssl-images-amazon.com/images/I/71--Y8HdOQL._AC_SL1500_.jpg"
+    "description": "With short and simple rhyming text, the Llama Llama board books introduce Llama Llama to babies and toddlers before they’re ready for longer full-length stories. And their small size and durable pages are perfect for little hands.",
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/91xQR0hElJL.jpg", "https://images-na.ssl-images-amazon.com/images/I/916ha2D7y4L.jpg"]
 };
 
 product.category = product.category.toLowerCase();
@@ -46,7 +42,6 @@ if(Array.isArray(product.images)){
 } else {
     console.log(new Error("Cannot write file, images is not a valid array") )
     return
->>>>>>> bda2f20aab0b6c527b7d91ddd48686554546cb05
 }
 
 
