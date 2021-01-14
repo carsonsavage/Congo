@@ -20,7 +20,7 @@ function Orders() {
     return (
         <>
             <Wrapper>
-                <div className="orders-header">
+                <div className="orders-header center">
                     <h1 className="ui icon header">
                         <i className="massive box icon"></i>
                         <div className="content">Orders</div>
