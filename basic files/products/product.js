@@ -19,21 +19,21 @@ function readWriteFile(product) {
 
 let product = {
     "uid": translator.new(),
-    "title": "Baby Einstein Magic Touch Piano Wooden Musical Toy Toddler Toy, Ages 6 months and up",
-    "price": 24.99,
-    "quantity": 1,
-    "category": "Baby",
+    "title": "Little Blue Truck's Valentine Hardcover – Picture Book, December 8, 2020",
+    "price": 9.29,
+    "quantity": 35,
+    "category": "Books",
     "keywords": [
-        "toy",
-        "Multi use"
+        "valentine book",
+        "reading",
+        "kids book"
     ],
     "features": [
-        "wooden",
-        "durable",
-        "multiple music options"
+        "story about little blue truck",
+        "kids valentine book"
     ],
-    "description": "Wooden piano magically makes music, 3 sheets of music & 6 different songs, child safe and durable materials, Easy to wipe down and clean, Ships in fully enclosed packaging",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/71--Y8HdOQL._AC_SL1500_.jpg"
+    "description": "Spread the love with Little Blue Truck—a perfect Valentine's Day read-aloud in this best-selling series! Beep! said Blue. Happy Valentine's Day!,Join Little Blue Truck as he delivers Valentine's Day cards to all his farm animal friends. But as Blue beeps along, he starts to wonder: will he get any cards of his own? With brightly colored foil accents throughout and a large gatefold at the end, this book is the perfect Valentine's Day gift.",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/511fkcXCwBL._SX258_BO1,204,203,200_.jpg"
 }
 
 readWriteFile(product);
