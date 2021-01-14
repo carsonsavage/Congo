@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const usersController = require("../../controllers/usersController");
+const resetPasswordController = require("../../controllers/resetPasswordController.js");
 var passport = require("../../config/passport.js");
 
 // Matches with "/api/user/"
@@ -25,7 +26,8 @@ router.route("/logout").get((req, res) => {
 
 router.route("/update/:id").put(usersController.update);
 
-// router.route("/forgot-password:email")
-// .get(usersController.findByEmail);
+router
+    .route("/forgot-password/:id")
+    .get(resetPasswordController.findUserResetAndDelete);
 
 module.exports = router;
