@@ -43,10 +43,22 @@ function StateController(props) {
     });
 
     useEffect(() => {
+        console.log("getting here");
         saveCurrentCart();
         //call to get multiple products
-        API.getMultipleProducts(cartIdState).then(({ data }) => {
-            setSavedCartItemsState(data);
+        let map = new Map();
+        let productIdArray = [];
+        cartIdState.forEach(({ _id, qnty_selected }) => {
+            map.set(_id, qnty_selected);
+            productIdArray.push(_id);
+        });
+        API.getMultipleProducts(productIdArray).then(({ data }) => {
+            let productArray = data;
+            productArray.forEach(({ _id }, index) => {
+                productArray[index].qnty_selected = map.get(_id);
+            });
+
+            setSavedCartItemsState(productArray);
         });
         //set into saved cartitemstate
     }, [cartIdState]);
@@ -55,9 +67,10 @@ function StateController(props) {
         let total = 0;
         let count = 0;
         if (savedCartItemsState[0]) {
-            savedCartItemsState.forEach((product) => {
-                total = total + product.price;
-                count = count + 1;
+            savedCartItemsState.forEach(({ price, qnty_selected }) => {
+                console.log(price);
+                total = total + parseInt(price) * parseInt(qnty_selected);
+                count = count + parseInt(qnty_selected);
             });
         }
 
@@ -273,13 +286,14 @@ function StateController(props) {
         });
     };
 
-    const addProductToCart = (productId) => {
+    const addProductToCart = (productId, qntySelected) => {
+        let productObj = { _id: productId, qnty_selected: qntySelected };
         let newCartArray;
         if (cartIdState) {
             newCartArray = cartIdState;
-            newCartArray.push(productId);
+            newCartArray.push(productObj);
         } else {
-            newCartArray = [productId];
+            newCartArray = [productObj];
         }
         let uniqueArray = [...new Set(newCartArray)];
         if (userState.loggedIn) {
@@ -302,10 +316,16 @@ function StateController(props) {
         }
     };
 
-    const deleteProductFromCart = (productId) => {
-        let deletedArray = [...cartIdState];
-        deletedArray.splice(0, 1);
-        setCartIdState(deletedArray);
+    const deleteProductFromCart = (index) => {
+        let deletedArray = cartIdState;
+        deletedArray.splice(parseInt(index), 1);
+        setCartIdState([...deletedArray]);
+    };
+
+    const updateProductInCart = (index, newQnty) => {
+        let updatedArray = cartIdState;
+        updatedArray[index].qnty_selected = parseInt(newQnty);
+        setCartIdState([...updatedArray]);
     };
 
     const searchProducts = (category, query) => {
@@ -328,6 +348,7 @@ function StateController(props) {
                 saveCurrentCart,
                 cartIdState,
                 setCartIdState,
+                updateProductInCart,
             }}
         >
             <SearchContext.Provider
