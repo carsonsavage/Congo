@@ -8,7 +8,7 @@ import API from "../../../util/API.js";
 
 function CheckoutDetails() {
     const { userState } = useContext(UserContext);
-    const { cartState, setCartIdState } = useContext(CartContext);
+    const { cartState, setCartIdState, cartIdState } = useContext(CartContext);
     const shippingCost = 2.21;
     const preTax = cartState.cart_total + shippingCost;
     const tax = parseInt((preTax * 0.08).toFixed(2));
@@ -26,6 +26,8 @@ function CheckoutDetails() {
     const [paymentCard, setPaymentCard] = useState(userState.credit_cards[0]);
 
     function confirmOrder() {
+        API.updateProductsQnty(cartIdState);
+
         API.createOrder({
             user_id: userState._id,
             items: cartState.cart_items,
@@ -220,7 +222,9 @@ function CheckoutDetails() {
                     className="center"
                     id="forgotten-password-form"
                 >
-                    <span>Success!</span> Order <span>#{orderNum}</span> has been successfully placed. <Link to="/orders">See my Orders</Link>
+                    <span>Success!</span> Order <span>#{orderNum}</span> has
+                    been successfully placed.{" "}
+                    <Link to="/orders">See my Orders</Link>
                 </Message>
             ) : (
                 <>
