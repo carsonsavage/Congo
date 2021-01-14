@@ -64,10 +64,7 @@ export default {
         return axios.post("/api/user/check", { email: email });
     },
 
-    sendPasswordReset: (userId, email) => {
-        return axios.post(`/api/user/forgot-password`, {
-            _id: userId,
-            email: email,
-        });
+    sendPasswordReset: (userId) => {
+        axios.get(`/api/user/forgot-password/${userId}`);
     },
 };
