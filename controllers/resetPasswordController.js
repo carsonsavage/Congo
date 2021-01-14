@@ -7,9 +7,7 @@ module.exports = {
             .then((dbModel) => res.json(dbModel))
             .catch((err) => res.status(422).json(err));
     },
-    create: function ({ body }, res) {
-        db.ResetPassword.create(body)
-            .then((dbModel) => res.json(dbModel))
-            .catch((err) => res.status(422).json(err));
+    create: function (obj) {
+        return db.ResetPassword.create(obj)
     },
 };
