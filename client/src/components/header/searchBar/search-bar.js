@@ -45,7 +45,7 @@ function SearchBar() {
                     <option value="video games">Video Games</option>
                 </Form.Control>
 
-                <div className="ui input">
+                <div className="ui input search">
                     <input
                         name="search"
                         type="text"
