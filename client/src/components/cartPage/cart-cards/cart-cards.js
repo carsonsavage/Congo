@@ -5,7 +5,6 @@ import { Row, Col, Image, Form } from "react-bootstrap";
 import CartContext from "../../../util/cartContext.js";
 
 function CartCards() {
-    const [updatedQnty, setUpdatedQnty] = useState();
     const {
         cartState,
         deleteProductFromCart,
@@ -51,10 +50,8 @@ function CartCards() {
                                         as="select"
                                         size="sm"
                                         className="select float-left"
-                                        value={updatedQnty}
                                         defaultValue={qnty_selected}
                                         onChange={(e) => {
-                                            setUpdatedQnty(e.target.value);
                                             updateProductInCart(
                                                 index,
                                                 e.target.value
