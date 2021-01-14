@@ -14,6 +14,7 @@ import ProductDetails from "./pages/product-details/product-details.js";
 import "./app.css";
 import UserContext from "./util/userContext";
 import ForgotPassword from "./pages/forgot-password/forgot-password.js";
+import ResetPasswordForm from "./components/resetPasswordPage/reset-password.js";
 
 function App() {
     const { userState } = useContext(UserContext);
@@ -55,6 +56,11 @@ function App() {
                 <Route path="/forgot-password" component={ForgotPassword} />
 
                 <Route path="/contact-us" component={ContactUs} />
+
+                <Route
+                    path="/user/forgot-password/:id"
+                    component={ResetPasswordForm}
+                />
             </Switch>
         </Router>
     );
