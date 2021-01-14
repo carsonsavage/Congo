@@ -43,7 +43,6 @@ function StateController(props) {
     });
 
     useEffect(() => {
-        console.log("getting here");
         saveCurrentCart();
         //call to get multiple products
         let map = new Map();
