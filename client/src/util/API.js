@@ -75,4 +75,8 @@ export default {
     getCode: (userId) => {
         return axios.get(`/api/user/forgot-password/${userId}`);
     },
+
+    updateProductsQnty: (cartArray) => {
+        axios.put("/api/products/update-quantity", { cart: cartArray });
+    },
 };
