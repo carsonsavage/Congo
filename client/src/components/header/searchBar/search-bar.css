@@ -1,12 +1,32 @@
-.search-bar{
-    width: 80%;
+.search-bar {
+    width: 100%;
 }
 
-.ui.input{
+.ui.input.search {
     width: 85%;
+    padding-left: 123px;
 }
 
-button{
+button {
     padding: 0;
     width: 55px;
 }
+#category-select {
+    width: 130px;
+    height: 38px;
+    position: absolute;
+    z-index: 20;
+}
+
+@media only screen and (max-width: 995px) {
+    button {
+        padding: 0;
+        width: 100%;
+    }
+
+    .ui.input {
+        width: 100%;
+    }
+}
+
+

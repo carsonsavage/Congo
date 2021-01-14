@@ -4,14 +4,11 @@ import App from "./App";
 import { CookiesProvider } from "react-cookie";
 import StateController from "./StateController.js";
 
-
 ReactDOM.render(
-    <React.StrictMode>
-        <CookiesProvider>
-            <StateController>
-                <App />
-            </StateController>
-        </CookiesProvider>
-    </React.StrictMode>,
+    <CookiesProvider>
+        <StateController>
+            <App />
+        </StateController>
+    </CookiesProvider>,
     document.getElementById("root")
 );

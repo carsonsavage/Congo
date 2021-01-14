@@ -6,7 +6,7 @@ export default {
     },
 
     register: (user) => {
-        console.log("here")
+        console.log("here");
         return axios.post("/api/user/register", user);
     },
 
@@ -14,12 +14,15 @@ export default {
         return axios.put(`/api/user/update/${userId}`, data);
     },
 
+    updatePassword: (userId, data) => {
+        return axios.put(`/api/user/update/password/${userId}`, data);
+    },
+
     getUser: () => {
         return axios.get("/api/user");
     },
 
     checkUser: (email) => {
-        console.log("checking")
         return axios.post("/api/user/check", { email: email });
     },
 
@@ -59,5 +62,17 @@ export default {
 
     getFeatured: () => {
         return axios.get("/api/products/featured");
+    },
+
+    checkUserEmail: (email) => {
+        return axios.post("/api/user/check", { email: email });
+    },
+
+    sendPasswordReset: (userId) => {
+        axios.post("/api/user/forgot-password/create", { user_id: userId });
+    },
+
+    getCode: (userId) => {
+        return axios.get(`/api/user/forgot-password/${userId}`);
     },
 };

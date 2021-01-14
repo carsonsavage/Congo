@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const usersController = require("../../controllers/usersController");
-var passport = require("../../config/passport.js");
+const resetPasswordController = require("../../controllers/resetPasswordController.js");
+const passport = require("../../config/passport.js");
+const randomize = require("randomatic");
+const bcrypt = require("bcrypt");
 
 // Matches with "/api/user/"
 router.route("/").get((req, res) => {
@@ -24,5 +27,25 @@ router.route("/logout").get((req, res) => {
 });
 
 router.route("/update/:id").put(usersController.update);
+
+router.route("/update/password/:id").put((req, res) => {
+    bcrypt.hash(req.body.password, 10, (err, hashedPass) => {
+        req.body.password = hashedPass;
+        usersController.update(req, res);
+    });
+});
+
+router.route("/forgot-password/create").post((req, res) => {
+    req.body.verification_code = randomize("0", 6);
+    resetPasswordController.create(req.body).then((data) => {
+        //send this to generate the email
+        console.log(data.verification_code);
+        res.sendStatus(200);
+    });
+});
+
+router
+    .route("/forgot-password/:id")
+    .get(resetPasswordController.findUserResetAndDelete);
 
 module.exports = router;

@@ -25,3 +25,11 @@ div.header{
     text-align: center;
     height: 60px;
 }
+
+@media only screen and (max-width: 995px) {
+    .ui.modal.transition.visible.active{
+        width: 100%;
+        left: 0;
+        overflow: auto;
+    }
+}

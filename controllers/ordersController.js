@@ -1,4 +1,5 @@
 const db = require("../models");
+const orderid = require("order-id")("supersecret");
 
 // Defining methods for the ordersController
 module.exports = {
@@ -15,6 +16,7 @@ module.exports = {
             .catch((err) => res.status(422).json(err));
     },
     create: function (req, res) {
+        req.body.order_num = orderid.generate();
         db.Order.create(req.body)
             .then((dbModel) => res.json(dbModel))
             .catch((err) => res.status(422).json(err));
