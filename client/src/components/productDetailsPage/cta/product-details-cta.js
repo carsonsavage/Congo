@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Button, Icon, Label } from "semantic-ui-react";
-import { Form, Row, Col } from "react-bootstrap";
+import { Icon, Label } from "semantic-ui-react";
+import { Form } from "react-bootstrap";
 import AddToCartBtn from "./add-to-cart-btn.js";
 
 function ProductCta({ id, price, quantity }) {
@@ -27,11 +27,15 @@ function ProductCta({ id, price, quantity }) {
         return (
             <>
                 {genQty.map((num, index) => (
-                    <option key={index}>{num}</option>
+                    <option key={index} value={num}>
+                        {num}
+                    </option>
                 ))}
             </>
         );
     }
+
+    const [qntySelected, setQntySelected] = useState(1);
 
     return (
         <div className="cart-cta-div">
@@ -54,12 +58,15 @@ function ProductCta({ id, price, quantity }) {
                     as="select"
                     size="sm"
                     className="select float-left"
+                    onChange={(e) => {
+                        setQntySelected(e.target.value);
+                    }}
                 >
                     {generateOptions(quantity)}
                 </Form.Control>
             </div>
             <div className="cta-divs addtocart">
-                <AddToCartBtn id={id} />
+                <AddToCartBtn id={id} qntySelected={qntySelected} />
                 <Icon name="lock" /> Secure transaction
             </div>
         </div>
