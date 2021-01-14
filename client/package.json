@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^12.6.0",
     "bootstrap": "^4.5.3",
     "bootstrap-icons-react": "^1.0.0",
-    "moment": "^2.29.1",
+    "mdbreact": "^5.0.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-cookie": "^4.0.3",

@@ -61,7 +61,7 @@ router.route("/details/:id").get(({ params }, res) => {
 });
 
 router
-.route("/featurd")
+.route("/featured")
 .get(productsController.findFeatured);
 
 router.route("/multiple-search").post(productsController.findMultipleId);
