@@ -14,6 +14,10 @@ export default {
         return axios.put(`/api/user/update/${userId}`, data);
     },
 
+    updatePassword: (userId, data) => {
+        return axios.put(`/api/user/update/password/${userId}`, data);
+    },
+
     getUser: () => {
         return axios.get("/api/user");
     },
@@ -65,6 +69,10 @@ export default {
     },
 
     sendPasswordReset: (userId) => {
-        axios.post("/api/user/forgot-password/create", { _id: userId });
+        axios.post("/api/user/forgot-password/create", { user_id: userId });
+    },
+
+    getCode: (userId) => {
+        return axios.get(`/api/user/forgot-password/${userId}`);
     },
 };
