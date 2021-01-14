@@ -20,7 +20,7 @@ function ForgotPasswordForm() {
         API.checkUserEmail(email).then(({ data }) => {
             if (data[0]) {
                 setMessageState("success");
-                API.sendPasswordReset(data._id, data.email);
+                API.sendPasswordReset(data._id);
             } else {
                 setMessageState("negative");
             }
