@@ -17,7 +17,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Requiring passport as we've configured it
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(
+    session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
 const passport = require("./config/passport.js");
 app.use(passport.initialize());
 app.use(passport.session());
@@ -28,13 +30,16 @@ app.use(routes);
 
 // Connect to the Mongo DB
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/congo", {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
-});
+mongoose.connect(
+    `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.ehpyg.mongodb.net/Congo?retryWrites=true&w=majority`,
+    {
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+    }
+);
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });

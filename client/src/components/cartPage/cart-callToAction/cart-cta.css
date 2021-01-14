@@ -1,26 +1,11 @@
-.cart-cta{
-    background-color: red;
-    color: white;
-    width: 29%;
-    height: 200px;
-    float: right;
+.cart-cta {
+    border: 1px solid green;
+    width: inherit;
+    text-align: center;
+    padding: 20px;
 }
 
-.cart-cta button{
-    width: 100%;
-}
-
-.cart-cta a:link{
-    text-decoration: none;
-    color: inherit;
-}
-
-.cart-cta a:hover{
-    text-decoration: none;
-    color: inherit;
-}
-
-.cart-cta a:visited{
-    text-decoration: none;
-    color: inherit;
+.ui.green.inverted.button.button {
+    margin-top: 30px;
+    width: 80%;
 }

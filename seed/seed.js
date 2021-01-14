@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 const productsSeed = require("./products.json");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/congo", {
+mongoose.connect("mongodb+srv://beshayr:beshayr23@cluster0.m6c2c.mongodb.net/Congo?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,

@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import "./search-results.css";
 import SearchCards from "./search-cards/search-cards.js";
 import SearchContext from "../../util/searchContext.js";
-import { Card, Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Dimmer, Loader } from "semantic-ui-react";
 
 function SearchResults() {
     const { searchState } = useContext(SearchContext);
@@ -22,7 +23,9 @@ function SearchResults() {
                 {loadProducts ? (
                     <SearchCards />
                 ) : (
-                    <h2>No products were found</h2>
+                    <Loader active size="massive" inline="centered" className="center">
+                        Loading results...
+                    </Loader>
                 )}
             </Row>
         </div>

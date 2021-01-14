@@ -12,7 +12,21 @@ module.exports = {
         return db.Product.find({ $text: { $search: `${query}` } });
     },
     findByCategoryAndQuery: function (category, query) {
-        return db.Product.find({ category: category, $text: { $search: query } });
+        return db.Product.find({
+            category: category,
+            $text: { $search: query },
+        });
+    },
+    findById: function (id) {
+        return db.Product.find({ _id: id });
+    },
+    findMultipleId: function ({ body }, res) {
+        db.Product.find()
+            .where("_id")
+            .in(body.array)
+            .exec((err, data) => {
+                res.json(data);
+            });
     },
     create: function (req, res) {
         db.Product.create(req.body)
@@ -30,4 +44,11 @@ module.exports = {
             .then((dbModel) => res.json(dbModel))
             .catch((err) => res.status(422).json(err));
     },
+
+
+    findFeatured: function (req, res) {
+        db.Product.find({ featured: true })
+        .then((dbModel) => res.json(dbModel))
+        .catch((err) => res.status(422).json(err));
+    }
 };

@@ -11,7 +11,7 @@ function Cart() {
     return (
         <Link to="/cart" className="cart">
             <Cart2 width={30} height={30}/>
-            <p>0</p>
+            <p>{cartState.cart_item_count}</p>
         </Link>
     );
 }

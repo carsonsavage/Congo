@@ -4,3 +4,24 @@
     height: 200px;
     margin: 40px auto;
 }
+
+.ui.modal.transition.visible.active{
+    top: 20%;
+    width: 40%;
+    left: 30%;
+    height: 450px;
+}
+
+#model-buttons{
+    width: 60%;
+    margin: 0 auto;
+}
+
+div.actions button{
+    width: 200px;
+}
+
+div.header{
+    text-align: center;
+    height: 60px;
+}

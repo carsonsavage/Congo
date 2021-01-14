@@ -48,4 +48,22 @@ router.route("/search/C=:category?&Q=:query?").get(({ params }, res) => {
     }
 });
 
+router.route("/details/:id").get(({ params }, res) => {
+    let { id } = params;
+    productsController
+        .findById(id)
+        .then((product) => {
+            res.json(product);
+        })
+        .catch((err) => {
+            res.status(422).json(err);
+        });
+});
+
+router
+.route("/featured")
+.get(productsController.findFeatured);
+
+router.route("/multiple-search").post(productsController.findMultipleId);
+
 module.exports = router;
