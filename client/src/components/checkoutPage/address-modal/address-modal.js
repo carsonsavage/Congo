@@ -52,13 +52,17 @@ function AddressModal({ setEditState, setShippingAddress, dispatch }) {
                 <div id="model-buttons">
                     <Button
                         negative
-                        onClick={() => dispatch({ type: "CLOSE_MODAL" })}
+                        onClick={() => {
+                            setEditState("");
+                            dispatch({ type: "CLOSE_MODAL" });
+                        }}
                     >
                         Cancel
                     </Button>
                     <Button
                         positive
                         onClick={() => {
+                            setEditState("");
                             setShippingAddress(userState.address[arrayIndex]);
                             dispatch({ type: "CLOSE_MODAL" });
                         }}
