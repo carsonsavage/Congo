@@ -36,6 +36,15 @@ function ProductCta({ id, price, quantity }) {
     }
 
     const [qntySelected, setQntySelected] = useState(1);
+    const [stockState, setStockState] = useState();
+
+    if (quantity === 0) {
+        setStockState("Out of Stock");
+    } else if (quantity <= 10) {
+        setStockState("Limited Stock");
+    } else {
+        setStockState("In Stock");
+    }
 
     return (
         <div className="cart-cta-div">
