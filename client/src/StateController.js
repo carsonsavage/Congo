@@ -117,14 +117,16 @@ function StateController(props) {
         //call to check user that is in session
         API.getUser()
             //set to the userState
-            .then(({ data }) => {
-                if (data) {
-                    API.checkUser(data.email).then((user)=>{
-                        console.log("get user", user);
-                    })
-                    
-                    //setUserState({ ...userState, loggedIn: true, ...data });
-                    //loadCart();
+            .then((data) => {
+                if (data.data) {
+                    API.checkUser(data.email).then(({ data }) => {
+                        setUserState({
+                            ...userState,
+                            loggedIn: true,
+                            ...data[0],
+                        });
+                        loadCart();
+                    });
                 }
             });
     };
