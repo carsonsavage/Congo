@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Button, Modal } from "semantic-ui-react";
 import { ListGroup, Item } from "react-bootstrap";
 import UserContext from "../../../util/userContext";
-import "./address-modal.css";
+import './card-modal.css'
 
 function CardModal({ setEditState, setPaymentCard, dispatch }) {
     const { userState } = useContext(UserContext);
@@ -10,7 +10,7 @@ function CardModal({ setEditState, setPaymentCard, dispatch }) {
 
     return (
         <>
-            <Modal.Header>Choose an address to ship to</Modal.Header>
+            <Modal.Header>Choose a new payment method</Modal.Header>
             <Modal.Content>
                 <ListGroup>
                     <form>
@@ -23,23 +23,28 @@ function CardModal({ setEditState, setPaymentCard, dispatch }) {
                                         setArrayIndex(index);
                                     }}
                                 />
-                                <div className="row">
-                                    <div className="col-3">
-                                        <i class="credit card icon"></i>
-                                        <span>
-                                            {" "}
-                                            Card ending in {payment.card_number}
-                                        </span>
-                                    </div>
-                                    <div className="col-3">
-                                        <p>{payment.card_name.toUpperCase()}</p>
-                                    </div>
+                                <div className="edit-card">
+                                    <div className="row">
+                                        <div className="col-4">
+                                            <i class="credit card icon"></i>
+                                            <span>
+                                                {" "}
+                                                Card ending in{" "}
+                                                {payment.card_number}
+                                            </span>
+                                        </div>
+                                        <div className="col-4">
+                                            <p>
+                                                {payment.card_name.toUpperCase()}
+                                            </p>
+                                        </div>
 
-                                    <div className="col-3">
-                                        <p>
-                                            {payment.expire_month} /{" "}
-                                            {payment.expire_year}
-                                        </p>
+                                        <div className="col-3">
+                                            <p>
+                                                {payment.expire_month} /{" "}
+                                                {payment.expire_year}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </ListGroup.Item>
@@ -51,7 +56,10 @@ function CardModal({ setEditState, setPaymentCard, dispatch }) {
                 <div id="model-buttons">
                     <Button
                         negative
-                        onClick={() => dispatch({ type: "CLOSE_MODAL" })}
+                        onClick={() => {
+                            setEditState("");
+                            dispatch({ type: "CLOSE_MODAL" });
+                        }}
                     >
                         Cancel
                     </Button>
@@ -59,6 +67,7 @@ function CardModal({ setEditState, setPaymentCard, dispatch }) {
                         positive
                         onClick={() => {
                             setPaymentCard(userState.credit_cards[arrayIndex]);
+                            setEditState("");
                             dispatch({ type: "CLOSE_MODAL" });
                         }}
                     >
