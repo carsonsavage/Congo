@@ -23,11 +23,20 @@ module.exports = {
         });
     },
     update: function (req, res) {
-        db.User.findOneAndUpdate({ _id: req.params.id }, req.body, {
-            returnNewDocument: true,
-        })
-            .then((dbModel) => res.json(dbModel))
-            .catch((err) => res.status(422).json(err));
+        console.log(req.body);
+        db.User.findOneAndReplace(
+            { _id: req.params.id },
+            req.body,
+            {
+                returnOriginal: false,
+            },
+            (err, result) => {
+                if (err) {
+                    res.status(422).json(err);
+                }
+                res.json(result);
+            }
+        );
     },
     remove: function (req, res) {
         db.User.findById({ _id: req.params.id })
