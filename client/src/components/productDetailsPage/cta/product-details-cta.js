@@ -36,16 +36,20 @@ function ProductCta({ id, price, quantity }) {
     }
 
     const [qntySelected, setQntySelected] = useState(1);
-    const [stockState, setStockState] = useState();
-
+    let stockClass;
+    let stockDisplay;
+    let isDisabled = false;
     if (quantity === 0) {
-        setStockState("Out of Stock");
+        stockDisplay = "Out of Stock";
+        stockClass = "out-of-stock";
+        isDisabled = true;
     } else if (quantity <= 10) {
-        setStockState("Limited Stock");
+        stockDisplay = "Limited Stock";
+        stockClass = "limited-stock";
     } else {
-        setStockState("In Stock");
+        stockDisplay = "In Stock";
+        stockClass = "in-stock";
     }
-
     return (
         <div className="cart-cta-div">
             <div className="cta-divs">
@@ -59,7 +63,7 @@ function ProductCta({ id, price, quantity }) {
                 </p>
             </div>
             <div className="cta-divs">
-                <h3 className="inStock">In Stock.</h3>
+                <h3 className={stockClass}>{stockDisplay}</h3>
             </div>
             <div className="clearfix cta-divs">
                 <label className="float-left">Qty:</label>
@@ -75,7 +79,11 @@ function ProductCta({ id, price, quantity }) {
                 </Form.Control>
             </div>
             <div className="cta-divs addtocart">
-                <AddToCartBtn id={id} qntySelected={qntySelected} />
+                <AddToCartBtn
+                    id={id}
+                    qntySelected={qntySelected}
+                    isDisabled={isDisabled}
+                />
                 <Icon name="lock" /> Secure transaction
             </div>
         </div>
