@@ -67,11 +67,11 @@ function CheckoutDetails() {
                                 id="edit-btn"
                                 floated="right"
                             />
-                            <h5>{name}</h5>
-                            <p>{address1}</p>
-                            <p>{address2}</p>
+                            <h5>{name.toUpperCase()}</h5>
+                            <p>{address1.toUpperCase()}</p>
+                            <p>{address2.toUpperCase()}</p>
                             <p>
-                                {city}, {state} {zipcode}
+                                {city.toUpperCase()}, {state} {zipcode}
                             </p>
                         </Segment>
                     </Segment.Group>
@@ -153,7 +153,7 @@ function CheckoutDetails() {
                                 <span> Card ending in {card_number}</span>
                             </div>
                             <div className="col-3">
-                                <p>{card_name}</p>
+                                <p>{card_name.toUpperCase()}</p>
                             </div>
 
                             <div className="col-3">
