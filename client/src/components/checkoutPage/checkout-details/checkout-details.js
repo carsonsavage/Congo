@@ -2,11 +2,38 @@ import React, { useContext, useState } from "react";
 import UserContext from "../../../util/userContext";
 import "./checkout-details.css";
 import { Link } from "react-router-dom";
-import { Segment, Button, Loader, Message } from "semantic-ui-react";
+import {
+    Segment,
+    Button,
+    Loader,
+    Message,
+    Header,
+    Icon,
+    Modal,
+} from "semantic-ui-react";
 import CartContext from "../../../util/cartContext";
 import API from "../../../util/API.js";
+import AddressModal from "../address-modal/address-modal";
 
 function CheckoutDetails() {
+    function exampleReducer(state, action) {
+        switch (action.type) {
+            case "OPEN_MODAL":
+                return { open: true, dimmer: action.dimmer };
+            case "CLOSE_MODAL":
+                return { open: false };
+            default:
+                throw new Error();
+        }
+    }
+
+    const [state, dispatch] = React.useReducer(exampleReducer, {
+        open: false,
+        dimmer: undefined,
+    });
+    const { open, dimmer } = state;
+
+    const [editState, setEditState] = useState();
     const { userState, editableUserState } = useContext(UserContext);
     const { cartState, setCartIdState, cartIdState } = useContext(CartContext);
     const shippingCost = 2.21;
@@ -24,8 +51,6 @@ function CheckoutDetails() {
         userState.address[0]
     );
     const [paymentCard, setPaymentCard] = useState(userState.credit_cards[0]);
-
-    console.log(editableUserState);
 
     function confirmOrder() {
         API.updateProductsQnty(cartIdState);
@@ -66,6 +91,13 @@ function CheckoutDetails() {
                                 className="mini"
                                 id="edit-btn"
                                 floated="right"
+                                onClick={() => {
+                                    setEditState("address");
+                                    dispatch({
+                                        type: "OPEN_MODAL",
+                                        dimmer: "blurring",
+                                    });
+                                }}
                             />
                             <h5>{name.toUpperCase()}</h5>
                             <p>{address1.toUpperCase()}</p>
@@ -320,6 +352,21 @@ function CheckoutDetails() {
                 </Message>
             ) : (
                 <>
+                    <Modal
+                        dimmer={dimmer}
+                        open={open}
+                        onClose={() => dispatch({ type: "CLOSE_MODAL" })}
+                    >
+                        {editState === "address" && (
+                            <AddressModal
+                                setEditState={setEditState}
+                                setShippingAddress={setShippingAddress}
+                                dispatch={dispatch}
+                            />
+                        )}
+                        {editState === "card"}
+                    </Modal>
+
                     <div class="ui three top attached steps" id="checkoutDiv">
                         <div class={`step ${shippingState}`}>
                             <i class="truck icon"></i>
