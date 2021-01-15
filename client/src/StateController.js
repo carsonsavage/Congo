@@ -67,7 +67,6 @@ function StateController(props) {
         let count = 0;
         if (savedCartItemsState[0]) {
             savedCartItemsState.forEach(({ price, qnty_selected }) => {
-                console.log(price);
                 total = total + parseInt(price) * parseInt(qnty_selected);
                 count = count + parseInt(qnty_selected);
             });
@@ -94,7 +93,7 @@ function StateController(props) {
     const [loginErrorState, setLoginErrorState] = useState("");
     const [signupErrorState, setSignupErrorState] = useState("");
 
-    const [editableUserState, setEditableUserState] = useState(userState);
+    const [editableUserState, setEditableUserState] = useState();
 
     const [ordersState, setOrdersState] = useState({
         orders: [],
@@ -105,6 +104,9 @@ function StateController(props) {
     useEffect(() => {
         setEditableUserState(userState);
         loadCart();
+        if (userState.loggedIn) {
+            API.update(userState._id, userState);
+        }
     }, [userState]);
 
     useEffect(() => {
@@ -117,8 +119,12 @@ function StateController(props) {
             //set to the userState
             .then(({ data }) => {
                 if (data) {
-                    setUserState({ ...userState, loggedIn: true, ...data });
-                    loadCart();
+                    API.checkUser(data.email).then((user)=>{
+                        console.log("get user", user);
+                    })
+                    
+                    //setUserState({ ...userState, loggedIn: true, ...data });
+                    //loadCart();
                 }
             });
     };
@@ -252,14 +258,6 @@ function StateController(props) {
         setUserState(editableUserState);
     };
 
-    useEffect(() => {
-        if (userState.loggedIn) {
-            API.update(userState._id, editableUserState).then((updatedUser) => {
-                console.log("got something back", editableUserState);
-            });
-        }
-    }, [userState]);
-
     const registerUser = (user) => {
         console.log("reg");
         return API.register(user);
@@ -270,7 +268,7 @@ function StateController(props) {
             .then(({ data }) => {
                 setLoginErrorState("");
                 setUserState({ ...userState, loggedIn: true, ...data });
-                window.location.href = "/";
+                //window.location.href = "/";
             })
             .catch((err) => {
                 setLoginErrorState("Invalid Username/password");
