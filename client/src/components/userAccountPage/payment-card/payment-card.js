@@ -21,7 +21,7 @@ function PaymentCards({ setCreditCard, setModalState, dispatch }) {
                                     </span>
                                 </div>
                                 <div className="col-3">
-                                    <p>{payment.card_name}</p>
+                                    <p>{payment.card_name.toUpperCase()}</p>
                                 </div>
 
                                 <div className="col-3">
