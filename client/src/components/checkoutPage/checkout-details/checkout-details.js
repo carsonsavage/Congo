@@ -212,7 +212,7 @@ function CheckoutDetails() {
                                 You need to
                                 <Link to={`/user/dashboard/${userState._id}`}>
                                     {" "}
-                                    add an address
+                                    add a payment method
                                 </Link>{" "}
                                 to your account to proceed
                             </Message.Header>
