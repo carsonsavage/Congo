@@ -7,7 +7,7 @@ import CartContext from "../../../util/cartContext";
 import API from "../../../util/API.js";
 
 function CheckoutDetails() {
-    const { userState } = useContext(UserContext);
+    const { userState, editableUserState } = useContext(UserContext);
     const { cartState, setCartIdState, cartIdState } = useContext(CartContext);
     const shippingCost = 2.21;
     const preTax = cartState.cart_total + shippingCost;
@@ -24,6 +24,8 @@ function CheckoutDetails() {
         userState.address[0]
     );
     const [paymentCard, setPaymentCard] = useState(userState.credit_cards[0]);
+
+    console.log(editableUserState);
 
     function confirmOrder() {
         API.updateProductsQnty(cartIdState);
@@ -42,82 +44,22 @@ function CheckoutDetails() {
     }
 
     function Shipping() {
-        const {
-            name,
-            address1,
-            address2,
-            city,
-            state,
-            zipcode,
-        } = shippingAddress;
+        if (shippingAddress) {
+            const {
+                name,
+                address1,
+                address2,
+                city,
+                state,
+                zipcode,
+            } = shippingAddress;
 
-        return (
-            <div className="clearfix">
-                <h2>Shipping Address</h2>
-                <hr />
-                <Segment.Group raised>
-                    <Segment id="shipping-address">
-                        <Button
-                            circular
-                            icon="edit"
-                            className="mini"
-                            id="edit-btn"
-                            floated="right"
-                        />
-                        <h5>{name}</h5>
-                        <p>{address1}</p>
-                        <p>{address2}</p>
-                        <p>
-                            {city}, {state} {zipcode}
-                        </p>
-                    </Segment>
-                </Segment.Group>
-
-                <Button
-                    content="Looks good"
-                    icon="right arrow"
-                    labelPosition="right"
-                    id="confirm-btn"
-                    className="mini green"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        setShippingState("completed");
-                        setPaymentState("active");
-                    }}
-                    floated="right"
-                />
-            </div>
-        );
-    }
-
-    function Billing() {
-        const {
-            card_number,
-            card_name,
-            expire_month,
-            expire_year,
-        } = paymentCard;
-        return (
-            <div className="clearfix">
-                <h2>Payment Method</h2>
-                <hr />
-
-                <div class="ui segment clearfix">
-                    <div className="row">
-                        <div className="col-3">
-                            <i className="credit card icon"></i>
-                            <span> Card ending in {card_number}</span>
-                        </div>
-                        <div className="col-3">
-                            <p>{card_name}</p>
-                        </div>
-
-                        <div className="col-3">
-                            <p>
-                                {expire_month} / {expire_year}
-                            </p>
-                        </div>
-                        <div className="col-3">
+            return (
+                <div className="clearfix">
+                    <h2>Shipping Address</h2>
+                    <hr />
+                    <Segment.Group raised>
+                        <Segment id="shipping-address">
                             <Button
                                 circular
                                 icon="edit"
@@ -125,37 +67,187 @@ function CheckoutDetails() {
                                 id="edit-btn"
                                 floated="right"
                             />
+                            <h5>{name}</h5>
+                            <p>{address1}</p>
+                            <p>{address2}</p>
+                            <p>
+                                {city}, {state} {zipcode}
+                            </p>
+                        </Segment>
+                    </Segment.Group>
+
+                    <Button
+                        content="Looks good"
+                        icon="right arrow"
+                        labelPosition="right"
+                        id="confirm-btn"
+                        className="mini green"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setShippingState("completed");
+                            setPaymentState("active");
+                        }}
+                        floated="right"
+                    />
+                </div>
+            );
+        } else {
+            return (
+                <div className="clearfix">
+                    <h2>Shipping Address</h2>
+                    <hr />
+                    <Segment.Group raised>
+                        <Segment id="shipping-address">
+                            <Message negative>
+                                <Message.Header id="reset-password-message">
+                                    You need to
+                                    <Link
+                                        to={`/user/dashboard/${userState._id}`}
+                                    >
+                                        {" "}
+                                        add an address
+                                    </Link>{" "}
+                                    to your account to proceed
+                                </Message.Header>
+                            </Message>
+                        </Segment>
+                    </Segment.Group>
+
+                    <Button
+                        content="Looks good"
+                        icon="right arrow"
+                        labelPosition="right"
+                        id="confirm-btn"
+                        className="mini green"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setShippingState("completed");
+                            setPaymentState("active");
+                        }}
+                        floated="right"
+                        disabled
+                    />
+                </div>
+            );
+        }
+    }
+
+    function Billing() {
+        if (paymentCard) {
+            const {
+                card_number,
+                card_name,
+                expire_month,
+                expire_year,
+            } = paymentCard;
+
+            return (
+                <div className="clearfix">
+                    <h2>Payment Method</h2>
+                    <hr />
+
+                    <div class="ui segment clearfix">
+                        <div className="row">
+                            <div className="col-3">
+                                <i className="credit card icon"></i>
+                                <span> Card ending in {card_number}</span>
+                            </div>
+                            <div className="col-3">
+                                <p>{card_name}</p>
+                            </div>
+
+                            <div className="col-3">
+                                <p>
+                                    {expire_month} / {expire_year}
+                                </p>
+                            </div>
+                            <div className="col-3">
+                                <Button
+                                    circular
+                                    icon="edit"
+                                    className="mini"
+                                    id="edit-btn"
+                                    floated="right"
+                                />
+                            </div>
                         </div>
                     </div>
+                    <Button
+                        content="Hold up, go back"
+                        icon="left arrow"
+                        labelPosition="left"
+                        id="confirm-btn"
+                        className="mini red"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setPaymentState("disabled");
+                            setShippingState("active");
+                        }}
+                        floated="left"
+                    />
+                    <Button
+                        content="All good here"
+                        icon="right arrow"
+                        labelPosition="right"
+                        id="confirm-btn"
+                        className="mini green"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setPaymentState("completed");
+                            setConfirmState("active");
+                        }}
+                        floated="right"
+                    />
                 </div>
-                <Button
-                    content="Hold up, go back"
-                    icon="left arrow"
-                    labelPosition="left"
-                    id="confirm-btn"
-                    className="mini red"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        setPaymentState("disabled");
-                        setShippingState("active");
-                    }}
-                    floated="left"
-                />
-                <Button
-                    content="All good here"
-                    icon="right arrow"
-                    labelPosition="right"
-                    id="confirm-btn"
-                    className="mini green"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        setPaymentState("completed");
-                        setConfirmState("active");
-                    }}
-                    floated="right"
-                />
-            </div>
-        );
+            );
+        } else {
+            return (
+                <div className="clearfix">
+                    <h2>Payment Method</h2>
+                    <hr />
+
+                    <div class="ui segment clearfix">
+                        <Message negative>
+                            <Message.Header id="reset-password-message">
+                                You need to
+                                <Link to={`/user/dashboard/${userState._id}`}>
+                                    {" "}
+                                    add an address
+                                </Link>{" "}
+                                to your account to proceed
+                            </Message.Header>
+                        </Message>
+                    </div>
+                    <Button
+                        content="Hold up, go back"
+                        icon="left arrow"
+                        labelPosition="left"
+                        id="confirm-btn"
+                        className="mini red"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setPaymentState("disabled");
+                            setShippingState("active");
+                        }}
+                        floated="left"
+                    />
+                    <Button
+                        content="All good here"
+                        icon="right arrow"
+                        labelPosition="right"
+                        id="confirm-btn"
+                        className="mini green"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setPaymentState("completed");
+                            setConfirmState("active");
+                        }}
+                        floated="right"
+                        disabled
+                    />
+                </div>
+            );
+        }
     }
 
     function Confirm() {
