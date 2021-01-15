@@ -270,7 +270,7 @@ function StateController(props) {
             .then(({ data }) => {
                 setLoginErrorState("");
                 setUserState({ ...userState, loggedIn: true, ...data });
-                //window.location.href = "/";
+                window.location.href = "/";
             })
             .catch((err) => {
                 setLoginErrorState("Invalid Username/password");
