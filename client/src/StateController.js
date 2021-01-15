@@ -67,12 +67,11 @@ function StateController(props) {
         let count = 0;
         if (savedCartItemsState[0]) {
             savedCartItemsState.forEach(({ price, qnty_selected }) => {
-                total = total + parseInt(price) * parseInt(qnty_selected);
+                let productTotal = price * qnty_selected;
+                total = total + productTotal;
                 count = count + parseInt(qnty_selected);
             });
         }
-
-        total = parseFloat(total.toFixed(2));
 
         setCartState({
             ...cartState,
