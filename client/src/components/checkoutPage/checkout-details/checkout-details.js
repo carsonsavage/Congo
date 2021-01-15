@@ -59,13 +59,16 @@ function CheckoutDetails() {
         API.createOrder({
             user_id: userState._id,
             items: cartState.cart_items,
+            item_count: parseInt(cartState.cart_item_count),
             ship_address: shippingAddress,
             total: total,
         }).then(({ data }) => {
             let array = [];
             setCartIdState(array);
             setOrderNum(data.order_num);
-            setDisplayState("confirmed");
+            setTimeout(() => {
+                setDisplayState("confirmed");
+            }, 5000);
         });
     }
 
@@ -292,17 +295,60 @@ function CheckoutDetails() {
 
     function Confirm() {
         return (
-            <div className="clearfix">
+            <div className="clearfix" id="confirm-table">
                 <h2>Order Summary</h2>
                 <hr />
-                <Segment.Group raised>
+                <Segment.Group raised >
                     <Segment id="shipping-address">
-                        <p>Delivery date: {cartState.delivery_date}</p>
-                        <p>Items: ${cartState.cart_total.toFixed(2)}</p>
-                        <p>Shipping & handling: ${shippingCost.toFixed(2)}</p>
-                        <p>Total before tax: ${preTax.toFixed(2)}</p>
-                        <p>Estimated tax to be collected: ${tax.toFixed(2)}</p>
-                        <h5>Order total: ${total.toFixed(2)}</h5>
+                        <table className="table">
+                            <thead className="table-dark">
+                                <tr>
+                                    <th>
+                                        Delivery date: {cartState.delivery_date}
+                                    </th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Items</td>
+                                    <td className="border-left">
+                                        ${cartState.cart_total.toFixed(2)}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Shipping & handling</td>
+                                    <td className="border-left">
+                                        ${shippingCost.toFixed(2)}
+                                    </td>
+                                </tr>
+                                <tr className="table-secondary">
+                                    <td className="text-right">
+                                        <b>Total before tax</b>
+                                    </td>
+                                    <td className="border-left">
+                                        ${preTax.toFixed(2)}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="text-right">
+                                        Estimated tax to be collected
+                                    </td>
+                                    <td className="border-left">
+                                        ${tax.toFixed(2)}
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                            <tfoot>
+                                <tr className="table-success">
+                                    <td className="text-right">
+                                        <b>Order Total:</b>
+                                    </td>
+                                    <td>${total.toFixed(2)}</td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </Segment>
                 </Segment.Group>
 
@@ -340,7 +386,7 @@ function CheckoutDetails() {
         return (
             <>
                 <Loader active inline="centered">
-                    Confirming Order...
+                    Processing Order...
                 </Loader>
             </>
         );
