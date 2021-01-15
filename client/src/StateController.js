@@ -268,7 +268,7 @@ function StateController(props) {
         API.login(user)
             .then(({ data }) => {
                 setLoginErrorState("");
-                setUserState({ ...userState, loggedIn: true, ...data });
+                //setUserState({ ...userState, loggedIn: true, ...data });
                 window.location.href = "/";
             })
             .catch((err) => {
