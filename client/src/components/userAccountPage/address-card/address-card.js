@@ -10,13 +10,13 @@ function AddressCards({ setAddress, setModalState, dispatch }) {
             {userState.address.map((address, index) => (
                 <div className="card" key={index}>
                     <div className="content">
-                        <div className="cardHeader">{address.name}</div>
+                        <div className="cardHeader">{address.name.toUpperCase()}</div>
                         <div className="description">
                             <address>
-                                <p>{address.address1}</p>
-                                <p>{address.address2}</p>
+                                <p>{address.address1.toUpperCase()}</p>
+                                <p>{address.address2.toUpperCase()}</p>
                                 <p>
-                                    {address.city},{address.state}
+                                    {address.city.toUpperCase()},{address.state}
                                 </p>
                                 <p>{address.zipcode}</p>
                             </address>
