@@ -14,6 +14,7 @@ import {
 import CartContext from "../../../util/cartContext";
 import API from "../../../util/API.js";
 import AddressModal from "../address-modal/address-modal";
+import CardModal from "../card-modal/card-modal";
 
 function CheckoutDetails() {
     function exampleReducer(state, action) {
@@ -36,9 +37,9 @@ function CheckoutDetails() {
     const [editState, setEditState] = useState();
     const { userState, editableUserState } = useContext(UserContext);
     const { cartState, setCartIdState, cartIdState } = useContext(CartContext);
-    const shippingCost = 2.21;
+    const shippingCost = cartState.cart_total * 0.1 + 3;
     const preTax = cartState.cart_total + shippingCost;
-    const tax = parseInt((preTax * 0.08).toFixed(2));
+    const tax = parseInt(preTax) * 0.08;
     const total = preTax + tax;
 
     const [displayState, setDisplayState] = useState("waiting");
@@ -200,6 +201,13 @@ function CheckoutDetails() {
                                     className="mini"
                                     id="edit-btn"
                                     floated="right"
+                                    onClick={() => {
+                                        setEditState("card");
+                                        dispatch({
+                                            type: "OPEN_MODAL",
+                                            dimmer: "blurring",
+                                        });
+                                    }}
                                 />
                             </div>
                         </div>
@@ -289,12 +297,12 @@ function CheckoutDetails() {
                 <hr />
                 <Segment.Group raised>
                     <Segment id="shipping-address">
-                        <p>Delivery date {cartState.delivery_date}</p>
-                        <p>Items: ${cartState.cart_total}</p>
-                        <p>Shipping & handling: ${shippingCost}</p>
-                        <p>Total before tax: ${preTax}</p>
-                        <p>Estimated tax to be collected: ${tax}</p>
-                        <h5>Order total: ${total}</h5>
+                        <p>Delivery date: {cartState.delivery_date}</p>
+                        <p>Items: ${cartState.cart_total.toFixed(2)}</p>
+                        <p>Shipping & handling: ${shippingCost.toFixed(2)}</p>
+                        <p>Total before tax: ${preTax.toFixed(2)}</p>
+                        <p>Estimated tax to be collected: ${tax.toFixed(2)}</p>
+                        <h5>Order total: ${total.toFixed(2)}</h5>
                     </Segment>
                 </Segment.Group>
 
@@ -364,7 +372,13 @@ function CheckoutDetails() {
                                 dispatch={dispatch}
                             />
                         )}
-                        {editState === "card"}
+                        {editState === "card" && (
+                            <CardModal
+                                setEditState={setEditState}
+                                setPaymentCard={setPaymentCard}
+                                dispatch={dispatch}
+                            />
+                        )}
                     </Modal>
 
                     <div class="ui three top attached steps" id="checkoutDiv">
