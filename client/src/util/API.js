@@ -6,7 +6,6 @@ export default {
     },
 
     register: (user) => {
-        console.log("here");
         return axios.post("/api/user/register", user);
     },
 
