@@ -13,7 +13,14 @@ function CartCallToAction() {
             <h4>
                 Subtotal ({cartState.cart_item_count}{" "}
                 {cartState.cart_item_count > 1 ? "items" : "item"}):{" "}
-                <span>${cartState.cart_total}</span>
+                <span>
+                    $
+                    <NumberFormat
+                        value={cartState.cart_total}
+                        displayType={"text"}
+                        decimalScale={2}
+                    />
+                </span>
             </h4>
             <Link to="/checkout" className="react-link">
                 <Button inverted color="green">
