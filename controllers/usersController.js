@@ -43,4 +43,37 @@ module.exports = {
             .then((dbModel) => res.json(dbModel))
             .catch((err) => res.status(422).json(err));
     },
+    changePassword: function (req, res) {
+        db.User.findById({ _id: req.params.id }).then((dbUser) => {
+            bcrypt.compare(
+                req.body.oldPassword,
+                dbUser.password,
+                (err, result) => {
+                    if (err) {
+                        res.status(422).json(err);
+                    }
+                    if (result) {
+                        bcrypt.hash(
+                            req.body.newPassword,
+                            10,
+                            (err, hashedPass) => {
+                                if (err) {
+                                    res.status(422).json(err);
+                                }
+                                db.User.findByIdAndUpdate(
+                                    req.params.id,
+                                    { password: hashedPass },
+                                    { returnOriginal: false }
+                                ).then((user) => {
+                                    res.sendStatus(200);
+                                });
+                            }
+                        );
+                    } else {
+                        res.status(422).json(err);
+                    }
+                }
+            );
+        });
+    },
 };
