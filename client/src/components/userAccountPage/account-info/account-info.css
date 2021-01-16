@@ -18,3 +18,8 @@ label, span{
 #change-password-btn{
     width: 100px;
 }
+
+#change-password-message{
+    margin-top: -20px;
+    height: 50px;
+}
