@@ -14,3 +14,7 @@ label, span{
     font-size: 20px;
     font-weight: bold;
 }
+
+#change-password-btn{
+    width: 100px;
+}
