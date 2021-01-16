@@ -1,12 +1,5 @@
-import React, { Fragment } from "react";
-import {
-    MDBContainer,
-    MDBRow,
-    MDBCol,
-    MDBBtn,
-    MDBIcon,
-    MDBInput,
-} from "mdbreact";
+import React, { Fragment, Component } from "react";
+import { MDBContainer, MDBRow, MDBCol, MDBInput } from "mdbreact";
 import "./contact-us.css";
 import Button from "react-bootstrap/Button";
 
@@ -19,37 +12,37 @@ function ContactUs() {
                         <form>
                             <p className="h5 text-center mb-4">Write to us</p>
                             <div className="grey-text">
+                                <label>Your name</label>
                                 <MDBInput
-                                    label="Your name"
                                     icon="user"
-                                    group
                                     type="text"
                                     validate
                                     error="wrong"
                                     success="right"
                                 />
+                                <label>Your email</label>
                                 <MDBInput
-                                    label="Your email"
                                     icon="envelope"
-                                    group
                                     type="email"
                                     validate
                                     error="wrong"
                                     success="right"
                                 />
-                                <MDBInput
-                                    label="Subject"
-                                    icon="tag"
+                                <label>Subject</label>
+                                <select
+                                    className="browser-default custom-select"
+                                    id="contact-us-select"
                                     group
-                                    type="text"
-                                    validate
-                                    error="wrong"
-                                    success="right"
-                                />
+                                >
+                                    <option>Choose your option</option>
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                </select>
+                                <label>Your Message</label>
                                 <MDBInput
                                     type="textarea"
                                     rows="2"
-                                    label="Your message"
                                     icon="pencil-alt"
                                 />
                             </div>
