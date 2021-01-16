@@ -38,6 +38,9 @@ export default {
             array: productIdArray,
         });
     },
+    getAllProducts: () => {
+        return axios.get("/api/products/getAll");
+    },
 
     lookupProduct: (productId) => {
         return axios.get(`/api/products/details/${productId}`);
@@ -68,7 +71,10 @@ export default {
     },
 
     sendPasswordReset: (userId, email) => {
-        axios.post("/api/user/forgot-password/create", { user_id: userId, email: email });
+        axios.post("/api/user/forgot-password/create", {
+            user_id: userId,
+            email: email,
+        });
     },
 
     getCode: (userId) => {
@@ -81,5 +87,16 @@ export default {
 
     sendContactEmail: (data) => {
         return axios.post("/api/user/contact-us", data);
+    },
+
+    getDbCategories: () => {
+        return axios.get("/api/products/getCategories");
+    },
+
+    changeUserPassword: (userId, oldPassword, newPassword) => {
+        return axios.put(`/api/user/change-password/${userId}`, {
+            oldPassword: oldPassword,
+            newPassword: newPassword,
+        });
     },
 };

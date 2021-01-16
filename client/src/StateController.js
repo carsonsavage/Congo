@@ -21,6 +21,7 @@ function StateController(props) {
         search_results: [],
         filtered_results: [],
         product_result: {},
+        product_categories: [],
     });
 
     const [cartIdState, setCartIdState] = useState([]);
@@ -110,6 +111,13 @@ function StateController(props) {
 
     useEffect(() => {
         loadUser();
+        API.getDbCategories().then(({ data }) => {
+            let categoryArray = data.map((item) => {
+                return item.category;
+            });
+            let uniqueArray = [...new Set(categoryArray)];
+            setSearchState({ ...searchState, product_categories: uniqueArray });
+        });
     }, []);
 
     const loadUser = () => {

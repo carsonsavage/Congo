@@ -109,7 +109,7 @@ export function Header() {
 
 export function MobileHeader() {
     const { userState, logoutUser } = useContext(UserContext);
-    const { saveCurrentCart } = useContext(CartContext);
+    const { saveCurrentCart, cartState } = useContext(CartContext);
 
     return (
         <Navbar bg="dark" variant="dark" id="mobile-header">
@@ -137,7 +137,10 @@ export function MobileHeader() {
                                         {userState.loggedIn ? (
                                             <NavDropdown
                                                 title={
-                                                    <i className="ui icon user" id="user-loggedIn"></i>
+                                                    <i
+                                                        className="ui icon user"
+                                                        id="user-loggedIn"
+                                                    ></i>
                                                 }
                                                 id="collasible-nav-dropdown"
                                             >
@@ -189,7 +192,9 @@ export function MobileHeader() {
                                                 className="react-link"
                                             >
                                                 <i className="ui icon cart"></i>
-                                                <p id="mobile-cart-count">0</p>
+                                                <p id="mobile-cart-count">
+                                                    {cartState.cart_item_count}
+                                                </p>
                                             </Link>
                                         </Nav.Link>
                                     </Col>

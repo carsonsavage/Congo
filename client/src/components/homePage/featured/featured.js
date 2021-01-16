@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import ItemsCarousel from "react-items-carousel";
 import AddToCartBtn from "../../productDetailsPage/cta/add-to-cart-btn.js";
 import API from "../../../util/API.js";
+import { Link } from "react-router-dom";
 
 export default () => {
     useEffect(() => {
@@ -19,7 +20,12 @@ export default () => {
             <ItemsCarousel
                 requestToChangeActive={setActiveItemIndex}
                 activeItemIndex={activeItemIndex}
-                numberOfCards={4}
+                numberOfCards={
+                    (window.innerWidth < 800 && 1) ||
+                    (window.innerWidth < 1200 && 2) ||
+                    (window.innerWidth < 1400 && 3) ||
+                    (window.innerWidth > 1200 && 4)
+                }
                 gutter={20}
                 leftChevron={<i className="ui icon angle left huge"></i>}
                 rightChevron={<i className="ui icon angle right huge"></i>}
@@ -34,7 +40,9 @@ export default () => {
                                 className="product-img-wrapper"
                                 id="featuredimage"
                             >
-                                <img src={images[0]} height="200"></img>
+                                <Link to={`/product/details/${_id}`}>
+                                    <img src={images[0]} height="200"></img>
+                                </Link>
                             </div>
                             <div className="productprice">
                                 <p>

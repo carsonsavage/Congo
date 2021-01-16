@@ -2,8 +2,10 @@ const db = require("../models");
 
 // Defining methods for the productsController
 module.exports = {
-    findAll: function () {
-        return db.Product.find({});
+    findAll: function (req, res) {
+        db.Product.find({})
+            .then((dbModel) => res.json(dbModel))
+            .catch((err) => res.status(422).json(err));
     },
     findByCategory: function (category) {
         return db.Product.find({ category: category });
@@ -34,7 +36,9 @@ module.exports = {
             .catch((err) => res.status(422).json(err));
     },
     update: function (req, res) {
-        db.Product.findOneAndUpdate({ _id: req.params.id }, req.body)
+        db.Product.findOneAndUpdate({ _id: req.params.id }, req.body, {
+            returnOriginal: false,
+        })
             .then((dbModel) => res.json(dbModel))
             .catch((err) => res.status(422).json(err));
     },
@@ -44,20 +48,30 @@ module.exports = {
             .then((dbModel) => res.json(dbModel))
             .catch((err) => res.status(422).json(err));
     },
-    updateQuantity: function (id, qnty) {
+    updateQuantity: function (id, qnty, res) {
         db.Product.find({ _id: id }).then((dbModel) => {
-            let newQuantity = parseInt(dbModel[0].quantity) - parseInt(qnty);
-            db.Product.findByIdAndUpdate(
-                id,
-                {
-                    $set: { quantity: newQuantity },
-                },
-                { new: true }
-            ).then((data) => {});
+            if (!dbModel[0]) {
+                console.log("haha it didn't update");
+            } else {
+                let newQuantity =
+                    parseInt(dbModel[0].quantity) - parseInt(qnty);
+                db.Product.findByIdAndUpdate(
+                    id,
+                    {
+                        $set: { quantity: newQuantity },
+                    },
+                    { new: true }
+                ).then((data) => {});
+            }
         });
     },
     findFeatured: function (req, res) {
         db.Product.find({ featured: true })
+            .then((dbModel) => res.json(dbModel))
+            .catch((err) => res.status(422).json(err));
+    },
+    getCategory: function (req, res) {
+        db.Product.find({}, { category: 1 })
             .then((dbModel) => res.json(dbModel))
             .catch((err) => res.status(422).json(err));
     },
