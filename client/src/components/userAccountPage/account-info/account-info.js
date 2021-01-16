@@ -73,7 +73,7 @@ function AccountInfo() {
                     setOldPassword("");
                     dispatch({ type: "CLOSE_MODAL" });
                 })
-                .cateh((err) => {
+                .catch((err) => {
                     //set message
                     setMessage("negative");
                 });
@@ -197,6 +197,7 @@ function AccountInfo() {
                         changeUserPassword={changeUserPassword}
                         passwordError={passwordError}
                         passwordRegexError={passwordRegexError}
+                        message={message}
                     />
                 )}
             </Modal>
