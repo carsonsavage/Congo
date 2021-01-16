@@ -12,6 +12,16 @@ const Emailer = {
             );
         });
     },
+    generateResetPasswordEmail: (email, code, user_id) => {
+        //do something here
+        HTMLGEN.resetPassword(code, user_id).then((html) => {
+            NodeMailer.sendEmail(
+                `Reset Password Link - Congo Marketplace`,
+                email,
+                html
+            );
+        });
+    },
 };
 
 module.exports = Emailer;
