@@ -89,4 +89,11 @@ export default {
     getDbCategories: () => {
         return axios.get("/api/products/getCategories");
     },
+
+    changeUserPassword: (userId, oldPassword, newPassword) => {
+        return axios.put(`/api/user/change-password/${userId}`, {
+            oldPassword: oldPassword,
+            newPassword: newPassword,
+        });
+    },
 };
