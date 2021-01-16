@@ -32,6 +32,7 @@ function ContactUs() {
                                     className="browser-default custom-select"
                                     id="contact-us-select"
                                     group
+                                    onChange={(e)=>setSubject(e.target.value)}
                                 >
                                     <option>Choose your option...</option>
                                     <option value="Product Inquiry">
@@ -56,7 +57,7 @@ function ContactUs() {
                                     </>
                                 )}
                                 <label>Your Message</label>
-                                <MDBInput type="textarea" rows="2" />
+                                <MDBInput type="textarea" rows="4" />
                             </div>
                             <div className="text-center">
                                 <Button
