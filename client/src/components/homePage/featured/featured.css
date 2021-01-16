@@ -1,20 +1,20 @@
-.featured{
-    background-color: #636363;
-    color: white;
-    height: 500px;
-    margin: 40px ;
+.featured {
+    height: 300px;
+    margin: 40px;
     text-align: center;
 }
 
-#featuredimage{
+#featuredimage {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.productprice{
+.productprice {
     text-align: center;
     font-size: 20px;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 .cartbutton {
