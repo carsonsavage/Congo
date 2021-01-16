@@ -38,6 +38,11 @@ router.route("/update/password/:id").put((req, res) => {
 
 router.route("/forgot-password/create").post((req, res) => {
     req.body.verification_code = randomize("0", 6);
+    Emailer.generateResetPasswordEmail(
+        req.body.email,
+        req.body.verification_code,
+        req.body.user_id
+    );
     resetPasswordController.create(req.body).then((data) => {
         //send this to generate the email
         console.log(data.verification_code);
