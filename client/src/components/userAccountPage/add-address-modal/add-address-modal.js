@@ -157,6 +157,7 @@ function AddAddressModal({ address, setAddress, handleAddressAdd, dispatch }) {
                                 required
                                 value={address.zipcode}
                                 name="zipcode"
+                                maxLength="5"
                                 onChange={(e) => {
                                     const { name, value } = e.target;
                                     setAddress({
@@ -185,6 +186,7 @@ function AddAddressModal({ address, setAddress, handleAddressAdd, dispatch }) {
                         type="submit"
                         onClick={(e) => {
                             e.preventDefault();
+                            setAddress("");
                             handleAddressAdd(address);
                             dispatch({ type: "CLOSE_MODAL" });
                         }}
