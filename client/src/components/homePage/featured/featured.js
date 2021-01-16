@@ -26,11 +26,10 @@ export default () => {
                 outsideChevron
                 chevronWidth={chevronWidth}
             >
-                {featuredProducts.map(({ _id, title, images, price }) => (
+                {featuredProducts.map(({ _id, images, price }) => (
                     <>
                         <br></br>
                         <div className="featured">
-                            {/* <h5>{title.substring(0, 60) + "..."}</h5> */}
                             <div
                                 className="product-img-wrapper"
                                 id="featuredimage"
