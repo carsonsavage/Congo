@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 
 module.exports = {
     // async..await is not allowed in global scope, must use a wrapper
-    sendEmail: async function (subject, htmlBody) {
+    sendEmail: async function (subject, email, htmlBody) {
         const transporter = nodemailer.createTransport({
             host: "smtp.ethereal.email",
             port: 587,
@@ -15,7 +15,7 @@ module.exports = {
         // send mail with defined transport object
         let info = await transporter.sendMail({
             from: "Congo Marketplace", // sender address
-            to: "cleta.veum71@ethereal.email", // list of receivers
+            to: email, // list of receivers
             subject: subject, // Subject line
             html: htmlBody, // html body
         });
