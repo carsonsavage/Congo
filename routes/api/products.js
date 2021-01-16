@@ -71,4 +71,6 @@ router.route("/update-quantity").put((req, res) => {
     res.sendStatus(200);
 });
 
+router.route("/getCategories").get(productsController.getCategory);
+
 module.exports = router;
