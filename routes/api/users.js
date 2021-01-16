@@ -59,4 +59,6 @@ router.route("/contact-us").post((req, res) => {
     res.sendStatus(200);
 });
 
+router.route("/change-password/:id").put(usersController.changePassword);
+
 module.exports = router;
