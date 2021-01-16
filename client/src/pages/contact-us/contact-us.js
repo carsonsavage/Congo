@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput } from "mdbreact";
 import "./contact-us.css";
 import Button from "react-bootstrap/Button";
+import API from "../../util/API.js";
 
 function ContactUs() {
     const [name, setName] = useState();
@@ -10,12 +11,31 @@ function ContactUs() {
     const [customSubject, setCustomSubject] = useState();
     const [message, setMessage] = useState();
 
+    function submitContactUsForm(e) {
+        e.preventDefault();
+        let contactUsObj = {
+            name: name,
+            email: email,
+            message: message,
+        };
+        if (subject === "Other") {
+            contactUsObj.subject = customSubject;
+        } else {
+            contactUsObj.subject = subject;
+        }
+
+        API.sendContactEmail(contactUsObj).then((data) => {
+            //set message to success
+            console.log(data);
+        });
+    }
+
     return (
         <>
             <MDBContainer id="contactus-form">
                 <MDBRow className="d-flex justify-content-center">
                     <MDBCol md="6">
-                        <form>
+                        <form onSubmit={submitContactUsForm}>
                             <div className="orders-header center">
                                 <h1 className="ui icon header">
                                     <i className="envelope open outline icon"></i>
@@ -29,12 +49,14 @@ function ContactUs() {
                                     type="text"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
+                                    required
                                 />
                                 <label>Your email</label>
                                 <MDBInput
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
+                                    required
                                 />
                                 <label>Subject</label>
                                 <select
@@ -43,6 +65,7 @@ function ContactUs() {
                                     group
                                     value={subject}
                                     onChange={(e) => setSubject(e.target.value)}
+                                    required
                                 >
                                     <option>Choose your option...</option>
                                     <option value="Product Inquiry">
@@ -69,6 +92,7 @@ function ContactUs() {
                                             onChange={(e) =>
                                                 setCustomSubject(e.target.value)
                                             }
+                                            required
                                         />
                                     </>
                                 )}
@@ -77,9 +101,8 @@ function ContactUs() {
                                     type="textarea"
                                     rows="4"
                                     value={message}
-                                    onChange={(e) =>
-                                        setMessage(e.target.value)
-                                    }
+                                    onChange={(e) => setMessage(e.target.value)}
+                                    required
                                 />
                             </div>
                             <div className="text-center">
