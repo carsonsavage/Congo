@@ -8,6 +8,11 @@
     line-height: .5em;
 }
 
+#confirm-table{
+    width: 70%;
+    margin: 0 auto;
+}
+
 #confirm-btn{
     width: 150px;
 }

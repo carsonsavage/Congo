@@ -44,11 +44,21 @@ module.exports = {
             .then((dbModel) => res.json(dbModel))
             .catch((err) => res.status(422).json(err));
     },
-
-
+    updateQuantity: function (id, qnty) {
+        db.Product.find({ _id: id }).then((dbModel) => {
+            let newQuantity = parseInt(dbModel[0].quantity) - parseInt(qnty);
+            db.Product.findByIdAndUpdate(
+                id,
+                {
+                    $set: { quantity: newQuantity },
+                },
+                { new: true }
+            ).then((data) => {});
+        });
+    },
     findFeatured: function (req, res) {
         db.Product.find({ featured: true })
-        .then((dbModel) => res.json(dbModel))
-        .catch((err) => res.status(422).json(err));
-    }
+            .then((dbModel) => res.json(dbModel))
+            .catch((err) => res.status(422).json(err));
+    },
 };

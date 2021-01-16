@@ -12,17 +12,17 @@ import { Link } from "react-router-dom";
 import API from "../../util/API.js";
 
 function ForgotPasswordForm() {
-    const [messageState, setMessageState] = useState("");
+    const [messageState, setMessageState] = useState(false);
     const [email, setEmail] = useState("");
 
     function checkUserEmail(event) {
         event.preventDefault();
         API.checkUserEmail(email).then(({ data }) => {
             if (data[0]) {
-                setMessageState("success");
-                API.sendPasswordReset(data[0]._id);
+                setMessageState(true);
+                API.sendPasswordReset(data[0]._id, data[0].email);
             } else {
-                setMessageState("negative");
+                setMessageState(true);
             }
         });
     }
@@ -50,19 +50,11 @@ function ForgotPasswordForm() {
                 </Form>
             </Segment>
 
-            {messageState === "success" && (
+            {messageState && (
                 <Message success>
                     <Message.Header id="reset-password-message">
-                        Check your email for a reset link
-                    </Message.Header>
-                </Message>
-            )}
-
-            {messageState === "negative" && (
-                <Message negative>
-                    <Message.Header id="reset-password-message">
-                        Sorry, we couldn't find that email. Try again or you can{" "}
-                        <Link to="/contact-us"> Contact Us</Link>
+                        If your email exists in our system, you will receive a
+                        password reset link
                     </Message.Header>
                 </Message>
             )}

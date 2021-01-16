@@ -4,6 +4,7 @@ const resetPasswordController = require("../../controllers/resetPasswordControll
 const passport = require("../../config/passport.js");
 const randomize = require("randomatic");
 const bcrypt = require("bcrypt");
+const Emailer = require("../../config/email.js");
 
 // Matches with "/api/user/"
 router.route("/").get((req, res) => {
@@ -37,6 +38,11 @@ router.route("/update/password/:id").put((req, res) => {
 
 router.route("/forgot-password/create").post((req, res) => {
     req.body.verification_code = randomize("0", 6);
+    Emailer.generateResetPasswordEmail(
+        req.body.email,
+        req.body.verification_code,
+        req.body.user_id
+    );
     resetPasswordController.create(req.body).then((data) => {
         //send this to generate the email
         console.log(data.verification_code);
@@ -47,5 +53,10 @@ router.route("/forgot-password/create").post((req, res) => {
 router
     .route("/forgot-password/:id")
     .get(resetPasswordController.findUserResetAndDelete);
+
+router.route("/contact-us").post((req, res) => {
+    Emailer.generateContactUsEmail(req.body);
+    res.sendStatus(200);
+});
 
 module.exports = router;

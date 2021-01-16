@@ -54,15 +54,15 @@ hr{
     margin-top: 70px;
 }
 
-.inStock{
+.in-stock{
     color: green;
 }
 
-.limitedStock{
+.limited-stock{
     color: orange;
 }
 
-.outOfStock{
+.out-of-stock{
     color: red;
 }
 

@@ -34,6 +34,7 @@
     "if-env": "^1.0.4",
     "mdbreact": "^5.0.1",
     "mongoose": "^5.11.8",
+    "nodemailer": "^6.4.17",
     "nodemon": "^2.0.6",
     "order-id": "^2.1.1",
     "passport": "^0.4.1",

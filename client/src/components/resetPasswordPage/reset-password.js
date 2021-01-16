@@ -19,6 +19,8 @@ function ResetPasswordForm({ props }) {
     const [showForm, setShowForm] = useState(false);
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [passwordError, setPasswordError] = useState();
+    const [passwordRegexError, setPasswordRegexError] = useState("");
 
     useEffect(() => {
         API.getCode(props.match.params.id).then(({ data }) => {
@@ -31,6 +33,26 @@ function ResetPasswordForm({ props }) {
             }
         });
     }, []);
+
+    useEffect(() => {
+        if (password === confirmPassword) {
+            setPasswordError("");
+        } else {
+            setPasswordError("Passwords Don't match");
+        }
+    }, [confirmPassword]);
+
+    useEffect(() => {
+        let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{5,}$/;
+        let test = regex.test(password);
+        if (!test) {
+            setPasswordRegexError(
+                "*Password must be a minimun length of 5, and contain one uppercase(A-Z), lowercase(a-z), number(0-9) "
+            );
+        } else {
+            setPasswordRegexError("");
+        }
+    }, [password]);
 
     function checkCode(event) {
         event.preventDefault();
@@ -45,14 +67,15 @@ function ResetPasswordForm({ props }) {
 
     function submitPasswordChange(event) {
         event.preventDefault();
-
-        API.updatePassword(props.match.params.id, { password: password }).then(
-            ({ data }) => {
+        if (!passwordError && !passwordRegexError) {
+            API.updatePassword(props.match.params.id, {
+                password: password,
+            }).then(({ data }) => {
                 if (data) {
                     setMessageState("changed");
                 }
-            }
-        );
+            });
+        }
     }
 
     function generateSuccessMessage() {
@@ -63,7 +86,8 @@ function ResetPasswordForm({ props }) {
                     className="center"
                     id="forgotten-password-form"
                 >
-                    <span>Success!</span> Your password was successfully changed. <Link to="/login">Login</Link>
+                    <span>Success!</span> Your password was successfully
+                    changed. <Link to="/login">Login</Link>
                 </Message>
             </>
         );
@@ -141,6 +165,12 @@ function ResetPasswordForm({ props }) {
                                                 }}
                                             />
                                         </Form.Field>
+                                        <div className="password-check-error">
+                                            {passwordError}
+                                        </div>
+                                        <div className="password-check-error">
+                                            {passwordRegexError}
+                                        </div>
                                         <Form.Field>
                                             <label>Confirm New Password</label>
                                             <input
@@ -152,6 +182,9 @@ function ResetPasswordForm({ props }) {
                                                 }}
                                             />
                                         </Form.Field>
+                                        <div className="password-check-error">
+                                            {passwordError}
+                                        </div>
                                         <Button type="submit">Submit</Button>
                                     </Form>
                                 </Segment>

@@ -31,12 +31,11 @@ function SearchBar() {
             <form onSubmit={handleSubmit}>
                 <Form.Control
                     as="select"
-                    defaultValue="All"
                     className="mr-sm-2"
                     id="category-select"
                     onChange={handleCategoryChange}
                 >
-                    <option>All</option>
+                    <option value="">All</option>
                     <option value="food">Food</option>
                     <option value="electronics">Electronics</option>
                     <option value="furniture">Furniture</option>

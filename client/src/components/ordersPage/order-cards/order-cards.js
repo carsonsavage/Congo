@@ -18,7 +18,6 @@ function OrderCards() {
         return formatedDate;
     }
 
-
     return (
         <>
             {ordersState.filtered_orders[0] ? (
@@ -35,7 +34,7 @@ function OrderCards() {
                             </div>
                             <div className="col-2">
                                 <p>Item Count: </p>
-                                <span>{order.items.length}</span>
+                                <span>{order.item_count}</span>
                             </div>
 
                             <div className="col-2">
@@ -68,7 +67,7 @@ function OrderCards() {
                             <div className="col-2"></div>
                             <div className="col-2">
                                 <p>Order total: </p>
-                                <span>${order.total}</span>
+                                <span>${order.total.toFixed(2)}</span>
                             </div>
                         </div>
                         <div className="row">
@@ -85,7 +84,10 @@ function OrderCards() {
                                                 </Link>
                                                 <p className="small-img-title">
                                                     {title.length > 60
-                                                        ? title.substring(0, 60) + " ..."
+                                                        ? title.substring(
+                                                              0,
+                                                              60
+                                                          ) + " ..."
                                                         : title}
                                                 </p>
                                             </div>

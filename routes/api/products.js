@@ -60,10 +60,15 @@ router.route("/details/:id").get(({ params }, res) => {
         });
 });
 
-router
-.route("/featured")
-.get(productsController.findFeatured);
+router.route("/featured").get(productsController.findFeatured);
 
 router.route("/multiple-search").post(productsController.findMultipleId);
+
+router.route("/update-quantity").put((req, res) => {
+    req.body.cart.forEach(({ _id, qnty_selected }) => {
+        productsController.updateQuantity(_id, parseInt(qnty_selected));
+    });
+    res.sendStatus(200);
+});
 
 module.exports = router;

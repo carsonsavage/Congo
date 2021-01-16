@@ -1,0 +1,17 @@
+.edit-address{
+    display: inline-block;
+    height: 40px;
+    margin-left: 10px;
+    text-align: justify;
+}
+
+.edit-address-header{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.edit-address-description p{
+    font-size: 13px;
+    padding: 2px;
+    display: inline-block;
+}

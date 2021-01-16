@@ -11,4 +11,5 @@ function SmallProductImages({ images, setImageState }) {
     );
 }
 
+
 export default SmallProductImages;
