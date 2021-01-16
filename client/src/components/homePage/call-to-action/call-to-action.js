@@ -29,7 +29,7 @@ return (
     <Link to="/signup" className='react-link'>
     <BootstrapBtn block size="lg" type="submit" id="signup-btn" variant="success">
         <i className="signup icon" />
-    Sign up
+        Sign up
     </BootstrapBtn>
     </Link>
 </Card.Body>
