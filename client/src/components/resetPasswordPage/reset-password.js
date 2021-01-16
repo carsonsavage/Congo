@@ -86,7 +86,7 @@ function ResetPasswordForm({ props }) {
                     className="center"
                     id="forgotten-password-form"
                 >
-                    <span>Success!</span> Your password was successfully
+                    <i className="ui icon checkmark"></i><span>Success!</span> Your password was successfully
                     changed. <Link to="/login">Login</Link>
                 </Message>
             </>
