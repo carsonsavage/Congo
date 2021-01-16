@@ -16,6 +16,7 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [passwordError, setPasswordError] = useState("");
+    const [passwordRegexError, setPasswordRegexError] = useState("");
     const [address, setAddress] = useState({
         name: "",
         address1: "",
@@ -41,6 +42,18 @@ export default function Login() {
     }, [confirmPassword]);
 
     useEffect(() => {
+        let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{5,}$/;
+        let test = regex.test(password);
+        if (!test) {
+            setPasswordRegexError(
+                "*Password must be a minimun length of 5, and contain one uppercase(A-Z), lowercase(a-z), number(0-9) "
+            );
+        } else {
+            setPasswordRegexError("");
+        }
+    }, [password]);
+
+    useEffect(() => {
         setAddress({ ...address, name: `${firstName} ${lastName}` });
     }, [firstName, lastName]);
 
@@ -55,7 +68,7 @@ export default function Login() {
             address: [address],
             credit_cards: [creditCard],
         };
-        if (!passwordError) {
+        if (!passwordError && !passwordRegexError) {
             //call to register
             API.checkUser(registerObj.email).then(({ data }) => {
                 if (data[0]) {
@@ -122,7 +135,6 @@ export default function Login() {
                         />
                     </Col>
                 </Form.Row>
-
                 <Form.Group size="lg">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
@@ -135,6 +147,7 @@ export default function Login() {
                 </Form.Group>
 
                 <div className="password-check-error">{passwordError}</div>
+                <div className="password-check-error">{passwordRegexError}</div>
 
                 <Form.Group size="lg" className="">
                     <Form.Label>Confirm Password</Form.Label>
@@ -147,11 +160,9 @@ export default function Login() {
                     />
                 </Form.Group>
                 <div className="password-check-error">{passwordError}</div>
-
                 <div className="ui horizontal divider signup-divider">
                     Address Information
                 </div>
-
                 <Form.Group size="lg">
                     <Form.Label>Address</Form.Label>
                     <Form.Control
@@ -174,7 +185,6 @@ export default function Login() {
                         placeholder="Apt, suite, unit, building, floor, etc."
                     />
                 </Form.Group>
-
                 <Form.Row>
                     <Form.Group as={Col}>
                         <Form.Label>City</Form.Label>
@@ -272,11 +282,9 @@ export default function Login() {
                         />
                     </Form.Group>
                 </Form.Row>
-
                 <div className="ui horizontal divider signup-divider">
                     Payment Information
                 </div>
-
                 <Form.Row>
                     <Form.Group as={Col}>
                         <Form.Label>Card Number</Form.Label>
