@@ -20,7 +20,7 @@ function ForgotPasswordForm() {
         API.checkUserEmail(email).then(({ data }) => {
             if (data[0]) {
                 setMessageState(true);
-                API.sendPasswordReset(data[0]._id);
+                API.sendPasswordReset(data[0]._id, data[0].email);
             } else {
                 setMessageState(true);
             }
@@ -53,7 +53,8 @@ function ForgotPasswordForm() {
             {messageState && (
                 <Message success>
                     <Message.Header id="reset-password-message">
-                        If your email exists in our system, you will receive a password reset link
+                        If your email exists in our system, you will receive a
+                        password reset link
                     </Message.Header>
                 </Message>
             )}
