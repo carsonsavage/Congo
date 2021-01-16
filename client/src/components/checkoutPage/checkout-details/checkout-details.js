@@ -62,6 +62,10 @@ function CheckoutDetails() {
             item_count: parseInt(cartState.cart_item_count),
             ship_address: shippingAddress,
             total: total,
+            preTax: preTax,
+            shippingHandling: shippingCost,
+            tax: tax,
+            delivery_date: cartState.delivery_date,
         }).then(({ data }) => {
             let array = [];
             setCartIdState(array);
@@ -298,7 +302,7 @@ function CheckoutDetails() {
             <div className="clearfix" id="confirm-table">
                 <h2>Order Summary</h2>
                 <hr />
-                <Segment.Group raised >
+                <Segment.Group raised>
                     <Segment id="shipping-address">
                         <table className="table">
                             <thead className="table-dark">
