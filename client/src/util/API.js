@@ -78,4 +78,8 @@ export default {
     updateProductsQnty: (cartArray) => {
         axios.put("/api/products/update-quantity", { cart: cartArray });
     },
+
+    sendContactEmail: (data) => {
+        return axios.post("/api/user/contact-us", data);
+    },
 };
