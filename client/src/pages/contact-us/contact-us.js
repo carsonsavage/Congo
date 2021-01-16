@@ -7,6 +7,7 @@ function ContactUs() {
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [subject, setSubject] = useState();
+    const [customSubject, setCustomSubject] = useState();
     const [message, setMessage] = useState();
 
     return (
@@ -24,15 +25,24 @@ function ContactUs() {
                             <hr />
                             <div className="grey-text">
                                 <label>Your name</label>
-                                <MDBInput type="text" />
+                                <MDBInput
+                                    type="text"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                />
                                 <label>Your email</label>
-                                <MDBInput type="email" />
+                                <MDBInput
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
                                 <label>Subject</label>
                                 <select
                                     className="browser-default custom-select"
                                     id="contact-us-select"
                                     group
-                                    onChange={(e)=>setSubject(e.target.value)}
+                                    value={subject}
+                                    onChange={(e) => setSubject(e.target.value)}
                                 >
                                     <option>Choose your option...</option>
                                     <option value="Product Inquiry">
@@ -53,11 +63,24 @@ function ContactUs() {
                                 {subject === "Other" && (
                                     <>
                                         <label>Custom subject</label>
-                                        <MDBInput type="text" />
+                                        <MDBInput
+                                            type="text"
+                                            value={customSubject}
+                                            onChange={(e) =>
+                                                setCustomSubject(e.target.value)
+                                            }
+                                        />
                                     </>
                                 )}
                                 <label>Your Message</label>
-                                <MDBInput type="textarea" rows="4" />
+                                <MDBInput
+                                    type="textarea"
+                                    rows="4"
+                                    value={message}
+                                    onChange={(e) =>
+                                        setMessage(e.target.value)
+                                    }
+                                />
                             </div>
                             <div className="text-center">
                                 <Button
