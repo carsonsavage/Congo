@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import ItemsCarousel from "react-items-carousel";
 import AddToCartBtn from "../../productDetailsPage/cta/add-to-cart-btn.js";
 import API from "../../../util/API.js";
+import { Link } from "react-router-dom";
 
 export default () => {
     useEffect(() => {
@@ -39,7 +40,9 @@ export default () => {
                                 className="product-img-wrapper"
                                 id="featuredimage"
                             >
-                                <img src={images[0]} height="200"></img>
+                                <Link to={`/product/details/${_id}`}>
+                                    <img src={images[0]} height="200"></img>
+                                </Link>
                             </div>
                             <div className="productprice">
                                 <p>
