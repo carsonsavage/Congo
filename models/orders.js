@@ -19,6 +19,7 @@ const orderSchema = new mongoose.Schema({
     ],
     ship_address: Object,
     order_num: String,
+    item_count: Number,
     total: Number,
     order_date: { type: Date, default: Date.now },
 });

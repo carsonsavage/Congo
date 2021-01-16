@@ -43,7 +43,7 @@ export default () => {
                                 </p>
                             </div>
                             <div className="cartbutton">
-                                <AddToCartBtn id={_id} />
+                                <AddToCartBtn id={_id} qntySelected={1} />
                             </div>
                         </div>
                     </>

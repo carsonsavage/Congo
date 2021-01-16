@@ -18,7 +18,6 @@ function Orders(props) {
     const { params } = props.match;
     const history = useHistory();
     const { product_result } = searchState;
-    const ratingValue = parseInt(Math.floor(Math.random() * 5));
     const ratingCount = parseInt(Math.floor(Math.random() * 2946));
 
     useEffect(() => {
@@ -51,7 +50,7 @@ function Orders(props) {
                                 <h2>{product_result.title}</h2>
                                 <Rating
                                     icon="star"
-                                    defaultRating={ratingValue}
+                                    defaultRating={4}
                                     maxRating={5}
                                     clearable
                                 />

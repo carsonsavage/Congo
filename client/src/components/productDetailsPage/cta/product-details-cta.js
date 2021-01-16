@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Button, Icon, Label } from "semantic-ui-react";
-import { Form, Row, Col } from "react-bootstrap";
+import { Icon, Label } from "semantic-ui-react";
+import { Form } from "react-bootstrap";
 import AddToCartBtn from "./add-to-cart-btn.js";
 
 function ProductCta({ id, price, quantity }) {
@@ -27,12 +27,29 @@ function ProductCta({ id, price, quantity }) {
         return (
             <>
                 {genQty.map((num, index) => (
-                    <option key={index}>{num}</option>
+                    <option key={index} value={num}>
+                        {num}
+                    </option>
                 ))}
             </>
         );
     }
 
+    const [qntySelected, setQntySelected] = useState(1);
+    let stockClass;
+    let stockDisplay;
+    let isDisabled = false;
+    if (quantity === 0) {
+        stockDisplay = "Out of Stock";
+        stockClass = "out-of-stock";
+        isDisabled = true;
+    } else if (quantity <= 10) {
+        stockDisplay = "Limited Stock";
+        stockClass = "limited-stock";
+    } else {
+        stockDisplay = "In Stock";
+        stockClass = "in-stock";
+    }
     return (
         <div className="cart-cta-div">
             <div className="cta-divs">
@@ -46,7 +63,7 @@ function ProductCta({ id, price, quantity }) {
                 </p>
             </div>
             <div className="cta-divs">
-                <h3 className="inStock">In Stock.</h3>
+                <h3 className={stockClass}>{stockDisplay}</h3>
             </div>
             <div className="clearfix cta-divs">
                 <label className="float-left">Qty:</label>
@@ -54,12 +71,19 @@ function ProductCta({ id, price, quantity }) {
                     as="select"
                     size="sm"
                     className="select float-left"
+                    onChange={(e) => {
+                        setQntySelected(e.target.value);
+                    }}
                 >
                     {generateOptions(quantity)}
                 </Form.Control>
             </div>
             <div className="cta-divs addtocart">
-                <AddToCartBtn id={id} />
+                <AddToCartBtn
+                    id={id}
+                    qntySelected={qntySelected}
+                    isDisabled={isDisabled}
+                />
                 <Icon name="lock" /> Secure transaction
             </div>
         </div>

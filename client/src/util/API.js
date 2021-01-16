@@ -6,7 +6,6 @@ export default {
     },
 
     register: (user) => {
-        console.log("here");
         return axios.post("/api/user/register", user);
     },
 
@@ -68,11 +67,19 @@ export default {
         return axios.post("/api/user/check", { email: email });
     },
 
-    sendPasswordReset: (userId) => {
-        axios.post("/api/user/forgot-password/create", { user_id: userId });
+    sendPasswordReset: (userId, email) => {
+        axios.post("/api/user/forgot-password/create", { user_id: userId, email: email });
     },
 
     getCode: (userId) => {
         return axios.get(`/api/user/forgot-password/${userId}`);
+    },
+
+    updateProductsQnty: (cartArray) => {
+        axios.put("/api/products/update-quantity", { cart: cartArray });
+    },
+
+    sendContactEmail: (data) => {
+        return axios.post("/api/user/contact-us", data);
     },
 };

@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./cart-cards.css";
 import { Segment, Button } from "semantic-ui-react";
 import { Row, Col, Image, Form } from "react-bootstrap";
 import CartContext from "../../../util/cartContext.js";
 
 function CartCards() {
-    const { cartState, deleteProductFromCart } = useContext(CartContext);
+    const {
+        cartState,
+        deleteProductFromCart,
+        updateProductInCart,
+    } = useContext(CartContext);
 
     function generateOptions(count) {
         let i;
@@ -16,7 +20,9 @@ function CartCards() {
         return (
             <>
                 {genQty.map((num, index) => (
-                    <option key={index}>{num}</option>
+                    <option key={index} value={num}>
+                        {num}
+                    </option>
                 ))}
             </>
         );
@@ -25,7 +31,7 @@ function CartCards() {
     return (
         <>
             {cartState.cart_items.map(
-                ({ _id, images, title, quantity, price }, index) => (
+                ({ images, title, quantity, price, qnty_selected }, index) => (
                     <Segment padded key={index}>
                         <Row>
                             <Col md={2}>
@@ -44,6 +50,13 @@ function CartCards() {
                                         as="select"
                                         size="sm"
                                         className="select float-left"
+                                        defaultValue={qnty_selected}
+                                        onChange={(e) => {
+                                            updateProductInCart(
+                                                index,
+                                                e.target.value
+                                            );
+                                        }}
                                     >
                                         {generateOptions(quantity)}
                                     </Form.Control>
@@ -56,8 +69,7 @@ function CartCards() {
                                         className="mini deleteBtn red"
                                         onClick={(e) => {
                                             e.preventDefault();
-                                            console.log("clicked")
-                                            deleteProductFromCart(_id);
+                                            deleteProductFromCart(index);
                                         }}
                                     />
                                 </div>

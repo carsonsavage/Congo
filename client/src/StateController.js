@@ -45,8 +45,19 @@ function StateController(props) {
     useEffect(() => {
         saveCurrentCart();
         //call to get multiple products
-        API.getMultipleProducts(cartIdState).then(({ data }) => {
-            setSavedCartItemsState(data);
+        let map = new Map();
+        let productIdArray = [];
+        cartIdState.forEach(({ _id, qnty_selected }) => {
+            map.set(_id, qnty_selected);
+            productIdArray.push(_id);
+        });
+        API.getMultipleProducts(productIdArray).then(({ data }) => {
+            let productArray = data;
+            productArray.forEach(({ _id }, index) => {
+                productArray[index].qnty_selected = map.get(_id);
+            });
+
+            setSavedCartItemsState(productArray);
         });
         //set into saved cartitemstate
     }, [cartIdState]);
@@ -55,13 +66,12 @@ function StateController(props) {
         let total = 0;
         let count = 0;
         if (savedCartItemsState[0]) {
-            savedCartItemsState.forEach((product) => {
-                total = total + product.price;
-                count = count + 1;
+            savedCartItemsState.forEach(({ price, qnty_selected }) => {
+                let productTotal = price * qnty_selected;
+                total = total + productTotal;
+                count = count + parseInt(qnty_selected);
             });
         }
-
-        total = parseFloat(total.toFixed(2));
 
         setCartState({
             ...cartState,
@@ -82,7 +92,7 @@ function StateController(props) {
     const [loginErrorState, setLoginErrorState] = useState("");
     const [signupErrorState, setSignupErrorState] = useState("");
 
-    const [editableUserState, setEditableUserState] = useState(userState);
+    const [editableUserState, setEditableUserState] = useState();
 
     const [ordersState, setOrdersState] = useState({
         orders: [],
@@ -93,6 +103,9 @@ function StateController(props) {
     useEffect(() => {
         setEditableUserState(userState);
         loadCart();
+        if (userState.loggedIn) {
+            API.update(userState._id, userState);
+        }
     }, [userState]);
 
     useEffect(() => {
@@ -103,10 +116,16 @@ function StateController(props) {
         //call to check user that is in session
         API.getUser()
             //set to the userState
-            .then(({ data }) => {
-                if (data) {
-                    setUserState({ ...userState, loggedIn: true, ...data });
-                    loadCart();
+            .then((data) => {
+                if (data.data) {
+                    API.checkUser(data.email).then(({ data }) => {
+                        setUserState({
+                            ...userState,
+                            loggedIn: true,
+                            ...data[0],
+                        });
+                        loadCart();
+                    });
                 }
             });
     };
@@ -240,14 +259,6 @@ function StateController(props) {
         setUserState(editableUserState);
     };
 
-    useEffect(() => {
-        if (userState.loggedIn) {
-            API.update(userState._id, editableUserState).then((updatedUser) => {
-                console.log("got something back", editableUserState);
-            });
-        }
-    }, [userState]);
-
     const registerUser = (user) => {
         console.log("reg");
         return API.register(user);
@@ -257,7 +268,7 @@ function StateController(props) {
         API.login(user)
             .then(({ data }) => {
                 setLoginErrorState("");
-                setUserState({ ...userState, loggedIn: true, ...data });
+                //setUserState({ ...userState, loggedIn: true, ...data });
                 window.location.href = "/";
             })
             .catch((err) => {
@@ -273,13 +284,14 @@ function StateController(props) {
         });
     };
 
-    const addProductToCart = (productId) => {
+    const addProductToCart = (productId, qntySelected) => {
+        let productObj = { _id: productId, qnty_selected: qntySelected };
         let newCartArray;
         if (cartIdState) {
             newCartArray = cartIdState;
-            newCartArray.push(productId);
+            newCartArray.push(productObj);
         } else {
-            newCartArray = [productId];
+            newCartArray = [productObj];
         }
         let uniqueArray = [...new Set(newCartArray)];
         if (userState.loggedIn) {
@@ -302,10 +314,16 @@ function StateController(props) {
         }
     };
 
-    const deleteProductFromCart = (productId) => {
-        let deletedArray = [...cartIdState];
-        deletedArray.splice(0, 1);
-        setCartIdState(deletedArray);
+    const deleteProductFromCart = (index) => {
+        let deletedArray = cartIdState;
+        deletedArray.splice(parseInt(index), 1);
+        setCartIdState([...deletedArray]);
+    };
+
+    const updateProductInCart = (index, newQnty) => {
+        let updatedArray = cartIdState;
+        updatedArray[index].qnty_selected = parseInt(newQnty);
+        setCartIdState([...updatedArray]);
     };
 
     const searchProducts = (category, query) => {
@@ -328,6 +346,7 @@ function StateController(props) {
                 saveCurrentCart,
                 cartIdState,
                 setCartIdState,
+                updateProductInCart,
             }}
         >
             <SearchContext.Provider
