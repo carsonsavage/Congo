@@ -73,4 +73,6 @@ router.route("/update-quantity").put((req, res) => {
 
 router.route("/getCategories").get(productsController.getCategory);
 
+router.route("/getAll").get(productsController.findAll);
+
 module.exports = router;
