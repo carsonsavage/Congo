@@ -26,6 +26,14 @@ function SearchBar() {
         searchProducts(searchState.search_category, searchState.search_query);
     }
 
+    function generateCategoryOptions() {
+        return searchState.product_categories.map((category) => (
+            <option value={category}>
+                {category[0].toUpperCase() + category.substring(1)}
+            </option>
+        ));
+    }
+
     return (
         <div className="search-bar">
             <form onSubmit={handleSubmit}>
@@ -36,12 +44,7 @@ function SearchBar() {
                     onChange={handleCategoryChange}
                 >
                     <option value="">All</option>
-                    <option value="food">Food</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="furniture">Furniture</option>
-                    <option value="baby">Baby</option>
-                    <option value="cd's & vinyl">Cd's & Vinyl</option>
-                    <option value="video games">Video Games</option>
+                    {generateCategoryOptions()}
                 </Form.Control>
 
                 <div className="ui input search">
