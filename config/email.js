@@ -22,6 +22,35 @@ const Emailer = {
             );
         });
     },
+
+    generateOrderConfirmEmail: (
+        email,
+        order_num,
+        item_count,
+        preTax,
+        shippingHandling,
+        tax,
+        order_total,
+        address,
+        delivery_date
+    ) => {
+        HTMLGEN.orderConfirm(
+            order_num,
+            item_count,
+            preTax,
+            shippingHandling,
+            tax,
+            order_total,
+            address,
+            delivery_date
+        ).then((html) => {
+            NodeMailer.sendEmail(
+                `Congo Order Confirmation - Order#${order_num}`,
+                email,
+                html
+            );
+        });
+    },
 };
 
 module.exports = Emailer;
