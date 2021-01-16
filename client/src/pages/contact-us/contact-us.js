@@ -58,7 +58,7 @@ function ContactUs() {
                                     block
                                     size="lg"
                                     type="submit"
-                                    color="green"
+                                    className="ui button green"
                                 >
                                     Send
                                 </Button>
