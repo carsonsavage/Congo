@@ -17,6 +17,7 @@ module.exports = {
     },
     create: function (req, res) {
         req.body.order_num = orderid.generate();
+        //send email here
         db.Order.create(req.body)
             .then((dbModel) => res.json(dbModel))
             .catch((err) => res.status(422).json(err));
