@@ -19,18 +19,17 @@ export default () => {
             <ItemsCarousel
                 requestToChangeActive={setActiveItemIndex}
                 activeItemIndex={activeItemIndex}
-                numberOfCards={3}
-                gutter={30}
-                leftChevron={<button>{"<"}</button>}
-                rightChevron={<button>{">"}</button>}
+                numberOfCards={4}
+                gutter={20}
+                leftChevron={<i className="ui icon angle left huge"></i>}
+                rightChevron={<i className="ui icon angle right huge"></i>}
                 outsideChevron
                 chevronWidth={chevronWidth}
             >
-                {featuredProducts.map(({ _id, title, images, price }) => (
+                {featuredProducts.map(({ _id, images, price }) => (
                     <>
                         <br></br>
-                        <div style={{ height: 400, background: "#f0f7f0" }}>
-                            <h3>{title}</h3>
+                        <div className="featured">
                             <div
                                 className="product-img-wrapper"
                                 id="featuredimage"

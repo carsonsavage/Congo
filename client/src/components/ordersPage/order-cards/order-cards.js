@@ -74,7 +74,7 @@ function OrderCards() {
                             {order.items.map(
                                 ({ images, title, _id }, index) => {
                                     return (
-                                        <div className="col-2">
+                                        <div className="col-2" key={index}>
                                             <div className="order-segment-img">
                                                 <Link
                                                     to={`/product/details/${_id}`}
@@ -84,10 +84,7 @@ function OrderCards() {
                                                 </Link>
                                                 <p className="small-img-title">
                                                     {title.length > 60
-                                                        ? title.substring(
-                                                              0,
-                                                              60
-                                                          ) + " ..."
+                                                        ? title.substring(0,60) + "..."
                                                         : title}
                                                 </p>
                                             </div>
