@@ -11,14 +11,20 @@ function ContactUs() {
                 <MDBRow className="d-flex justify-content-center">
                     <MDBCol md="6">
                         <form>
-                            <p className="h5 text-center mb-4">Write to us</p>
+                            <br/>
+                            <br/>
+                            <p className="h2 text-center mb-4">Write to us!</p>
                             <div className="grey-text">
-                                <MDBInput label="Your name" icon="user" group type="text" validate error="wrong"
+                                <h4><b>Your name:</b></h4>
+                                <MDBInput icon="user" group type="text" validate error="wrong"
                                     success="right" />
-                                <MDBInput label="Your email" icon="envelope" group type="email" validate error="wrong"
+                                    <h4><b>Your email:</b></h4>
+                                <MDBInput icon="envelope" group type="email" validate error="wrong"
                                     success="right" />
-                                <MDBInput label="Subject" icon="tag" group type="text" validate error="wrong" success="right" />
-                                <MDBInput type="textarea" rows="2" label="Your message" icon="pencil-alt" />
+                                    <h4><b>Subject:</b></h4>
+                                <MDBInput icon="tag" group type="text" validate error="wrong" success="right" />
+                                <h4><b>Message:</b></h4>
+                                <MDBInput type="textarea" rows="2" icon="pencil-alt" />
                             </div>
                             <div className="text-center">
                                 <Button
