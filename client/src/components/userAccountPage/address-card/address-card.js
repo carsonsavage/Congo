@@ -14,7 +14,7 @@ function AddressCards({ setAddress, setModalState, dispatch }) {
                         <div className="description">
                             <address>
                                 <p>{address.address1.toUpperCase()}</p>
-                                <p>{address.address2.toUpperCase()}</p>
+                                <p>{address.address2 && address.address2.toUpperCase()}</p>
                                 <p>
                                     {address.city.toUpperCase()},{address.state}
                                 </p>
