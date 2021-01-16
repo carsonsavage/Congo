@@ -38,6 +38,9 @@ export default {
             array: productIdArray,
         });
     },
+    getAllProducts: () => {
+        return axios.get("/api/products/getAll");
+    },
 
     lookupProduct: (productId) => {
         return axios.get(`/api/products/details/${productId}`);
