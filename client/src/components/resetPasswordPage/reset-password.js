@@ -20,6 +20,7 @@ function ResetPasswordForm({ props }) {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [passwordError, setPasswordError] = useState();
+    const [passwordRegexError, setPasswordRegexError] = useState("");
 
     useEffect(() => {
         API.getCode(props.match.params.id).then(({ data }) => {
@@ -41,6 +42,18 @@ function ResetPasswordForm({ props }) {
         }
     }, [confirmPassword]);
 
+    useEffect(() => {
+        let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{5,}$/;
+        let test = regex.test(password);
+        if (!test) {
+            setPasswordRegexError(
+                "*Password must be a minimun length of 5, and contain one uppercase(A-Z), lowercase(a-z), number(0-9) "
+            );
+        } else {
+            setPasswordRegexError("");
+        }
+    }, [password]);
+
     function checkCode(event) {
         event.preventDefault();
         if (parseInt(verificationCode) === parseInt(code)) {
@@ -54,7 +67,7 @@ function ResetPasswordForm({ props }) {
 
     function submitPasswordChange(event) {
         event.preventDefault();
-        if (!passwordError) {
+        if (!passwordError && !passwordRegexError) {
             API.updatePassword(props.match.params.id, {
                 password: password,
             }).then(({ data }) => {
@@ -154,6 +167,9 @@ function ResetPasswordForm({ props }) {
                                         </Form.Field>
                                         <div className="password-check-error">
                                             {passwordError}
+                                        </div>
+                                        <div className="password-check-error">
+                                            {passwordRegexError}
                                         </div>
                                         <Form.Field>
                                             <label>Confirm New Password</label>
