@@ -3,6 +3,7 @@ import "./account-info.css";
 import UserContext from "../../../util/userContext.js";
 import { Modal, Button } from "semantic-ui-react";
 import ChangePasswordModal from "../change-password-modal/change-password-modal.js";
+import API from "../../../util/API";
 
 function AccountInfo() {
     function exampleReducer(state, action) {
@@ -25,6 +26,7 @@ function AccountInfo() {
     const [modalState, setModalState] = useState("");
 
     const {
+        userState,
         editableUserState,
         handleUserInfoChange,
         saveUserInfoChange,
@@ -37,6 +39,7 @@ function AccountInfo() {
     const [oldPassword, setOldPassword] = useState();
     const [passwordError, setPasswordError] = useState();
     const [passwordRegexError, setPasswordRegexError] = useState("");
+    const [message, setMessage] = useState();
 
     useEffect(() => {
         if (password === confirmPassword) {
@@ -58,10 +61,22 @@ function AccountInfo() {
         }
     }, [password]);
 
-    function changeUserPassword(e) {
-        e.preventDefault();
+    function changeUserPassword() {
         if (!passwordError && !passwordRegexError) {
             //submit change here
+            API.changeUserPassword(userState._id, oldPassword, password)
+                .then((response) => {
+                    //set message here
+                    setMessage("success");
+                    setPassword("");
+                    setConfirmPassword("");
+                    setOldPassword("");
+                    dispatch({ type: "CLOSE_MODAL" });
+                })
+                .cateh((err) => {
+                    //set message
+                    setMessage("negative");
+                });
         }
     }
 
