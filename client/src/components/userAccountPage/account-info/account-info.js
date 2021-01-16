@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./account-info.css";
 import UserContext from "../../../util/userContext.js";
 import { Modal, Button } from "semantic-ui-react";
@@ -33,6 +33,37 @@ function AccountInfo() {
     const [editState, setEditState] = useState(false);
 
     const [password, setPassword] = useState();
+    const [confirmPassword, setConfirmPassword] = useState();
+    const [oldPassword, setOldPassword] = useState();
+    const [passwordError, setPasswordError] = useState();
+    const [passwordRegexError, setPasswordRegexError] = useState("");
+
+    useEffect(() => {
+        if (password === confirmPassword) {
+            setPasswordError("");
+        } else {
+            setPasswordError("Passwords Don't match");
+        }
+    }, [confirmPassword]);
+
+    useEffect(() => {
+        let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{5,}$/;
+        let test = regex.test(password);
+        if (!test) {
+            setPasswordRegexError(
+                "*Password must be a minimun length of 5, and contain one uppercase(A-Z), lowercase(a-z), number(0-9) "
+            );
+        } else {
+            setPasswordRegexError("");
+        }
+    }, [password]);
+
+    function changeUserPassword(e) {
+        e.preventDefault();
+        if (!passwordError && !passwordRegexError) {
+            //submit change here
+        }
+    }
 
     function enableEdit() {
         setEditState(true);
@@ -138,15 +169,20 @@ function AccountInfo() {
                 dimmer={dimmer}
                 open={open}
                 onClose={() => dispatch({ type: "CLOSE_MODAL" })}
-                id="card-modal"
             >
                 {modalState === "password" && (
-                    <ChangePasswordModal dispatch={dispatch} password,
-                    confirmPassword,
-                    oldPassword,
-                    setPassword,
-                    setConfirmPassword,
-                    setOldPassword,/>
+                    <ChangePasswordModal
+                        dispatch={dispatch}
+                        password={password}
+                        confirmPassword={confirmPassword}
+                        oldPassword={oldPassword}
+                        setPassword={setPassword}
+                        setConfirmPassword={setConfirmPassword}
+                        setOldPassword={setOldPassword}
+                        changeUserPassword={changeUserPassword}
+                        passwordError={passwordError}
+                        passwordRegexError={passwordRegexError}
+                    />
                 )}
             </Modal>
         </div>
