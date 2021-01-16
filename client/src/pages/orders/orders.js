@@ -20,7 +20,7 @@ function Orders() {
     return (
         <>
             <Wrapper>
-                <div className="orders-header">
+                <div className="orders-header center">
                     <h1 className="ui icon header">
                         <i className="massive box icon"></i>
                         <div className="content">Orders</div>
@@ -36,8 +36,8 @@ function Orders() {
                     <div className="ui placeholder segment">
                         <div className="ui icon header">
                             <i className="users icon"></i>
-                            You need to login to see previous orders
                         </div>
+                        <div className="center-text"><span>You need to login to see previous orders</span></div>
                         <Link to="/login" className="react-link">
                             <div className="ui green huge button">Login</div>
                         </Link>

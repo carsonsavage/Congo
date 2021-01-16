@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../../util/userContext";
 import "./checkout-details.css";
-import { Segment, Button, Loader } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import { Segment, Button, Loader, Message } from "semantic-ui-react";
 import CartContext from "../../../util/cartContext";
 import API from "../../../util/API.js";
 
@@ -17,6 +18,7 @@ function CheckoutDetails() {
     const [shippingState, setShippingState] = useState("active");
     const [paymentState, setPaymentState] = useState("disabled");
     const [confirmState, setConfirmState] = useState("disabled");
+    const [orderNum, setOrderNum] = useState();
 
     const [shippingAddress, setShippingAddress] = useState(
         userState.address[0]
@@ -28,11 +30,11 @@ function CheckoutDetails() {
             user_id: userState._id,
             items: cartState.cart_items,
             ship_address: shippingAddress,
-            order_num: "124-34395-3234",
             total: total,
         }).then(({ data }) => {
             let array = [];
             setCartIdState(array);
+            setOrderNum(data.order_num);
             setDisplayState("confirmed");
         });
     }
@@ -102,11 +104,7 @@ function CheckoutDetails() {
                     <div className="row">
                         <div className="col-3">
                             <i className="credit card icon"></i>
-                            <span>
-                                {" "}
-                                Card ending in{" "}
-                                {card_number.toString().slice(-4)}
-                            </span>
+                            <span> Card ending in {card_number}</span>
                         </div>
                         <div className="col-3">
                             <p>{card_name}</p>
@@ -217,7 +215,13 @@ function CheckoutDetails() {
     return (
         <div className="checkout-details">
             {displayState === "confirmed" ? (
-                <h2>Confirmed order</h2>
+                <Message
+                    color="green"
+                    className="center"
+                    id="forgotten-password-form"
+                >
+                    <span>Success!</span> Order <span>#{orderNum}</span> has been successfully placed. <Link to="/orders">See my Orders</Link>
+                </Message>
             ) : (
                 <>
                     <div class="ui three top attached steps" id="checkoutDiv">

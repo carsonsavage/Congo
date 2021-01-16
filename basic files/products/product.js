@@ -19,21 +19,21 @@ function readWriteFile(product) {
 
 let product = {
     "uid": translator.new(),
-    "title": "Baby Einstein Magic Touch Piano Wooden Musical Toy Toddler Toy, Ages 6 months and up",
-    "price": 24.99,
-    "quantity": 1,
-    "category": "Baby",
+    "title": "Llama Llama I Love You Board book – Illustrated, December 26, 2014",
+    "price": 5.00,
+    "quantity": 12,
+    "category": "Books",
     "keywords": [
-        "toy",
-        "Multi use"
+        "Llama book",
+        "reading",
+        "kids book"
     ],
     "features": [
-        "wooden",
-        "durable",
-        "multiple music options"
+        "story about llamas",
+        "kids i love you book"
     ],
-    "description": "Wooden piano magically makes music, 3 sheets of music & 6 different songs, child safe and durable materials, Easy to wipe down and clean, Ships in fully enclosed packaging",
-    "images": "https://images-na.ssl-images-amazon.com/images/I/71--Y8HdOQL._AC_SL1500_.jpg"
+    "description": "With short and simple rhyming text, the Llama Llama board books introduce Llama Llama to babies and toddlers before they’re ready for longer full-length stories. And their small size and durable pages are perfect for little hands.",
+    "images": ["https://images-na.ssl-images-amazon.com/images/I/91xQR0hElJL.jpg", "https://images-na.ssl-images-amazon.com/images/I/916ha2D7y4L.jpg"]
 };
 
 product.category = product.category.toLowerCase();

@@ -15,6 +15,7 @@
     "react-cookie": "^4.0.3",
     "react-cookies": "^0.1.1",
     "react-dom": "^17.0.1",
+    "react-input-verification-code": "^0.6.4",
     "react-items-carousel": "^2.8.0",
     "react-moment": "^1.1.1",
     "react-number-format": "^4.4.4",

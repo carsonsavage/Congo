@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/header/header.js";
+import { Header, MobileHeader } from "./components/header/header.js";
 import Home from "./pages/home/home.js";
 import Search from "./pages/search/search.js";
 import Dashboard from "./pages/dashboard/dashboard.js";
@@ -13,14 +13,15 @@ import Signup from "./pages/signup/signup.js";
 import ProductDetails from "./pages/product-details/product-details.js";
 import "./app.css";
 import UserContext from "./util/userContext";
-import { Check } from "bootstrap-icons-react";
-
+import ForgotPassword from "./pages/forgot-password/forgot-password.js";
+import ResetPassword from "./pages/reset-password/reset-password.js";
 
 function App() {
     const { userState } = useContext(UserContext);
     return (
         <Router>
             <Header />
+            <MobileHeader />
             <Switch>
                 <Route exact path="/" component={Home} />
 
@@ -51,8 +52,15 @@ function App() {
                 <Route path="/signup" component={Signup} />
 
                 <Route path="/orders" component={Orders} />
-                
+
+                <Route path="/forgot-password" component={ForgotPassword} />
+
                 <Route path="/contact-us" component={ContactUs} />
+
+                <Route
+                    path="/user/forgot-password/:id"
+                    component={ResetPassword}
+                />
             </Switch>
         </Router>
     );

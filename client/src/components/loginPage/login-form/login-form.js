@@ -3,10 +3,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./login-form.css";
 import { Link } from "react-router-dom";
-import UserContext from '../../../util/userContext.js';
+import UserContext from "../../../util/userContext.js";
 
 export default function Login() {
-    const {loginUser, loginErrorState} = useContext(UserContext);
+    const { loginUser, loginErrorState } = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -16,8 +16,7 @@ export default function Login() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        loginUser({email: email, password: password});
-
+        loginUser({ email: email, password: password });
     }
 
     return (
@@ -51,6 +50,9 @@ export default function Login() {
                 >
                     Login
                 </Button>
+                <Link to="forgot-password">
+                    <p className="forgot-password">Forgot Password?</p>
+                </Link>
             </Form>
             <div>
                 <div className="ui horizontal divider">Or</div>
@@ -58,7 +60,6 @@ export default function Login() {
                 <Link to="/signup">
                     <div
                         className="ui green labeled huge icon button"
-
                         id="signup-btn"
                     >
                         Sign Up
