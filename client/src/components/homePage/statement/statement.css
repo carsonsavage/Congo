@@ -4,3 +4,7 @@
     height: 150px;
     margin: 40px 0;
 }
+
+div.carousel-inner img {
+    width: 100%;
+}
