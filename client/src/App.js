@@ -58,7 +58,7 @@ function App() {
                 <Route path="/contact-us" component={ContactUs} />
 
                 <Route
-                    path="/user/forgot-password/:id"
+                    path="/user/reset-password/:id"
                     component={ResetPassword}
                 />
             </Switch>
