@@ -58,6 +58,7 @@ function CheckoutDetails() {
 
         API.createOrder({
             user_id: userState._id,
+            email: userState.email,
             items: cartState.cart_items,
             item_count: parseInt(cartState.cart_item_count),
             ship_address: shippingAddress,
