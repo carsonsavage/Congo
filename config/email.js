@@ -16,7 +16,7 @@ const Emailer = {
         //do something here
         HTMLGEN.resetPassword(code, user_id).then((html) => {
             NodeMailer.sendEmail(
-                `Reset Password Link - Congo Marketplace`,
+                `[Reset Password Link] - Congo Marketplace`,
                 email,
                 html
             );
