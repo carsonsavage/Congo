@@ -10,6 +10,9 @@ function ChangePasswordModal({
     setConfirmPassword,
     setOldPassword,
     dispatch,
+    changeUserPassword,
+    passwordError,
+    passwordRegexError,
 }) {
     return (
         <>
@@ -19,7 +22,40 @@ function ChangePasswordModal({
                     onSubmit={(event) => {
                         console.log(event);
                     }}
-                ></Form>
+                >
+                    <Form.Group>
+                        <Form.Label>Old Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            required
+                            value={oldPassword}
+                            onChange={(e) => setOldPassword(e.target.value)}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>New Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            value={password}
+                            required
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </Form.Group>
+                    <div className="password-check-error">{passwordError}</div>
+                    <div className="password-check-error">
+                        {passwordRegexError}
+                    </div>
+                    <Form.Group>
+                        <Form.Label>Confirm New Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            value={confirmPassword}
+                            required
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                        />
+                    </Form.Group>
+                    <div className="password-check-error">{passwordError}</div>
+                </Form>
             </Modal.Content>
             <Modal.Actions>
                 <div id="model-buttons">
@@ -27,6 +63,8 @@ function ChangePasswordModal({
                         negative
                         onClick={() => {
                             setPassword("");
+                            setConfirmPassword("");
+                            setOldPassword("");
                             dispatch({ type: "CLOSE_MODAL" });
                         }}
                     >
@@ -38,7 +76,9 @@ function ChangePasswordModal({
                         onClick={(e) => {
                             e.preventDefault();
                             setPassword("");
-                            //handleAddressAdd(address);
+                            setConfirmPassword("");
+                            setOldPassword("");
+                            changeUserPassword();
                             dispatch({ type: "CLOSE_MODAL" });
                         }}
                     >
