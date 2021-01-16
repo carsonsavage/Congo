@@ -75,11 +75,7 @@ function ChangePasswordModal({
                         type="submit"
                         onClick={(e) => {
                             e.preventDefault();
-                            setPassword("");
-                            setConfirmPassword("");
-                            setOldPassword("");
                             changeUserPassword();
-                            dispatch({ type: "CLOSE_MODAL" });
                         }}
                     >
                         Submit
