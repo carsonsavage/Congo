@@ -7,6 +7,10 @@
     padding-left: 123px;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
 button {
     padding: 0;
     width: 55px;
@@ -28,5 +32,3 @@ button {
         width: 100%;
     }
 }
-
-
