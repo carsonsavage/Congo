@@ -3,6 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBInput } from "mdbreact";
 import "./contact-us.css";
 import Button from "react-bootstrap/Button";
 import API from "../../util/API.js";
+import { Message } from "semantic-ui-react";
 
 function ContactUs() {
     const [name, setName] = useState();
@@ -10,6 +11,7 @@ function ContactUs() {
     const [subject, setSubject] = useState();
     const [customSubject, setCustomSubject] = useState();
     const [message, setMessage] = useState();
+    const [successMessage, setSuccessMessage] = useState();
 
     function submitContactUsForm(e) {
         e.preventDefault();
@@ -26,7 +28,9 @@ function ContactUs() {
 
         API.sendContactEmail(contactUsObj).then((data) => {
             //set message to success
-            console.log(data);
+            setSuccessMessage(
+                "Email was sent successfully. Our support team will be in contact soon"
+            );
         });
     }
 
@@ -115,6 +119,13 @@ function ContactUs() {
                                     Send
                                 </Button>
                             </div>
+                            {successMessage && (
+                                <Message success>
+                                    <Message.Header id="contact-us-message">
+                                        <i className="ui icon checkmark"></i>{successMessage}
+                                    </Message.Header>
+                                </Message>
+                            )}
                         </form>
                     </MDBCol>
                 </MDBRow>
