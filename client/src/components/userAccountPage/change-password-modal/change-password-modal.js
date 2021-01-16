@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, Modal } from "semantic-ui-react";
-import { Form, Col } from "react-bootstrap";
-
+import { Button, Modal, Message } from "semantic-ui-react";
+import { Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 function ChangePasswordModal({
     password,
     confirmPassword,
@@ -13,6 +13,7 @@ function ChangePasswordModal({
     changeUserPassword,
     passwordError,
     passwordRegexError,
+    message,
 }) {
     return (
         <>
@@ -57,6 +58,23 @@ function ChangePasswordModal({
                     <div className="password-check-error">{passwordError}</div>
                 </Form>
             </Modal.Content>
+            {message === "negative" && (
+                <Message negative id="change-password-message">
+                    <Message.Header>
+                        Old password is incorrect. Try again or
+                        <Link to="/contact-us"> Contact Us</Link> for help
+                    </Message.Header>
+                </Message>
+            )}
+
+            {message === "success" && (
+                <Message success id="change-password-message">
+                    <Message.Header>
+                        <i className="ui icon check"></i>Password changed
+                    </Message.Header>
+                </Message>
+            )}
+
             <Modal.Actions>
                 <div id="model-buttons">
                     <Button
