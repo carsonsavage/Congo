@@ -4,6 +4,7 @@ const resetPasswordController = require("../../controllers/resetPasswordControll
 const passport = require("../../config/passport.js");
 const randomize = require("randomatic");
 const bcrypt = require("bcrypt");
+const Emailer = require("../../config/email.js");
 
 // Matches with "/api/user/"
 router.route("/").get((req, res) => {
@@ -49,7 +50,7 @@ router
     .get(resetPasswordController.findUserResetAndDelete);
 
 router.route("/contact-us").post((req, res) => {
-    console.log(req.body);
+    Emailer.generateContactUsEmail(req.body);
     res.sendStatus(200);
 });
 
