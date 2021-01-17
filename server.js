@@ -3,6 +3,7 @@ const express = require("express");
 var session = require("express-session");
 require("dotenv").config();
 const routes = require("./routes");
+const { compress, decompress } = require("express-compress");
 
 //getting express server
 const app = express();
@@ -15,6 +16,10 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
+
+app.use(compress({ contentType: /html/ }));
+
+app.use(decompress({ contentType: /html/ }));
 
 // Requiring passport as we've configured it
 app.use(
