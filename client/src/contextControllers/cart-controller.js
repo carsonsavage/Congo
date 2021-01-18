@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import CartContext from "../util/cartContext.js";
 
-function CartController() {
+
+function CartController(props) {
+    Date.prototype.addDays = function (days) {
+        var date = new Date(this.valueOf());
+        date.setDate(date.getDate() + days);
+        return date;
+    };
+
+    const daysToAdd = Math.floor(Math.random() * 9);
+    const date = new Date().addDays(daysToAdd);
+    const formatedDate = date.toLocaleDateString(undefined, {
+        weekday: "long",
+        month: "short",
+        day: "numeric",
+    });
+
     const [cartState, setCartState] = useState({
         cart_total: 0,
         cart_item_count: 0,
@@ -121,6 +137,23 @@ function CartController() {
         updatedArray[index].qnty_selected = parseInt(newQnty);
         setCartIdState([...updatedArray]);
     };
+
+    return (
+        <CartContext.Provider
+            value={{
+                cartState,
+                setCartState,
+                addProductToCart,
+                deleteProductFromCart,
+                saveCurrentCart,
+                cartIdState,
+                setCartIdState,
+                updateProductInCart,
+            }}
+        >
+            {props.children}
+        </CartContext.Provider>
+    );
 }
 
 export default CartController;
