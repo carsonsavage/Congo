@@ -1,6 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import CartContext from "../util/cartContext.js";
-
+import API from "../util/API";
+import { useCookies } from "react-cookie";
 
 function CartController(props) {
     Date.prototype.addDays = function (days) {
