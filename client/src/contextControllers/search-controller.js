@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchController() {
+function SearchController(props) {
     const [searchState, setSearchState] = useState({
         search_query: "",
         search_category: "",
@@ -44,6 +44,20 @@ function SearchController() {
     const handleCategoryChange = (event) => {
         setSearchState({ ...searchState, search_category: event.target.value });
     };
+
+    return (
+        <SearchContext.Provider
+            value={{
+                searchState,
+                handleSearchChange,
+                handleCategoryChange,
+                searchProducts,
+                lookupProduct,
+            }}
+        >
+            {props.children}
+        </SearchContext.Provider>
+    );
 }
 
 export default SearchController;
