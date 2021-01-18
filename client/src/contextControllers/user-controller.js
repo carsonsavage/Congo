@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import UserContext from "../util/userContext.js";
+import API from "../util/API";
 
 function UserController(props) {
     const [userState, setUserState] = useState({
