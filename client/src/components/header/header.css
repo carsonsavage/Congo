@@ -1,5 +1,6 @@
 .header-logo {
-    width: 100px;
+    margin-top: -40px;
+    z-index: 6000;
 }
 
 .logo-div {
@@ -45,7 +46,9 @@ a.dropdown-item button {
         font-size: 25px;
     }
     .header-logo {
-        width: 100px;
+        width: 250px;
+        margin-left: -20px;
+        margin-top: -30px;
     }
     #mobile-cart-count{
         font-size: 20px;

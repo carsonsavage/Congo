@@ -15,6 +15,7 @@ import "./app.css";
 import UserContext from "./util/userContext";
 import ForgotPassword from "./pages/forgot-password/forgot-password.js";
 import ResetPassword from "./pages/reset-password/reset-password.js";
+import UpdateProducts from "./pages/update-products/update-products.js";
 
 function App() {
     const { userState } = useContext(UserContext);
@@ -60,6 +61,11 @@ function App() {
                 <Route
                     path="/user/reset-password/:id"
                     component={ResetPassword}
+                />
+
+                <Route
+                    path="/user/admin/product-update"
+                    component={userState.isAdmin ? UpdateProducts : Home}
                 />
             </Switch>
         </Router>

@@ -1,0 +1,24 @@
+.custom-container{
+    width: 700px !important;
+}
+    .form-container {
+      padding: 5%;
+      background: #07500a;
+      border: 9px solid #f2f2f2;            
+      max-width: 520px;
+      margin: auto;
+    }
+
+h1, p 
+{
+  text-align: center;
+}
+
+input, textarea , button
+{
+  width: 100%;
+}    
+textarea
+{
+  height: 200px;
+}
