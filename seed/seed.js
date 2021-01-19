@@ -2,13 +2,21 @@ const mongoose = require("mongoose");
 const db = require("../models");
 const productsSeed = require("./products.json");
 
-mongoose.connect("mongodb+srv://beshayr:beshayr23@cluster0.m6c2c.mongodb.net/Congo?retryWrites=true&w=majority", {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-});
+mongoose.connect(
+    `mongodb+srv://${db-username-here}:${db-password-here}@cluster0.ehpyg.mongodb.net/Congo?retryWrites=true&w=majority`,
+    {
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+    }
+);
 
-db.Product.collection.createIndex({title: "text", keywords: "text", features: "text", category: "text"});
+db.Product.collection.createIndex({
+    title: "text",
+    keywords: "text",
+    features: "text",
+    category: "text",
+});
 
 db.Product.deleteMany({})
     .then(() => db.Product.collection.insertMany(productsSeed))
