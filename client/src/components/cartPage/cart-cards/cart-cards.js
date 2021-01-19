@@ -46,10 +46,7 @@ function CartCards() {
                                 <h5>{title}</h5>
                                 <div className="clearfix cta-divs">
                                     <label className="float-left">Qty:</label>
-                                    <Form.Control
-                                        as="select"
-                                        size="sm"
-                                        className="select float-left"
+                                    <select
                                         defaultValue={qnty_selected}
                                         onChange={(e) => {
                                             updateProductInCart(
@@ -59,7 +56,7 @@ function CartCards() {
                                         }}
                                     >
                                         {generateOptions(quantity)}
-                                    </Form.Control>
+                                    </select>
                                 </div>
                                 <div>
                                     <Button
