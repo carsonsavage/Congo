@@ -231,7 +231,9 @@ function StateController(props) {
     useEffect(() => {
         let total = 0;
         let count = 0;
+        //checks if the cartitemstate has anything in it
         if (savedCartItemsState[0]) {
+            //if it does it will take each product and update the count and total accordingly
             savedCartItemsState.forEach(({ price, qnty_selected }) => {
                 let productTotal = price * qnty_selected;
                 total = total + productTotal;
@@ -239,6 +241,7 @@ function StateController(props) {
             });
         }
 
+        //sets the cart state accordingly
         setCartState({
             ...cartState,
             cart_total: total,
@@ -247,28 +250,40 @@ function StateController(props) {
         });
     }, [savedCartItemsState]);
 
+    //will load the users cart when called
     const loadCart = () => {
         //call to get cart if someone is logged in
         if (userState.loggedIn) {
+            //if the user is logged in it will grab the card data and save it to the db
             API.getCart(userState._id).then(({ data }) => {
                 let cartArray = [];
+                //if it received data back from the db
                 if (data) {
+                    //sets our temporary array to the cart_items it got back
                     cartArray = data.cart_items;
+                    // if there is a cookie cart present (i.e. the user added an item while not logged in)
                     if (cookies.cookieCart) {
+                        //adds the cookie cart to the user cart it received before
                         cartArray = cartArray.concat(cookies.cookieCart);
+                        //removes the cookie cart since now it is added to the users saved cart
                         removeCookie(["cookieCart"], { path: "/" });
                     }
+                    //if there wasn't data received, it will check for an existing cookie cart and add that to the array, and remove said cart
                 } else if (cookies.cookieCart) {
                     cartArray = cartArray.concat(cookies.cookieCart);
                     removeCookie(["cookieCart"], { path: "/" });
                 }
 
+                //sets a unique array (only allows one of each item to be added)
                 let uniqueArray = [...new Set(cartArray)];
+
+                //sets this array to the cartidstate
                 setCartIdState(uniqueArray);
             });
         } else {
             //call to get cart if someone is NOT logged in
             if (cookies.cookieCart) {
+                //if there is a cookie cart and they are not logged in it will set the cartidstate to that cookie cart
                 setCartIdState(cookies.cookieCart);
             }
         }
