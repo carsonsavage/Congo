@@ -2,9 +2,107 @@ const EmailHTML = {
     contactUs: (contactObj) => {
         return new Promise((resolve, reject) => {
             resolve(`
-            <h1>${contactObj.name}</h1>
-            <h1>${contactObj.email}</h1>
-            <h1>${contactObj.message}</h1>`);
+            <!DOCTYPE html>
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <title>Contact-us email</title>
+                </head>
+                <body>
+                    <style>
+                        body {
+                            width: 60%;
+                            margin: 0 auto;
+                            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                        }
+
+                        header {
+                            background-color: #cccccc;
+                            width: 100%;
+                            height: 200px;
+                            text-align: center;
+                        }
+
+                        header img {
+                            width: 400px;
+                            margin-top: 10px;
+                        }
+
+                        footer {
+                            margin-top: 20px;
+                            background-color: #cccccc;
+                            height: 200px;
+                            text-align: center;
+                        }
+
+                        .subject {
+                            text-align: center;
+                            text-transform: capitalize;
+                        }
+
+                        .user-contact p {
+                            text-align: center;
+                        }
+
+                        .message {
+                            padding: 30px 0;
+                            line-height: 2em;
+                        }
+
+                        address p {
+                            line-height: 0.5em;
+                        }
+
+                        address {
+                            padding: 5px;
+                        }
+
+                        footer {
+                            padding: 5px;
+                        }
+                    </style>
+
+                    <header>
+                        <img src="https://i.ibb.co/NFCHpsp/logo.png" alt="logo" />
+                    </header>
+                    <div class="subject">
+                        <h1>**[${contactObj.subject}]** - webpage contact form</h1>
+                    </div>
+                    <div class="user-contact">
+                        <hr />
+                        <h3>Contact Info:</h3>
+                        <p>
+                            <b>Name:</b>
+                            <span>${contactObj.name}</span>
+                        </p>
+                        <p>
+                            <b>User Email:</b>
+                            <a href="mailto:${contactObj.email}">${contactObj.email}</a>
+                        </p>
+                    </div>
+                    <hr />
+                    <div class="message">
+                        <h5>Message:</h5>
+                        <p>${contactObj.message}</p>
+                    </div>
+                    <hr />
+                    <div></div>
+                    <footer>
+                        <p>
+                            **This email is automatically generated from a web form
+                            submission**
+                        </p>
+                        <address>
+                            <p>Congo Online</p>
+                            <p>3953 Geneva Ln</p>
+                            <p>New York, NY 10010</p>
+                        </address>
+                        <h5>&copy; Congo Marketplace 2021</h5>
+                    </footer>
+                </body>
+            </html>
+            `);
         });
     },
 
@@ -466,7 +564,16 @@ const EmailHTML = {
         });
     },
 
-    orderConfirm: (order_num, item_count, preTax, shippingHandling, tax, order_total, address, delivery_date) => {
+    orderConfirm: (
+        order_num,
+        item_count,
+        preTax,
+        shippingHandling,
+        tax,
+        order_total,
+        address,
+        delivery_date
+    ) => {
         return new Promise((resolve, reject) => {
             resolve(`<!DOCTYPE html>
             <html>
