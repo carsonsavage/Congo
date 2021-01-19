@@ -84,6 +84,7 @@ function ProductCta({ id, price, quantity }) {
                     qntySelected={qntySelected}
                     isDisabled={isDisabled}
                 />
+                <br />
                 <Icon name="lock" /> Secure transaction
             </div>
         </div>
