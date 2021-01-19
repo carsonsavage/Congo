@@ -1,23 +1,33 @@
-.checkout-details{
+.checkout-details {
     width: 70%;
     margin: 40px auto;
 }
 
-#shipping-address p{
+#shipping-address p {
     margin-top: 15px;
-    line-height: .5em;
+    line-height: 0.5em;
 }
 
-#confirm-table{
+#confirm-table {
     width: 70%;
     margin: 0 auto;
 }
 
-#confirm-btn{
+#confirm-btn {
     width: 150px;
 }
 
-#edit-btn{
+#edit-btn {
     display: inline-block;
 }
 
+@media only screen and (max-width: 900px) {
+    .checkout-details {
+        width: 100%;
+        margin: 40px auto;
+    }
+
+    #confirm-btn {
+        width: 48%;
+    }
+}
