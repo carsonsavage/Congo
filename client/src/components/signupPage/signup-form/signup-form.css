@@ -16,4 +16,8 @@
     div#signup-page {
         width: 100%;
     }
+
+    div.Signup {
+        padding-top: 20px;
+    }
 }
