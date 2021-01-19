@@ -9,7 +9,7 @@ function SearchCards() {
         <>
             {searchState.filtered_results.map(
                 ({ _id, title, price, images, quantity }, index) => (
-                    <Col>
+                    <Col xs={3}>
                         <Link to={`/product/details/${_id}`} key={index} className="react-link">
                             <Card
                                 style={{ width: "20rem" }}
@@ -18,7 +18,7 @@ function SearchCards() {
                                 <Card.Img variant="top" src={images[0]} />
                                 <Card.Body>
                                     <Card.Title>{title}</Card.Title>
-                                    <h3>${price}</h3>
+                                    <h3 className="search-card-price">${price}</h3>
                                     {quantity < 5 && (
                                         <>
                                             {quantity === 0 ? (
