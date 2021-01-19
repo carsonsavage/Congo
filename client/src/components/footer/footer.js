@@ -8,17 +8,17 @@ return (
         <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
             <MDBCol md="4">
-            <h5 className="title">Congo</h5>
+            <h4 className="title">Congo</h4>
             <p>
                 Making shopping a breeze.
             </p>
             </MDBCol>
             <MDBCol md="4">
-            <h5 className="title">Issues?</h5>
+            <h4 className="title">Issues?</h4>
             <a href="#">Contact us here</a>
         </MDBCol>
         <MDBCol md="4">
-            <h5 className="title">Links to our Github Pages:</h5>
+            <h4 className="title">Links to our Github Pages:</h4>
             <ul>
                 <li className="list-unstyled">
                     <a href="https://github.com/DaySloth">Allister</a>
