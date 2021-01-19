@@ -14,24 +14,24 @@ function PaymentCards({ setCreditCard, setModalState, dispatch }) {
                     {userState.credit_cards.map((payment, index) => (
                         <div class="ui segment clearfix" key={index}>
                             <div className="row">
-                                <Col>
+                                <Col sm={6}>
                                     <i class="credit card icon"></i>
                                     <span>
                                         {" "}
                                         Card ending in {payment.card_number}
                                     </span>
                                 </Col>
-                                <Col>
+                                <Col sm={6}>
                                     <p>{payment.card_name.toUpperCase()}</p>
                                 </Col>
 
-                                <Col>
+                                <Col sm={6}>
                                     <p>
                                         {payment.expire_month} /{" "}
                                         {payment.expire_year}
                                     </p>
                                 </Col>
-                                <Col>
+                                <Col sm={6}>
                                     <div
                                         class="ui mini buttons float-right"
                                         id="paymentBtn"
