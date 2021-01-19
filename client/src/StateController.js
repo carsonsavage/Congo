@@ -164,28 +164,32 @@ function StateController(props) {
         setUserState({ ...userState, credit_cards: cardArray });
     };
 
+    //function to save the user info into the current user state and updates the database
     const saveUserInfoChange = () => {
         //on success, change userState
         setUserState(editableUserState);
     };
 
+    //makes a call to register the user
     const registerUser = (user) => {
-        console.log("reg");
         return API.register(user);
     };
 
+    //makes a call to login the user
     const loginUser = (user) => {
         API.login(user)
             .then(({ data }) => {
+                //if you receive data from the database it will set your error state to blank and redirect
                 setLoginErrorState("");
-                //setUserState({ ...userState, loggedIn: true, ...data });
                 window.location.href = "/";
             })
             .catch((err) => {
+                //if anything happens in the process, like an invalid email or password it automatically errors out. We notify the user here
                 setLoginErrorState("Invalid Username/password");
             });
     };
 
+    //calls the server and logs out the user, reloads to reflect a logout happening
     const logoutUser = () => {
         API.logout().then(({ status }) => {
             if (status === 200) {
@@ -198,21 +202,27 @@ function StateController(props) {
 
     //Cart State editing
 
+    //when the cart ID state changes (i.e. an item being added, removed or quantity being updated) it will save the cart to the db
     useEffect(() => {
         saveCurrentCart();
         //call to get multiple products
+        //sections out the current cart array into a map for editing later on
         let map = new Map();
         let productIdArray = [];
+        //runs through the cartID array and sets the map
         cartIdState.forEach(({ _id, qnty_selected }) => {
             map.set(_id, qnty_selected);
             productIdArray.push(_id);
         });
+        //calls the db to get the products back
         API.getMultipleProducts(productIdArray).then(({ data }) => {
             let productArray = data;
+            //sets the quantity selected onto the specific product object using the map.get call
             productArray.forEach(({ _id }, index) => {
                 productArray[index].qnty_selected = map.get(_id);
             });
 
+            //sets the cartitemstate to the new array
             setSavedCartItemsState(productArray);
         });
         //set into saved cartitemstate
