@@ -53,6 +53,7 @@ function SearchBar() {
                         type="text"
                         onChange={handleSearchChange}
                         value={searchState.search_query}
+                        id="search-bar"
                     />
                 </div>
 
