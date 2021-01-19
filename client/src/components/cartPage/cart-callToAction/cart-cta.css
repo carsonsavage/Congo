@@ -1,6 +1,6 @@
 .cart-cta {
     border: 1px solid green;
-    width: inherit;
+    width: 100%;
     text-align: center;
     padding: 20px;
 }
