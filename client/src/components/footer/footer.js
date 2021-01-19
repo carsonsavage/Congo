@@ -1,12 +1,45 @@
 import React from "react";
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import "./mdb.min.css";
 import "./footer.css";
 
-function Footer() {
-    return (
-        <div className="footer">
-            <img src = "https://i.imgur.com/WtADeG3.png" class= "footerimage" atl="congo logo image of a toucan in a tree"></img>
-        </div>
-    );
+const FooterPage = () => {
+  return (
+    <MDBFooter color="blue" className="font-small pt-4 mt-4">
+      <MDBContainer fluid className="text-center text-md-left">
+        <MDBRow>
+          <MDBCol md="6">
+            <h5 className="title">Congo</h5>
+            <p>
+              Words words words
+            </p>
+          </MDBCol>
+          <MDBCol md="6">
+            <h5 className="title">Links to our Github Pages:</h5>
+            <ul>
+              <li className="list-unstyled">
+                <a href="#!">Allister</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Carson</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Beshayr</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Teshera</a>
+              </li>
+            </ul>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+      <div className="footer-copyright text-center py-3">
+        <MDBContainer fluid>
+          &copy; {new Date().getFullYear()} Copyright: <a href=""> Congo </a>
+        </MDBContainer>
+      </div>
+    </MDBFooter>
+  );
 }
 
-export default Footer;
+export default FooterPage;

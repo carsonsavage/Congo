@@ -7,7 +7,7 @@ function Statement(){
       <Carousel.Item interval={10000}>
         <img
           className="d-block w-100"
-          src="https://i.imgur.com/eXTlBPb.png"
+          src="..../client/public/images/covid.png"
           alt="covid info"
         />
         <Carousel.Caption>
