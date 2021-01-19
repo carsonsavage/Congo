@@ -18,7 +18,7 @@ return (
             <a href="#">Contact us here</a>
         </MDBCol>
         <MDBCol md="4">
-            <h4 className="title">Links to our Github Pages:</h4>
+            <h4 className="title">Github Pages:</h4>
             <ul>
                 <li className="list-unstyled">
                     <a href="https://github.com/DaySloth">Allister</a>
