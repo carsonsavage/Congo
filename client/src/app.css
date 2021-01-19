@@ -23,3 +23,10 @@
     margin-bottom: 10px;
     font-family: "Yanone Kaffeesatz", sans-serif;
 }
+
+@media only screen and (max-width: 750px) {
+    .ui.container {
+        width: 100%;
+        padding: 0;
+    }
+}
