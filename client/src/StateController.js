@@ -289,9 +289,11 @@ function StateController(props) {
         }
     };
 
+    //function for adding a product to the cart - takes in the productId and the quantity the user selected
     const addProductToCart = (productId, qntySelected) => {
         let productObj = { _id: productId, qnty_selected: qntySelected };
         let newCartArray;
+        //if there is a cart already going, it will add the prduct to it
         if (cartIdState) {
             newCartArray = cartIdState;
             newCartArray.push(productObj);
@@ -299,21 +301,28 @@ function StateController(props) {
             newCartArray = [productObj];
         }
         let uniqueArray = [...new Set(newCartArray)];
+        //sets the unique array and saved to the users cart if they are logged in
         if (userState.loggedIn) {
             API.saveCart(userState._id, uniqueArray).then((data) => {
+                //redirects after a successful save
                 window.location.href = "/cart";
             });
         } else {
+            //if there is no user, it will first remove the cookie cart, and then re-add it with the updated data
             removeCookie(["cookieCart"], { path: "/" });
             setCookie("cookieCart", uniqueArray, { path: "/" });
+            //redirects after a successful save
             window.location.href = "/cart";
         }
     };
 
+    //function to save the current cart
     const saveCurrentCart = () => {
+        //if the user is logged in it will save the cart
         if (userState.loggedIn) {
             API.saveCart(userState._id, cartIdState).then(({ data }) => {});
         } else {
+            //removes and sets the cookie cart if user is not logged in
             removeCookie(["cookieCart"], { path: "/" });
             setCookie("cookieCart", cartIdState, { path: "/" });
         }
