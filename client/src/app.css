@@ -15,6 +15,7 @@
 
 .ui.container {
     width: 80%;
+    position: relative;
 }
 
 .error-statement {
