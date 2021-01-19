@@ -28,4 +28,8 @@ button.ui.fade.animated.button{
         margin-left: 20%;
         width: 200px;
     }
+
+    div.col-3{
+        width: 100%;
+    }
 }
