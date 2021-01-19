@@ -15,6 +15,12 @@
     align-items: center;
 }
 
+@media only screen and (max-width: 470px) {
+  div.center.login-center div.form-group {
+    padding-top: 30px;
+  }
+}
+
 .forgot-password{
   padding-top: 10px;
 }
