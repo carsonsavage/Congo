@@ -16,12 +16,6 @@ export default () => {
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const chevronWidth = 30;
 
-    useEffect(() => {
-        setTimeout(() => {
-            setActiveItemIndex(activeItemIndex + 1);
-        }, 7000);
-    }, [featuredProducts]);
-
     return (
         <div style={{ padding: `0 ${chevronWidth}px` }}>
             <ItemsCarousel
@@ -39,7 +33,6 @@ export default () => {
                 outsideChevron
                 chevronWidth={chevronWidth}
                 infiniteLoop={true}
-                firstAndLastGutter={true}
             >
                 {featuredProducts.map(({ _id, images, price }) => (
                     <>
