@@ -170,6 +170,12 @@ function StateController(props) {
         setUserState(editableUserState);
     };
 
+    //sets the user state to the users changed info
+    const handleUserInfoChange = (event) => {
+        const { name, value } = event.target;
+        setEditableUserState({ ...editableUserState, [name]: value });
+    };
+
     //makes a call to register the user
     const registerUser = (user) => {
         return API.register(user);
@@ -328,12 +334,14 @@ function StateController(props) {
         }
     };
 
+    //handles deleting a product from the cart and saving it to the db
     const deleteProductFromCart = (index) => {
         let deletedArray = cartIdState;
         deletedArray.splice(parseInt(index), 1);
         setCartIdState([...deletedArray]);
     };
 
+    //handles updating a product from the cart and saving it to the db
     const updateProductInCart = (index, newQnty) => {
         let updatedArray = cartIdState;
         updatedArray[index].qnty_selected = parseInt(newQnty);
@@ -344,11 +352,13 @@ function StateController(props) {
 
     //Order State Editing
 
+    //function for loading the orders
     const loadOrders = (userId) => {
         //call to get orders by userId
         API.getOrders(userId)
             //set into ordersState
             .then(({ data }) => {
+                //setting the orders state
                 setOrdersState({
                     ...ordersState,
                     orders: [...data],
@@ -357,9 +367,11 @@ function StateController(props) {
             });
     };
 
+    //checking if the user is searching for a specific order
     useEffect(() => {
         if (ordersState.order_query) {
             let filteredArray = [];
+            //runs over each order and the containing items in the order and checks the title to see if it matches the users search
             ordersState.orders.forEach((order) => {
                 order.items.forEach((item) => {
                     if (
@@ -372,9 +384,10 @@ function StateController(props) {
                 });
             });
 
+            //sets the order state to the users filtered array
             setOrdersState({ ...ordersState, filtered_orders: filteredArray });
         } else {
-            //set orders array
+            //set orders array back to the original
             setOrdersState({
                 ...ordersState,
                 filtered_orders: ordersState.orders,
@@ -382,10 +395,16 @@ function StateController(props) {
         }
     }, [ordersState.order_query]);
 
+    //handles the order query change
+    const handleOrderSearchChange = (event) => {
+        setOrdersState({ ...ordersState, order_query: event.target.value });
+    };
+
     //////////////////////////////////////////////////////  End Order State Editing //////////////////////////////////////////////////////////////
 
     //Search State Editing
 
+    //on page load it will load the user and call the database to update the categories for products
     useEffect(() => {
         loadUser();
         API.getDbCategories().then(({ data }) => {
@@ -393,35 +412,33 @@ function StateController(props) {
                 return item.category;
             });
             let uniqueArray = [...new Set(categoryArray)];
+            //sets the categories for the user to search by
             setSearchState({ ...searchState, product_categories: uniqueArray });
         });
     }, []);
 
-    const handleOrderSearchChange = (event) => {
-        setOrdersState({ ...ordersState, order_query: event.target.value });
-    };
-
+    //function to lookup a product in the database, returns the product and sets to the product_result
     const lookupProduct = (productId) => {
         API.lookupProduct(productId).then(({ data }) => {
             setSearchState({ ...searchState, product_result: data[0] });
         });
     };
 
+    //when the user types in a search it will save it to the search_query to be searched on a form submit
     const handleSearchChange = (event) => {
         setSearchState({ ...searchState, search_query: event.target.value });
     };
 
+    //when the user changes the category it will save it here
     const handleCategoryChange = (event) => {
         setSearchState({ ...searchState, search_category: event.target.value });
     };
 
-    const handleUserInfoChange = (event) => {
-        const { name, value } = event.target;
-        setEditableUserState({ ...editableUserState, [name]: value });
-    };
-
+    //function for searching products
     const searchProducts = (category, query) => {
+        //passes the API the category and query it is searching for and makes the call
         API.searchProducts(category, query).then(({ data }) => {
+            //on return it sets the search state to the data it received
             setSearchState({
                 ...searchState,
                 search_results: data,
