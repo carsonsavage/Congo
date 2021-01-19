@@ -28,7 +28,6 @@ function Orders(props) {
         <>
             {searchState.product_result.title ? (
                 <Wrapper>
-                    {console.log(product_result)}
                     <Button
                         animated
                         size="mini"
