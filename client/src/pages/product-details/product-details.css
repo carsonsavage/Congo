@@ -80,20 +80,31 @@ div.ui.tag.label.ui.label.massive.red {
     max-width: 120px;
 }
 
-@media only screen and (max-width: 1500px){
-    .ui.massive.label{
+@media only screen and (max-width: 1500px) {
+    .ui.massive.label {
         font-size: 16px;
     }
 }
 
-@media only screen and (max-width: 1100px){
-    .ui.massive.label{
+@media only screen and (max-width: 1100px) {
+    .ui.massive.label {
         font-size: 13px;
     }
 }
 
-@media only screen and (max-width: 900px){
-    .ui.massive.label{
+@media only screen and (max-width: 900px) {
+    .ui.massive.label {
         font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .ui.massive.label {
+        font-size: 2em;
+    }
+
+    div.ui.tag.label.ui.label.massive.red {
+        width: 80%;
+        max-width: 200px;
     }
 }
