@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import UserContext from "../../../util/userContext.js";
 import "./payment-card.css";
 import { Button } from "semantic-ui-react";
+import { Col } from "react-bootstrap";
 
 function PaymentCards({ setCreditCard, setModalState, dispatch }) {
     const { userState, handleCardRemoval } = useContext(UserContext);
@@ -13,24 +14,24 @@ function PaymentCards({ setCreditCard, setModalState, dispatch }) {
                     {userState.credit_cards.map((payment, index) => (
                         <div class="ui segment clearfix" key={index}>
                             <div className="row">
-                                <div className="col-3">
+                                <Col>
                                     <i class="credit card icon"></i>
                                     <span>
                                         {" "}
                                         Card ending in {payment.card_number}
                                     </span>
-                                </div>
-                                <div className="col-3">
+                                </Col>
+                                <Col>
                                     <p>{payment.card_name.toUpperCase()}</p>
-                                </div>
+                                </Col>
 
-                                <div className="col-3">
+                                <Col>
                                     <p>
                                         {payment.expire_month} /{" "}
                                         {payment.expire_year}
                                     </p>
-                                </div>
-                                <div className="col-3">
+                                </Col>
+                                <Col>
                                     <div
                                         class="ui mini buttons float-right"
                                         id="paymentBtn"
@@ -65,7 +66,7 @@ function PaymentCards({ setCreditCard, setModalState, dispatch }) {
                                             Remove
                                         </button>
                                     </div>
-                                </div>
+                                </Col>
                             </div>
                         </div>
                     ))}
