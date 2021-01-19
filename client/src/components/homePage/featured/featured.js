@@ -15,6 +15,13 @@ export default () => {
     const [featuredProducts, setFeaturedProducts] = useState([]);
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const chevronWidth = 30;
+
+    useEffect(() => {
+        setTimeout(() => {
+            setActiveItemIndex(activeItemIndex + 1);
+        }, 7000);
+    }, [featuredProducts]);
+
     return (
         <div style={{ padding: `0 ${chevronWidth}px` }}>
             <ItemsCarousel
@@ -31,6 +38,8 @@ export default () => {
                 rightChevron={<i className="ui icon angle right huge"></i>}
                 outsideChevron
                 chevronWidth={chevronWidth}
+                infiniteLoop={true}
+                firstAndLastGutter={true}
             >
                 {featuredProducts.map(({ _id, images, price }) => (
                     <>
