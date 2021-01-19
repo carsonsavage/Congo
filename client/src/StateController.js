@@ -106,46 +106,61 @@ function StateController(props) {
     };
 
     useEffect(() => {
+        //when the user state changes it will save those changes into the editable user, for the user to further edit if they choose
         setEditableUserState(userState);
+        //loads the cart again
         loadCart();
+        //checks if the user is logged in, if they are they will update the user in the db to reflect any edited fields
         if (userState.loggedIn) {
             API.update(userState._id, userState);
         }
     }, [userState]);
 
+    //handles any edited address and saves to database
     const handleAddressEdit = (editedAddress, index) => {
         let addressArray = editableUserState.address;
         addressArray[index] = editedAddress;
+        //saves to the user state to update the server and current user state for the page
         setUserState({ ...userState, address: addressArray });
     };
 
+    //handles any added address and saves to database
     const handleAddressAdd = (newAddress) => {
         let addressArray = editableUserState.address;
         addressArray.push(newAddress);
+        //saves to the user state to update the server and current user state for the page
         setUserState({ ...userState, address: addressArray });
     };
 
+    //handles any removed address and saves to database
     const handleAddressRemoval = (index) => {
         let addressArray = editableUserState.address;
         addressArray.splice(index, 1);
+        //saves to the user state to update the server and current user state for the page
         setUserState({ ...userState, address: addressArray });
     };
 
+    //handles any edited payment_card and saves to database
     const handleCardEdit = (editedCard, index) => {
         let cardArray = editableUserState.credit_cards;
         cardArray[index] = editedCard;
+        //saves to the user state to update the server and current user state for the page
         setUserState({ ...userState, credit_cards: cardArray });
     };
 
+    //handles any added payment_card and saves to database
     const handleCardAdd = (newCard) => {
         let cardArray = editableUserState.credit_cards;
         cardArray.push(newCard);
+        //saves to the user state to update the server and current user state for the page
         setUserState({ ...userState, credit_cards: cardArray });
     };
 
+    //handles any removed payment_card and saves to database
     const handleCardRemoval = (index) => {
         let cardArray = editableUserState.credit_cards;
         cardArray.splice(index, 1);
+        //saves to the user state to update the server and current user state for the page
         setUserState({ ...userState, credit_cards: cardArray });
     };
 
