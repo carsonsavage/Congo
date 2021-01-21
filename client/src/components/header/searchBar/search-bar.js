@@ -37,15 +37,14 @@ function SearchBar() {
     return (
         <div className="search-bar">
             <form onSubmit={handleSubmit}>
-                <Form.Control
-                    as="select"
-                    className="mr-sm-2"
+                <select
+                    className="browser-default custom-select"
                     id="category-select"
                     onChange={handleCategoryChange}
                 >
                     <option value="">All</option>
                     {generateCategoryOptions()}
-                </Form.Control>
+                </select>
 
                 <div className="ui input search">
                     <input
