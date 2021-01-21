@@ -1,4 +1,4 @@
-.account-info{
+.account-info {
     background-color: green;
     color: white;
     height: 200px;
@@ -6,20 +6,27 @@
     justify-content: center;
 }
 
-label, span{
+label,
+span {
     font-weight: bold;
 }
 
-.cardHeader{
+.cardHeader {
     font-size: 20px;
     font-weight: bold;
 }
 
-#change-password-btn{
+#change-password-btn {
     width: 100px;
 }
 
-#change-password-message{
+#change-password-message {
     margin-top: -20px;
     height: 50px;
+}
+
+@media only screen and (max-width: 995px) {
+    .circular.ui.icon.button {
+        width: 50px;
+    }
 }

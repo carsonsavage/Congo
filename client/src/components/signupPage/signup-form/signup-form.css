@@ -8,6 +8,16 @@
     font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
-.password-check-error{
+.password-check-error {
     color: red;
+}
+
+@media only screen and (max-width: 586px) {
+    div#signup-page {
+        width: 100%;
+    }
+
+    div.Signup {
+        padding-top: 20px;
+    }
 }

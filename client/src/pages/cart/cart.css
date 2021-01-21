@@ -1,13 +1,14 @@
-.cart-page{
-    margin-top: 40px;
+.cart-page {
+    margin-top: 70px;
+    min-height: 70vh;
 }
 
-.header.sub{
+.header.sub {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-style: italic;
 }
 
-#cart-placeholder{
+#cart-placeholder {
     margin-top: 5%;
 }

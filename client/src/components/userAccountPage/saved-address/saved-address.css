@@ -32,4 +32,8 @@ div.header{
         left: 0;
         overflow: auto;
     }
+
+    div.ui.buttons button{
+        width: 50%;
+    }
 }

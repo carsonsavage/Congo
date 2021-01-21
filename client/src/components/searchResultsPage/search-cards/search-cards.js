@@ -9,8 +9,12 @@ function SearchCards() {
         <>
             {searchState.filtered_results.map(
                 ({ _id, title, price, images, quantity }, index) => (
-                    <Col>
-                        <Link to={`/product/details/${_id}`} key={index} className="react-link">
+                    <Col xl={3} lg={5} sm={12}>
+                        <Link
+                            to={`/product/details/${_id}`}
+                            key={index}
+                            className="react-link"
+                        >
                             <Card
                                 style={{ width: "20rem" }}
                                 className="product-cards"
@@ -18,12 +22,15 @@ function SearchCards() {
                                 <Card.Img variant="top" src={images[0]} />
                                 <Card.Body>
                                     <Card.Title>{title}</Card.Title>
-                                    <h3>${price}</h3>
+                                    <h3 className="search-card-price">
+                                        ${price}
+                                    </h3>
                                     {quantity < 5 && (
                                         <>
                                             {quantity === 0 ? (
                                                 <p className="out-of-stock">
-                                                    Sorry this item is out of stock
+                                                    Sorry this item is out of
+                                                    stock
                                                 </p>
                                             ) : (
                                                 <p>

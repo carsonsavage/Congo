@@ -31,4 +31,8 @@ button {
     .ui.input {
         width: 100%;
     }
+
+    div.ui.input.search {
+        width: 100%;
+    }
 }

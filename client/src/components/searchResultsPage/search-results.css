@@ -1,15 +1,20 @@
-.search-results{
+.search-results {
     margin: 40px auto;
 }
 
-.card.product-cards{
+.card.product-cards {
     margin-top: 40px;
     border: none;
     box-sizing: none;
     background-color: #ffffff00;
 }
 
-.ui.massive.active.text.centered.inline.loader.center{
+.ui.massive.active.text.centered.inline.loader.center {
     margin-top: 10%;
 }
 
+.search-card-price {
+    color: green;
+    font-style: italic;
+    font-weight: bold;
+}

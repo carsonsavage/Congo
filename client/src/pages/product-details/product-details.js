@@ -83,7 +83,11 @@ function Orders(props) {
                         </Col>
                         <Col md={2}>
                             <div className="product-cta">
-                                <ProductCta price={product_result.price} quantity={product_result.quantity} id={product_result._id} />
+                                <ProductCta
+                                    price={product_result.price}
+                                    quantity={product_result.quantity}
+                                    id={product_result._id}
+                                />
                             </div>
                         </Col>
                     </Row>

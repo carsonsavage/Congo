@@ -1,4 +1,4 @@
-.product-details{
+.product-details {
     margin-top: 40px;
 }
 
@@ -19,54 +19,92 @@
     display: inline;
 }
 
-.inline-block{
+.inline-block {
     display: inline-block;
 }
 
-.price{
+.price {
     text-align: center;
     width: 70px;
 }
 
-hr{
+hr {
     background-color: green;
 }
 
-.select{
+.select {
     width: 60px;
 }
 
-.col#description{
+.col#description {
     margin-top: 10px;
 }
 
-.addToCartBtn{
+.addToCartBtn {
     width: 200px;
     margin-top: 50px;
 }
 
-.cta-divs{
+.cta-divs {
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
-.cta-divs.addtocart{
+.cta-divs.addtocart {
     margin-top: 70px;
 }
 
-.in-stock{
+.in-stock {
     color: green;
 }
 
-.limited-stock{
+.limited-stock {
     color: orange;
 }
 
-.out-of-stock{
+.out-of-stock {
     color: red;
 }
 
-#back-to-results{
-    margin-top: 10px;
+#back-to-results {
+    margin-top: 40px;
     width: 200px;
+}
+
+button.ui.vertical.animated.button.addToCartBtn.green {
+    width: 100%;
+}
+
+div.ui.tag.label.ui.label.massive.red {
+    width: 80%;
+    max-width: 120px;
+}
+
+@media only screen and (max-width: 1500px) {
+    .ui.massive.label {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .ui.massive.label {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .ui.massive.label {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .ui.massive.label {
+        font-size: 2em;
+    }
+
+    div.ui.tag.label.ui.label.massive.red {
+        width: 80%;
+        max-width: 200px;
+    }
 }

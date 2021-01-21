@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import UserContext from "../../../util/userContext.js";
 import OrderContext from "../../../util/orderContext.js";
 import { Popup, Icon } from "semantic-ui-react";
+import { Col } from "react-bootstrap";
 import "./order-cards.css";
 
 function OrderCards() {
@@ -24,24 +25,24 @@ function OrderCards() {
                 ordersState.filtered_orders.map((order, index) => (
                     <div class="ui raised segment order-segment" key={index}>
                         <div className="row">
-                            <div className="col-2">
+                            <Col>
                                 <p>Order #: </p>
                                 <Link
                                     to={`/user/${userState._id}/order/${order._id}`}
                                 >
                                     <span>{order.order_num}</span>
                                 </Link>
-                            </div>
-                            <div className="col-2">
+                            </Col>
+                            <Col>
                                 <p>Item Count: </p>
                                 <span>{order.item_count}</span>
-                            </div>
+                            </Col>
 
-                            <div className="col-2">
+                            <Col>
                                 <p>Order date: </p>
                                 <span>{convertDate(order.order_date)}</span>
-                            </div>
-                            <div className="col-2 float-left">
+                            </Col>
+                            <Col className="float-left">
                                 <p>Shipping to: </p>
                                 <Popup
                                     trigger={
@@ -63,12 +64,12 @@ function OrderCards() {
                                     }
                                     position="bottom center"
                                 />
-                            </div>
-                            <div className="col-2"></div>
-                            <div className="col-2">
+                            </Col>
+                            <Col></Col>
+                            <Col>
                                 <p>Order total: </p>
                                 <span>${order.total.toFixed(2)}</span>
-                            </div>
+                            </Col>
                         </div>
                         <div className="row">
                             {order.items.map(
@@ -84,7 +85,10 @@ function OrderCards() {
                                                 </Link>
                                                 <p className="small-img-title">
                                                     {title.length > 60
-                                                        ? title.substring(0,60) + "..."
+                                                        ? title.substring(
+                                                              0,
+                                                              60
+                                                          ) + "..."
                                                         : title}
                                                 </p>
                                             </div>

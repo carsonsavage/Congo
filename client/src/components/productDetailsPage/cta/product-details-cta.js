@@ -67,16 +67,14 @@ function ProductCta({ id, price, quantity }) {
             </div>
             <div className="clearfix cta-divs">
                 <label className="float-left">Qty:</label>
-                <Form.Control
-                    as="select"
-                    size="sm"
+                <select
                     className="select float-left"
                     onChange={(e) => {
                         setQntySelected(e.target.value);
                     }}
                 >
                     {generateOptions(quantity)}
-                </Form.Control>
+                </select>
             </div>
             <div className="cta-divs addtocart">
                 <AddToCartBtn
@@ -84,6 +82,7 @@ function ProductCta({ id, price, quantity }) {
                     qntySelected={qntySelected}
                     isDisabled={isDisabled}
                 />
+                <br />
                 <Icon name="lock" /> Secure transaction
             </div>
         </div>
