@@ -42,8 +42,8 @@ function AddCardModal({ dispatch, creditCard, setCreditCard, handleCardAdd }) {
                         <Form.Label>Expiration date</Form.Label>
                         <Form.Row>
                             <Col xs={5}>
-                                <Form.Control
-                                    as="select"
+                                <select
+                                    className="browser-default custom-select"
                                     onChange={(e) =>
                                         setCreditCard({
                                             ...creditCard,
@@ -65,12 +65,12 @@ function AddCardModal({ dispatch, creditCard, setCreditCard, handleCardAdd }) {
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
-                                </Form.Control>
+                                </select>
                             </Col>
                             <div>/</div>
                             <Col xs={5}>
-                                <Form.Control
-                                    as="select"
+                                <select
+                                    className="browser-default custom-select"
                                     onChange={(e) =>
                                         setCreditCard({
                                             ...creditCard,
@@ -90,7 +90,7 @@ function AddCardModal({ dispatch, creditCard, setCreditCard, handleCardAdd }) {
                                     <option value="2028">2028</option>
                                     <option value="2029">2029</option>
                                     <option value="2030">2030</option>
-                                </Form.Control>
+                                </select>
                             </Col>
                         </Form.Row>
                     </Form.Group>
