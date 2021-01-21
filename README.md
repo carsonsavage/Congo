@@ -6,8 +6,11 @@
 
 ## Description
 
+This online e-commerce site is a take on an Amazon clone. Instead of completely copying Amazon we have decided to take some design layouts as an insiration and create our own little e-commerce website. Our site took the name of Congo, which is another rainforest and has taken color themes from the rainforest to help with the user experience. You can create a user account and freely explore the functionality of our site and create mock orders. Happy Shopping!
 
 ## Usage
+
+For this website we have implemented a MongoDb for our users, carts, 
 
 ## Technologies Used
 
