@@ -84,8 +84,8 @@ function EditAddressModal({
 
                         <Form.Group as={Col}>
                             <Form.Label>State</Form.Label>
-                            <Form.Control
-                                as="select"
+                            <select
+                                className="browser-default custom-select"
                                 required
                                 name="state"
                                 value={address.state}
@@ -150,7 +150,7 @@ function EditAddressModal({
                                 <option value="WI">Wisconsin</option>
                                 <option value="WV">West Virginia</option>
                                 <option value="WY">Wyoming</option>
-                            </Form.Control>
+                            </select>
                         </Form.Group>
 
                         <Form.Group as={Col}>
