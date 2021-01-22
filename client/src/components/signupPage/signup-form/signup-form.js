@@ -4,9 +4,9 @@ import BootstrapBtn from "react-bootstrap/Button";
 import "./signup-form.css";
 import UserContext from "../../../util/userContext.js";
 import API from "../../../util/API.js";
-import { Select } from 'semantic-ui-react'
+import { Select } from "semantic-ui-react";
 
-export default function Login() {
+export default function Login({ history }) {
     const { registerUser, signupErrorState, setSignupErrorState } = useContext(
         UserContext
     );
@@ -76,7 +76,7 @@ export default function Login() {
                     setSignupErrorState("Email already in use");
                 } else {
                     registerUser(registerObj).then((res) => {
-                        window.location.href = "/login";
+                        history.push("/login");
                     });
                 }
             });
