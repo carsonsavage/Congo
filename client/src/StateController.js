@@ -224,11 +224,15 @@ function StateController(props) {
         });
         //calls the db to get the products back
         API.getMultipleProducts(productIdArray).then(({ data }) => {
-            let productArray = data;
-            //sets the quantity selected onto the specific product object using the map.get call
-            productArray.forEach(({ _id }, index) => {
-                productArray[index].qnty_selected = map.get(_id);
-            });
+            let productArray = [];
+            if (data) {
+                productArray = data;
+                //sets the quantity selected onto the specific product object using the map.get call
+                productArray.forEach(({ _id }, index) => {
+                    productArray[index].qnty_selected = map.get(_id);
+                });
+            }
+
 
             //sets the cartitemstate to the new array
             setSavedCartItemsState(productArray);
@@ -330,7 +334,7 @@ function StateController(props) {
     const saveCurrentCart = () => {
         //if the user is logged in it will save the cart
         if (userState.loggedIn) {
-            API.saveCart(userState._id, cartIdState).then(({ data }) => {});
+            API.saveCart(userState._id, cartIdState).then(({ data }) => { });
         } else {
             //removes and sets the cookie cart if user is not logged in
             removeCookie(["cookieCart"], { path: "/" });

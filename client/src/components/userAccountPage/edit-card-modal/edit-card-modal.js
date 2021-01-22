@@ -44,8 +44,8 @@ function EditCardModal({ dispatch, creditCard, setCreditCard, handleCardEdit }) 
                         <Form.Label>Expiration date</Form.Label>
                         <Form.Row>
                             <Col xs={5}>
-                                <Form.Control
-                                    as="select"
+                                <select
+                                    className="browser-default custom-select"
                                     value={creditCard.expire_month}
                                     onChange={(e) =>
                                         setCreditCard({
@@ -68,12 +68,12 @@ function EditCardModal({ dispatch, creditCard, setCreditCard, handleCardEdit }) 
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
-                                </Form.Control>
+                                </select>
                             </Col>
                             <div>/</div>
                             <Col xs={5}>
-                                <Form.Control
-                                    as="select"
+                                <select
+                                    className="browser-default custom-select"
                                     value={creditCard.expire_year}
                                     onChange={(e) =>
                                         setCreditCard({
@@ -94,7 +94,7 @@ function EditCardModal({ dispatch, creditCard, setCreditCard, handleCardEdit }) 
                                     <option value="2028">2028</option>
                                     <option value="2029">2029</option>
                                     <option value="2030">2030</option>
-                                </Form.Control>
+                                </select>
                             </Col>
                         </Form.Row>
                     </Form.Group>

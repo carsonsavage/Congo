@@ -10,11 +10,14 @@ export default () => {
         API.getFeatured().then(({ data }) => {
             setFeaturedProducts(data);
         });
-    });
+    }, []);
 
     const [featuredProducts, setFeaturedProducts] = useState([]);
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const chevronWidth = 30;
+    const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+    window.onresize = () => { setWindowSize(window.innerWidth) }
 
     return (
         <div style={{ padding: `0 ${chevronWidth}px` }}>
@@ -22,10 +25,10 @@ export default () => {
                 requestToChangeActive={setActiveItemIndex}
                 activeItemIndex={activeItemIndex}
                 numberOfCards={
-                    (window.innerWidth < 800 && 1) ||
-                    (window.innerWidth < 1200 && 2) ||
-                    (window.innerWidth < 1400 && 3) ||
-                    (window.innerWidth > 1200 && 4)
+                    (windowSize < 800 && 1) ||
+                    (windowSize < 1200 && 2) ||
+                    (windowSize < 1400 && 3) ||
+                    (windowSize > 1200 && 4)
                 }
                 gutter={30}
                 leftChevron={<i className="ui icon angle left huge"></i>}

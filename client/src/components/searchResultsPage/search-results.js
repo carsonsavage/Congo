@@ -3,7 +3,7 @@ import "./search-results.css";
 import SearchCards from "./search-cards/search-cards.js";
 import SearchContext from "../../util/searchContext.js";
 import { Row } from "react-bootstrap";
-import { Dimmer, Loader } from "semantic-ui-react";
+import { Loader, Segment, Header } from "semantic-ui-react";
 
 function SearchResults() {
     const { searchState } = useContext(SearchContext);
@@ -12,6 +12,8 @@ function SearchResults() {
     useEffect(() => {
         if (searchState.filtered_results.length > 0) {
             setLoadProducts(true);
+        } else if (searchState.filtered_results.length === 0) {
+            setLoadProducts("none found");
         } else {
             setLoadProducts(false);
         }
@@ -20,9 +22,13 @@ function SearchResults() {
     return (
         <div className="search-results">
             <Row>
-                {loadProducts ? (
-                    <SearchCards />
-                ) : (
+                {loadProducts === "none found" && (
+                    <Segment>
+                        <Header>Sorry, but no products matched your search criteria. Please search again</Header>
+                    </Segment>
+                )}
+                {loadProducts === true && <SearchCards />}
+                {loadProducts === false && (
                     <Loader active size="massive" inline="centered" className="center">
                         Loading results...
                     </Loader>

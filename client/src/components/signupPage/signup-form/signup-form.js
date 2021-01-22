@@ -4,6 +4,7 @@ import BootstrapBtn from "react-bootstrap/Button";
 import "./signup-form.css";
 import UserContext from "../../../util/userContext.js";
 import API from "../../../util/API.js";
+import { Select } from 'semantic-ui-react'
 
 export default function Login() {
     const { registerUser, signupErrorState, setSignupErrorState } = useContext(
@@ -200,8 +201,8 @@ export default function Login() {
 
                     <Form.Group as={Col}>
                         <Form.Label>State</Form.Label>
-                        <Form.Control
-                            as="select"
+                        <select
+                            className="browser-default custom-select"
                             defaultValue="Choose..."
                             onChange={(e) =>
                                 setAddress({
@@ -264,7 +265,7 @@ export default function Login() {
                             <option value="WI">Wisconsin</option>
                             <option value="WV">West Virginia</option>
                             <option value="WY">Wyoming</option>
-                        </Form.Control>
+                        </select>
                     </Form.Group>
 
                     <Form.Group as={Col}>
@@ -320,8 +321,8 @@ export default function Login() {
                         <Form.Label>Expiration date</Form.Label>
                         <Form.Row>
                             <Col xs={5}>
-                                <Form.Control
-                                    as="select"
+                                <select
+                                    className="browser-default custom-select"
                                     onChange={(e) =>
                                         setCreditCard({
                                             ...creditCard,
@@ -343,12 +344,12 @@ export default function Login() {
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
-                                </Form.Control>
+                                </select>
                             </Col>
                             <div>/</div>
                             <Col xs={5}>
-                                <Form.Control
-                                    as="select"
+                                <select
+                                    className="browser-default custom-select"
                                     onChange={(e) =>
                                         setCreditCard({
                                             ...creditCard,
@@ -368,7 +369,7 @@ export default function Login() {
                                     <option value="2028">2028</option>
                                     <option value="2029">2029</option>
                                     <option value="2030">2030</option>
-                                </Form.Control>
+                                </select>
                             </Col>
                         </Form.Row>
                     </Form.Group>

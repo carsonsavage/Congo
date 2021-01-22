@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./cart-cards.css";
+import { Link } from 'react-router-dom'
 import { Segment, Button } from "semantic-ui-react";
 import { Row, Col, Image, Form } from "react-bootstrap";
 import CartContext from "../../../util/cartContext.js";
@@ -31,22 +32,25 @@ function CartCards() {
     return (
         <>
             {cartState.cart_items.map(
-                ({ images, title, quantity, price, qnty_selected }, index) => (
+                ({ _id, images, title, quantity, price, qnty_selected }, index) => (
                     <Segment padded key={index}>
                         <Row>
                             <Col md={2}>
-                                <Image
-                                    src={images[0]}
-                                    thumbnail
-                                    className="card-cards"
-                                    alt={title}
-                                />
+                                <Link to={`/product/details/${_id}`}>
+                                    <Image
+                                        src={images[0]}
+                                        thumbnail
+                                        className="card-cards"
+                                        alt={title}
+                                    />
+                                </Link>
                             </Col>
                             <Col md={8}>
                                 <h5>{title}</h5>
                                 <div className="clearfix cta-divs">
                                     <label className="float-left">Qty:</label>
                                     <select
+                                        className="browser-default custom-select select"
                                         defaultValue={qnty_selected}
                                         onChange={(e) => {
                                             updateProductInCart(
