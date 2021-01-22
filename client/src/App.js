@@ -16,9 +16,11 @@ import UserContext from "./util/userContext";
 import ForgotPassword from "./pages/forgot-password/forgot-password.js";
 import ResetPassword from "./pages/reset-password/reset-password.js";
 import UpdateProducts from "./pages/update-products/update-products.js";
+import { useHistory } from "react-router-dom";
 
 function App() {
     const { userState } = useContext(UserContext);
+    const history = useHistory();
     return (
         <Router>
             <Header />
