@@ -233,7 +233,6 @@ function StateController(props) {
                 });
             }
 
-
             //sets the cartitemstate to the new array
             setSavedCartItemsState(productArray);
         });
@@ -324,9 +323,8 @@ function StateController(props) {
             //if there is no user, it will first remove the cookie cart, and then re-add it with the updated data
             removeCookie(["cookieCart"], { path: "/" });
             setCookie("cookieCart", uniqueArray, { path: "/" });
-            //redirects after a successful save
-            //window.location.href = "/cart";
-            loadCart();
+
+            setCartIdState(uniqueArray);
         }
     };
 
@@ -334,7 +332,7 @@ function StateController(props) {
     const saveCurrentCart = () => {
         //if the user is logged in it will save the cart
         if (userState.loggedIn) {
-            API.saveCart(userState._id, cartIdState).then(({ data }) => { });
+            API.saveCart(userState._id, cartIdState).then(({ data }) => {});
         } else {
             //removes and sets the cookie cart if user is not logged in
             removeCookie(["cookieCart"], { path: "/" });
