@@ -195,11 +195,13 @@ function StateController(props) {
             });
     };
 
+    //const history = useHistory();
     //calls the server and logs out the user, reloads to reflect a logout happening
     const logoutUser = () => {
         API.logout().then(({ status }) => {
             if (status === 200) {
-                window.location.href = "/";
+                //window.location.href = "/";
+                setUserState({ ...userState, loggedIn: false });
             }
         });
     };
@@ -311,14 +313,16 @@ function StateController(props) {
         if (userState.loggedIn) {
             API.saveCart(userState._id, uniqueArray).then((data) => {
                 //redirects after a successful save
-                window.location.href = "/cart";
+                //window.location.href = "/cart";
+                loadCart();
             });
         } else {
             //if there is no user, it will first remove the cookie cart, and then re-add it with the updated data
             removeCookie(["cookieCart"], { path: "/" });
             setCookie("cookieCart", uniqueArray, { path: "/" });
             //redirects after a successful save
-            window.location.href = "/cart";
+            //window.location.href = "/cart";
+            loadCart();
         }
     };
 
