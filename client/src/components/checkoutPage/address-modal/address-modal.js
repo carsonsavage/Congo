@@ -33,7 +33,8 @@ function AddressModal({ setEditState, setShippingAddress, dispatch }) {
                                                 {address.address1.toUpperCase()}
                                             </p>
                                             <p>
-                                                {address.address2.toUpperCase()}
+                                                {address.address2 &&
+                                                    address.address2.toUpperCase()}
                                             </p>
                                             <p>
                                                 {address.city.toUpperCase()},
