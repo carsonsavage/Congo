@@ -182,12 +182,13 @@ function StateController(props) {
     };
 
     //makes a call to login the user
-    const loginUser = (user) => {
+    const loginUser = (user, history) => {
         API.login(user)
             .then(({ data }) => {
                 //if you receive data from the database it will set your error state to blank and redirect
                 setLoginErrorState("");
-                window.location.href = "/";
+                loadUser();
+                history.push("/");
             })
             .catch((err) => {
                 //if anything happens in the process, like an invalid email or password it automatically errors out. We notify the user here
@@ -202,6 +203,13 @@ function StateController(props) {
             if (status === 200) {
                 //window.location.href = "/";
                 setUserState({ ...userState, loggedIn: false });
+                setCartIdState([]);
+                setCartState({
+                    ...cartState,
+                    cart_total: 0,
+                    cart_item_count: 0,
+                    cart_items: [],
+                });
             }
         });
     };
@@ -294,6 +302,8 @@ function StateController(props) {
         } else {
             //call to get cart if someone is NOT logged in
             if (cookies.cookieCart) {
+                console.log("grabbing cookies cart and setting to cartId");
+                console.log(cookies.cookieCart);
                 //if there is a cookie cart and they are not logged in it will set the cartidstate to that cookie cart
                 setCartIdState(cookies.cookieCart);
             }
