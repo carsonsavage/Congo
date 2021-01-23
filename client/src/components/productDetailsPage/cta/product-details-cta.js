@@ -68,7 +68,7 @@ function ProductCta({ id, price, quantity }) {
             <div className="clearfix cta-divs">
                 <label className="float-left">Qty:</label>
                 <select
-                    className="select float-left"
+                    className="browser-default custom-select select float-left"
                     onChange={(e) => {
                         setQntySelected(e.target.value);
                     }}

@@ -4,13 +4,13 @@ import Logo from "../../components/loginPage/logo/logo.js";
 import SignupForm from "../../components/signupPage/signup-form/signup-form.js";
 import "./signup.css";
 
-function Signup() {
+function Signup(props) {
     return (
         <>
             <Wrapper>
                 <div id="signup-page">
                     <Logo />
-                    <SignupForm />
+                    <SignupForm history={props.history} />
                 </div>
             </Wrapper>
         </>

@@ -61,10 +61,7 @@ export function Header() {
                                                 <NavDropdown.Item>
                                                     <Button
                                                         color="red"
-                                                        onClick={
-                                                            (saveCurrentCart,
-                                                            logoutUser)
-                                                        }
+                                                        onClick={logoutUser}
                                                     >
                                                         Logout
                                                     </Button>

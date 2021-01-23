@@ -9,6 +9,9 @@ function AddToCartBtn({ id, qntySelected, isDisabled }) {
         event.preventDefault();
         setButtonLoading(true);
         addProductToCart(_id, qntySelected);
+        setTimeout(() => {
+            setButtonLoading(false);
+        }, 3000);
     };
 
     return (

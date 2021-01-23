@@ -13,7 +13,7 @@
 }
 
 #model-buttons{
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -34,6 +34,11 @@ div.header{
     }
 
     div.ui.buttons button{
-        width: 50%;
+        width: 40%;
+    }
+
+    #model-buttons{
+        width: 100%;
+        margin: 0 auto;
     }
 }

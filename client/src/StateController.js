@@ -182,12 +182,13 @@ function StateController(props) {
     };
 
     //makes a call to login the user
-    const loginUser = (user) => {
+    const loginUser = (user, history) => {
         API.login(user)
             .then(({ data }) => {
                 //if you receive data from the database it will set your error state to blank and redirect
                 setLoginErrorState("");
-                window.location.href = "/";
+                loadUser();
+                history.push("/");
             })
             .catch((err) => {
                 //if anything happens in the process, like an invalid email or password it automatically errors out. We notify the user here
@@ -195,11 +196,20 @@ function StateController(props) {
             });
     };
 
+    //const history = useHistory();
     //calls the server and logs out the user, reloads to reflect a logout happening
     const logoutUser = () => {
         API.logout().then(({ status }) => {
             if (status === 200) {
-                window.location.href = "/";
+                //window.location.href = "/";
+                setUserState({ ...userState, loggedIn: false });
+                setCartIdState([]);
+                setCartState({
+                    ...cartState,
+                    cart_total: 0,
+                    cart_item_count: 0,
+                    cart_items: [],
+                });
             }
         });
     };
@@ -222,11 +232,14 @@ function StateController(props) {
         });
         //calls the db to get the products back
         API.getMultipleProducts(productIdArray).then(({ data }) => {
-            let productArray = data;
-            //sets the quantity selected onto the specific product object using the map.get call
-            productArray.forEach(({ _id }, index) => {
-                productArray[index].qnty_selected = map.get(_id);
-            });
+            let productArray = [];
+            if (data) {
+                productArray = data;
+                //sets the quantity selected onto the specific product object using the map.get call
+                productArray.forEach(({ _id }, index) => {
+                    productArray[index].qnty_selected = map.get(_id);
+                });
+            }
 
             //sets the cartitemstate to the new array
             setSavedCartItemsState(productArray);
@@ -289,6 +302,8 @@ function StateController(props) {
         } else {
             //call to get cart if someone is NOT logged in
             if (cookies.cookieCart) {
+                console.log("grabbing cookies cart and setting to cartId");
+                console.log(cookies.cookieCart);
                 //if there is a cookie cart and they are not logged in it will set the cartidstate to that cookie cart
                 setCartIdState(cookies.cookieCart);
             }
@@ -311,14 +326,15 @@ function StateController(props) {
         if (userState.loggedIn) {
             API.saveCart(userState._id, uniqueArray).then((data) => {
                 //redirects after a successful save
-                window.location.href = "/cart";
+                //window.location.href = "/cart";
+                loadCart();
             });
         } else {
             //if there is no user, it will first remove the cookie cart, and then re-add it with the updated data
             removeCookie(["cookieCart"], { path: "/" });
             setCookie("cookieCart", uniqueArray, { path: "/" });
-            //redirects after a successful save
-            window.location.href = "/cart";
+
+            setCartIdState(uniqueArray);
         }
     };
 
