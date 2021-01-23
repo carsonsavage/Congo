@@ -5,7 +5,7 @@ import "./login-form.css";
 import { Link } from "react-router-dom";
 import UserContext from "../../../util/userContext.js";
 
-export default function Login() {
+export default function Login({ history }) {
     const { loginUser, loginErrorState } = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -16,7 +16,7 @@ export default function Login() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        loginUser({ email: email, password: password });
+        loginUser({ email: email, password: password }, history);
     }
 
     return (
