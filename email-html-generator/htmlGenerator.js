@@ -335,7 +335,7 @@ const EmailHTML = {
                                                                     bgcolor="green"
                                                                 >
                                                                     <a
-                                                                        href="http://localhost:3000/user/reset-password/${user_id}"
+                                                                        href="http://192.168.1.103:3000/user/reset-password/${user_id}"
                                                                         target="_blank"
                                                                         style="
                                                                             font-size: 20px;
@@ -402,10 +402,10 @@ const EmailHTML = {
                                         >
                                             <p style="margin: 0">
                                                 <a
-                                                    href="http://localhost:3000/user/reset-password/${user_id}"
+                                                    href="http://192.168.1.103:3000/user/reset-password/${user_id}"
                                                     target="_blank"
                                                     style="color: green"
-                                                    >http://localhost:3000/user/reset-password/${user_id}</a
+                                                    >http://192.168.1.103:3000/user/reset-password/${user_id}</a
                                                 >
                                             </p>
                                         </td>
