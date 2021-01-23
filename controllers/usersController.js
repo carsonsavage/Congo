@@ -76,4 +76,13 @@ module.exports = {
             );
         });
     },
+    resetPassword: function (req, res) {
+        db.User.findByIdAndUpdate(
+            req.params.id,
+            { password: req.body.password },
+            { returnOriginal: false }
+        ).then((user) => {
+            res.sendStatus(200);
+        });
+    },
 };
