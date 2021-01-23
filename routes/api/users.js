@@ -32,7 +32,7 @@ router.route("/update/:id").put(usersController.update);
 router.route("/update/password/:id").put((req, res) => {
     bcrypt.hash(req.body.password, 10, (err, hashedPass) => {
         req.body.password = hashedPass;
-        usersController.update(req, res);
+        usersController.resetPassword(req, res);
     });
 });
 
