@@ -16,13 +16,12 @@ Once you go through creating your account you can login, and start browsing our 
 
 To access more info on a specific product simply click on the image and you will be taken to a more in depth product details page. From this page you can see more photos, a description and add a specific quantity to your cart.
 
-```
 If you are not logged in your cart will be saved using a cookie. Once you login, however, that cart will be added to your user specific cart and deleted from your local device. This will ensure you can access this cart from anywhere.
-```
 
-When you have finished finding and selecting products you can proceed to the checkout page. This is accessed from the cart page, and by clicking checkout. You will then be taken through prompts to confirm your shipping and payment info and then the final amount. Once you click Place Order, it will simulate your payment being processed, after 5 seconds it will confirm your order with an order #. During this time it is calling a sample email provided called Nodemailer, and sending a dummy email to the users email. <span style="font-style: italic"> **Note: an email actually does not get sent to your email, it is using a third party service to just replicate an email being sent. You will not receive an email from Congo</span>
+When you have finished finding and selecting products you can proceed to the checkout page. This is accessed from the cart page, and by clicking checkout. You will then be taken through prompts to confirm your shipping and payment info and then the final amount. Once you click Place Order, it will simulate your payment being processed, after 5 seconds it will confirm your order with an order #. During this time it is calling a sample email provided called Nodemailer, and sending a dummy email to the users email. <span style="font-style: italic"> \*\*Note: an email actually does not get sent to your email, it is using a third party service to just replicate an email being sent. You will not receive an email from Congo</span>
 
 ## Technologies Used
+
 
 ## License
 
