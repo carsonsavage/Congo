@@ -16,6 +16,7 @@
 .ui.container {
     width: 80%;
     position: relative;
+    min-height: 65vh;
 }
 
 .error-statement {
